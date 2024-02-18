@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ForceReceiver : MonoBehaviour
 {
-    [SerializeField] CharacterController controller;
+    //[SerializeField] CharacterController controller;
 
     private float verticalVelocity;
     private float horizontalVelocity;   

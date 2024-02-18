@@ -5,7 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PlayerData : ScriptableObject
 {
-    public int Level;
+    [Header("Level Info")]
+    public int LevelMax;
+    public int CurrentLevel;
 
     [Header ("Health&Mana")]
     public float Health;

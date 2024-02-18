@@ -6,8 +6,19 @@ using UnityEngine;
 
 public class FarmControls : MonoBehaviour
 {
-    //[Header("ScriptableObjects")]
-    //[SerializeField] PlayerData ActivePlayerData;
+    [Header("ScriptableObjects")]
+    [SerializeField] BulletData bulletData;
+    [SerializeField] PlayerData activePlayerData;
+    [SerializeField] BuildingsData farmData;
+
+    [Header("Individual Farm Stats")]
+    //it's inside FarmData
+    //public int farmMaxHealth;
+    public int farmCurrentHealth;
+    public bool isBurning;
+    [SerializeField] GameObject HealthPanel;
+    [SerializeField] GameObject HealthBarGreen;
+    [SerializeField] GameObject HealthBarRed;
 
     [Header("ObjectsToSpawn")]
     [SerializeField] GameObject Peasant;
@@ -19,13 +30,16 @@ public class FarmControls : MonoBehaviour
     public int currentNumberOfFarmers;
     public float spawnTimer = 2f;
     public float spawnTimerCounter = 0f;
+    //current values used by code above will be replaced with farmData values
 
     public bool alert;
     public bool panic;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        farmCurrentHealth = farmData.maxHealth;
+
         maxNumberOfFarmers = 5;
         currentNumberOfFarmers = 0;
 
@@ -33,7 +47,7 @@ public class FarmControls : MonoBehaviour
         spawnTimer = 2f;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (currentNumberOfFarmers >= maxNumberOfFarmers)
@@ -53,6 +67,26 @@ public class FarmControls : MonoBehaviour
              // Debug.Log("i will spawn");
             Debug.Log(currentNumberOfFarmers);
         }
+
+
+        if (farmCurrentHealth == farmData.maxHealth)
+        {
+            HealthPanel.SetActive(false);
+        }
+        else { HealthPanel.SetActive(true); }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            if (activePlayerData.CurrentLevel < 2)
+            {
+                farmCurrentHealth -= bulletData.LVL1_bulletDamage;
+            }
+                
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +102,7 @@ public class FarmControls : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player is detected");
-            if (collision.gameObject.GetComponent<testPlayer>().playerData.Level < 3)
+            if (collision.gameObject.GetComponent<testPlayer>().playerData.CurrentLevel < 3)
             {
                 alert = true;
 

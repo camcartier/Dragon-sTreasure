@@ -6,18 +6,27 @@ using UnityEngine.InputSystem;
 public class PlayerStateMachine : StateMachine
 {
     [field: SerializeField] public InputReader InputReader { get; private set; }
-    [field: SerializeField] public CharacterController Controller { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
-    [field: SerializeField] public float _movementSpeed { get; private set; }
 
-    //no current use
-    //[field: SerializeField] public float DashForce { get; private set; }
+    [field: SerializeField] public PlayerData PlayerData { get; private set; }
 
-    //not necessary for this game
-    //[field: SerializeField] public float RotationDamping { get; private set; }
-    
-    //not currently used 
+
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
+
+
+    //[Header("Firing Variables")]
+
+    [field: SerializeField] public GameObject BulletPrefab { get; private set; }
+
+    //[field: SerializeField] public GameObject FiringEmpty { get; private set; }
+    
+    //[SerializeField] GameObject BulletPrefab;
+    //[SerializeField] GameObject FiringEmpty;
+
+    //[field: SerializeField] public float RotationDamping { get; private set; }
+
+
+    
 
     public Transform MainCameraTransform { get; private set; }
 
