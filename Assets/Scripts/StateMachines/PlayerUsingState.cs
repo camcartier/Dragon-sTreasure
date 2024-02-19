@@ -15,6 +15,8 @@ public class PlayerUsingState : PlayerBaseState
     public override void Enter()
     {
         TimerCounter  = 0f;
+        stateMachine.rb2D.velocity = Vector2.zero;
+
         stateMachine.Animator.CrossFadeInFixedTime(UseHash, CrossFadeDuration);
     }
 

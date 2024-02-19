@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4364131185281000549}
   - component: {fileID: 2072502224667387666}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Castle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1630668091919457380}
   - component: {fileID: 6080840877493821704}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

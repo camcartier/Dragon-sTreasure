@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 172299199858803786}
   - component: {fileID: 9033838750334023689}
   - component: {fileID: 1454233127772832480}
+  - component: {fileID: 3319847874230943825}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -243,9 +244,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 172299199858803786}
-  <Animator>k__BackingField: {fileID: 8057751363925601226}
-  <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   <ForceReceiver>k__BackingField: {fileID: 1454233127772832480}
+  <Animator>k__BackingField: {fileID: 8057751363925601226}
+  <rb2D>k__BackingField: {fileID: 3319847874230943825}
+  <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
 --- !u!114 &1454233127772832480
 MonoBehaviour:
@@ -259,6 +261,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969084c93b3c4ee4d9c6efb3070d442a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &3319847874230943825
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &7175643183065341082
 GameObject:
   m_ObjectHideFlags: 0

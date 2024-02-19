@@ -81,7 +81,7 @@ public class FarmControls : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            if (activePlayerData.CurrentLevel < 2)
+            if (activePlayerData.currentLevel < 2)
             {
                 farmCurrentHealth -= bulletData.LVL1_bulletDamage;
             }
@@ -102,7 +102,7 @@ public class FarmControls : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player is detected");
-            if (collision.gameObject.GetComponent<testPlayer>().playerData.CurrentLevel < 3)
+            if (collision.gameObject.GetComponent<testPlayer>().playerData.currentLevel < 3)
             {
                 alert = true;
 

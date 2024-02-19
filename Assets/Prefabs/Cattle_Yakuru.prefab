@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8069244209389890196}
   - component: {fileID: 8120626812604428614}
   - component: {fileID: 1455654621556315506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: yakuru1-5_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 958778660787037923}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cattle_Yakuru
   m_TagString: Untagged
   m_Icon: {fileID: 0}

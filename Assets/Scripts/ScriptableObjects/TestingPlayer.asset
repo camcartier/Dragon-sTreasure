@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: TestingPlayer
   m_EditorClassIdentifier: 
   LevelMax: 5
-  CurrentLevel: 1
-  Health: 10
-  Mana: 10
-  Speed: 1
+  currentLevel: 0
+  movementSpeed: 9000
+  stunTime: 0
+  MaxHealth: 0
+  currentHealth: 0
+  MaxMana: 0
+  currentMana: 0
+  HealthRegenDelay: 0
+  HealthRegenSpeed: 0
+  HealthRegenAmount: 0
+  ManaRegenDelay: 0
+  ManaRegenSpeed: 0
+  ManaRegenAmount: 0
+  fireDelay: 0

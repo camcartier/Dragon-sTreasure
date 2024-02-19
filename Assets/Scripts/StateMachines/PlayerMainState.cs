@@ -33,7 +33,7 @@ public class PlayerMainState : PlayerBaseState
         BulletStartPoint = stateMachine.gameObject.GetComponentInChildren<BulletStartPoint>().gameObject;
 
 
-        if (stateMachine.PlayerData.CurrentLevel < 2)
+        if (stateMachine.PlayerData.currentLevel < 2)
         {
             stateMachine.Animator.Play(LVL1_IdleHash);
         }
@@ -47,16 +47,18 @@ public class PlayerMainState : PlayerBaseState
 
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
         //Debug.Log(movement);
+        movement.Normalize();
 
         FaceMovementDirecton();
+
+        //weirdass movement at the start of the game
+        stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed * Time.deltaTime;
+        
 
         /*
         movement.x = stateMachine.InputReader.MovementValue.x;
         movement.y = 0f;
         movement.z = stateMachine.InputReader.MovementValue.y;*/
-
-        //Move(movement * stateMachine._movementSpeed, deltaTime);
-        //stateMachine.Controller.Move(movement * Time.deltaTime * stateMachine._movementSpeed);
 
         /*
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
@@ -110,8 +112,8 @@ public class PlayerMainState : PlayerBaseState
     }
 
     private void OnFire()
-    {
-        GameObject.Instantiate(stateMachine.BulletPrefab, BulletStartPoint.transform);
+    {       
+        GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
     }
 
 

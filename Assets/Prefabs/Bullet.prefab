@@ -236,4 +236,4 @@ MonoBehaviour:
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   bulletLifeExpectancy: 20
   bulletTimeAlive: 0
-  bulletSpeed: 4
+  bulletSpeed: 8
