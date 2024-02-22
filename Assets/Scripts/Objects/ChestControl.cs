@@ -16,12 +16,13 @@ public class ChestControl : MonoBehaviour
         
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player")){Destroy(this.gameObject);}
         
         /*if (collision.gameObject.CompareTag("Thief")){
             Debug.Log("contact");
-            Destroy(this.gameObject);}*/
-    }
+            Destroy(this.gameObject);}
+    }*/
 }

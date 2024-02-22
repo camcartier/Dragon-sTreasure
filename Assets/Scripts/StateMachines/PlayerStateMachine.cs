@@ -19,6 +19,12 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public bool canFire { get; private set; }
 
 
+    [field: SerializeField] public bool isStunnable { get;  set; }
+    [field: SerializeField] public Vector2 knockbackDirection { get; set; }
+    [field: SerializeField] public int knockbackForce { get; private set; }
+    [field: SerializeField] public float knockBackDuration { get; private set; }
+    [field: SerializeField] public int knockBackDistance { get; private set; }
+
     public Transform MainCameraTransform { get; private set; }
 
     void Start()

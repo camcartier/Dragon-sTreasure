@@ -488,7 +488,6 @@ GameObject:
   m_Component:
   - component: {fileID: 855590603061018377}
   - component: {fileID: 669463234883276288}
-  - component: {fileID: -4420789535129894196}
   m_Layer: 7
   m_Name: Farm
   m_TagString: Untagged
@@ -543,18 +542,6 @@ MonoBehaviour:
   spawnTimerCounter: 0
   alert: 0
   panic: 0
---- !u!114 &-4420789535129894196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7675599877956090434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282c3dc02173f46489de8ae40d406b14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8879040876609548976
 GameObject:
   m_ObjectHideFlags: 0

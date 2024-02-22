@@ -107,20 +107,7 @@ public class FarmControls : MonoBehaviour
                 alert = true;
 
                 Debug.Log("FIGHT");
-                //if(!canSpawn)
-                //{
 
-                //}
-
-                //if (spawnTimer > spawnTimerCounter)
-                //{
-                //    spawnTimerCounter += Time.deltaTime;
-                //}
-                //else
-                //{
-                //   Instantiate(Peasant, gameObject.transform);
-                //    spawnTimerCounter = 0;
-                //}
             }
             else { Debug.Log("HAAAAAAA"); panic = true; }
         }

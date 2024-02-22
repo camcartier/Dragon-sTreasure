@@ -28,4 +28,9 @@ public class ForceReceiver : MonoBehaviour
         horizontalVelocity += dashForce;
     }
     */
+
+    public void Knockback()
+    {
+
+    }
 }

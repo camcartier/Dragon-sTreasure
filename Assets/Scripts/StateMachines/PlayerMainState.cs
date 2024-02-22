@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerMainState : PlayerBaseState
 {
@@ -12,20 +13,16 @@ public class PlayerMainState : PlayerBaseState
     private GameObject BulletStartPoint;
 
 
-    //private const float AnimatorDampTime = 0.1f;
-    //we attribute an int to this string for faster code
-    //private readonly int FreeLookSpeedHash = Animator.StringToHash("FreelookSpeed");
-    //private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
-
-
     private readonly int LVL1_IdleHash = Animator.StringToHash("LVL1_Idle");
     //each for each level
     //private readonly int LVL2_IdleHash = Animator.StringToHash("LVL2_Idle");
+    //private const float AnimatorDampTime = 0.1f;
 
     public PlayerMainState(PlayerStateMachine stateMachine) : base(stateMachine) {}
 
     public override void Enter()
     {
+        stateMachine.isStunnable = true;
 
         stateMachine.InputReader.UseEvent += OnUse;
         stateMachine.InputReader.FireEvent += OnFire;
@@ -116,6 +113,9 @@ public class PlayerMainState : PlayerBaseState
         GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
     }
 
+    
+
+
 
     private void FaceMovementDirecton()
     {
@@ -133,6 +133,7 @@ public class PlayerMainState : PlayerBaseState
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = false;
             }
         }
+
 
 
     /*

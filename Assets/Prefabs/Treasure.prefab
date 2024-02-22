@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2838294856866874289}
   - component: {fileID: 8478328149175616099}
   - component: {fileID: 4838661372734086050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tas1
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -98,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.03}
+  m_Offset: {x: -0.02005732, y: 0.491318}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 1.4237822
 --- !u!1 &1248802273375065464
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2976341320043168678}
   - component: {fileID: 4669547217890308222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tas5
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 8347082430808462172}
   - component: {fileID: 8385764935380568588}
   - component: {fileID: 1731391335385835569}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tas4
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -283,18 +283,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0036266446, y: -0.033848673}
+  m_Offset: {x: -0.04393339, y: -1.349699}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 64, y: 32}
+    oldSize: {x: 32, y: 16}
     newSize: {x: 1.28, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9777794, y: 0.43207222}
+  m_Size: {x: 23.965523, y: 9.595463}
   m_EdgeRadius: 0
 --- !u!1 &3237593767290778540
 GameObject:
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 3819905075742079336}
   - component: {fileID: 4423480852565262547}
   - component: {fileID: 7336095714522840620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tas3
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -394,18 +394,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009671062, y: -0.054399684}
+  m_Offset: {x: 0.3901577, y: -2.0361016}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 64, y: 32}
+    oldSize: {x: 32, y: 16}
     newSize: {x: 1.28, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5208221, y: 0.31843737}
+  m_Size: {x: 12.506157, y: 7.072078}
   m_EdgeRadius: 0
 --- !u!1 &5480757962699618862
 GameObject:
@@ -417,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6902717500808390134}
   - component: {fileID: 2919819605702585984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Treasure
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 5545073446292700177}
   - component: {fileID: 3527651413227870880}
   - component: {fileID: 1213261031555899011}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tas2
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -561,18 +561,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0036266744, y: -0.056817457}
+  m_Offset: {x: 0.043934107, y: -2.3714457}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 64, y: 32}
+    oldSize: {x: 32, y: 16}
     newSize: {x: 1.28, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5087332, y: 0.25557548}
+  m_Size: {x: 10.306267, y: 4.8848324}
   m_EdgeRadius: 0
 --- !u!1 &7234363748267620578
 GameObject:
@@ -584,7 +584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7569300828034110507}
   - component: {fileID: 449023836275057692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DetectionCircle
   m_TagString: Treasure
   m_Icon: {fileID: 0}
@@ -619,6 +619,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.45494318}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 3.6681256

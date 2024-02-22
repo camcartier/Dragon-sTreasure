@@ -2,35 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Animation;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ThiefControls : MonoBehaviour
 {
     [SerializeField] Rigidbody2D thiefRb;
     [SerializeField] CharacterData thiefData;
+    [SerializeField] PlayerData playerData;
+    [SerializeField] TreasureData treasureData;
 
     private GameObject treasure;
 
-    //public float speed;
-    //public int health;
-    
+    public int currentGoldCarried;
+    public bool isMovingToTreasure;
+    public bool hasStolen;
+    public bool isFleeing;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         treasure = GameObject.Find("Treasure");
-        MoveToTreasure();
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+
+        if (!isFleeing || hasStolen)
+        {
+            isMovingToTreasure = true;
+        }
     }
 
     void MoveToTreasure()
     {
         Vector2 direction = new Vector2 (treasure.transform.position.x- thiefRb.position.x, treasure.transform.position.y- thiefRb.position.y);
-        thiefRb.velocity = new Vector2 (direction.x, direction.y);
+        thiefRb.velocity = new Vector2 (direction.x, direction.y).normalized * thiefData.walkSpeed * Time.deltaTime;
     }
 
     void GetDirection()
@@ -38,11 +46,35 @@ public class ThiefControls : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Gold"))
+        if (collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            isFleeing = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isFleeing = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Treasure"))
+        {
+            hasStolen= true;
+            if (treasureData.GoldCount < 50)
+            {
+                currentGoldCarried += treasureData.GoldCount;
+            }
+            else { currentGoldCarried += 50; }
+            
+        }
+    }
+
 }
