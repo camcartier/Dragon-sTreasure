@@ -57,19 +57,11 @@ public class BulletControls : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        /*
-        if (collision.gameObject.GetComponentInParent<FarmControls>() )
-        {
-            collision.gameObject.GetComponentInParent<FarmControls>().farmCurrentHealth -= bulletData.LVL1_bulletDamage;
-      
-        }
-        */
-
 
         if (collision.gameObject.GetComponentInParent<Destroyable>())
         {
-            //this will need adaptation for indexed bullet level
-            //collision.gameObject.GetComponentInParent<Destroyable>().currentHealth -= bulletData.LVL1_bulletDamage;
+           
+            //Destroyable now deals with health going up and down
 
 
             if (player.transform.rotation.y > 0)

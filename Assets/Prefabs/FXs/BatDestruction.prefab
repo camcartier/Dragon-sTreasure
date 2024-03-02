@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4253768120813561730}
   - component: {fileID: 8775968681385822560}
   m_Layer: 0
-  m_Name: DestructionDerby
+  m_Name: BatDestruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

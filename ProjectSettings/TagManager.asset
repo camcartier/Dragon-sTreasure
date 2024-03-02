@@ -12,6 +12,7 @@ TagManager:
   - Loot
   - Detection
   - Farmer
+  - Bullet
   layers:
   - Default
   - TransparentFX
