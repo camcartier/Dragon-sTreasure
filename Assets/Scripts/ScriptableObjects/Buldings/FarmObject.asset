@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8357bfb1d6b81af4db804ce601ab5c22, type: 3}
   m_Name: FarmObject
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  regenAmount: 1
-  regenSpeed: 60
-  regenFirstWait: 120
-  regenWaitTime: 60
+  maxHealth: 200
+  regenAmount: 2
+  regenSpeed: 2
+  regenFirstWait: 8
   goldLoot: 200
-  burningAmount: 2
-  burningSpeed: 40
+  burningAmount: 3
+  burningSpeed: 1
   walkSpeed: 0
   goldCarried: 0
   defenseSpe: 0

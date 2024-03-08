@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class ThiefControls : MonoBehaviour
 {
     [SerializeField] Rigidbody2D thiefRb;
-    [SerializeField] CharacterData thiefData;
+    [SerializeField] ObjectsData thiefData;
     [SerializeField] PlayerData playerData;
     [SerializeField] TreasureData treasureData;
 

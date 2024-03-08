@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3838690878283556494}
   - component: {fileID: -6901807754266360427}
+  - component: {fileID: -8512650438489144154}
   m_Layer: 0
   m_Name: BooooomBaby
   m_TagString: Untagged
@@ -46,6 +47,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AliveMaxTime: 200
+--- !u!114 &-8512650438489144154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578530899346938797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e295db8c9d3d94a83ff50f2229b003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7052977608471791109
 GameObject:
   m_ObjectHideFlags: 0

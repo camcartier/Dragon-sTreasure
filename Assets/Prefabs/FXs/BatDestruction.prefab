@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4253768120813561730}
   - component: {fileID: 8775968681385822560}
+  - component: {fileID: 2346286972779983664}
   m_Layer: 0
   m_Name: BatDestruction
   m_TagString: Untagged
@@ -46,6 +47,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AliveMaxTime: 300
+--- !u!114 &2346286972779983664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849580410850680577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e295db8c9d3d94a83ff50f2229b003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8207580137486816301
 GameObject:
   m_ObjectHideFlags: 0

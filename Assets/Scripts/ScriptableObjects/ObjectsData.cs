@@ -10,12 +10,11 @@ public class ObjectsData : ScriptableObject
     public int regenAmount;
     public float regenSpeed;
     public float regenFirstWait;
-    public float regenWaitTime;
 
     [Header("Loot")]
     public int goldLoot;
 
-    [Header ("Burning Stats")]
+    [Header("Burning Stats")]
     public int burningAmount;
     public float burningSpeed;
 

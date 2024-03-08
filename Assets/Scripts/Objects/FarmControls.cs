@@ -9,16 +9,16 @@ public class FarmControls : MonoBehaviour
     [Header("ScriptableObjects")]
     [SerializeField] BulletData bulletData;
     [SerializeField] PlayerData activePlayerData;
-    [SerializeField] BuildingsData farmData;
+    [SerializeField] ObjectsData farmData;
 
     [Header("Individual Farm Stats")]
     //it's inside FarmData
     //public int farmMaxHealth;
-    public int farmCurrentHealth;
+    //public int farmCurrentHealth;
     public bool isBurning;
-    [SerializeField] GameObject HealthPanel;
-    [SerializeField] GameObject HealthBarGreen;
-    [SerializeField] GameObject HealthBarRed;
+    //[SerializeField] GameObject HealthPanel;
+    //[SerializeField] GameObject HealthBarGreen;
+    //[SerializeField] GameObject HealthBarRed;
 
     [Header("ObjectsToSpawn")]
     [SerializeField] GameObject Peasant;
@@ -38,7 +38,7 @@ public class FarmControls : MonoBehaviour
     
     void Start()
     {
-        farmCurrentHealth = farmData.maxHealth;
+        //farmCurrentHealth = farmData.maxHealth;
 
         maxNumberOfFarmers = 5;
         currentNumberOfFarmers = 0;
@@ -68,26 +68,13 @@ public class FarmControls : MonoBehaviour
             Debug.Log(currentNumberOfFarmers);
         }
 
-
-        if (farmCurrentHealth == farmData.maxHealth)
+        if (gameObject.GetComponent<Destroyable>().MyCurrentHealth< farmData.maxHealth / 5)
         {
-            HealthPanel.SetActive(false);
+            panic = true;
         }
-        else { HealthPanel.SetActive(true); }
+
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            if (activePlayerData.currentLevel < 2)
-            {
-                farmCurrentHealth -= bulletData.LVL1_bulletDamage;
-            }
-                
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -102,14 +89,8 @@ public class FarmControls : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player is detected");
-            if (collision.gameObject.GetComponent<testPlayer>().playerData.currentLevel < 3)
-            {
-                alert = true;
-
-                Debug.Log("FIGHT");
-
-            }
-            else { Debug.Log("HAAAAAAA"); panic = true; }
+            alert = true;
+            
         }
     }
 
