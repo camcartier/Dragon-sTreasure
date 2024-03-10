@@ -63,7 +63,7 @@ public class FarmControls : MonoBehaviour
             {
                 spawnTimerCounter += Time.deltaTime;
             }
-            else { spawnTimerCounter = 0f; Instantiate(Peasant, gameObject.transform); currentNumberOfFarmers++; }
+            else { spawnTimerCounter = 0f; Instantiate(Peasant, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity); currentNumberOfFarmers++; }
              // Debug.Log("i will spawn");
             //Debug.Log(currentNumberOfFarmers);
         }

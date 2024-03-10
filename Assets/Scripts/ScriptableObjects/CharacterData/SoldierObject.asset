@@ -16,11 +16,11 @@ MonoBehaviour:
   regenAmount: 0
   regenSpeed: 0
   regenFirstWait: 0
-  regenWaitTime: 0
   goldLoot: 50
   burningAmount: 0
   burningSpeed: 0
   walkSpeed: 6000
+  outOfRangeDetachTime: 5
   goldCarried: 0
   defenseSpe: 0
   runSpeed: 0

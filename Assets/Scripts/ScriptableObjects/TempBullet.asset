@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0532333915c0b240a225cad7329ee11, type: 3}
   m_Name: TempBullet
   m_EditorClassIdentifier: 
-  LVL1_bulletDamage: 10
+  LVL1_bulletDamage: 5
   LVL2_bulletDamage: 3
   LVL3_bulletDamage: 10
   LVL4_bulletDamage: 25
