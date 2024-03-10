@@ -71,7 +71,7 @@ public class Destroyable : MonoBehaviour
         {    }
         else { currentWaitAfterLastAttack += Time.deltaTime; }*/
 
-        if(MyCurrentHealth < objectData.maxHealth)
+        if(MyCurrentHealth < objectData.maxHealth && !IsBurning)
         {
             currentWaitAfterLastAttack += Time.deltaTime;
             if (currentWaitAfterLastAttack > objectData.regenFirstWait )

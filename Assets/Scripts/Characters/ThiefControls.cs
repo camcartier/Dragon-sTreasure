@@ -22,16 +22,22 @@ public class ThiefControls : MonoBehaviour
     void Start()
     {
         treasure = GameObject.Find("Treasure");
-
+        isMovingToTreasure = true;
     }
 
 
     void Update()
     {
+        Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
 
         if (!isFleeing || hasStolen)
         {
             isMovingToTreasure = true;
+        }
+
+        if (isMovingToTreasure)
+        {
+            thiefRb.velocity = direction.normalized * thiefData.walkSpeed * Time.deltaTime;
         }
     }
 
@@ -41,9 +47,13 @@ public class ThiefControls : MonoBehaviour
         thiefRb.velocity = new Vector2 (direction.x, direction.y).normalized * thiefData.walkSpeed * Time.deltaTime;
     }
 
-    void GetDirection()
+    Vector3 GetDirection(float posX, float posY)
     {
-
+        if (gameObject.transform.position.x- posX > gameObject.transform.position.x)
+        {
+            return new Vector3(gameObject.transform.position.x - posX, gameObject.transform.position.y - posY, 0);
+        }
+        else return new Vector3(posX-gameObject.transform.position.x, posY-gameObject.transform.position.y, 0);
     }
 
 

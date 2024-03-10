@@ -16,7 +16,6 @@ MonoBehaviour:
   regenAmount: 0
   regenSpeed: 0
   regenFirstWait: 0
-  regenWaitTime: 0
   goldLoot: 1
   burningAmount: 0
   burningSpeed: 0

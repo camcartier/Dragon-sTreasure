@@ -65,7 +65,7 @@ public class FarmControls : MonoBehaviour
             }
             else { spawnTimerCounter = 0f; Instantiate(Peasant, gameObject.transform); currentNumberOfFarmers++; }
              // Debug.Log("i will spawn");
-            Debug.Log(currentNumberOfFarmers);
+            //Debug.Log(currentNumberOfFarmers);
         }
 
         if (gameObject.GetComponent<Destroyable>().MyCurrentHealth< farmData.maxHealth / 5)
