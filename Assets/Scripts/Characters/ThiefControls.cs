@@ -18,26 +18,42 @@ public class ThiefControls : MonoBehaviour
     public bool hasStolen;
     public bool isFleeing;
 
+    private bool hasDirection;
+    private Vector2 dirToTreasure;
+    private Vector2 dirAway;
+    private Vector2 dirFromPlayer;
+
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         treasure = GameObject.Find("Treasure");
         isMovingToTreasure = true;
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
 
     void Update()
     {
-        Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
+
+
+        if (!hasDirection)
+        {
+            dirToTreasure = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
+        }
+
+        //Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
 
         if (!isFleeing || hasStolen)
         {
             isMovingToTreasure = true;
         }
+        else { isMovingToTreasure= false; }
 
         if (isMovingToTreasure)
         {
-            thiefRb.velocity = direction.normalized * thiefData.walkSpeed * Time.deltaTime;
+            thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed * Time.deltaTime;
         }
     }
 
@@ -59,10 +75,16 @@ public class ThiefControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Bullet"))
         {
             isFleeing = true;
         }
+
+        if (collision.CompareTag("Treasure"))
+        {
+            spriteRenderer.color = Color.grey;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -86,5 +108,6 @@ public class ThiefControls : MonoBehaviour
             
         }
     }
+
 
 }

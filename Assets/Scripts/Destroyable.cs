@@ -49,7 +49,7 @@ public class Destroyable : MonoBehaviour
     private void Start()
     {
         SetMaxHealth(objectData.maxHealth);
-        Debug.Log(objectData.maxHealth);
+        //Debug.Log(objectData.maxHealth);
 
         MyCurrentHealth = objectData.maxHealth;
         MyCurrentStoredHealth = objectData.maxHealth;
@@ -63,13 +63,9 @@ public class Destroyable : MonoBehaviour
 
         if ( MyCurrentStoredHealth != MyCurrentHealth)
         { UpdateHealthBar(MyCurrentHealth); MyCurrentStoredHealth  = MyCurrentHealth;
-            Debug.Log(MyCurrentHealth);
+            //Debug.Log(MyCurrentHealth);
         }
 
-        /*
-        if ( MyCurrentHealth <= objectData.maxHealth & currentWaitAfterLastAttack > objectData.regenFirstWait)
-        {    }
-        else { currentWaitAfterLastAttack += Time.deltaTime; }*/
 
         if(MyCurrentHealth < objectData.maxHealth && !IsBurning)
         {

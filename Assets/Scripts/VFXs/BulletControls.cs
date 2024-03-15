@@ -21,10 +21,11 @@ public class BulletControls : MonoBehaviour
     private GameObject player;
 
     [Header("Bullet stats")]
-    public float bulletLifeExpectancy;
-    public float bulletTimeAlive;
-    public float bulletSpeed;
-    //public int bulletDamage = 1;
+    [SerializeField] float bulletSpeed;
+    [SerializeField] float bulletLifeExpectancy;
+    public float bulletTimeAlive { get; private set; }
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,7 @@ public class BulletControls : MonoBehaviour
 
         if(bulletTimeAlive < bulletLifeExpectancy)
         {
-            Debug.Log("ayoooooo");
+            //Debug.Log("ayoooooo");
             bulletTimeAlive += Time.deltaTime;
         }
         else { Destroy(this.gameObject); }
