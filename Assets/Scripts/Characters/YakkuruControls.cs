@@ -23,7 +23,7 @@ public class YakkuruControls : MonoBehaviour
 
     private void OnValidate()
     {
-        if (runningTimer <= 0) {  runningTimer = 8f; }
+        if (runningTimer <= 0) {  runningTimer = 3f; }
     }
 
     // Start is called before the first frame update
@@ -41,7 +41,12 @@ public class YakkuruControls : MonoBehaviour
     {
         if(destroyable.MyCurrentHealth != yakkuruData.maxHealth)
         {
-            isFleeing = true;
+            if (runningCounter < runningTimer)
+            {
+                isFleeing = true;
+                runningCounter += Time.deltaTime;
+            }
+            else { isFleeing = false; rb2.velocity = Vector2.zero; }
         }
 
         if (isFleeing) 
@@ -51,7 +56,7 @@ public class YakkuruControls : MonoBehaviour
                 fleeingDirection = new Vector2(transform.position.x - player.transform.position.x, 
                     transform.position.y - player.transform.position.y).normalized;
                 hasFleeingDirection = true;
-                timerStarted = true;
+                
             }
 
             rb2.velocity = fleeingDirection*yakkuruData.runSpeed*Time.deltaTime;
@@ -60,16 +65,29 @@ public class YakkuruControls : MonoBehaviour
                 spriteRenderer.flipX = true;
             }
 
+
         }
 
+        /*
+        if (runningCounter > runningTimer)
+        {
+            isFleeing = false;
+            runningCounter = 0;
+            rb2.velocity = Vector2.zero;
+        }*/
+
+        /*
         if (timerStarted)
         {
-            if (runningCounter < runningTimer)
+            runningCounter += Time.deltaTime;
+            if (runningCounter >= runningTimer)
             {
-                runningCounter += Time.deltaTime;
+                timerStarted = false;
+                isFleeing = false;
+                runningCounter = 0f;  
+                //rb2.velocity = Vector2.zero;  
             }
-            else { isFleeing = false;  runningCounter = 0f; }
-        }
+        }*/
         
     }
 }
