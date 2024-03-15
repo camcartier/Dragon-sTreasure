@@ -39,6 +39,7 @@ public class YakkuruControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(destroyable.MyCurrentHealth != yakkuruData.maxHealth)
         {
             if (runningCounter < runningTimer)
@@ -48,9 +49,12 @@ public class YakkuruControls : MonoBehaviour
             }
             else { isFleeing = false; rb2.velocity = Vector2.zero; }
         }
+        */
 
         if (isFleeing) 
         {
+            timerStarted = true;
+
             if (!hasFleeingDirection)
             {
                 fleeingDirection = new Vector2(transform.position.x - player.transform.position.x, 
@@ -64,30 +68,27 @@ public class YakkuruControls : MonoBehaviour
             {
                 spriteRenderer.flipX = true;
             }
-
-
         }
 
-        /*
-        if (runningCounter > runningTimer)
-        {
-            isFleeing = false;
-            runningCounter = 0;
-            rb2.velocity = Vector2.zero;
-        }*/
-
-        /*
         if (timerStarted)
         {
             runningCounter += Time.deltaTime;
             if (runningCounter >= runningTimer)
             {
-                timerStarted = false;
                 isFleeing = false;
-                runningCounter = 0f;  
-                //rb2.velocity = Vector2.zero;  
+                timerStarted = false;
+                runningCounter = 0;
+                rb2.velocity = Vector2.zero;
             }
-        }*/
-        
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            isFleeing = true;
+        }
     }
 }
