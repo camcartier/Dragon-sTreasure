@@ -17,6 +17,7 @@ public class YakkuruControls : MonoBehaviour
     private Destroyable destroyable;
     private Rigidbody2D rb2;
     private Animator animator;
+    private GameObject bossYakkuruSpawner;
 
     [Expandable] [SerializeField] ObjectsData yakkuruData;
     [SerializeField] GameObject player;
@@ -31,7 +32,8 @@ public class YakkuruControls : MonoBehaviour
     {
         destroyable = GetComponent<Destroyable>();
         rb2 = GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animator>();  
+        animator = GetComponentInChildren<Animator>();
+        bossYakkuruSpawner = GameObject.Find("BossYakkuruSpawner");
 
         //spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
@@ -86,5 +88,10 @@ public class YakkuruControls : MonoBehaviour
             isFleeing = true;
             hasFleeingDirection = false;
         }
+    }
+
+    private void OnDestroy()
+    {
+        bossYakkuruSpawner.GetComponent<BossYakkuruSpawner>().YakkurusKilled += 1;
     }
 }
