@@ -9,6 +9,7 @@ public class BossYakkuruSpawner : MonoBehaviour
     [SerializeField] GameObject yakkuruBoss;
     [SerializeField] GameObject player;
     public int YakkurusKilled { get; set; }
+    public bool HasSpawned { get; private set; }
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,12 @@ public class BossYakkuruSpawner : MonoBehaviour
     {
         if (YakkurusKilled > storedYakkurusNumber / 2)
         {
+            if(!HasSpawned)
             Instantiate(
                 yakkuruBoss, 
                 new Vector3 (player.transform.position.x -100, player.transform.position.y, 0), 
-                Quaternion.identity );
+                Quaternion.identity);
+            HasSpawned = true;
         }
     }
 }
