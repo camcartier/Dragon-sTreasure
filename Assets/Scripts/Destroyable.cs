@@ -104,7 +104,7 @@ public class Destroyable : MonoBehaviour
         if (MyCurrentHealth <= 0)
         {
             Instantiate(destructionFx, transform.position, Quaternion.identity);
-            destructionFx.GetComponentInChildren<ParticleSystem>().Play();
+            //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
             Destroy(gameObject);
         }
     }

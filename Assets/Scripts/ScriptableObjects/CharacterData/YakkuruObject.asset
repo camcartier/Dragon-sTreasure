@@ -23,5 +23,5 @@ MonoBehaviour:
   outOfRangeDetachTime: 0
   goldCarried: 0
   defenseSpe: 0
-  runSpeed: 6000
+  runSpeed: 7000
   maxSpawnCapacity: 0
