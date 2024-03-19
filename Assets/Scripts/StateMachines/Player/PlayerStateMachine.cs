@@ -29,7 +29,6 @@ public class PlayerStateMachine : StateMachine
 
     void Start()
     {
-        //why? I don't remember
         MainCameraTransform = Camera.main.transform;
 
         SwitchState(new PlayerMainState(this));

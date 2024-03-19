@@ -16,28 +16,5 @@ public class CharacterData : ScriptableObject
     public int defenseSpe;
     public int runSpeed;
 
-    //that's stupid LOL
-    /*
-    [Header("Thief")]
-    public int thiefMaxHealth;
-    public int thiefSpeed;
-    public int thiefGoldLoot;
-    public int thiefGoldCarried;
-
-    [Header("Farmer")]
-    public int farmerMaxHealth;
-    public int farmerSpeed;
-    public int farmerLoot;
-
-    [Header("Soldier")]
-    public int soldierMaxHealth;
-    public int soldierSpeed;
-    public int soldierLoot;
-
-    [Header ("Yakkuru")]
-    public int yakkuruMaxHealth;
-    public int yakkuruSpeed;
-    public int yakkuruLoot;
-    */
 
 }

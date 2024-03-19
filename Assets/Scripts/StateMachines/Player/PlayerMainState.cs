@@ -5,8 +5,7 @@ using UnityEngine.Rendering;
 
 public class PlayerMainState : PlayerBaseState
 {
-
-     
+  
     Vector2 movement = new Vector2();
 
     private bool isFiring;
