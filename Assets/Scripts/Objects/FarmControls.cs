@@ -11,40 +11,44 @@ public class FarmControls : MonoBehaviour
     [SerializeField] PlayerData activePlayerData;
     [SerializeField] ObjectsData farmData;
 
-    [Header("Individual Farm Stats")]
-    //it's inside FarmData
-    //public int farmMaxHealth;
-    //public int farmCurrentHealth;
-    public bool isBurning;
-    //[SerializeField] GameObject HealthPanel;
-    //[SerializeField] GameObject HealthBarGreen;
-    //[SerializeField] GameObject HealthBarRed;
-
     [Header("ObjectsToSpawn")]
     [SerializeField] GameObject Peasant;
     [SerializeField] GameObject FleeingPeasant;
 
+    /*
+[Header("Individual Farm Stats")]
+//it's inside FarmData
+//public int farmMaxHealth;
+//public int farmCurrentHealth;
+//public bool isBurning;
+//[SerializeField] GameObject HealthPanel;
+//[SerializeField] GameObject HealthBarGreen;
+//[SerializeField] GameObject HealthBarRed;
+*/
+
     [Header("Spawner Settings")]
-    public bool canSpawn;
-    public int maxNumberOfFarmers;
-    public int currentNumberOfFarmers;
-    public float spawnTimer = 2f;
-    public float spawnTimerCounter = 0f;
-    //current values used by code above will be replaced with farmData values
+    private int currentNumberOfFarmers;
+    private int maxNumberOfFarmers;
+    [SerializeField] Transform spawnPostransform;
 
-    public bool alert;
-    public bool panic;
+    public bool canSpawn { get; private set; }
+    public bool alert { get; private set; }
+    public bool panic { get; private set; }
 
-    
+    [Header ("Spawner Timer")]
+    private float spawnTimer = 2f;
+    private float spawnTimerCounter;
+
     void Start()
     {
-        //farmCurrentHealth = farmData.maxHealth;
-
+        
         maxNumberOfFarmers = 5;
         currentNumberOfFarmers = 0;
 
         canSpawn = true;
         spawnTimer = 2f;
+
+        if (spawnPostransform == null) { spawnPostransform = transform; }   
     }
 
     
@@ -63,18 +67,25 @@ public class FarmControls : MonoBehaviour
             {
                 spawnTimerCounter += Time.deltaTime;
             }
-            else { spawnTimerCounter = 0f; Instantiate(Peasant, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity); currentNumberOfFarmers++; }
+            else { spawnTimerCounter = 0f; Instantiate(Peasant, PickRandomSpot(), Quaternion.identity); currentNumberOfFarmers++; }
              // Debug.Log("i will spawn");
             //Debug.Log(currentNumberOfFarmers);
         }
 
-        if (gameObject.GetComponent<Destroyable>().MyCurrentHealth< farmData.maxHealth / 5)
-        {
-            panic = true;
-        }
+        
 
     }
 
+
+    private Vector3 PickRandomSpot()
+    {
+        return new Vector3(spawnPostransform.position.x + Random.Range(-15, 15), spawnPostransform.position.y + Random.Range(-15, 15), 0);
+    }
+
+    private Vector3 PickRandomFleeingSpot()
+    {
+        return new Vector3(spawnPostransform.position.x + Random.Range(-25, 25), spawnPostransform.position.y + Random.Range(-25, 25), 0);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

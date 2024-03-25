@@ -266,6 +266,37 @@ Transform:
   m_Father: {fileID: 855590603061018377}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4735133164326071939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6441333985018528041}
+  m_Layer: 7
+  m_Name: SpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6441333985018528041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735133164326071939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -18.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 855590603061018377}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6295653360597465398
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +465,7 @@ Transform:
   - {fileID: 6744732576613485658}
   - {fileID: 8093664946626676159}
   - {fileID: 2715999241367214054}
+  - {fileID: 6441333985018528041}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -452,16 +484,9 @@ MonoBehaviour:
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   activePlayerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   farmData: {fileID: 11400000, guid: 024e3b5312ac89744bfae685374a25bf, type: 2}
-  isBurning: 0
   Peasant: {fileID: 2410063474788455525, guid: 97d474669ee0f5c4b8460855b59bbee9, type: 3}
   FleeingPeasant: {fileID: 2410063474788455525, guid: 97d474669ee0f5c4b8460855b59bbee9, type: 3}
-  canSpawn: 0
-  maxNumberOfFarmers: 0
-  currentNumberOfFarmers: 0
-  spawnTimer: 2
-  spawnTimerCounter: 0
-  alert: 0
-  panic: 0
+  spawnPostransform: {fileID: 6441333985018528041}
 --- !u!114 &-4199647885750787096
 MonoBehaviour:
   m_ObjectHideFlags: 0

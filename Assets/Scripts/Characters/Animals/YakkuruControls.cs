@@ -56,7 +56,7 @@ public class YakkuruControls : MonoBehaviour
                 animator.SetBool("isRunning", true);
             }
 
-            rb2.velocity = fleeingDirection*yakkuruData.runSpeed*Time.deltaTime;
+            rb2.velocity = fleeingDirection*yakkuruData.runSpeed;
             if (fleeingDirection.x < 0)
             {
                 gameObject.transform.localScale = new Vector3(-1, 1, 1); 
