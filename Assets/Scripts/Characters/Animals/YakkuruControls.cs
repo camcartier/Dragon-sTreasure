@@ -111,7 +111,7 @@ public class YakkuruControls : MonoBehaviour
             if (waitingTimerStarted)
             {
                 waitingTimerCounter += Time.deltaTime;
-                Debug.Log("I am waiting");
+                //Debug.Log("I am waiting");
                 if (waitingTimerCounter > waitingTimer)
                 {
                     isWaiting = false;
@@ -125,7 +125,7 @@ public class YakkuruControls : MonoBehaviour
             if (walkingTimerStarted)
             {
                 walkingTimerCounter += Time.deltaTime;
-                Debug.Log("I am walking");
+                //Debug.Log("I am walking");
                 if (walkingTimerCounter > walkingTimer)
                 {
                     isWaiting = true;
