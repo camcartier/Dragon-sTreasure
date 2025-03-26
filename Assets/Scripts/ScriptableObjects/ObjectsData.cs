@@ -21,6 +21,8 @@ public class ObjectsData : ScriptableObject
     [Header("Character Stats")]
     public int walkSpeed;
     public float outOfRangeDetachTime;
+    public int damageAmount;
+    public float damageCooldown;
 
     [Header("Character Special Stats")]
     public int goldCarried;

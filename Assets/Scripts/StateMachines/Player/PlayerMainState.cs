@@ -51,6 +51,8 @@ public class PlayerMainState : PlayerBaseState
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed * Time.deltaTime;
         
 
+
+
         /*
         movement.x = stateMachine.InputReader.MovementValue.x;
         movement.y = 0f;
@@ -122,17 +124,26 @@ public class PlayerMainState : PlayerBaseState
 
         if (movement.x < 0)
         {
-            Debug.Log("facing left");
+            //Debug.Log("facing left");
             this.stateMachine.gameObject.transform.rotation = new Quaternion (0, 180, 0, 0); 
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
         else {
-            Debug.Log("facing right");
+            //Debug.Log("facing right");
             this.stateMachine.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = false;
             }
         }
 
+
+    private void OnCollisionEnter2D(Collision collision)
+    {
+        if (collision.gameObject.GetComponentInChildren<CanDamage>() !=null)
+        {
+            stateMachine.SwitchState(new PlayerHurtState(stateMachine));
+        }
+        else { Debug.Log("not found"); }
+    }
 
 
     /*

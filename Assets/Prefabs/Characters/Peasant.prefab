@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 3619396092452625242}
   - component: {fileID: -7057330562676109637}
   - component: {fileID: 5961826141067821993}
+  - component: {fileID: 7844336900137141494}
   - component: {fileID: 6599733396899705006}
   m_Layer: 7
   m_Name: Peasant
@@ -244,6 +245,18 @@ MonoBehaviour:
   healthSlider: {fileID: 5355274578090129595}
   destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
+--- !u!114 &7844336900137141494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410063474788455525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6455be4c1d2386b44b3e7e37e5d2ed72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6599733396899705006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmerData: {fileID: 11400000, guid: db7aa6159f2d0ed479cf7472d9225849, type: 2}
+  fleeingPosList: []
+  player: {fileID: 0}
 --- !u!1 &2819632776329361316
 GameObject:
   m_ObjectHideFlags: 0

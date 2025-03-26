@@ -83,7 +83,7 @@ public class ThiefControls : MonoBehaviour
 
         if (isFleeing)
         {
-            Debug.Log("I am fleeing");
+            //Debug.Log("I am fleeing");
             isMovingToTreasure = false;
             MoveAwayFromPlayer();
             fleeingTimerCounter += Time.deltaTime;
@@ -191,7 +191,7 @@ public class ThiefControls : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isFleeing = true;
-            Debug.Log(collision.transform.position);
+            //Debug.Log(collision.transform.position);
         }
     }
 
