@@ -19,8 +19,9 @@ MonoBehaviour:
   goldLoot: 1
   burningAmount: 0
   burningSpeed: 0
-  walkSpeed: 500
+  walkSpeed: 2000
+  outOfRangeDetachTime: 0
   goldCarried: 0
   defenseSpe: 0
-  runSpeed: 0
+  runSpeed: 5000
   maxSpawnCapacity: 0

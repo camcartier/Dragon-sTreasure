@@ -12,22 +12,33 @@ public class ThiefControls : MonoBehaviour
     [SerializeField] TreasureData treasureData;
 
     private GameObject treasure;
+    private GameObject Player;
 
     public int currentGoldCarried;
     public bool isMovingToTreasure;
     public bool hasStolen;
     public bool isFleeing;
 
+    private float fleeingDuration = 5f;
+    private float fleeingTimerCounter;
+
+    private float disappearDuration = 1f;
+    private float disappearTimerCounter;  
+
     private bool hasDirection;
+    private bool hasFleeingDirection;
     private Vector2 dirToTreasure;
     private Vector2 dirAway;
     private Vector2 dirFromPlayer;
+    private Vector2 playerPosAtCollision;
 
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         treasure = GameObject.Find("Treasure");
+        Player = GameObject.Find("Player"); 
+
         isMovingToTreasure = true;
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -38,9 +49,23 @@ public class ThiefControls : MonoBehaviour
     {
 
 
+        if (hasStolen)
+        {
+            Debug.Log("Stole");
+            isMovingToTreasure = false;
+            thiefRb.velocity = Vector2.zero;
+            disappearTimerCounter += Time.deltaTime;
+        }
+        if (disappearTimerCounter > disappearDuration)
+        {
+            Destroy(this.gameObject);
+        }
+
+
+
         if (!hasDirection)
         {
-            dirToTreasure = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
+            dirToTreasure = GetDirectionToTreasure(treasure.transform.position.x, treasure.transform.position.y);
         }
 
         //Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
@@ -51,10 +76,26 @@ public class ThiefControls : MonoBehaviour
         }
         else { isMovingToTreasure= false; }
 
-        if (isMovingToTreasure)
+        if (isMovingToTreasure )
         {
             thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed * Time.deltaTime;
         }
+
+        if (isFleeing)
+        {
+            //Debug.Log("I am fleeing");
+            isMovingToTreasure = false;
+            MoveAwayFromPlayer();
+            fleeingTimerCounter += Time.deltaTime;
+                
+        }
+        if(fleeingTimerCounter > fleeingDuration)
+        {
+            isFleeing= false;
+            isMovingToTreasure = true;
+            fleeingTimerCounter= 0;
+        }
+
     }
 
     void MoveToTreasure()
@@ -63,7 +104,7 @@ public class ThiefControls : MonoBehaviour
         thiefRb.velocity = new Vector2 (direction.x, direction.y).normalized * thiefData.walkSpeed * Time.deltaTime;
     }
 
-    Vector3 GetDirection(float posX, float posY)
+    Vector3 GetDirectionToTreasure(float posX, float posY)
     {
         if (gameObject.transform.position.x- posX > gameObject.transform.position.x)
         {
@@ -72,13 +113,45 @@ public class ThiefControls : MonoBehaviour
         else return new Vector3(posX-gameObject.transform.position.x, posY-gameObject.transform.position.y, 0);
     }
 
+    
+    void MoveAwayFromPlayer()
+    {
+        Vector2 direction;
+        if (Player.transform.position.x > thiefRb.position.x)
+        {
+            direction.x =  thiefRb.position.x - Player.transform.position.x;
+        }
+        else {
+            direction.x =  thiefRb.position.x + Player.transform.position.x;
+        }
+        if (Player.transform.position.y > thiefRb.position.y)
+        {
+            direction.y = thiefRb.position.y -Player.transform.position.y ;
+        }
+        else {
+            direction.y = thiefRb.position.y +Player.transform.position.y ;
+        }
+        
+        thiefRb.velocity = direction.normalized * thiefData.runSpeed * Time.deltaTime;
+        
+    }
+
+    /*
+    Vector2 GetFleeingDirection() 
+    {
+        if (gameObject.transform.position.x)
+    }
+    */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        /* to move to collision
         if (collision.CompareTag("Player") || collision.CompareTag("Bullet"))
         {
             isFleeing = true;
+            playerPosAtCollision = collision.transform.position;
         }
+        */
 
         if (collision.CompareTag("Treasure"))
         {
@@ -89,10 +162,15 @@ public class ThiefControls : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        /*
         if (collision.CompareTag("Player"))
         {
-            isFleeing = false;
+            Debug.Log("not touching anymore");
+
+            //isFleeing = false;
+            //playerPosAtCollision= Vector2.zero;
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -100,12 +178,25 @@ public class ThiefControls : MonoBehaviour
         if (collision.gameObject.CompareTag("Treasure"))
         {
             hasStolen= true;
+            isFleeing= false;
+            Debug.Log("has stolen");
             if (treasureData.GoldCount < 50)
             {
                 currentGoldCarried += treasureData.GoldCount;
             }
             else { currentGoldCarried += 50; }
             
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isFleeing = true;
+            //Debug.Log(collision.transform.position);
+        }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            isFleeing = true;
         }
     }
 

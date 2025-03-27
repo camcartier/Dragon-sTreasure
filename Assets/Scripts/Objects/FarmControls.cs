@@ -99,7 +99,7 @@ public class FarmControls : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player is detected");
+            //Debug.Log("Player is detected");
             alert = true;
             
         }

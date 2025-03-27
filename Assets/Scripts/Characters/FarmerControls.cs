@@ -15,6 +15,9 @@ public class FarmerControls : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public bool isFollowing { get; private set;}
+    public bool canBeStunned { get; private set;}
+    public bool isStunned { get; private set; }
+    private float stunTimerCounter;
 
     void Start()
     {
@@ -24,6 +27,8 @@ public class FarmerControls : MonoBehaviour
         destroyable = GetComponent<Destroyable>();
 
         spriteRenderer= GetComponentInChildren<SpriteRenderer>();
+
+        canBeStunned= true;
     }
 
 
@@ -32,6 +37,8 @@ public class FarmerControls : MonoBehaviour
         if (destroyable.IsBurning)
         {
             spriteRenderer.color = Color.red;
+            isFollowing= false;
+            canBeStunned= false;
         }
 
         if (isFollowing)
@@ -39,6 +46,24 @@ public class FarmerControls : MonoBehaviour
             Vector3 direction = new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y- transform.position.y);
             farmerRb.velocity = direction.normalized * farmerData.walkSpeed;
         }
+
+        if (canBeStunned)
+        {
+            if (isStunned)
+            {
+                farmerRb.velocity = Vector2.zero;
+                if (stunTimerCounter < farmerData.stunDuration)
+                {
+                    stunTimerCounter += Time.deltaTime;
+                }
+                else
+                {
+                    isStunned = false;
+                    stunTimerCounter = 0;
+                }
+            }
+        }
+
 
     }
 
@@ -61,6 +86,14 @@ public class FarmerControls : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isFollowing = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            isStunned= true;
         }
     }
 }

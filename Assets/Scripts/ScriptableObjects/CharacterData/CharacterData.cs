@@ -16,5 +16,7 @@ public class CharacterData : ScriptableObject
     public int defenseSpe;
     public int runSpeed;
 
-
+    [Header("Attack Stats")]
+    public int damageAmount;
+    public int damageCooldown;
 }
