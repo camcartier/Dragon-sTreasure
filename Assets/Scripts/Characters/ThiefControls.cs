@@ -193,6 +193,11 @@ public class ThiefControls : MonoBehaviour
             isFleeing = true;
             //Debug.Log(collision.transform.position);
         }
+
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            isFleeing = true;
+        }
     }
 
 

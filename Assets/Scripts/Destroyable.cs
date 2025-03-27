@@ -130,6 +130,9 @@ public class Destroyable : MonoBehaviour
         {
             MyCurrentHealth -= bulletData.LVL1_bulletDamage;
             Destroy(collision.gameObject);
+
         }
+
+
     }
 }
