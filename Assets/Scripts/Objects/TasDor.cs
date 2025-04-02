@@ -34,6 +34,7 @@ public class TasDor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (treasureData.GoldCount > 10)
         {
             Tas2.SetActive (true);
@@ -58,13 +59,14 @@ public class TasDor : MonoBehaviour
             Tas4.SetActive(false);
             DetectorTrigger.radius = 32f;
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Thief"))
         {
-
+            Debug.Log("uuuuhhhhrrrr");
         }
         
     }

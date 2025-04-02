@@ -13,6 +13,7 @@ public class ThiefControls : MonoBehaviour
 
     private GameObject treasure;
     private GameObject Player;
+    private GameObject MinusPanel;
 
     public int currentGoldCarried;
     public bool isMovingToTreasure;
@@ -37,9 +38,11 @@ public class ThiefControls : MonoBehaviour
     void Start()
     {
         treasure = GameObject.Find("Treasure");
-        Player = GameObject.Find("Player"); 
+        Player = GameObject.Find("Player");
+        MinusPanel = GameObject.Find("MinusPanel");
 
         isMovingToTreasure = true;
+        //MinusPanel.SetActive(false);
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
@@ -51,8 +54,8 @@ public class ThiefControls : MonoBehaviour
 
         if (hasStolen)
         {
-            Debug.Log("Stole");
             isMovingToTreasure = false;
+            MinusPanel.SetActive(true);
             thiefRb.velocity = Vector2.zero;
             disappearTimerCounter += Time.deltaTime;
         }
@@ -70,26 +73,25 @@ public class ThiefControls : MonoBehaviour
 
         //Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
 
-        if (!isFleeing || hasStolen)
+        if (!isFleeing && !hasStolen)
         {
             isMovingToTreasure = true;
         }
         else { isMovingToTreasure= false; }
 
-        if (isMovingToTreasure )
+        if (isMovingToTreasure)
         {
             thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed * Time.deltaTime;
         }
 
-        if (isFleeing)
+        if (isFleeing && !hasStolen)
         {
-            //Debug.Log("I am fleeing");
             isMovingToTreasure = false;
             MoveAwayFromPlayer();
             fleeingTimerCounter += Time.deltaTime;
                 
         }
-        if(fleeingTimerCounter > fleeingDuration)
+        if(fleeingTimerCounter > fleeingDuration && !hasStolen)
         {
             isFleeing= false;
             isMovingToTreasure = true;
@@ -136,12 +138,6 @@ public class ThiefControls : MonoBehaviour
         
     }
 
-    /*
-    Vector2 GetFleeingDirection() 
-    {
-        if (gameObject.transform.position.x)
-    }
-    */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -156,6 +152,7 @@ public class ThiefControls : MonoBehaviour
         if (collision.CompareTag("Treasure"))
         {
             spriteRenderer.color = Color.grey;
+
         }
 
     }
@@ -179,6 +176,8 @@ public class ThiefControls : MonoBehaviour
         {
             hasStolen= true;
             isFleeing= false;
+            thiefRb.velocity = Vector3.zero;
+            spriteRenderer.color = Color.red;
             Debug.Log("has stolen");
             if (treasureData.GoldCount < 50)
             {

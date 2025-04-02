@@ -25,6 +25,9 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float knockBackDuration { get; private set; }
     [field: SerializeField] public int knockBackDistance { get; private set; }
 
+    [field: SerializeField] public bool isUsing { get; private set; }
+
+
     public Transform MainCameraTransform { get; private set; }
 
     void Start()
