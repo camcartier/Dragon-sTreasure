@@ -34,8 +34,22 @@ public class SkullControls : MonoBehaviour
             UsingText.gameObject.SetActive(true);
             Debug.Log("Player is in range");
 
-            if (PlayerStateMachine.isUsing) { Debug.Log("Player is using"); }
+            if (collision.gameObject.GetComponentInChildren<PlayerStateMachine>() == null) { Debug.Log("notfound"); }
+            
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            UsingText.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 
 }

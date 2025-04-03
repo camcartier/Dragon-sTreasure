@@ -136,6 +136,7 @@ Transform:
   - {fileID: 3884045060633610854}
   - {fileID: 3534380203122937055}
   - {fileID: 6855757345211780610}
+  - {fileID: 769869981878959873}
   - {fileID: 160584106019905025}
   m_Father: {fileID: 5303012427385822974}
   m_RootOrder: 0
@@ -182,6 +183,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d6aa72d2587fec4d80533272c8e99cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3010943199372593793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769869981878959873}
+  - component: {fileID: 3999552288910849269}
+  m_Layer: 3
+  m_Name: DiggingFXStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769869981878959873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010943199372593793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7, y: -1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9025353642850110306}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3999552288910849269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010943199372593793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df05c941d1fba0d46a1b7bcd08580766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3295344177543506999
@@ -279,7 +324,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 6}
   serializedVersion: 2
-  m_Radius: 30
+  m_Radius: 20
 --- !u!1 &5610117372633554883
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +356,7 @@ Transform:
   - {fileID: 1283566898522148133}
   - {fileID: 2261841399839379207}
   m_Father: {fileID: 9025353642850110306}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6509603958421342453
 GameObject:
@@ -380,12 +425,14 @@ MonoBehaviour:
   <rb2D>k__BackingField: {fileID: 3319847874230943825}
   <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
+  <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <canFire>k__BackingField: 0
   <isStunnable>k__BackingField: 0
   <knockbackDirection>k__BackingField: {x: 0, y: 0}
   <knockbackForce>k__BackingField: 100
   <knockBackDuration>k__BackingField: 100
   <knockBackDistance>k__BackingField: 0
+  <isUsing>k__BackingField: 0
 --- !u!114 &1454233127772832480
 MonoBehaviour:
   m_ObjectHideFlags: 0

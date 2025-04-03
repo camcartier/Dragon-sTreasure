@@ -8,6 +8,8 @@ public class PlayerUsingState : PlayerBaseState
     private readonly int UseHash = Animator.StringToHash("LVL1_Dig");
     private const float CrossFadeDuration = 0.1f;
 
+    private GameObject DigginFXStartPoint;
+
     private float TimerCounter;
 
     public PlayerUsingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
@@ -18,6 +20,15 @@ public class PlayerUsingState : PlayerBaseState
         stateMachine.rb2D.velocity = Vector2.zero;
 
         stateMachine.Animator.CrossFadeInFixedTime(UseHash, CrossFadeDuration);
+
+        DigginFXStartPoint = stateMachine.gameObject.GetComponentInChildren<DiggingFXStartPoint>().gameObject;
+
+        stateMachine.isUsing = true;
+        Debug.Log("I am digging");
+
+        GameObject.Instantiate(stateMachine.diggingFX, new Vector2(DigginFXStartPoint.transform.position.x, DigginFXStartPoint.transform.position.y), Quaternion.identity);
+        
+
     }
 
     public override void Tick(float deltaTime)
@@ -25,7 +36,7 @@ public class PlayerUsingState : PlayerBaseState
         
         if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)
         {
-            Debug.Log("I am digging");
+            
             TimerCounter += Time.deltaTime;
         }
         else { stateMachine.SwitchState(new PlayerMainState(stateMachine));  }
@@ -35,6 +46,8 @@ public class PlayerUsingState : PlayerBaseState
     {
         TimerCounter = 0f;
         Debug.Log("I stopped digging");
+        stateMachine.isUsing = false;
+        //Debug.Log(stateMachine.isUsing);
     }
 
 

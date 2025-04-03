@@ -15,6 +15,8 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public PlayerData PlayerData { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
+    [field: SerializeField] public GameObject diggingFX { get; private set; }
+
 
     [field: SerializeField] public bool canFire { get; private set; }
 
@@ -25,7 +27,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float knockBackDuration { get; private set; }
     [field: SerializeField] public int knockBackDistance { get; private set; }
 
-    [field: SerializeField] public bool isUsing { get; private set; }
+    [field: SerializeField] public bool isUsing { get; set; }
 
 
     public Transform MainCameraTransform { get; private set; }
