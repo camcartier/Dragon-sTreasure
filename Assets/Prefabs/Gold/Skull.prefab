@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f64fc94b41234c418be1879bc4e94c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoldDug: {fileID: 324681217225952502, guid: fe1532e33b356e5438c913607ad30c5a, type: 3}
+  TotalGoldCount: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
 --- !u!1 &1328687963390631220
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,11 @@ public class SkullControls : MonoBehaviour
     private PlayerStateMachine PlayerStateMachine;
     private TextMeshPro UsingText;
 
+    [SerializeField] GameObject GoldDug;
+    private bool hasInstantiated;
+
+    //[SerializeField] TreasureData TotalGoldCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +25,18 @@ public class SkullControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (UsingText.gameObject.activeInHierarchy == true)
         {
             Debug.Log("yoooo");
         }
         else { Debug.Log("ayyyy"); }
+        */
+
+        if (hasInstantiated)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,8 +46,19 @@ public class SkullControls : MonoBehaviour
             UsingText.gameObject.SetActive(true);
             Debug.Log("Player is in range");
 
-            if (collision.gameObject.GetComponentInChildren<PlayerStateMachine>() == null) { Debug.Log("notfound"); }
-            
+
+            //if (collision.gameObject.GetComponentInChildren<PlayerStateMachine>() == null) { Debug.Log("notfound"); }
+
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (PlayerStateMachine.isUsing && !hasInstantiated)
+        {
+            Debug.Log("GGGGG");
+            Instantiate(GoldDug, transform.position, Quaternion.identity);
+            hasInstantiated = true;
         }
     }
 
@@ -47,9 +70,15 @@ public class SkullControls : MonoBehaviour
         }
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (PlayerStateMachine.isUsing)
+        {
+            Debug.Log("GGGGG");
+            Instantiate(GoldDug);
+        }
     }
+    */
 
 }

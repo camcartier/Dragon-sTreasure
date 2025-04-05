@@ -22,6 +22,6 @@ public class GoldUI : MonoBehaviour
         {
             return;
         }
-        else { TreasureCounter = treasureData.GoldCount; goldCounterTxt.text = TreasureCounter + ("/") + TreasureCounter*2;  }
+        else { TreasureCounter = treasureData.GoldCount; goldCounterTxt.text = TreasureCounter + ("/") + treasureData.CurrentStep;  }
     }
 }
