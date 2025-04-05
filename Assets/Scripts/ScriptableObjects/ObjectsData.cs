@@ -25,6 +25,10 @@ public class ObjectsData : ScriptableObject
     public float damageCooldown;
     public float stunDuration;
 
+    [Header ("Contact with player stats")]
+    public bool isHurtFromContact;
+    public int contactDamageTaken;
+
     [Header("Character Special Stats")]
     public int goldCarried;
     public int defenseSpe;

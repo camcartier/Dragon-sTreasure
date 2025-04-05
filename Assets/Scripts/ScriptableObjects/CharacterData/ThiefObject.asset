@@ -13,15 +13,20 @@ MonoBehaviour:
   m_Name: ThiefObject
   m_EditorClassIdentifier: 
   maxHealth: 10
-  regenAmount: 0
+  regenAmount: 5
   regenSpeed: 0
-  regenFirstWait: 0
+  regenFirstWait: 1
   goldLoot: 1
   burningAmount: 0
   burningSpeed: 0
   walkSpeed: 2000
   outOfRangeDetachTime: 0
+  damageAmount: 0
+  damageCooldown: 0
+  stunDuration: 0
+  isHurtFromContact: 1
+  contactDamageTaken: 1
   goldCarried: 0
   defenseSpe: 0
-  runSpeed: 5000
+  runSpeed: 4000
   maxSpawnCapacity: 0

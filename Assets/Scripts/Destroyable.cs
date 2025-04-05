@@ -133,6 +133,13 @@ public class Destroyable : MonoBehaviour
 
         }
 
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (objectData.isHurtFromContact )
+            {
+                MyCurrentHealth -= objectData.contactDamageTaken;
+            }
+        }
 
     }
 }
