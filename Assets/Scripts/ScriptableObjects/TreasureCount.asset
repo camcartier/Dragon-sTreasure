@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120e9488e4731f74da250b5a5279504c, type: 3}
   m_Name: TreasureCount
   m_EditorClassIdentifier: 
-  GoldCount: 1
+  GoldCount: 0
+  CurrentStep: 0
+  StepArray: 0500000032000000c8000000f4010000d007000088130000
+  FirstStep: 5
+  SecondStep: 50
+  ThirstStep: 200
+  FourthStep: 500
+  FifthStep: 2000
+  SixthStep: 5000

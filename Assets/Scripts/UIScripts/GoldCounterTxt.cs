@@ -25,7 +25,7 @@ public class GoldCounterTxt : MonoBehaviour
     {
         if (treasureData.GoldCount > treasureData.StepArray[treasureData.CurrentStep])
         {
-            treasureData.CurrentStep += 1; treasureData.GoldCount = 0;
+            treasureData.CurrentStep += 1; //treasureData.GoldCount = 0;
         }
 
 
