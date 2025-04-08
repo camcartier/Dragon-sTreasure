@@ -1762,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinusPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 374728815487260997, guid: b3455f84b4c77234d8cc9e5049e2a2d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9099748286497967630, guid: b3455f84b4c77234d8cc9e5049e2a2d1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
