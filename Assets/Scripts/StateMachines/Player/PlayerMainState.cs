@@ -135,15 +135,17 @@ public class PlayerMainState : PlayerBaseState
             }
         }
 
-
-    private void OnCollisionEnter2D(Collision collision)
+    //this can not work as the script is not derived from MonoBehavior
+    /*private void OnCollisionEnter2D(Collision collision)
     {
-        if (collision.gameObject.GetComponentInChildren<CanDamage>() !=null)
+        Debug.Log("collided");
+
+        if (collision.collider.gameObject.GetComponent<CanDamage>() !=null)
         {
             stateMachine.SwitchState(new PlayerHurtState(stateMachine));
         }
         else { Debug.Log("not found"); }
-    }
+    }*/
 
 
     /*

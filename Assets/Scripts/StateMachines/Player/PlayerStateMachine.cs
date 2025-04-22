@@ -22,6 +22,7 @@ public class PlayerStateMachine : StateMachine
 
 
     [field: SerializeField] public bool isStunnable { get;  set; }
+    [field: SerializeField] public float stunDuration { get; set; }
     [field: SerializeField] public Vector2 knockbackDirection { get; set; }
     [field: SerializeField] public int knockbackForce { get; private set; }
     [field: SerializeField] public float knockBackDuration { get; private set; }

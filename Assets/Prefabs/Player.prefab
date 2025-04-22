@@ -428,9 +428,10 @@ MonoBehaviour:
   <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <canFire>k__BackingField: 0
   <isStunnable>k__BackingField: 0
+  <stunDuration>k__BackingField: 100
   <knockbackDirection>k__BackingField: {x: 0, y: 0}
   <knockbackForce>k__BackingField: 100
-  <knockBackDuration>k__BackingField: 100
+  <knockBackDuration>k__BackingField: 25
   <knockBackDistance>k__BackingField: 0
   <isUsing>k__BackingField: 0
 --- !u!114 &1454233127772832480
