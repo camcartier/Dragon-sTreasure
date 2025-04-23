@@ -14,7 +14,7 @@ public class PlayerStateMachine : StateMachine
 
 
     [field: SerializeField] public PlayerData PlayerData { get; private set; }
-    [field: SerializeField] public PlayerCurrentHealthAndMana PlayerCurrentHealthAndMana { get; private set; }
+    [field: SerializeField] public PlayerCurrentHealthAndMana PlayerCurrentHealthAndMana { get;  set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
     [field: SerializeField] public GameObject diggingFX { get; private set; }
 
@@ -32,10 +32,14 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public bool isUsing { get; set; }
 
 
+
+    public GameManager GameManager { get; set; }
     public Transform MainCameraTransform { get; private set; }
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         MainCameraTransform = Camera.main.transform;
 
         SwitchState(new PlayerMainState(this));

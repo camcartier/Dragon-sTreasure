@@ -45,10 +45,12 @@ public class PlayerHurtState : PlayerBaseState
         {
             stunDurationCounter++;
         }
-        else
+        else if (stateMachine.PlayerCurrentHealthAndMana.currentHealth > 0)
         {
             stateMachine.SwitchState(new PlayerMainState(stateMachine));
+
         }
+        else { stateMachine.SwitchState(new PlayerDyingState(stateMachine)); }
     }
 
     public override void Exit()

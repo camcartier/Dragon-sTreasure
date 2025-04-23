@@ -1800,18 +1800,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8057751363925601226, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
   m_PrefabInstance: {fileID: 915686919}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &915686928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915686920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb940f1c403335408ad950069a50489, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &926043463
 GameObject:
   m_ObjectHideFlags: 0
@@ -3706,6 +3694,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5725290438409722654, guid: 063f386258e49914498a8ee1b5770309, type: 3}
+      propertyPath: contactDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6981916106793257934, guid: 063f386258e49914498a8ee1b5770309, type: 3}
       propertyPath: m_RootOrder
       value: 8
