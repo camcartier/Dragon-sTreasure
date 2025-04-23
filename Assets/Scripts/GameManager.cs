@@ -10,10 +10,28 @@ public class GameManager : MonoBehaviour
     public float TimerCounter;
     public float TimeBeforeIncrement = 3f;
 
+    //public PlayerCurrentHealthAndMana currentPlayerData;
+    //public PlayerData playerData;
+
+    [SerializeField] PlayerCurrentHealthAndMana currentPlayerHealthAndMana;
+    [SerializeField] PlayerData playerData;
+
+    private void Awake()
+    {
+        treasureData.GoldCount = 1;
+
+        currentPlayerHealthAndMana.currentMana = playerData.MaxMana;
+        currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;
+
+        //currentPlayerData = GameObject.Find("ScriptableObjectsManager").GetComponent<ScriptableGestionnaire>().PlayerCurrentHealthAndMana;
+        //playerData = GameObject.Find("ScriptableObjectsManager").GetComponent<ScriptableGestionnaire>().PlayerData;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        treasureData.GoldCount = 1;
+        
+        
     }
 
     // Update is called once per frame

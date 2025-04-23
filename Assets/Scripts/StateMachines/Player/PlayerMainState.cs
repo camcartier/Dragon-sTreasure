@@ -110,8 +110,25 @@ public class PlayerMainState : PlayerBaseState
     }
 
     private void OnFire()
-    {       
-        GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
+    {
+
+
+        if (stateMachine.PlayerCurrentHealthAndMana.currentMana >= 5)
+        {
+ 
+            GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
+            stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
+                  
+            if (stateMachine.PlayerCurrentHealthAndMana.currentMana - 5 < 0)
+            {
+                stateMachine.PlayerCurrentHealthAndMana.currentMana = 0;
+            }
+            else {  stateMachine.PlayerCurrentHealthAndMana.currentMana -= 5; }
+        }
+        else { Debug.Log("not enough mana"); }
+
+
+            
     }
 
     

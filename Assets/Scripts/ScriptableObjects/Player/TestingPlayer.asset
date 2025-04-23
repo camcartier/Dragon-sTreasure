@@ -16,14 +16,14 @@ MonoBehaviour:
   currentLevel: 0
   movementSpeed: 9000
   stunTime: 0
-  MaxHealth: 0
+  MaxHealth: 15
   currentHealth: 0
-  MaxMana: 0
+  MaxMana: 50
   currentMana: 0
-  HealthRegenDelay: 0
+  HealthRegenDelay: 5
   HealthRegenSpeed: 0
   HealthRegenAmount: 0
-  ManaRegenDelay: 0
+  ManaRegenDelay: 5
   ManaRegenSpeed: 0
   ManaRegenAmount: 0
   fireDelay: 0

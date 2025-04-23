@@ -14,6 +14,7 @@ public class PlayerStateMachine : StateMachine
 
 
     [field: SerializeField] public PlayerData PlayerData { get; private set; }
+    [field: SerializeField] public PlayerCurrentHealthAndMana PlayerCurrentHealthAndMana { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
     [field: SerializeField] public GameObject diggingFX { get; private set; }
 

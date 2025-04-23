@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70aaf2b1b6b75aa45b3bc569f86e4a24, type: 3}
   m_Name: PlayerLvl1
   m_EditorClassIdentifier: 
-  Level: 1
-  Health: 0
-  Mana: 0
-  Speed: 0
+  LevelMax: 0
+  currentLevel: 0
+  movementSpeed: 0
+  stunTime: 0
+  MaxHealth: 15
+  currentHealth: 0
+  MaxMana: 50
+  currentMana: 0
+  HealthRegenDelay: 5
+  HealthRegenSpeed: 0
+  HealthRegenAmount: 0
+  ManaRegenDelay: 5
+  ManaRegenSpeed: 0
+  ManaRegenAmount: 0
+  fireDelay: 0
