@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+        /* hahahaha
+        if (playerData.MaxMana < playerData.MaxMana * treasureData.CurrentStep)
+        {
+            playerData.MaxMana = playerData.MaxMana * treasureData.CurrentStep;
+        }
+        */
 
 
     }

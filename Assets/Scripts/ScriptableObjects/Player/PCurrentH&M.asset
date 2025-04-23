@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 15
   currentMana: 50
+  manaMinimumDelayCounter: 0

@@ -431,7 +431,7 @@ MonoBehaviour:
   <isStunnable>k__BackingField: 0
   <stunDuration>k__BackingField: 100
   <knockbackDirection>k__BackingField: {x: 0, y: 0}
-  <knockbackForce>k__BackingField: 100
+  <knockbackForce>k__BackingField: 5000
   <knockBackDuration>k__BackingField: 25
   <knockBackDistance>k__BackingField: 0
   <isUsing>k__BackingField: 0
