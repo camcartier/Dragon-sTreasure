@@ -17,6 +17,11 @@ public class PlayerMainState : PlayerBaseState
     //private readonly int LVL2_IdleHash = Animator.StringToHash("LVL2_Idle");
     //private const float AnimatorDampTime = 0.1f;
 
+    [Header ("Everything about firing Bullets")]
+    private readonly int FiringHash = Animator.StringToHash("LVL1_Fire");
+    private const float CrossFadeDuration = 0.1f;
+    private float TimerCounter;
+
     public PlayerMainState(PlayerStateMachine stateMachine) : base(stateMachine) {}
 
     public override void Enter()
@@ -49,7 +54,13 @@ public class PlayerMainState : PlayerBaseState
 
         //weirdass movement at the start of the game
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed * Time.deltaTime;
-        
+
+        //seems to be working
+        if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)
+        {
+            TimerCounter += Time.deltaTime;
+        }
+        else { stateMachine.Animator.CrossFadeInFixedTime(LVL1_IdleHash, CrossFadeDuration); TimerCounter = 0f;  }
 
 
 
@@ -115,7 +126,8 @@ public class PlayerMainState : PlayerBaseState
 
         if (stateMachine.PlayerCurrentHealthAndMana.currentMana >= 5)
         {
- 
+            stateMachine.Animator.CrossFadeInFixedTime(FiringHash, CrossFadeDuration);
+
             GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
             stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
                   
@@ -127,8 +139,9 @@ public class PlayerMainState : PlayerBaseState
         }
         else { Debug.Log("not enough mana"); }
 
+        
 
-            
+
     }
 
     

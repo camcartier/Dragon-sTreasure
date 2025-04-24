@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerDyingState : PlayerBaseState
 {
 
+    private readonly int DyingHash = Animator.StringToHash("LVL1_Die");
+    private const float CrossFadeDuration = 0.1f;
+
+    private float TimerCounter;
 
     public PlayerDyingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -14,11 +18,16 @@ public class PlayerDyingState : PlayerBaseState
     {
         Debug.Log("Am dead");
 
+        stateMachine.Animator.CrossFadeInFixedTime(DyingHash, CrossFadeDuration);
 
     }
     public override void Tick(float deltaTime)
     {
-        //stateMachine.InputReader.enabled = false;
+        if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)
+        {
+            TimerCounter += Time.deltaTime;
+        }
+        else { stateMachine.GameManager.GetComponent<GameManager>().SetActiveDeathPanel() ; }
     }
 
     public override void Exit()

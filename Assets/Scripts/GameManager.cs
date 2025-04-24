@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public float TimerCounter;
     public float TimeBeforeIncrement = 3f;
 
-    //public PlayerCurrentHealthAndMana currentPlayerData;
-    //public PlayerData playerData;
+    [Header("Panel")]
+    public GameObject DeathPanel;
 
     [SerializeField] PlayerCurrentHealthAndMana currentPlayerHealthAndMana;
     [SerializeField] PlayerData playerData;
@@ -48,12 +48,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void SetActiveDeathPanel()
+    {
+        DeathPanel.SetActive(true);
+    }
 
-    /*
-//TESTING
-if(TimerCounter < TimeBeforeIncrement) { TimerCounter += Time.deltaTime; }
-else { treasureData.GoldCount += 1;  TimerCounter -= 0; }
-*/
-
+    
 
 }
