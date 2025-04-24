@@ -54,34 +54,7 @@ public class PlayerManaManager : MonoBehaviour
         }
 
 
-        /*
-        if (playerCurrentHealthAndMana.currentMana <= 0)
-        {
-            if (ManaDepletionTimer > ManaDepletionTimerCounter)
-            {
-                ManaDepletionTimerCounter += Time.deltaTime;
-            }
-            else { playerData.canRegenMana = true; }
-        }
 
-
-        if (playerData.canRegenMana)
-        {
-            if (playerCurrentHealthAndMana.currentMana < playerData.MaxMana)
-            {
-
-                playerCurrentHealthAndMana.currentMana += 1;
-            }
-
-            
-        }
-
-        if (playerCurrentHealthAndMana.currentMana >= playerData.MaxMana)
-        {
-            playerData.canRegenMana = true;
-        }
-
-        */
 
     }
 }

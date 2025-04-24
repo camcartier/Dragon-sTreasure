@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
         DeathPanel.SetActive(true);
     }
 
-    
+    public void SetActivePauseMenu()
+    {
+        //not yet implemented
+    }
 
 }

@@ -19,6 +19,11 @@ public class PlayerHealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerData.canRegenHealth)
+        {
+            playerCurrentHealthAndMana.currentHealth += 0.1f;
+        }
+
+
     }
 }

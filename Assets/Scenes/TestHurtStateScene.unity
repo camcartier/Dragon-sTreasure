@@ -400,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47276279}
   - component: {fileID: 47276280}
+  - component: {fileID: 47276281}
   m_Layer: 5
   m_Name: HealthSlider
   m_TagString: Untagged
@@ -480,6 +481,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &47276281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47276278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32d4606b554bff43b4faf9356f55f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 47276280}
+  PlayerCurrentHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
+  playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
 --- !u!1 &51659690
 GameObject:
   m_ObjectHideFlags: 0
