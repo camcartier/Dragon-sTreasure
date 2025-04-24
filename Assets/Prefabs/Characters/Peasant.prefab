@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 3619396092452625242}
   - component: {fileID: -7057330562676109637}
   - component: {fileID: 5961826141067821993}
-  - component: {fileID: 7844336900137141494}
   - component: {fileID: 6599733396899705006}
   m_Layer: 7
   m_Name: Peasant
@@ -245,18 +244,6 @@ MonoBehaviour:
   healthSlider: {fileID: 5355274578090129595}
   destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
---- !u!114 &7844336900137141494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2410063474788455525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6455be4c1d2386b44b3e7e37e5d2ed72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6599733396899705006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -815,6 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5511093007373034629}
   - component: {fileID: 3918021029948634733}
+  - component: {fileID: 3878759411759192677}
   m_Layer: 7
   m_Name: AttackZone
   m_TagString: Untagged
@@ -847,7 +835,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -7.2198353, y: 8.057929}
@@ -863,6 +851,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.406818, y: 4.8488827}
   m_EdgeRadius: 0
+--- !u!114 &3878759411759192677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7899421065449863303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6455be4c1d2386b44b3e7e37e5d2ed72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 5
 --- !u!1 &8138230326632933945
 GameObject:
   m_ObjectHideFlags: 0

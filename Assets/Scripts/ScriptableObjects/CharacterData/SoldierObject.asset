@@ -21,6 +21,11 @@ MonoBehaviour:
   burningSpeed: 0
   walkSpeed: 6000
   outOfRangeDetachTime: 5
+  damageAmount: 10
+  damageCooldown: 0
+  stunDuration: 0
+  isHurtFromContact: 0
+  contactDamageTaken: 10
   goldCarried: 0
   defenseSpe: 0
   runSpeed: 0

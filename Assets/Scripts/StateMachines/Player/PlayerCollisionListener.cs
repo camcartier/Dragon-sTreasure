@@ -43,8 +43,7 @@ public class PlayerCollisionListener : MonoBehaviour
             else { stateMachine.PlayerCurrentHealthAndMana.currentHealth -= collision.collider.gameObject.GetComponentInChildren<CanDamage>().contactDamage; }
 
 
-                knockbackDirection = new Vector2(gameObject.transform.position.x - collision.collider.transform.position.x, gameObject.transform.position.y - collision.collider.transform.position.y);
-            
+            knockbackDirection = new Vector2(gameObject.transform.position.x - collision.collider.transform.position.x, gameObject.transform.position.y - collision.collider.transform.position.y);
             stateMachine.knockbackDirection = knockbackDirection;
 
 

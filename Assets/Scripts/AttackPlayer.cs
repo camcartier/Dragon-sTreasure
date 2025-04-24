@@ -24,6 +24,8 @@ public class AttackPlayer : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
 
+        player = GameObject.Find("Player");
+
         //i dun get what happens here (type mismatch but wut???
         //player = GameObject.Find("Player");
     }

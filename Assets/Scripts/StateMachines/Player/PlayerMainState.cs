@@ -130,6 +130,7 @@ public class PlayerMainState : PlayerBaseState
 
             GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
             stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
+            
                   
             if (stateMachine.PlayerCurrentHealthAndMana.currentMana - 5 < 0)
             {
