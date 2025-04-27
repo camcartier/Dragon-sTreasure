@@ -8,7 +8,7 @@ public class PlayerCollisionListener : MonoBehaviour
     private PlayerStateMachine stateMachine;
     public Vector2 knockbackDirection { get; private set; }
 
-    private float thiefWaitTime = 10f;
+    //private float thiefWaitTime = 10f;
     private float thiefWaitCounter;
 
     //[SerializeField] PlayerCurrentHealthAndMana playerCurrentHealth;

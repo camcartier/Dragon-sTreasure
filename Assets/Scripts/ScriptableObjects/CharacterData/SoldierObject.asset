@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SoldierObject
   m_EditorClassIdentifier: 
   maxHealth: 100
-  regenAmount: 0
-  regenSpeed: 0
-  regenFirstWait: 0
+  regenAmount: 5
+  regenSpeed: 1
+  regenFirstWait: 5
   goldLoot: 50
   burningAmount: 0
   burningSpeed: 0

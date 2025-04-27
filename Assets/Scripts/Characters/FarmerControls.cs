@@ -19,6 +19,8 @@ public class FarmerControls : MonoBehaviour
     public bool isStunned { get; private set; }
     private float stunTimerCounter;
 
+    private float turnDelayCounter;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -63,6 +65,26 @@ public class FarmerControls : MonoBehaviour
                 }
             }
         }
+
+        if (player.transform.position.x > gameObject.transform.position.x) 
+        {
+            if (turnDelayCounter < farmerData.timeBeforeTurn)
+            {
+                turnDelayCounter += Time.deltaTime;
+            }
+            else { gameObject.transform.localScale = new Vector3(-1, 1, 1); turnDelayCounter = 0f; }
+        }
+        if (player.transform.position.x < gameObject.transform.position.x)
+        {
+            if (turnDelayCounter < farmerData.timeBeforeTurn)
+            {
+                turnDelayCounter += Time.deltaTime;
+            }
+            else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; }
+        }
+
+
+
 
 
     }
