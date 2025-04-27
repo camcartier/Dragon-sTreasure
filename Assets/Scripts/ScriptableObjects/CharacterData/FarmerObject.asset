@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   regenAmount: 0
-  regenSpeed: 0
-  regenFirstWait: 0
+  regenSpeed: 1
+  regenFirstWait: 1
   goldLoot: 5
-  burningAmount: 0
+  burningAmount: 0.01
   burningSpeed: 0
   walkSpeed: 4
   outOfRangeDetachTime: 0

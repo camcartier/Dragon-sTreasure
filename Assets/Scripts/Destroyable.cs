@@ -20,8 +20,8 @@ public class Destroyable : MonoBehaviour
     [SerializeField] BulletData bulletData;
 
 
-    public int MyCurrentHealth { get; private set; }
-    public int MyCurrentStoredHealth { get; private set; }
+    public float MyCurrentHealth { get; private set; }
+    public float MyCurrentStoredHealth { get; private set; }
     public bool IsBurning { get; private set; }
     public bool IsRegen { get; private set; }
 
@@ -62,17 +62,24 @@ public class Destroyable : MonoBehaviour
         {   healthPanel.gameObject.SetActive(true); }
 
         if ( MyCurrentStoredHealth != MyCurrentHealth)
-        { UpdateHealthBar(MyCurrentHealth); MyCurrentStoredHealth  = MyCurrentHealth;
-            //Debug.Log(MyCurrentHealth);
+        { 
+            UpdateHealthBar(MyCurrentHealth); MyCurrentStoredHealth  = MyCurrentHealth;
         }
 
+        if (MyCurrentHealth >= objectData.maxHealth)
+        {
+            MyCurrentHealth = objectData.maxHealth;
+            IsRegen = false;
+            //Debug.Log("regen stopped");
+
+        }
 
         if(MyCurrentHealth < objectData.maxHealth && !IsBurning)
         {
             currentWaitAfterLastAttack += Time.deltaTime;
             if (currentWaitAfterLastAttack > objectData.regenFirstWait )
             {
-                IsRegen = true;
+                IsRegen = true; Debug.Log("regen");
             }
 
         }
@@ -83,13 +90,15 @@ public class Destroyable : MonoBehaviour
             {
                 currentWaitBeforeRegen += Time.deltaTime;
             }
-            else { RegenHealth(); currentWaitBeforeRegen = 0; }
+            else { RegenHealth(); currentWaitBeforeRegen = 0;  }
+
+
         }
 
 
         if (MyCurrentHealth <= objectData.maxHealth / 2)
         {
-            IsBurning = true;
+            IsBurning = true; IsRegen = false;
         }
 
         if (IsBurning) {
@@ -109,11 +118,11 @@ public class Destroyable : MonoBehaviour
         }
     }
 
-    private void SetMaxHealth(int health)
+    private void SetMaxHealth(float health)
     {
         healthSlider.maxValue = health;
     }
-    private void UpdateHealthBar(int health)
+    private void UpdateHealthBar(float health)
     {
         healthSlider.value = health;
         //Debug.Log(healthSlider.value);
@@ -142,4 +151,13 @@ public class Destroyable : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Le joueur a quitté le contact.");
+        }
+    }
+
 }

@@ -69,6 +69,7 @@ public class ThiefControls : MonoBehaviour
         if (!hasDirection)
         {
             dirToTreasure = GetDirectionToTreasure(treasure.transform.position.x, treasure.transform.position.y);
+            hasDirection = true;
         }
 
         //Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
@@ -87,6 +88,7 @@ public class ThiefControls : MonoBehaviour
         if (isFleeing && !hasStolen)
         {
             isMovingToTreasure = false;
+            hasDirection = false;
             MoveAwayFromPlayer();
             fleeingTimerCounter += Time.deltaTime;
                 

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   regenAmount: 5
-  regenSpeed: 0
+  regenSpeed: 1
   regenFirstWait: 1
   goldLoot: 1
-  burningAmount: 0
+  burningAmount: 0.01
   burningSpeed: 0
   walkSpeed: 2000
   outOfRangeDetachTime: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
   damageCooldown: 0
   stunDuration: 0
   isHurtFromContact: 1
-  contactDamageTaken: 1
+  contactDamageTaken: 5
   goldCarried: 0
   defenseSpe: 0
   runSpeed: 4000

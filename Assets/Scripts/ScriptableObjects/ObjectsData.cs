@@ -6,8 +6,8 @@ using UnityEngine;
 public class ObjectsData : ScriptableObject
 {
     [Header("Basic Stats")]
-    public int maxHealth;
-    public int regenAmount;
+    public float maxHealth;
+    public float regenAmount;
     public float regenSpeed;
     public float regenFirstWait;
 
@@ -15,13 +15,13 @@ public class ObjectsData : ScriptableObject
     public int goldLoot;
 
     [Header("Burning Stats")]
-    public int burningAmount;
+    public float burningAmount;
     public float burningSpeed;
 
     [Header("Character Stats")]
-    public int walkSpeed;
+    public float walkSpeed;
     public float outOfRangeDetachTime;
-    public int damageAmount;
+    public float damageAmount;
     public float damageCooldown;
     public float stunDuration;
 
