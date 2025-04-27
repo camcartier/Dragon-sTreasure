@@ -8,6 +8,7 @@ public class FarmerControls : MonoBehaviour
     [SerializeField] ObjectsData farmerData;
     [SerializeField] List<Transform> fleeingPosList;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject healthCanvas;
 
     private Destroyable destroyable;
     private Rigidbody2D farmerRb;
@@ -72,7 +73,7 @@ public class FarmerControls : MonoBehaviour
             {
                 turnDelayCounter += Time.deltaTime;
             }
-            else { gameObject.transform.localScale = new Vector3(-1, 1, 1); turnDelayCounter = 0f; }
+            else { gameObject.transform.localScale = new Vector3(-1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(-1, 1, 1); }
         }
         if (player.transform.position.x < gameObject.transform.position.x)
         {
@@ -80,7 +81,7 @@ public class FarmerControls : MonoBehaviour
             {
                 turnDelayCounter += Time.deltaTime;
             }
-            else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; }
+            else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(1, 1, 1); }
         }
 
 

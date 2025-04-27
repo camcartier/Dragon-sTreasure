@@ -259,6 +259,7 @@ MonoBehaviour:
   farmerData: {fileID: 11400000, guid: db7aa6159f2d0ed479cf7472d9225849, type: 2}
   fleeingPosList: []
   player: {fileID: 0}
+  healthCanvas: {fileID: 1728061189113049858}
 --- !u!1 &2819632776329361316
 GameObject:
   m_ObjectHideFlags: 0
