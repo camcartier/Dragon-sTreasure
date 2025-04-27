@@ -46,9 +46,11 @@ public class FarmerControls : MonoBehaviour
 
         if (isFollowing)
         {
+            farmerData.canTurn = true;
             Vector3 direction = new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y- transform.position.y);
             farmerRb.velocity = direction.normalized * farmerData.walkSpeed;
         }
+        else { farmerRb.velocity = Vector2.zero; farmerData.canTurn = false; }
 
         if (canBeStunned)
         {
@@ -67,6 +69,8 @@ public class FarmerControls : MonoBehaviour
             }
         }
 
+
+        /* moved to a separate script
         if (player.transform.position.x > gameObject.transform.position.x) 
         {
             if (turnDelayCounter < farmerData.timeBeforeTurn)
@@ -83,7 +87,7 @@ public class FarmerControls : MonoBehaviour
             }
             else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(1, 1, 1); }
         }
-
+        */
 
 
 

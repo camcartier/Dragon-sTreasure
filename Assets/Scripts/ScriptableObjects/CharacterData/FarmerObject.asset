@@ -24,7 +24,9 @@ MonoBehaviour:
   damageAmount: 0
   damageCooldown: 0
   stunDuration: 2
-  timeBeforeTurn: 4
+  timeBeforeTurn: 2.5
+  canTurn: 0
+  hasTurnedOnce: 1
   isHurtFromContact: 1
   contactDamageTaken: 1
   goldCarried: 0

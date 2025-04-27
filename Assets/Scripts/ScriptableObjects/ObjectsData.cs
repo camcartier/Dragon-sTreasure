@@ -24,7 +24,11 @@ public class ObjectsData : ScriptableObject
     public float damageAmount;
     public float damageCooldown;
     public float stunDuration;
+
+    [Header("Turn Stats")]
     public float timeBeforeTurn;
+    public bool canTurn;
+    public bool hasTurnedOnce;
 
     [Header ("Contact with player stats")]
     public bool isHurtFromContact;
