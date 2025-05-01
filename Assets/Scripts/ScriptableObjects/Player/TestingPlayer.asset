@@ -15,8 +15,10 @@ MonoBehaviour:
   LevelMax: 5
   currentLevel: 0
   movementSpeed: 9000
-  dashSpeed: 18000
   stunTime: 0
+  dashSpeed: 18000
+  dashDelay: 1
+  canDash: 1
   MaxHealth: 15
   MaxMana: 50
   canRegenHealth: 0

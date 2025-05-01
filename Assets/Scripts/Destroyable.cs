@@ -17,6 +17,7 @@ public class Destroyable : MonoBehaviour
     [SerializeField] IAMAPanel healthPanel;
     [SerializeField] Slider healthSlider;
     [SerializeField] IAMAPS destructionFx;
+    [SerializeField] IAMAPS burningFx;
     [SerializeField] BulletData bulletData;
 
 
