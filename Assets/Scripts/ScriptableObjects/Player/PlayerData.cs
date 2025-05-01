@@ -11,8 +11,12 @@ public class PlayerData : ScriptableObject
 
     [Header(" Stats")]
     public float movementSpeed;
-    public float dashSpeed;
     public float stunTime;
+
+    [Header("Dash attributes")]
+    public float dashSpeed;
+    public float dashDelay;
+    public bool canDash;
 
     [Header ("Health&Mana")]
     public float MaxHealth;

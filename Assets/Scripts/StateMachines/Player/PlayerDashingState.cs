@@ -33,5 +33,7 @@ public class PlayerDashingState : PlayerBaseState
         dashDurationCounter = 0f;
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = true;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        stateMachine.PlayerData.canDash = false;
+        
     }
 }

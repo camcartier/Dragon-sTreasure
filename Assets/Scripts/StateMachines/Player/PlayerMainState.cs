@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -21,6 +22,8 @@ public class PlayerMainState : PlayerBaseState
     private readonly int FiringHash = Animator.StringToHash("LVL1_Fire");
     private const float CrossFadeDuration = 0.1f;
     private float TimerCounter;
+
+    private float dashDelayCounter;
 
     public PlayerMainState(PlayerStateMachine stateMachine) : base(stateMachine) {}
 
@@ -68,6 +71,15 @@ public class PlayerMainState : PlayerBaseState
         }
         else { stateMachine.Animator.CrossFadeInFixedTime(LVL1_IdleHash, CrossFadeDuration); TimerCounter = 0f;  }
 
+
+        if (!stateMachine.PlayerData.canDash)
+        {
+            if (dashDelayCounter < stateMachine.PlayerData.dashDelay)
+            {
+                dashDelayCounter += Time.deltaTime;
+            }
+            else { stateMachine.PlayerData.canDash = true; dashDelayCounter = 0f; }
+        }
 
 
         /*
@@ -151,7 +163,11 @@ public class PlayerMainState : PlayerBaseState
 
     private void OnDash()
     {
-        stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+        if (stateMachine.PlayerData.canDash)
+        {
+            stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+        }
+
     }
 
 
