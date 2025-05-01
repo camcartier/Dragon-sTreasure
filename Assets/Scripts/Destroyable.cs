@@ -30,7 +30,9 @@ public class Destroyable : MonoBehaviour
     private float currentWaitBeforeNextBurn;
     private float currentWaitBeforeRegen;
 
-    public ObjectsData ObjectData => objectData; 
+    public ObjectsData ObjectData => objectData;
+
+    private bool lastColliderIsBullet; 
 
     /*
     private void OnValidate()
@@ -98,7 +100,10 @@ public class Destroyable : MonoBehaviour
 
         if (MyCurrentHealth <= objectData.maxHealth / 2)
         {
-            IsBurning = true; IsRegen = false;
+            if (lastColliderIsBullet)
+            {
+                IsBurning = true; IsRegen = false;
+            }
         }
 
         if (IsBurning) {
@@ -135,15 +140,19 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+
         if (collision.gameObject.CompareTag("Bullet"))
         {
             MyCurrentHealth -= bulletData.LVL1_bulletDamage;
             Destroy(collision.gameObject);
+            lastColliderIsBullet = true;
 
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            lastColliderIsBullet = false;
             if (objectData.isHurtFromContact )
             {
                 MyCurrentHealth -= objectData.contactDamageTaken;
