@@ -29,8 +29,12 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float knockBackDuration { get; private set; }
     [field: SerializeField] public int knockBackDistance { get; private set; }
 
+
     [field: SerializeField] public bool isUsing { get; set; }
 
+
+    [field: SerializeField] public float dashDuration { get; private set; }
+    [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 
 
     public GameManager GameManager { get; set; }

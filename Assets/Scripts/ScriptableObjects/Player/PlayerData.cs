@@ -9,25 +9,23 @@ public class PlayerData : ScriptableObject
     public int LevelMax;
     public int currentLevel;
 
-    [Header("Basic Stats")]
+    [Header(" Stats")]
     public float movementSpeed;
+    public float dashSpeed;
     public float stunTime;
 
     [Header ("Health&Mana")]
     public float MaxHealth;
-    //public float currentHealth;
     public float MaxMana;
-    //public float currentMana;
+
     [Header("Health Regen")]
     public bool canRegenHealth;
     public float HealthRegenDelay;
-    //public float HealthRegenSpeed;
     public float HealthRegenAmount;
+
     [Header("Mana Regen")]
     public bool canRegenMana;
     public float ManaRegenMinimumDelay;
-    //public float ManaRegenSpeed;
-    //public float ManaRegenAmount;
 
     [Header("Firing Info")]
     public float fireDelay;

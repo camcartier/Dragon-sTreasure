@@ -8,7 +8,7 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 {
     private Controls controls;
 
-    public event Action  UseEvent, FireEvent;
+    public event Action  UseEvent, FireEvent, DashEvent; 
     //MoveEvent,
 
     public Vector2 MovementValue { get; private set; }
@@ -47,6 +47,11 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 
     }
 
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
 
+        DashEvent?.Invoke();
+    }
 
 }

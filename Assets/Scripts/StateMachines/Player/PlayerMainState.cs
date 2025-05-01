@@ -30,6 +30,7 @@ public class PlayerMainState : PlayerBaseState
 
         stateMachine.InputReader.UseEvent += OnUse;
         stateMachine.InputReader.FireEvent += OnFire;
+        stateMachine.InputReader.DashEvent += OnDash;
 
         BulletStartPoint = stateMachine.gameObject.GetComponentInChildren<BulletStartPoint>().gameObject;
 
@@ -49,6 +50,11 @@ public class PlayerMainState : PlayerBaseState
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
         //Debug.Log(movement);
         movement.Normalize();
+
+        if (movement != Vector2.zero)
+        {
+            stateMachine.lastMovementDirection = movement;
+        }
 
         FaceMovementDirecton();
 
@@ -86,7 +92,7 @@ public class PlayerMainState : PlayerBaseState
 
         stateMachine.InputReader.UseEvent -= OnUse;
         stateMachine.InputReader.FireEvent -= OnFire;
-
+        stateMachine.InputReader.DashEvent -= OnDash;
 
     }
 
@@ -140,12 +146,13 @@ public class PlayerMainState : PlayerBaseState
         }
         else { Debug.Log("not enough mana"); }
 
-        
-
 
     }
 
-    
+    private void OnDash()
+    {
+        stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+    }
 
 
 
