@@ -24,6 +24,7 @@ public class Destroyable : MonoBehaviour
     public float MyCurrentHealth { get; private set; }
     public float MyCurrentStoredHealth { get; private set; }
     public bool IsBurning { get; private set; }
+    private bool burningFxHasSpawned;
     public bool IsRegen { get; private set; }
 
 
@@ -108,6 +109,12 @@ public class Destroyable : MonoBehaviour
         }
 
         if (IsBurning) {
+            if (!burningFxHasSpawned)
+            {
+                Instantiate(burningFx, new Vector3(transform.position.x, transform.position.y + 16, transform.position.z), Quaternion.identity, gameObject.transform);
+                burningFxHasSpawned = true;
+            }
+            
             currentWaitBeforeNextBurn += Time.deltaTime;
             if (currentWaitBeforeNextBurn >= objectData.burningSpeed)
             {

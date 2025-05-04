@@ -6,6 +6,7 @@ public class PlayerManaManager : MonoBehaviour
 {
     [SerializeField] PlayerCurrentHealthAndMana playerCurrentHealthAndMana;
     [SerializeField] PlayerData playerData;
+    [SerializeField] TreasureData treasureData;
     public float ManaDepletionTimer;
     public float ManaDepletionTimerCounter;
 
@@ -20,6 +21,7 @@ public class PlayerManaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
         if (playerData.canRegenMana)
         {

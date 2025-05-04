@@ -35,8 +35,6 @@ public class TasDor : MonoBehaviour
             Debug.Log("no treasure Data");
         }
 
-
-
     }
 
     // Update is called once per frame
