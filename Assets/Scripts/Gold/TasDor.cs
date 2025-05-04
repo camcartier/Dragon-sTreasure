@@ -9,17 +9,22 @@ public class TasDor : MonoBehaviour
     [SerializeField] TreasureData treasureData;
 
     [Header ("Visuals")]
-    [SerializeField] GameObject Tas1;
-    [SerializeField] GameObject Tas2;
-    [SerializeField] GameObject Tas3;
-    [SerializeField] GameObject Tas4;
-    [SerializeField] GameObject Tas5;
+    //[SerializeField] GameObject Tas1;
+    //[SerializeField] GameObject Tas2;
+    //[SerializeField] GameObject Tas3;
+    //[SerializeField] GameObject Tas4;
+    //[SerializeField] GameObject Tas5;
+    public GameObject[] StepArrayGameObjects = new GameObject[6];
+    public int CurrentSpriteNumber;
 
     private CircleCollider2D DetectorTrigger;
 
     private void Awake()
     {
         DetectorTrigger = GameObject.Find("DetectionCircle").GetComponent<CircleCollider2D>();
+
+        CurrentSpriteNumber = 0;
+        StepArrayGameObjects[CurrentSpriteNumber].SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -29,11 +34,23 @@ public class TasDor : MonoBehaviour
         {
             Debug.Log("no treasure Data");
         }
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (treasureData.CurrentStep != CurrentSpriteNumber)
+        {
+            StepArrayGameObjects[treasureData.CurrentStep].SetActive(true);
+            StepArrayGameObjects[CurrentSpriteNumber].SetActive(false);
+            CurrentSpriteNumber += 1;
+        }
+
+
         /*
         if (treasureData.GoldCount > 10)
         {

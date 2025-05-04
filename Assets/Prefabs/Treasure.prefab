@@ -580,11 +580,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
-  Tas1: {fileID: 563976575377410412}
-  Tas2: {fileID: 5581019924667508841}
-  Tas3: {fileID: 3237593767290778540}
-  Tas4: {fileID: 1870861771239691170}
-  Tas5: {fileID: 1248802273375065464}
+  StepArrayGameObjects:
+  - {fileID: 563976575377410412}
+  - {fileID: 5581019924667508841}
+  - {fileID: 3237593767290778540}
+  - {fileID: 1870861771239691170}
+  - {fileID: 1248802273375065464}
+  - {fileID: 0}
+  CurrentSpriteNumber: 0
 --- !u!50 &6553469694237238953
 Rigidbody2D:
   serializedVersion: 4

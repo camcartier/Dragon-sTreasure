@@ -4,25 +4,5 @@ using UnityEngine;
 
 public class ChestControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    /*
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player")){Destroy(this.gameObject);}
-        
-        /*if (collision.gameObject.CompareTag("Thief")){
-            Debug.Log("contact");
-            Destroy(this.gameObject);}
-    }*/
 }

@@ -23,7 +23,7 @@ public class GoldCounterTxt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (treasureData.GoldCount > treasureData.StepArray[treasureData.CurrentStep])
+        if (treasureData.GoldCount >= treasureData.StepArray[treasureData.CurrentStep])
         {
             treasureData.CurrentStep += 1; //treasureData.GoldCount = 0;
         }
