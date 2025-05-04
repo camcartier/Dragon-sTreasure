@@ -367,12 +367,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5303012427385822974}
+  - component: {fileID: 3319847874230943825}
+  - component: {fileID: 1286876370922697055}
   - component: {fileID: 172299199858803786}
   - component: {fileID: 9033838750334023689}
   - component: {fileID: 1454233127772832480}
-  - component: {fileID: 3319847874230943825}
-  - component: {fileID: 1286876370922697055}
   - component: {fileID: 5001503474633560126}
+  - component: {fileID: 8964317341285677106}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -396,60 +397,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &172299199858803786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509603958421342453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b7b6f14395055e46b60c8c05cccd0aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &9033838750334023689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509603958421342453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f40b54553a89443acc786cfff65722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <InputReader>k__BackingField: {fileID: 172299199858803786}
-  <ForceReceiver>k__BackingField: {fileID: 1454233127772832480}
-  <Animator>k__BackingField: {fileID: 8057751363925601226}
-  <rb2D>k__BackingField: {fileID: 3319847874230943825}
-  <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
-  <PlayerCurrentHealthAndMana>k__BackingField: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
-  <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
-  <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
-  <canFire>k__BackingField: 0
-  <isStunnable>k__BackingField: 0
-  <stunDuration>k__BackingField: 100
-  <knockbackDirection>k__BackingField: {x: 0, y: 0}
-  <knockbackForce>k__BackingField: 5000
-  <knockBackDuration>k__BackingField: 25
-  <knockBackDistance>k__BackingField: 0
-  <isUsing>k__BackingField: 0
-  <dashDuration>k__BackingField: 0.3
-  <lastMovementDirection>k__BackingField: {x: 0, y: 0}
---- !u!114 &1454233127772832480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509603958421342453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 969084c93b3c4ee4d9c6efb3070d442a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &3319847874230943825
 Rigidbody2D:
   serializedVersion: 4
@@ -484,6 +431,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+--- !u!114 &172299199858803786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7b6f14395055e46b60c8c05cccd0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9033838750334023689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f40b54553a89443acc786cfff65722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputReader>k__BackingField: {fileID: 172299199858803786}
+  <ForceReceiver>k__BackingField: {fileID: 1454233127772832480}
+  <Animator>k__BackingField: {fileID: 8057751363925601226}
+  <rb2D>k__BackingField: {fileID: 3319847874230943825}
+  <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+  <PlayerCurrentHealthAndMana>k__BackingField: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
+  PlayerManaManager: {fileID: 8964317341285677106}
+  <canFire>k__BackingField: 0
+  <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
+  <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
+  <isStunnable>k__BackingField: 0
+  <stunDuration>k__BackingField: 100
+  <knockbackDirection>k__BackingField: {x: 0, y: 0}
+  <knockbackForce>k__BackingField: 5000
+  <knockBackDuration>k__BackingField: 25
+  <knockBackDistance>k__BackingField: 0
+  <isUsing>k__BackingField: 0
+  <dashDuration>k__BackingField: 0.3
+  <lastMovementDirection>k__BackingField: {x: 0, y: 0}
+--- !u!114 &1454233127772832480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969084c93b3c4ee4d9c6efb3070d442a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5001503474633560126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +498,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb940f1c403335408ad950069a50489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8964317341285677106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c9e0176c95948445ba97135e2bb81f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCurrentHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
+  playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+  ManaDepletionTimer: 0
+  ManaDepletionTimerCounter: 0
 --- !u!1 &7175643183065341082
 GameObject:
   m_ObjectHideFlags: 0

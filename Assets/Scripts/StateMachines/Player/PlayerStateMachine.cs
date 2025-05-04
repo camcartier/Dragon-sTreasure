@@ -9,19 +9,28 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
 
 
+    //Movement
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Rigidbody2D rb2D { get; private set; }
 
 
+    //Stats, Health and Mana
     [field: SerializeField] public PlayerData PlayerData { get; private set; }
     [field: SerializeField] public PlayerCurrentHealthAndMana PlayerCurrentHealthAndMana { get;  set; }
+
+    [field: SerializeField] public PlayerManaManager PlayerManaManager;
+
+
+    //Firing bullets
+    [field: SerializeField] public bool canFire { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
+    
+
+    //FXs
     [field: SerializeField] public GameObject diggingFX { get; private set; }
 
 
-    [field: SerializeField] public bool canFire { get; private set; }
-
-
+    //stun and knockback
     [field: SerializeField] public bool isStunnable { get;  set; }
     [field: SerializeField] public float stunDuration { get; set; }
     [field: SerializeField] public Vector2 knockbackDirection { get; set; }
@@ -30,13 +39,16 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public int knockBackDistance { get; private set; }
 
 
+    //Use
     [field: SerializeField] public bool isUsing { get; set; }
 
 
+    //Dash
     [field: SerializeField] public float dashDuration { get; private set; }
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 
 
+    //General
     public GameManager GameManager { get; set; }
     public Transform MainCameraTransform { get; private set; }
 

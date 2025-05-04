@@ -10,4 +10,8 @@ public class PlayerCurrentHealthAndMana : ScriptableObject
     public float currentHealth;
     public float currentMana;
     public float manaMinimumDelayCounter;
+
+    //idk si servira ou pas
+    [Header("Stamina")]
+    public float stamina;
 }

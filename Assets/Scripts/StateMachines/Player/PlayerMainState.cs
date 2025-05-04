@@ -142,13 +142,19 @@ public class PlayerMainState : PlayerBaseState
     {
 
 
+
         if (stateMachine.PlayerCurrentHealthAndMana.currentMana >= 5)
         {
+            //to make sure the timer doesn't start when firing i thought i'd seeen someyhing weird before
+            stateMachine.PlayerManaManager.ManaDepletionTimerCounter = 0f;
+            stateMachine.PlayerData.canRegenMana = false;
+
+
             stateMachine.Animator.CrossFadeInFixedTime(FiringHash, CrossFadeDuration);
 
             GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
             stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
-            
+              
                   
             if (stateMachine.PlayerCurrentHealthAndMana.currentMana - 5 < 0)
             {

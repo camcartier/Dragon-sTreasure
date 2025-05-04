@@ -23,7 +23,7 @@ public class PlayerManaManager : MonoBehaviour
 
         if (playerData.canRegenMana)
         {
-            playerCurrentHealthAndMana.currentMana += 1;
+            playerCurrentHealthAndMana.currentMana += 0.1f;
         }
 
         if (playerCurrentHealthAndMana.currentMana >= playerData.MaxMana)
