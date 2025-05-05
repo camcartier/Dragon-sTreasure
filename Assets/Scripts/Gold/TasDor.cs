@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -14,7 +15,7 @@ public class TasDor : MonoBehaviour
     //[SerializeField] GameObject Tas3;
     //[SerializeField] GameObject Tas4;
     //[SerializeField] GameObject Tas5;
-    public GameObject[] StepArrayGameObjects = new GameObject[6];
+    public GameObject[] StepArrayGameObjects = new GameObject[5];
     public int CurrentSpriteNumber;
 
     private CircleCollider2D DetectorTrigger;
@@ -25,6 +26,12 @@ public class TasDor : MonoBehaviour
 
         CurrentSpriteNumber = 0;
         StepArrayGameObjects[CurrentSpriteNumber].SetActive(true);
+
+        for (int i = 1; i < StepArrayGameObjects.Length; i++)
+        {
+            StepArrayGameObjects[i].SetActive(false);
+        }
+
     }
 
     // Start is called before the first frame update

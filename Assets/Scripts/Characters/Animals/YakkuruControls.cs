@@ -111,7 +111,6 @@ public class YakkuruControls : MonoBehaviour
             if (waitingTimerStarted)
             {
                 waitingTimerCounter += Time.deltaTime;
-                //Debug.Log("I am waiting");
                 if (waitingTimerCounter > waitingTimer)
                 {
                     isWaiting = false;
@@ -125,7 +124,6 @@ public class YakkuruControls : MonoBehaviour
             if (walkingTimerStarted)
             {
                 walkingTimerCounter += Time.deltaTime;
-                //Debug.Log("I am walking");
                 if (walkingTimerCounter > walkingTimer)
                 {
                     isWaiting = true;
@@ -140,7 +138,6 @@ public class YakkuruControls : MonoBehaviour
             if (isFleeing)
             {
                 timerStarted = true;
-                //isWalking = false;
                 isWaiting = false;
                 spriteRenderer.color = Color.white;
 
@@ -156,9 +153,6 @@ public class YakkuruControls : MonoBehaviour
                 if (fleeingDirection.x < 0)
                 {
                     gameObject.transform.localScale = new Vector3(-1, 1, 1);
-                    //msieur Roussel il a dit
-                    //pas bien
-                    //spriteRenderer.flipX = true;
                 }
                 else { gameObject.transform.localScale = new Vector3(1, 1, 1); }
             }
@@ -198,6 +192,12 @@ public class YakkuruControls : MonoBehaviour
 
     private void OnDestroy()
     {
+        // ne peut pas etre mis la car quand le jeu se ferme, des objets sont spawn et la scene ne se nettoie pas
+        /*
+        int lootnum = Random.Range(0, 2);
+        Instantiate(listOfPossiblePotions[lootnum], transform.position, Quaternion.identity);
+        */
+
         //bossYakkuruSpawner.GetComponent<BossYakkuruSpawner>().YakkurusKilled += 1;
     }
 }

@@ -34,7 +34,11 @@ public class Destroyable : MonoBehaviour
 
     public ObjectsData ObjectData => objectData;
 
-    private bool lastColliderIsBullet; 
+    private bool lastColliderIsBullet;
+
+    //Loot Generation
+    public GameObject[] listOfPossibleLoots = new GameObject[6];
+
 
     /*
     private void OnValidate()
@@ -43,7 +47,7 @@ public class Destroyable : MonoBehaviour
     }
     */
 
-     void Reset()
+    void Reset()
     {
         healthPanel = gameObject.GetComponentInChildren<IAMAPanel>(true);
         healthSlider = gameObject.GetComponentInChildren<Slider>(true);
@@ -106,6 +110,11 @@ public class Destroyable : MonoBehaviour
             {
                 IsBurning = true; IsRegen = false;
             }
+
+            if (MyCurrentHealth <= objectData.minHealthBurnsStop)
+            {
+                IsBurning = false;
+            }
         }
 
         if (IsBurning) {
@@ -120,14 +129,28 @@ public class Destroyable : MonoBehaviour
             {
                 BurningHealth(); currentWaitBeforeNextBurn = 0; 
             }
+
+
         }
 
 
         if (MyCurrentHealth <= 0)
         {
             Instantiate(destructionFx, transform.position, Quaternion.identity);
-            //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
-            Destroy(gameObject);
+            
+            if (gameObject.CompareTag("Yakkuru") == true)
+            {
+                int lootnum = Random.Range(0, 2);
+                Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
+            }
+            if(gameObject.CompareTag("Farmer") == true)
+            {
+                Instantiate(listOfPossibleLoots[3], transform.position, Quaternion.identity);
+            }
+            
+
+                //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
+                Destroy(gameObject);
         }
     }
 

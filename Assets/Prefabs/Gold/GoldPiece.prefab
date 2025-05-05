@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8874777896016097408}
   - component: {fileID: 5695251606780015118}
   - component: {fileID: -8024907820477229463}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GoldPiece
   m_TagString: Gold
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 2408154463491158327}
   - component: {fileID: 8907729321735053785}
   - component: {fileID: 6113197050305816901}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7385284689761221350}
   - component: {fileID: 8862501872393281041}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ContactZone
   m_TagString: Gold
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014568831604913194}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}

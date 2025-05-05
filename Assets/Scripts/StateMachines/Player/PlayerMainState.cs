@@ -48,7 +48,10 @@ public class PlayerMainState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        
+        if (stateMachine.currentLevelStored != stateMachine.TreasureData.CurrentStep)
+        {
+            stateMachine.SwitchState(new PlayerLevelingUpState(stateMachine));
+        }
 
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
         //Debug.Log(movement);

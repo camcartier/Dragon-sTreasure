@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 412689291073281782}
   m_Layer: 7
   m_Name: Cattle_Yakuru
-  m_TagString: Untagged
+  m_TagString: Yakkuru
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,7 +750,15 @@ MonoBehaviour:
   healthPanel: {fileID: 3001829450714213467}
   healthSlider: {fileID: 209774727364542321}
   destructionFx: {fileID: 6705355423509510006}
+  burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
+  listOfPossibleLoots:
+  - {fileID: 117661991500826913, guid: 5c8e6770a95cc024091ce991a7c78bd7, type: 3}
+  - {fileID: 117661991500826913, guid: d530272aaa8967b4eb9b7e1ddf373247, type: 3}
+  - {fileID: 117661991500826913, guid: 4585ff551c6941d4ca5ba731489956f0, type: 3}
+  - {fileID: 1699467609051321577, guid: 7426cbd462c0ce0409c9e3dd1319de17, type: 3}
+  - {fileID: 4907049712102308116, guid: 11ff29149b0af2549b3b30f727f2f2fd, type: 3}
+  - {fileID: 0}
 --- !u!114 &412689291073281782
 MonoBehaviour:
   m_ObjectHideFlags: 0

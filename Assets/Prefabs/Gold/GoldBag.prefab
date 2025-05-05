@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2460506358756146655}
   - component: {fileID: 1812525832503267459}
   - component: {fileID: 7105385647367457441}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpriteHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501273228884110276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2747805873537427526}
   - component: {fileID: -6888470096192317464}
   - component: {fileID: 2298438020740797986}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GoldBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5242484179755438301}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8998216002916196726}
   - component: {fileID: 6335604611969774082}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ContactZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

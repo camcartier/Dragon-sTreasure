@@ -48,9 +48,15 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 
 
+    //Leveling up
+    [field: SerializeField] public int currentLevelStored { get; set; }
+    [field: SerializeField] public TreasureData TreasureData { get; set; }
+    [field: SerializeField] public LevelingUpTimer LevelingUpTimer { get; set; }
+
     //General
     public GameManager GameManager { get; set; }
     public Transform MainCameraTransform { get; private set; }
+
 
     void Start()
     {

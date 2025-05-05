@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5814190666851307109}
   - component: {fileID: 701303359873687367}
   - component: {fileID: 1057056649}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpriteHolder
   m_TagString: Gold
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8469646702913521276}
   - component: {fileID: 3887359647674663633}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DetectionZone
   m_TagString: Detection
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 253092314393571297}
   - component: {fileID: 302428832}
   - component: {fileID: 1881254762797329913}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SmallChest
   m_TagString: Gold
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6041799304843666265}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802455450413406229}
   - component: {fileID: 6120408315892670184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ContactZone
   m_TagString: Gold
   m_Icon: {fileID: 0}

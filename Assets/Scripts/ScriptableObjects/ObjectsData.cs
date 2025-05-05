@@ -17,6 +17,7 @@ public class ObjectsData : ScriptableObject
     [Header("Burning Stats")]
     public float burningAmount;
     public float burningSpeed;
+    public float minHealthBurnsStop;
 
     [Header("Character Stats")]
     public float walkSpeed;

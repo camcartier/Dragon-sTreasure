@@ -166,8 +166,10 @@ MonoBehaviour:
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   currentGoldCarried: 0
   isMovingToTreasure: 0
+  isMovingAwayFromTreasure: 0
   hasStolen: 0
   isFleeing: 0
+  disappearDuration: 5
 --- !u!114 &2411617863815039248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,7 +186,15 @@ MonoBehaviour:
   healthPanel: {fileID: 4497582333074931428}
   healthSlider: {fileID: 3825678110271546159}
   destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
+  burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
+  listOfPossibleLoots:
+  - {fileID: 117661991500826913, guid: 5c8e6770a95cc024091ce991a7c78bd7, type: 3}
+  - {fileID: 117661991500826913, guid: d530272aaa8967b4eb9b7e1ddf373247, type: 3}
+  - {fileID: 117661991500826913, guid: 4585ff551c6941d4ca5ba731489956f0, type: 3}
+  - {fileID: 1699467609051321577, guid: 7426cbd462c0ce0409c9e3dd1319de17, type: 3}
+  - {fileID: 4907049712102308116, guid: 11ff29149b0af2549b3b30f727f2f2fd, type: 3}
+  - {fileID: 0}
 --- !u!1 &4126246011608522992
 GameObject:
   m_ObjectHideFlags: 0

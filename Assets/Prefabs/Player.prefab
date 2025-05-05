@@ -105,6 +105,54 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &815700236738109050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4234049467796356805}
+  - component: {fileID: 4069827129231997455}
+  m_Layer: 10
+  m_Name: DetectPotions
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4234049467796356805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815700236738109050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 160584106019905025}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4069827129231997455
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815700236738109050}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 5.5}
+  serializedVersion: 2
+  m_Radius: 6.5
 --- !u!1 &1134238745312961694
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +403,7 @@ Transform:
   m_Children:
   - {fileID: 1283566898522148133}
   - {fileID: 2261841399839379207}
+  - {fileID: 4234049467796356805}
   m_Father: {fileID: 9025353642850110306}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,6 +423,7 @@ GameObject:
   - component: {fileID: 1454233127772832480}
   - component: {fileID: 5001503474633560126}
   - component: {fileID: 8964317341285677106}
+  - component: {fileID: -8877131050200906242}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -474,6 +524,9 @@ MonoBehaviour:
   <isUsing>k__BackingField: 0
   <dashDuration>k__BackingField: 0.3
   <lastMovementDirection>k__BackingField: {x: 0, y: 0}
+  <currentLevelStored>k__BackingField: 0
+  <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
+  <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}
 --- !u!114 &1454233127772832480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,8 +565,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCurrentHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+  treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   ManaDepletionTimer: 0
   ManaDepletionTimerCounter: 0
+--- !u!114 &-8877131050200906242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a93a769152eab704887e5c6210bee743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStateMachine: {fileID: 9033838750334023689}
 --- !u!1 &7175643183065341082
 GameObject:
   m_ObjectHideFlags: 0

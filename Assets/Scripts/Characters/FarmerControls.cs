@@ -6,7 +6,7 @@ public class FarmerControls : MonoBehaviour
 {
     [Header("Setup")]
     [SerializeField] ObjectsData farmerData;
-    [SerializeField] List<Transform> fleeingPosList;
+    [SerializeField] List<Vector2> fleeingPosList;
     [SerializeField] GameObject player;
     [SerializeField] GameObject healthCanvas;
 
@@ -97,7 +97,7 @@ public class FarmerControls : MonoBehaviour
     private Vector3 PickFleeingDirection()
     {
         int randomIndex = Random.Range(0, 3);
-        return new Vector3(fleeingPosList[randomIndex].transform.position.x, fleeingPosList[randomIndex].transform.position.y, 0) ;
+        return new Vector2(fleeingPosList[randomIndex].x, fleeingPosList[randomIndex].y) ;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

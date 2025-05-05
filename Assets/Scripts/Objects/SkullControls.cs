@@ -56,7 +56,6 @@ public class SkullControls : MonoBehaviour
     {
         if (PlayerStateMachine.isUsing && !hasInstantiated)
         {
-            Debug.Log("GGGGG");
             Instantiate(GoldDug, transform.position, Quaternion.identity);
             hasInstantiated = true;
         }

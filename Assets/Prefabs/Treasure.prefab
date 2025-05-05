@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2838294856866874289
 Transform:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8347082430808462172
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +586,6 @@ MonoBehaviour:
   - {fileID: 3237593767290778540}
   - {fileID: 1870861771239691170}
   - {fileID: 1248802273375065464}
-  - {fileID: 0}
   CurrentSpriteNumber: 0
 --- !u!50 &6553469694237238953
 Rigidbody2D:
@@ -816,7 +815,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.45494318}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 5
 --- !u!1 &7429877617886538921
 GameObject:
   m_ObjectHideFlags: 0

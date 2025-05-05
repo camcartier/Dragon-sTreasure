@@ -503,7 +503,15 @@ MonoBehaviour:
   healthPanel: {fileID: 4293897767437760716}
   healthSlider: {fileID: 6038164933190088464}
   destructionFx: {fileID: 2346286972779983664, guid: 799000189b1e59e4d807ec0830039208, type: 3}
+  burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
+  listOfPossibleLoots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &4393718332974180985
 Rigidbody2D:
   serializedVersion: 4

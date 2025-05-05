@@ -13,6 +13,7 @@ TagManager:
   - Detection
   - Farmer
   - Bullet
+  - Yakkuru
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Destroyable
   - Treasure
   - FlyingIgnore
-  - 
-  - 
+  - Potions
+  - Gold
   - 
   - 
   - 

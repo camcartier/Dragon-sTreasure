@@ -24,7 +24,6 @@ public class PlayerUsingState : PlayerBaseState
         DigginFXStartPoint = stateMachine.gameObject.GetComponentInChildren<DiggingFXStartPoint>().gameObject;
 
         stateMachine.isUsing = true;
-        Debug.Log("I am digging");
 
         GameObject.Instantiate(stateMachine.diggingFX, new Vector2(DigginFXStartPoint.transform.position.x, DigginFXStartPoint.transform.position.y), Quaternion.identity);
         
@@ -45,7 +44,6 @@ public class PlayerUsingState : PlayerBaseState
     public override void Exit()
     {
         TimerCounter = 0f;
-        Debug.Log("I stopped digging");
         stateMachine.isUsing = false;
         //Debug.Log(stateMachine.isUsing);
     }

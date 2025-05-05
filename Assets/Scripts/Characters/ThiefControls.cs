@@ -15,15 +15,18 @@ public class ThiefControls : MonoBehaviour
     private GameObject Player;
     private GameObject MinusPanel;
 
+    [Header ("General stats")]
     public int currentGoldCarried;
     public bool isMovingToTreasure;
+    public bool isMovingAwayFromTreasure;
     public bool hasStolen;
     public bool isFleeing;
 
     private float fleeingDuration = 5f;
     private float fleeingTimerCounter;
 
-    private float disappearDuration = 1f;
+    [Header ("Disappear after stealing")]
+    public float disappearDuration = 1f;
     private float disappearTimerCounter;  
 
     private bool hasDirection;
@@ -55,24 +58,46 @@ public class ThiefControls : MonoBehaviour
         if (hasStolen)
         {
             isMovingToTreasure = false;
+            hasDirection = false;
             MinusPanel.SetActive(true);
-            thiefRb.velocity = Vector2.zero;
+            //thiefRb.velocity = GetDirectionToTreasure(treasure.transform.position.x*-1, treasure.transform.position.y*-1).normalized * thiefData.walkSpeed * Time.deltaTime;
+            
+            
             disappearTimerCounter += Time.deltaTime;
+
+            if (disappearTimerCounter > disappearDuration * (treasureData.CurrentStep +1))
+            {
+                Destroy(gameObject);
+            }
         }
+
+        if (isMovingAwayFromTreasure)
+        {
+            thiefRb.velocity = dirAway.normalized * thiefData.walkSpeed * Time.deltaTime;
+        }
+
+        /*
         if (disappearTimerCounter > disappearDuration)
         {
             Destroy(this.gameObject);
-        }
+        }*/
 
 
 
-        if (!hasDirection)
+        if (!hasDirection && !hasStolen)
         {
             dirToTreasure = GetDirectionToTreasure(treasure.transform.position.x, treasure.transform.position.y);
             hasDirection = true;
         }
 
-        //Vector3 direction = GetDirection(treasure.transform.position.x, treasure.transform.position.y);
+        if (!hasDirection && hasStolen)
+        {
+            dirAway = -dirToTreasure;
+            hasDirection = true;
+            isMovingAwayFromTreasure = true;
+        }
+
+       
 
         if (!isFleeing && !hasStolen)
         {
@@ -143,17 +168,20 @@ public class ThiefControls : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /* to move to collision
-        if (collision.CompareTag("Player") || collision.CompareTag("Bullet"))
-        {
-            isFleeing = true;
-            playerPosAtCollision = collision.transform.position;
-        }
-        */
+
 
         if (collision.CompareTag("Treasure"))
         {
-            spriteRenderer.color = Color.grey;
+            hasStolen = true;
+            isFleeing = false;
+            spriteRenderer.color = Color.blue;
+            Debug.Log("has stolen");
+            if (treasureData.GoldCount < 50)
+            {
+                currentGoldCarried += treasureData.GoldCount;
+                treasureData.GoldCount = 0;
+            }
+            else { currentGoldCarried += 50; treasureData.GoldCount -= 50; }
 
         }
 
@@ -170,24 +198,13 @@ public class ThiefControls : MonoBehaviour
             //playerPosAtCollision= Vector2.zero;
         }
         */
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Treasure"))
-        {
-            hasStolen= true;
-            isFleeing= false;
-            thiefRb.velocity = Vector3.zero;
-            spriteRenderer.color = Color.red;
-            Debug.Log("has stolen");
-            if (treasureData.GoldCount < 50)
-            {
-                currentGoldCarried += treasureData.GoldCount;
-            }
-            else { currentGoldCarried += 50; }
-            
-        }
+
 
         if (collision.gameObject.CompareTag("Player"))
         {

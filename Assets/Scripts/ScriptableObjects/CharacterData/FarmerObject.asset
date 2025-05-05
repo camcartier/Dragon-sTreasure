@@ -19,6 +19,7 @@ MonoBehaviour:
   goldLoot: 5
   burningAmount: 0.01
   burningSpeed: 0
+  minHealthBurnsStop: 3
   walkSpeed: 4
   outOfRangeDetachTime: 0
   damageAmount: 0
