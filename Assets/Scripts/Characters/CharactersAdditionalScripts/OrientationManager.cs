@@ -11,7 +11,6 @@ public class OrientationManager : MonoBehaviour
     [SerializeField] GameObject healthCanvas;
     private float turnDelayCounter;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
@@ -20,49 +19,27 @@ public class OrientationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (characterData.canTurn)
+
+
+        /*
+        if (player.transform.position.x > gameObject.transform.position.x)
         {
-
-            if (Mathf.Abs(player.transform.position.x) - Mathf.Abs(gameObject.transform.position.x) > 0)
-            {
-                if (turnDelayCounter < characterData.timeBeforeTurn)
-                {
-                    turnDelayCounter += Time.deltaTime;
-                }
-                else { gameObject.transform.localScale = new Vector3(-1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(-1, 1, 1); }
-            }
-
-            if (Mathf.Abs(player.transform.position.x) - Mathf.Abs(gameObject.transform.position.x) < 0)
-            {
-                if (turnDelayCounter < characterData.timeBeforeTurn)
-                {
-                    turnDelayCounter += Time.deltaTime;
-                }
-                else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(1, 1, 1); }
-            }
-
-
-            /*
-            if (player.transform.position.x > gameObject.transform.position.x)
-            {
-                if (turnDelayCounter < characterData.timeBeforeTurn)
-                {
-                    turnDelayCounter += Time.deltaTime;
-                }
-                else { gameObject.transform.localScale = new Vector3(-1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(-1, 1, 1); }
-            }
-            
-            if (player.transform.position.x < gameObject.transform.position.x)
-            {
-                if (turnDelayCounter < characterData.timeBeforeTurn)
-                {
-                    turnDelayCounter += Time.deltaTime;
-                }
-                else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(1, 1, 1); }
-            }
-            */
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
+        else { gameObject.transform.localScale = new Vector3(1, 1, 1); }
+        */
+
 
 
     }
+
+    public void TurnTowardsPlayer()
+    {
+        if (player.transform.position.x > gameObject.transform.position.x)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else { gameObject.transform.localScale = new Vector3(1, 1, 1); }
+    }
+
 }

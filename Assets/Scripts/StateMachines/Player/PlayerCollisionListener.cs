@@ -45,14 +45,6 @@ public class PlayerCollisionListener : MonoBehaviour
         {
             stateMachine.rb2D.velocity = Vector2.zero;
 
-            /*
-            if (thiefWaitCounter < thiefWaitTime)
-            {
-                
-                thiefWaitCounter += Time.deltaTime;
-            }
-            else { thiefWaitCounter =0f; }
-            */
 
         }
 

@@ -20,7 +20,9 @@ public class FarmerControls : MonoBehaviour
     public bool isStunned { get; private set; }
     private float stunTimerCounter;
 
-    private float turnDelayCounter;
+    public bool canTurn;
+
+    //private float turnDelayCounter;
 
     void Start()
     {
@@ -37,37 +39,48 @@ public class FarmerControls : MonoBehaviour
 
     void Update()
     {
+        //should be in destroyable
+        /*
         if (destroyable.IsBurning)
         {
             spriteRenderer.color = Color.red;
             isFollowing= false;
             canBeStunned= false;
+
         }
+        */
+        if (isStunned)
+        {
+            canTurn = false;
+            farmerRb.velocity = Vector2.zero;
+            if (stunTimerCounter < farmerData.stunDuration)
+            {
+                stunTimerCounter += Time.deltaTime;
+            }
+            else
+            {
+                isStunned = false;
+                stunTimerCounter = 0;
+                canTurn = true;
+            }
+        }
+
 
         if (isFollowing)
         {
-            farmerData.canTurn = true;
+            canTurn = true;
             Vector3 direction = new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y- transform.position.y);
             farmerRb.velocity = direction.normalized * farmerData.walkSpeed;
         }
-        else { farmerRb.velocity = Vector2.zero; farmerData.canTurn = false; }
+        else { farmerRb.velocity = Vector2.zero; canTurn = false; }
 
-        if (canBeStunned)
+        if (canTurn)
         {
-            if (isStunned)
-            {
-                farmerRb.velocity = Vector2.zero;
-                if (stunTimerCounter < farmerData.stunDuration)
-                {
-                    stunTimerCounter += Time.deltaTime;
-                }
-                else
-                {
-                    isStunned = false;
-                    stunTimerCounter = 0;
-                }
-            }
+            TurnTowardsPlayer();
         }
+
+
+
 
 
         /* moved to a separate script
@@ -108,6 +121,18 @@ public class FarmerControls : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (!isFollowing)
+            {
+                isFollowing = true;
+            }
+               
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -122,5 +147,16 @@ public class FarmerControls : MonoBehaviour
         {
             isStunned= true;
         }
+    }
+
+
+
+    public void TurnTowardsPlayer()
+    {
+        if (player.transform.position.x > gameObject.transform.position.x)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else { gameObject.transform.localScale = new Vector3(1, 1, 1); }
     }
 }

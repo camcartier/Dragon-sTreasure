@@ -11,11 +11,14 @@ public class PlayerData : ScriptableObject
 
     [Header(" Stats")]
     public float movementSpeed;
+    public float[] movementSpeedArray = new float[6];
     public float stunTime;
 
     [Header("Dash attributes")]
     public float dashSpeed;
+    public float[] dashSpeedArray = new float[6];
     public float dashDelay;
+    public float[] dashDelayArray = new float[6];
     public bool canDash;
 
     [Header ("Health&Mana")]

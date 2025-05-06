@@ -87,7 +87,7 @@ public class Destroyable : MonoBehaviour
             currentWaitAfterLastAttack += Time.deltaTime;
             if (currentWaitAfterLastAttack > objectData.regenFirstWait )
             {
-                IsRegen = true; Debug.Log("regen");
+                IsRegen = true; //Debug.Log("regen");
             }
 
         }
@@ -194,10 +194,12 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        /*
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Le joueur a quitté le contact.");
+
         }
+        */
     }
 
 }

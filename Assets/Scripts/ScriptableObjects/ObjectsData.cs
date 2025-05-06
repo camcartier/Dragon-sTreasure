@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Rendering.HybridV2;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -28,7 +29,8 @@ public class ObjectsData : ScriptableObject
 
     [Header("Turn Stats")]
     public float timeBeforeTurn;
-    public bool canTurn;
+    // d'apres chat gpt ne doit pas etre dans le scriptable pour eviter des conflits avec les autres objets
+    //public bool canTurn;
     public bool hasTurnedOnce;
 
     [Header ("Contact with player stats")]

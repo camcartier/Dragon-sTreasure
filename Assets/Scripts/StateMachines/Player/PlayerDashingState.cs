@@ -11,7 +11,6 @@ public class PlayerDashingState : PlayerBaseState
 
     public override void Enter()
     {
-        Debug.Log("i am dashing");
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = false;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
 

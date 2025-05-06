@@ -20,9 +20,6 @@ public class PlayerHurtState : PlayerBaseState
     {
         stateMachine.isStunnable = false;
 
-       
-
-        Debug.Log("I am hurt");
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
         stateMachine.rb2D.velocity = Vector3.zero;
