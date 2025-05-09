@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,13 +57,16 @@ public class PlayerStateMachine : StateMachine
     //General
     public GameManager GameManager { get; set; }
     public Transform MainCameraTransform { get; private set; }
+    [field: SerializeField] public CameraCoroutines CameraCoroutines { get; private set; }
 
+    public CinemachineVirtualCamera CinemachineVirtualCamera { get; set; }
 
     void Start()
     {
         GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         MainCameraTransform = Camera.main.transform;
+        CinemachineVirtualCamera = GameObject.Find("CinemachineVirtualCamera").GetComponent<CinemachineVirtualCamera>();
 
         SwitchState(new PlayerMainState(this));
     }

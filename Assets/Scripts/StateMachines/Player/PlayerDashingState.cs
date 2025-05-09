@@ -1,5 +1,7 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerDashingState : PlayerBaseState
@@ -15,6 +17,10 @@ public class PlayerDashingState : PlayerBaseState
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
 
         stateMachine.rb2D.velocity = stateMachine.lastMovementDirection * stateMachine.PlayerData.dashSpeed * Time.deltaTime;
+
+        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 2f;
+
+        //framingTransposer.m_XDamping = Mathf.Lerp(framingTransposer.m_XDamping, targetXDamping, Time.deltaTime * 5f);
 
     }
     public override void Tick(float deltaTime)
@@ -33,6 +39,12 @@ public class PlayerDashingState : PlayerBaseState
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = true;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         stateMachine.PlayerData.canDash = false;
+        //stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = Mathf.Lerp(2, 0, Time.deltaTime * 5f);
+
+        stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpXDamping());
         
     }
+
+
+
 }
