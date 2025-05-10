@@ -104,7 +104,7 @@ public class YakkuruControls : MonoBehaviour
                 }
                 walkingTimerStarted = true;
                 spriteRenderer.color = Color.yellow;
-                rb2.velocity = walkingDirection * yakkuruData.walkSpeed * Time.deltaTime;
+                rb2.velocity = walkingDirection * yakkuruData.walkSpeed;
             }
 
             //c'est le timer de l'idle
@@ -149,7 +149,7 @@ public class YakkuruControls : MonoBehaviour
                     animator.SetBool("isRunning", true);
                 }
 
-                rb2.velocity = fleeingDirection * yakkuruData.runSpeed * Time.deltaTime;
+                rb2.velocity = fleeingDirection * yakkuruData.runSpeed;
                 if (fleeingDirection.x < 0)
                 {
                     gameObject.transform.localScale = new Vector3(-1, 1, 1);

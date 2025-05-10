@@ -14,10 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelMax: 5
   currentLevel: 0
-  movementSpeed: 9000
+  movementSpeed: 70
+  movementSpeedArray:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   stunTime: 0
-  dashSpeed: 18000
+  dashSpeed: 120
+  dashSpeedArray:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   dashDelay: 1
+  dashDelayArray:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   canDash: 1
   MaxHealth: 15
   MaxMana: 50

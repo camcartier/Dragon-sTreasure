@@ -19,9 +19,17 @@ MonoBehaviour:
   goldLoot: 0
   burningAmount: 0
   burningSpeed: 0
-  walkSpeed: 3000
+  minHealthBurnsStop: 0
+  walkSpeed: 20
   outOfRangeDetachTime: 0
+  damageAmount: 0
+  damageCooldown: 0
+  stunDuration: 0
+  timeBeforeTurn: 0
+  hasTurnedOnce: 0
+  isHurtFromContact: 0
+  contactDamageTaken: 0
   goldCarried: 0
   defenseSpe: 0
-  runSpeed: 7000
+  runSpeed: 70
   maxSpawnCapacity: 0

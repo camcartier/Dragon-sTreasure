@@ -60,7 +60,7 @@ public class ThiefControls : MonoBehaviour
             isMovingToTreasure = false;
             hasDirection = false;
             MinusPanel.SetActive(true);
-            //thiefRb.velocity = GetDirectionToTreasure(treasure.transform.position.x*-1, treasure.transform.position.y*-1).normalized * thiefData.walkSpeed * Time.deltaTime;
+            //thiefRb.velocity = GetDirectionToTreasure(treasure.transform.position.x*-1, treasure.transform.position.y*-1).normalized * thiefData.walkSpeed;
             
             
             disappearTimerCounter += Time.deltaTime;
@@ -73,7 +73,7 @@ public class ThiefControls : MonoBehaviour
 
         if (isMovingAwayFromTreasure)
         {
-            thiefRb.velocity = dirAway.normalized * thiefData.walkSpeed * Time.deltaTime;
+            thiefRb.velocity = dirAway.normalized * thiefData.walkSpeed;
         }
 
         /*
@@ -107,7 +107,7 @@ public class ThiefControls : MonoBehaviour
 
         if (isMovingToTreasure)
         {
-            thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed * Time.deltaTime;
+            thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed;
         }
 
         if (isFleeing && !hasStolen)
@@ -130,7 +130,7 @@ public class ThiefControls : MonoBehaviour
     void MoveToTreasure()
     {
         Vector2 direction = new Vector2 (treasure.transform.position.x- thiefRb.position.x, treasure.transform.position.y- thiefRb.position.y);
-        thiefRb.velocity = new Vector2 (direction.x, direction.y).normalized * thiefData.walkSpeed * Time.deltaTime;
+        thiefRb.velocity = new Vector2 (direction.x, direction.y).normalized * thiefData.walkSpeed;
     }
 
     Vector3 GetDirectionToTreasure(float posX, float posY)
@@ -161,7 +161,7 @@ public class ThiefControls : MonoBehaviour
             direction.y = thiefRb.position.y +Player.transform.position.y ;
         }
         
-        thiefRb.velocity = direction.normalized * thiefData.runSpeed * Time.deltaTime;
+        thiefRb.velocity = direction.normalized * thiefData.runSpeed;
         
     }
 

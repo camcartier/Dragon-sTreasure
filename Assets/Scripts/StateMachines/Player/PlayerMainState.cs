@@ -54,7 +54,6 @@ public class PlayerMainState : PlayerBaseState
         }
 
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
-        //Debug.Log(movement);
         movement.Normalize();
 
         if (movement != Vector2.zero)
@@ -65,7 +64,7 @@ public class PlayerMainState : PlayerBaseState
         FaceMovementDirecton();
 
         //weirdass movement at the start of the game
-        stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed * Time.deltaTime;
+        stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed;
 
         //seems to be working
         if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)

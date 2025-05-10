@@ -16,7 +16,7 @@ public class PlayerDashingState : PlayerBaseState
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = false;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
 
-        stateMachine.rb2D.velocity = stateMachine.lastMovementDirection * stateMachine.PlayerData.dashSpeed * Time.deltaTime;
+        stateMachine.rb2D.velocity = stateMachine.lastMovementDirection * stateMachine.PlayerData.dashSpeed;
 
         stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 1.5f;
         stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 1f;
