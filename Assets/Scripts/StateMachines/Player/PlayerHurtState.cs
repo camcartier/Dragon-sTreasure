@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,14 @@ public class PlayerHurtState : PlayerBaseState
         
         stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized*stateMachine.knockbackForce) ;
         //direction comes from Player Collision Listener
+
+        //noise on impact
+        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = stateMachine.CameraData.AmplitudeGain;
+        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = stateMachine.CameraData.FrequencyGain;
+
+
+        //stopping noise progressively
+        stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpCameraNoise());
     }
     public override void Tick(float deltaTime)
     {
@@ -55,8 +64,10 @@ public class PlayerHurtState : PlayerBaseState
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
         knockbackDurationCounter = 0f;
-    }
 
+
+    }
+     
 
 
 

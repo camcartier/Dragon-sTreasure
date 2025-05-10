@@ -58,6 +58,7 @@ public class PlayerStateMachine : StateMachine
     public GameManager GameManager { get; set; }
     public Transform MainCameraTransform { get; private set; }
     [field: SerializeField] public CameraCoroutines CameraCoroutines { get; private set; }
+    [field: SerializeField] public CameraData CameraData { get; set; }
 
     public CinemachineVirtualCamera CinemachineVirtualCamera { get; set; }
 

@@ -18,7 +18,8 @@ public class PlayerDashingState : PlayerBaseState
 
         stateMachine.rb2D.velocity = stateMachine.lastMovementDirection * stateMachine.PlayerData.dashSpeed * Time.deltaTime;
 
-        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 2f;
+        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 1.5f;
+        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 1f;
 
         //framingTransposer.m_XDamping = Mathf.Lerp(framingTransposer.m_XDamping, targetXDamping, Time.deltaTime * 5f);
 
@@ -41,7 +42,7 @@ public class PlayerDashingState : PlayerBaseState
         stateMachine.PlayerData.canDash = false;
         //stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = Mathf.Lerp(2, 0, Time.deltaTime * 5f);
 
-        stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpXDamping());
+        stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpXYDamping());
         
     }
 
