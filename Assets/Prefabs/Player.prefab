@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903614020001868552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.02, y: 2.74, z: 0}
+  m_LocalPosition: {x: 17.2, y: 3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -505,7 +505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 172299199858803786}
-  <ForceReceiver>k__BackingField: {fileID: 0}
   <Animator>k__BackingField: {fileID: 8057751363925601226}
   <rb2D>k__BackingField: {fileID: 3319847874230943825}
   <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
@@ -522,6 +521,7 @@ MonoBehaviour:
   <knockBackDistance>k__BackingField: 0
   <isDead>k__BackingField: 0
   <isInvulnerable>k__BackingField: 0
+  <PlayerCoroutinesScript>k__BackingField: {fileID: 0}
   <isUsing>k__BackingField: 0
   <dashDuration>k__BackingField: 0.3
   <lastMovementDirection>k__BackingField: {x: 0, y: 0}
@@ -597,7 +597,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7175643183065341082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 6.8, z: 0}
+  m_LocalPosition: {x: 5, y: 7.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

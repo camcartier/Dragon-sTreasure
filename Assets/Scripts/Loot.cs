@@ -10,6 +10,8 @@ public class Loot : MonoBehaviour
 
     [SerializeField] GoldValue thisGoldValue;
 
+    [SerializeField] PlayerCurrentHealthAndMana PlayerHealthAndMana;
+
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class Loot : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")){
 
             treasureData.GoldCount += thisGoldValue.Value;
+            PlayerHealthAndMana.currentMana += thisGoldValue.ManaValue;
             Destroy(this.gameObject);
         }
 

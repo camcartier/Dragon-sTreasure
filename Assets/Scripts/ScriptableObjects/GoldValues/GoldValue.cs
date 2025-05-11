@@ -6,4 +6,5 @@ using UnityEngine;
 public class GoldValue : ScriptableObject
 {
     public int Value;
+    public float ManaValue;
 }

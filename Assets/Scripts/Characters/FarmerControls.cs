@@ -9,6 +9,7 @@ public class FarmerControls : MonoBehaviour
     [SerializeField] List<Vector2> fleeingPosList;
     [SerializeField] GameObject player;
     [SerializeField] GameObject healthCanvas;
+    [SerializeField] GameObject surpriseFX;
 
     private Destroyable destroyable;
     private Rigidbody2D farmerRb;
@@ -39,16 +40,12 @@ public class FarmerControls : MonoBehaviour
 
     void Update()
     {
-        //should be in destroyable
-        /*
-        if (destroyable.IsBurning)
+        
+        if (destroyable.MyCurrentHealth < farmerData.maxHealth)
         {
-            spriteRenderer.color = Color.red;
-            isFollowing= false;
-            canBeStunned= false;
-
+            surpriseFX.SetActive(false);    
         }
-        */
+
         if (isStunned)
         {
             canTurn = false;
@@ -118,6 +115,7 @@ public class FarmerControls : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isFollowing = true;
+            surpriseFX.SetActive(true);
         }
     }
 
@@ -138,6 +136,7 @@ public class FarmerControls : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isFollowing = false;
+            surpriseFX.SetActive(false);
         }
     }
 

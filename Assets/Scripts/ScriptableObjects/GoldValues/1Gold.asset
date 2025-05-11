@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: 1Gold
   m_EditorClassIdentifier: 
   Value: 1
+  ManaValue: 5

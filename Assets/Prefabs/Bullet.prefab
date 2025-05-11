@@ -5016,5 +5016,5 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   boooomBaby: {fileID: 1578530899346938797, guid: fade9478baf462b4e99e48ef5430feb0, type: 3}
-  bulletSpeed: 8
+  bulletSpeed: 10
   bulletLifeExpectancy: 0.7

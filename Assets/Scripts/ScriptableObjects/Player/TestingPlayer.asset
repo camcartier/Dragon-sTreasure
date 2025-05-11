@@ -23,7 +23,7 @@ MonoBehaviour:
   - 0
   - 0
   stunDuration: 0.3
-  invulnerabilityDuration: 0.5
+  invulnerabilityDuration: 1
   dashSpeed: 120
   dashSpeedArray:
   - 0
