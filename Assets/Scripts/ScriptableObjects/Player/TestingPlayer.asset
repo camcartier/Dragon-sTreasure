@@ -22,7 +22,8 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  stunTime: 0
+  stunDuration: 0.3
+  invulnerabilityDuration: 0.5
   dashSpeed: 120
   dashSpeedArray:
   - 0
@@ -39,7 +40,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  canDash: 0
+  canDash: 1
   MaxHealth: 15
   MaxMana: 50
   maxHealthArray:

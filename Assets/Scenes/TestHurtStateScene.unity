@@ -2844,6 +2844,36 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8057751363925601226, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
   m_PrefabInstance: {fileID: 1450945579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1397087997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6509603958421342453, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
+  m_PrefabInstance: {fileID: 1450945579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1397088001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
+  m_PrefabInstance: {fileID: 1450945579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397087997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f40b54553a89443acc786cfff65722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1397088005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397087997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b27b0c35eee724bad474894b25ed26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStateMachine: {fileID: 1397088001}
+  playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
 --- !u!1 &1436095989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,7 +3107,7 @@ PrefabInstance:
       objectReference: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <knockbackForce>k__BackingField
-      value: 5000
+      value: 7500
       objectReference: {fileID: 0}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <CameraCoroutines>k__BackingField
@@ -3087,6 +3117,18 @@ PrefabInstance:
       propertyPath: <CinemachineCamera>k__BackingField
       value: 
       objectReference: {fileID: 1233668554}
+    - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
+      propertyPath: <knockBackDistance>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
+      propertyPath: <knockBackDuration>k__BackingField
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
+      propertyPath: <PlayerCoroutinesScript>k__BackingField
+      value: 
+      objectReference: {fileID: 1397088005}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <CinemachineVirtualCamera>k__BackingField
       value: 

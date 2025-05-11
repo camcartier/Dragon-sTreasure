@@ -7,8 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerStateMachine : StateMachine
 {
     [field: SerializeField] public InputReader InputReader { get; private set; }
-    [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
-
+    //[field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
+    //n a pas servi avec ce nom la 
 
     //Movement
     [field: SerializeField] public Animator Animator { get; private set; }
@@ -47,6 +47,7 @@ public class PlayerStateMachine : StateMachine
     
     //pour qu'on se fasse pas marave comme une victime
     [field: SerializeField] public bool isInvulnerable  { get; set; }
+    [field: SerializeField] public PlayerCoroutinesScript PlayerCoroutinesScript { get; private set; }
 
 
     //Use

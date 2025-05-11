@@ -9,10 +9,14 @@ public class PlayerData : ScriptableObject
     public int LevelMax;
     public int currentLevel;
 
-    [Header(" Stats")]
+    [Header("Movement")]
     public float movementSpeed;
     public float[] movementSpeedArray = new float[6];
-    public float stunTime;
+
+    [Header("hurt state")]
+    public float stunDuration;
+    public float invulnerabilityDuration;
+    //public float knockbackDuration;
 
     [Header("Dash attributes")]
     public float dashSpeed;

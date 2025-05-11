@@ -12,7 +12,7 @@ public class CanKnockback : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-
+    /*
     void Update()
     {
         
@@ -45,5 +45,6 @@ public class CanKnockback : MonoBehaviour
             }
         }
     }
+    */
 
 }

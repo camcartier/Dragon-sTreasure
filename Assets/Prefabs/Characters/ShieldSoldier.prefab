@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 3734673022220493830}
   - component: {fileID: -2151252311815318612}
   - component: {fileID: 7869589743604368178}
+  - component: {fileID: 2592148062896783540}
   m_Layer: 7
   m_Name: ShieldSoldier
   m_TagString: Untagged
@@ -306,7 +307,28 @@ MonoBehaviour:
   healthPanel: {fileID: 4911500296075489940}
   healthSlider: {fileID: 8414962628994974556}
   destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
+  burningFx: {fileID: 0}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
+  listOfPossibleLoots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &2592148062896783540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012083092160188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6455be4c1d2386b44b3e7e37e5d2ed72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 10
 --- !u!1 &3719910465070521073
 GameObject:
   m_ObjectHideFlags: 0

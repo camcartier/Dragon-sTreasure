@@ -22,6 +22,7 @@ public class PlayerHurtState : PlayerBaseState
     {
         stateMachine.isStunnable = false;
         stateMachine.isInvulnerable = true;
+        stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingInvulnerability());
 
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
@@ -47,16 +48,16 @@ public class PlayerHurtState : PlayerBaseState
     {
         if (knockbackDurationCounter < stateMachine.knockBackDuration)
         {
-            knockbackDurationCounter++;
+            knockbackDurationCounter += Time.deltaTime;
         }
         else
         {
             stateMachine.rb2D.velocity = Vector3.zero;
         }
 
-        if (stunDurationCounter < stateMachine.stunDuration)
+        if (stunDurationCounter < stateMachine.PlayerData.stunDuration)
         {
-            stunDurationCounter++;
+            stunDurationCounter += Time.deltaTime;
         }
         else if (stateMachine.PlayerCurrentHealthAndMana.currentHealth > 0)
         {
