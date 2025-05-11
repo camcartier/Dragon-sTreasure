@@ -624,6 +624,7 @@ MonoBehaviour:
   DeathPanel: {fileID: 943960332}
   currentPlayerHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+  player: {fileID: 0}
 --- !u!1 &219822354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3094,7 +3095,8 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1454233127772832480, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
 --- !u!1 &1474195784
 GameObject:

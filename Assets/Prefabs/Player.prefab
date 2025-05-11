@@ -420,7 +420,6 @@ GameObject:
   - component: {fileID: 1286876370922697055}
   - component: {fileID: 172299199858803786}
   - component: {fileID: 9033838750334023689}
-  - component: {fileID: 1454233127772832480}
   - component: {fileID: 5001503474633560126}
   - component: {fileID: 8964317341285677106}
   - component: {fileID: -8877131050200906242}
@@ -506,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 172299199858803786}
-  <ForceReceiver>k__BackingField: {fileID: 1454233127772832480}
+  <ForceReceiver>k__BackingField: {fileID: 0}
   <Animator>k__BackingField: {fileID: 8057751363925601226}
   <rb2D>k__BackingField: {fileID: 3319847874230943825}
   <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
@@ -521,24 +520,16 @@ MonoBehaviour:
   <knockbackForce>k__BackingField: 5000
   <knockBackDuration>k__BackingField: 25
   <knockBackDistance>k__BackingField: 0
+  <isDead>k__BackingField: 0
+  <isInvulnerable>k__BackingField: 0
   <isUsing>k__BackingField: 0
   <dashDuration>k__BackingField: 0.3
   <lastMovementDirection>k__BackingField: {x: 0, y: 0}
   <currentLevelStored>k__BackingField: 0
   <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}
---- !u!114 &1454233127772832480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509603958421342453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 969084c93b3c4ee4d9c6efb3070d442a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  <CameraCoroutines>k__BackingField: {fileID: 0}
+  <CameraData>k__BackingField: {fileID: 0}
 --- !u!114 &5001503474633560126
 MonoBehaviour:
   m_ObjectHideFlags: 0

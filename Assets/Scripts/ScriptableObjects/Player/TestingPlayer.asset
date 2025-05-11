@@ -39,7 +39,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  canDash: 1
+  canDash: 0
   MaxHealth: 15
   MaxMana: 50
   maxHealthArray:
@@ -56,6 +56,7 @@ MonoBehaviour:
   - 400
   - 800
   - 2000
+  invulnerabilityTimer: 30
   canRegenHealth: 0
   HealthRegenDelay: 5
   HealthRegenAmount: 0

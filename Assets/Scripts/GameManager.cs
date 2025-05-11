@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PlayerCurrentHealthAndMana currentPlayerHealthAndMana;
     [SerializeField] PlayerData playerData;
+    public GameObject player;
 
     private void Awake()
     {
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
 
         currentPlayerHealthAndMana.currentMana = playerData.MaxMana;
         currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;
+        
+        player = GameObject.Find("Player");
 
         //currentPlayerData = GameObject.Find("ScriptableObjectsManager").GetComponent<ScriptableGestionnaire>().PlayerCurrentHealthAndMana;
         //playerData = GameObject.Find("ScriptableObjectsManager").GetComponent<ScriptableGestionnaire>().PlayerData;
@@ -32,14 +35,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        if (player.GetComponent<PlayerStateMachine>().isDead)
+        {
+            player.GetComponent<PlayerStateMachine>().isDead = false;
+        }
+            
+        UnPauseGame();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
 
 
 

@@ -26,6 +26,7 @@ public class PlayerData : ScriptableObject
     public float MaxMana;
     public float[] maxHealthArray = new float[6];
     public float[] maxManaArray = new float[6];
+    public float invulnerabilityTimer;
 
     [Header("Health Regen")]
     public bool canRegenHealth;

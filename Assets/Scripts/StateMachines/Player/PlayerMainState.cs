@@ -61,10 +61,10 @@ public class PlayerMainState : PlayerBaseState
             stateMachine.lastMovementDirection = movement;
         }
 
-        FaceMovementDirecton();
 
-        //weirdass movement at the start of the game
+        FaceMovementDirecton();
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed;
+
 
         //seems to be working
         if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)

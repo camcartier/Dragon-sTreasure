@@ -16,18 +16,24 @@ public class PlayerDyingState : PlayerBaseState
 
     public override void Enter()
     {
-        Debug.Log("Am dead");
+        stateMachine.isDead = true;
 
         stateMachine.Animator.CrossFadeInFixedTime(DyingHash, CrossFadeDuration);
 
     }
     public override void Tick(float deltaTime)
     {
+        if (!stateMachine.isDead)
+        {
+            stateMachine.SwitchState(new PlayerMainState(stateMachine));
+        }
+
         if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)
         {
             TimerCounter += Time.deltaTime;
         }
-        else { stateMachine.GameManager.GetComponent<GameManager>().SetActiveDeathPanel() ; }
+        else { stateMachine.GameManager.GetComponent<GameManager>().SetActiveDeathPanel() ; stateMachine.GameManager.GetComponent<GameManager>().PauseGame(); }
+
     }
 
     public override void Exit()

@@ -7,6 +7,7 @@ public class PlayerHurtState : PlayerBaseState
 {
 
     private float knockbackDurationCounter;
+    private float invulnerabilityDurationCounter;
     private float stunDurationCounter;
     private Vector2 normalizedDirection;
 
@@ -20,6 +21,7 @@ public class PlayerHurtState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.isStunnable = false;
+        stateMachine.isInvulnerable = true;
 
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
@@ -28,13 +30,18 @@ public class PlayerHurtState : PlayerBaseState
         stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized*stateMachine.knockbackForce) ;
         //direction comes from Player Collision Listener
 
+
         //noise on impact
-        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = stateMachine.CameraData.AmplitudeGain;
-        stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = stateMachine.CameraData.FrequencyGain;
+        if (stateMachine.PlayerCurrentHealthAndMana.currentHealth < stateMachine.PlayerData.MaxHealth / 2) 
+        {
+            stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = stateMachine.CameraData.AmplitudeGain;
+            stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = stateMachine.CameraData.FrequencyGain;
 
 
-        //stopping noise progressively
-        stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpCameraNoise());
+            //stopping noise progressively
+            stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpCameraNoise());
+        }
+
     }
     public override void Tick(float deltaTime)
     {
