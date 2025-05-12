@@ -21,6 +21,9 @@ public class Destroyable : MonoBehaviour
     [SerializeField] BulletData bulletData;
 
 
+    private IAMAPS burningFxInstance;
+
+
     public float MyCurrentHealth { get; private set; }
     public float MyCurrentStoredHealth { get; private set; }
     public bool IsBurning { get; private set; }
@@ -62,10 +65,13 @@ public class Destroyable : MonoBehaviour
         MyCurrentHealth = objectData.maxHealth;
         MyCurrentStoredHealth = objectData.maxHealth;
 
+        burningFxHasSpawned = false;
     }
 
     private void Update()
     {
+        Debug.Log("burning is" + IsBurning);
+        Debug.Log("regen is" + IsRegen);
         if (MyCurrentHealth != objectData.maxHealth)
         {   healthPanel.gameObject.SetActive(true); }
 
@@ -82,15 +88,24 @@ public class Destroyable : MonoBehaviour
 
         }
 
-        if(MyCurrentHealth < objectData.maxHealth && !IsBurning)
-        {
-            currentWaitAfterLastAttack += Time.deltaTime;
-            if (currentWaitAfterLastAttack > objectData.regenFirstWait )
-            {
-                IsRegen = true; //Debug.Log("regen");
-            }
 
+
+        if (MyCurrentHealth < objectData.maxHealth)
+        {
+            if (!IsBurning)
+            {
+                //not sure about that one
+                /*currentWaitAfterLastAttack += Time.deltaTime;
+                if (currentWaitAfterLastAttack > objectData.regenFirstWait)
+                {
+                    IsRegen = true; Debug.Log("regen");
+                }*/
+
+                Debug.Log("not full health not burning");
+            }
         }
+
+
 
         if (IsRegen)
         {
@@ -99,8 +114,6 @@ public class Destroyable : MonoBehaviour
                 currentWaitBeforeRegen += Time.deltaTime;
             }
             else { RegenHealth(); currentWaitBeforeRegen = 0;  }
-
-
         }
 
 
@@ -108,49 +121,60 @@ public class Destroyable : MonoBehaviour
         {
             if (lastColliderIsBullet)
             {
-                IsBurning = true; IsRegen = false;
+                IsBurning = true; IsRegen = false; 
             }
-
             if (MyCurrentHealth <= objectData.minHealthBurnsStop)
             {
-                IsBurning = false;
+                IsBurning = false; 
             }
+
         }
 
-        if (IsBurning) {
+        if (IsBurning)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
             if (!burningFxHasSpawned)
             {
-                Instantiate(burningFx, new Vector3(transform.position.x, transform.position.y + 16, transform.position.z), Quaternion.identity, gameObject.transform);
+                burningFxInstance = Instantiate(burningFx, new Vector3(transform.position.x, transform.position.y + 16, transform.position.z), Quaternion.identity, gameObject.transform);
                 burningFxHasSpawned = true;
             }
-            
+
             currentWaitBeforeNextBurn += Time.deltaTime;
             if (currentWaitBeforeNextBurn >= objectData.burningSpeed)
             {
-                BurningHealth(); currentWaitBeforeNextBurn = 0; 
+                BurningHealth(); currentWaitBeforeNextBurn = 0;
             }
 
-
         }
+        else 
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white; 
+            
+            ParticleSystem ps = burningFxInstance.GetComponentInChildren<ParticleSystem>();
+            if (ps != null) ps.Stop();
+            
+            burningFxHasSpawned = false;
+        }
+
 
 
         if (MyCurrentHealth <= 0)
         {
             Instantiate(destructionFx, transform.position, Quaternion.identity);
-            
+
             if (gameObject.CompareTag("Yakkuru") == true)
             {
                 int lootnum = Random.Range(0, 2);
                 Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
             }
-            if(gameObject.CompareTag("Farmer") == true)
+            if (gameObject.CompareTag("Farmer") == true)
             {
                 Instantiate(listOfPossibleLoots[3], transform.position, Quaternion.identity);
             }
-            
 
-                //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
-                Destroy(gameObject);
+
+            //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
+            Destroy(gameObject);
         }
     }
 

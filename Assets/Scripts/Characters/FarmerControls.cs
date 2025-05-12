@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+using System.Runtime.CompilerServices;
 
 public class FarmerControls : MonoBehaviour
 {
     [Header("Setup")]
-    [SerializeField] ObjectsData farmerData;
+    [Expandable][SerializeField] ObjectsData farmerData;
     [SerializeField] List<Vector2> fleeingPosList;
     [SerializeField] GameObject player;
     [SerializeField] GameObject healthCanvas;
@@ -17,6 +19,7 @@ public class FarmerControls : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     public bool isFollowing { get; private set;}
+    public bool isFleeing { get; private set;}
     public bool canBeStunned { get; private set;}
     public bool isStunned { get; private set; }
     private float stunTimerCounter;
@@ -45,6 +48,23 @@ public class FarmerControls : MonoBehaviour
         {
             surpriseFX.SetActive(false);    
         }
+        
+
+        if (destroyable.IsBurning)
+        {
+            isFleeing = true;
+        }
+        else { isFleeing = false; }
+
+        if (isFleeing)
+        {
+            canBeStunned = false;
+            int randomIndex = Random.Range(0, 3);
+            Vector2 direction = fleeingPosList[randomIndex];
+            farmerRb.velocity = direction * farmerData.runSpeed;
+        }
+        else { canBeStunned = true; if (!isFollowing) { farmerRb.velocity = Vector2.zero; } }
+
 
         if (isStunned)
         {
@@ -77,27 +97,6 @@ public class FarmerControls : MonoBehaviour
         }
 
 
-
-
-
-        /* moved to a separate script
-        if (player.transform.position.x > gameObject.transform.position.x) 
-        {
-            if (turnDelayCounter < farmerData.timeBeforeTurn)
-            {
-                turnDelayCounter += Time.deltaTime;
-            }
-            else { gameObject.transform.localScale = new Vector3(-1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(-1, 1, 1); }
-        }
-        if (player.transform.position.x < gameObject.transform.position.x)
-        {
-            if (turnDelayCounter < farmerData.timeBeforeTurn)
-            {
-                turnDelayCounter += Time.deltaTime;
-            }
-            else { gameObject.transform.localScale = new Vector3(1, 1, 1); turnDelayCounter = 0f; healthCanvas.transform.localScale = new Vector3(1, 1, 1); }
-        }
-        */
 
 
 
@@ -144,7 +143,12 @@ public class FarmerControls : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            isStunned= true;
+            if (canBeStunned)
+            {
+                isStunned = true;
+            }
+
+
         }
     }
 

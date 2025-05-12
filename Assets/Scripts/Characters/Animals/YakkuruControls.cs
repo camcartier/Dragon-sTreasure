@@ -44,7 +44,7 @@ public class YakkuruControls : MonoBehaviour
 
     private void OnValidate()
     { 
-        if (runningTimer <= 0) {  runningTimer = 3f; }
+        if (runningTimer <= 0) {  runningTimer = 2f; }
 
         gameJustStarted= true;
     }
