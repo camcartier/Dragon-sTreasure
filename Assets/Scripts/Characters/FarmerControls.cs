@@ -15,8 +15,12 @@ public class FarmerControls : MonoBehaviour
 
     private Destroyable destroyable;
     private Rigidbody2D farmerRb;
+    private Animator animator;
 
     private SpriteRenderer spriteRenderer;
+
+    private readonly int AttackHash = Animator.StringToHash("Peasant_1");
+    private const float CrossFadeDuration = 0.1f;
 
     public bool isFollowing { get; private set;}
     public bool isFleeing { get; private set;}
@@ -34,6 +38,7 @@ public class FarmerControls : MonoBehaviour
 
         farmerRb = GetComponent<Rigidbody2D>();
         destroyable = GetComponent<Destroyable>();
+        animator = GetComponentInChildren<Animator>();
 
         spriteRenderer= GetComponentInChildren<SpriteRenderer>();
 
@@ -86,6 +91,8 @@ public class FarmerControls : MonoBehaviour
         if (isFollowing)
         {
             canTurn = true;
+            //animator.CrossFadeInFixedTime(AttackHash, CrossFadeDuration);
+
             Vector3 direction = new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y- transform.position.y);
             farmerRb.velocity = direction.normalized * farmerData.walkSpeed;
         }

@@ -307,7 +307,7 @@ MonoBehaviour:
   healthPanel: {fileID: 4911500296075489940}
   healthSlider: {fileID: 8414962628994974556}
   destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
-  burningFx: {fileID: 0}
+  burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   listOfPossibleLoots:
   - {fileID: 0}

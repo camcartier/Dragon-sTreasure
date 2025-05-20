@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelMax: 5
   currentLevel: 0
-  movementSpeed: 70
+  movementSpeed: 60
   movementSpeedArray:
   - 0
   - 0
