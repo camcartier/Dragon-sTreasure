@@ -24,12 +24,12 @@ MonoBehaviour:
   outOfRangeDetachTime: 0
   damageAmount: 0
   damageCooldown: 0
-  stunDuration: 2
+  stunDuration: 1
   timeBeforeTurn: 1
   hasTurnedOnce: 1
   isHurtFromContact: 1
   contactDamageTaken: 1
   goldCarried: 0
   defenseSpe: 0
-  runSpeed: 7
+  runSpeed: 35
   maxSpawnCapacity: 0

@@ -70,8 +70,8 @@ public class Destroyable : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("burning is" + IsBurning);
-        Debug.Log("regen is" + IsRegen);
+        //Debug.Log("burning is" + IsBurning);
+        //Debug.Log("regen is" + IsRegen);
         if (MyCurrentHealth != objectData.maxHealth)
         {   healthPanel.gameObject.SetActive(true); }
 
@@ -150,8 +150,9 @@ public class Destroyable : MonoBehaviour
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white; 
             
-            ParticleSystem ps = burningFxInstance.GetComponentInChildren<ParticleSystem>();
-            if (ps != null) ps.Stop();
+            //idk makes error pop but still runs
+            //ParticleSystem ps = burningFxInstance.GetComponentInChildren<ParticleSystem>();
+            //if (ps != null) ps.Stop();
             
             burningFxHasSpawned = false;
         }

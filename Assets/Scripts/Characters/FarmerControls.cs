@@ -9,9 +9,11 @@ public class FarmerControls : MonoBehaviour
     [Header("Setup")]
     [Expandable][SerializeField] ObjectsData farmerData;
     [SerializeField] List<Vector2> fleeingPosList;
+    [SerializeField] List<Vector2> fleeingPosList2;
     [SerializeField] GameObject player;
     [SerializeField] GameObject healthCanvas;
     [SerializeField] GameObject surpriseFX;
+    [SerializeField] GameObject attackColliderHolder;
 
     private Destroyable destroyable;
     private Rigidbody2D farmerRb;
@@ -24,6 +26,12 @@ public class FarmerControls : MonoBehaviour
 
     public bool isFollowing { get; private set;}
     public bool isFleeing { get; private set;}
+    private bool hasFleeingDirection;
+    private Vector2 fleeingDirection;
+    private float fleeingTimer = 5;
+    private float fleeingTimerCounter;
+    private float oneRunTimer = 0.5f;
+    private float oneRunTimerCounter;
     public bool canBeStunned { get; private set;}
     public bool isStunned { get; private set; }
     private float stunTimerCounter;
@@ -59,16 +67,6 @@ public class FarmerControls : MonoBehaviour
         {
             isFleeing = true;
         }
-        else { isFleeing = false; }
-
-        if (isFleeing)
-        {
-            canBeStunned = false;
-            int randomIndex = Random.Range(0, 3);
-            Vector2 direction = fleeingPosList[randomIndex];
-            farmerRb.velocity = direction * farmerData.runSpeed;
-        }
-        else { canBeStunned = true; if (!isFollowing) { farmerRb.velocity = Vector2.zero; } }
 
 
         if (isStunned)
@@ -87,6 +85,47 @@ public class FarmerControls : MonoBehaviour
             }
         }
 
+        if (isFleeing)
+        {
+            Debug.Log("is fleeing");
+
+            attackColliderHolder.SetActive(false);
+
+            canBeStunned = false;
+            isFollowing = false;
+            fleeingTimerCounter += Time.deltaTime;
+            oneRunTimerCounter  += Time.deltaTime;
+
+            if (!hasFleeingDirection)
+            {
+                fleeingDirection = PickFleeingDirection();
+                hasFleeingDirection = true;
+            }
+            farmerRb.velocity = fleeingDirection.normalized * farmerData.runSpeed;
+
+            if(oneRunTimerCounter > oneRunTimer)
+            {
+                hasFleeingDirection = false;
+                oneRunTimerCounter = 0f;
+            }
+
+            //Debug.Log(fleeingDirection);
+
+            if (fleeingTimerCounter > fleeingTimer)
+            {
+                isFleeing = false;
+                fleeingTimerCounter = 0f;
+                hasFleeingDirection = false;
+                Debug.Log("done fleeing");
+            }
+
+            
+        }
+        else { canBeStunned = true; attackColliderHolder.SetActive(true); if (!isFollowing) { farmerRb.velocity = Vector2.zero; } }
+
+
+
+
 
         if (isFollowing)
         {
@@ -96,7 +135,7 @@ public class FarmerControls : MonoBehaviour
             Vector3 direction = new Vector3(player.transform.position.x - transform.position.x, player.transform.position.y- transform.position.y);
             farmerRb.velocity = direction.normalized * farmerData.walkSpeed;
         }
-        else { farmerRb.velocity = Vector2.zero; canTurn = false; }
+        else if (!isFleeing) { farmerRb.velocity = Vector2.zero; canTurn = false; }
 
         if (canTurn)
         {

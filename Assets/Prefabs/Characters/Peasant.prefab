@@ -272,9 +272,11 @@ MonoBehaviour:
   - {x: -1, y: 1}
   - {x: 1, y: 1}
   - {x: 1, y: -1}
+  fleeingPosList2: []
   player: {fileID: 0}
   healthCanvas: {fileID: 1728061189113049858}
   surpriseFX: {fileID: 66036285431303701}
+  attackColliderHolder: {fileID: 7899421065449863303}
   canTurn: 0
 --- !u!114 &4366104757987002797
 MonoBehaviour:
