@@ -5,14 +5,18 @@ using UnityEngine.Rendering.Universal;
 
 public class NightAndDay : MonoBehaviour
 {
+    [Header ("general timer")]
     public float DayTimer = 5f;
     public float NightTimer = 5f;
     private float DayTimerCounter;
     private float NightTimerCounter;
+
     private Camera Camera;
     private Color CameraBaseColor;
     [SerializeField] Light2D CharacterLight;
     [SerializeField] Light2D GlobalLight;
+
+    [Header ("light stats")]
     private float DayIntensityGL;
     private float NightIntensityGL = 0.25f;
     private float NightFalloff = 0.7f;

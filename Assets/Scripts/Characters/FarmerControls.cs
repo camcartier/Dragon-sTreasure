@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 
 public class FarmerControls : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class FarmerControls : MonoBehaviour
     private const float CrossFadeDuration = 0.1f;
 
     public bool isFollowing { get; private set;}
+
     public bool isFleeing { get; private set;}
     private bool hasFleeingDirection;
     private Vector2 fleeingDirection;
@@ -56,7 +58,7 @@ public class FarmerControls : MonoBehaviour
 
     void Update()
     {
-        
+        //Debug.Log("following is" + isFollowing);
         if (destroyable.MyCurrentHealth < farmerData.maxHealth)
         {
             surpriseFX.SetActive(false);    
@@ -87,23 +89,32 @@ public class FarmerControls : MonoBehaviour
 
         if (isFleeing)
         {
-            Debug.Log("is fleeing");
-
+            //Debug.Log("is fleeing" + isFleeing);
+            //Debug.Log(gameObject.transform.localScale);
             attackColliderHolder.SetActive(false);
 
             canBeStunned = false;
             isFollowing = false;
+            canTurn = false;
             fleeingTimerCounter += Time.deltaTime;
             oneRunTimerCounter  += Time.deltaTime;
+
+            if (fleeingDirection.x > 0f)
+            {
+                gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else { gameObject.transform.localScale = new Vector3(1, 1, 1); }
 
             if (!hasFleeingDirection)
             {
                 fleeingDirection = PickFleeingDirection();
+
                 hasFleeingDirection = true;
             }
             farmerRb.velocity = fleeingDirection.normalized * farmerData.runSpeed;
 
-            if(oneRunTimerCounter > oneRunTimer)
+
+            if (oneRunTimerCounter > oneRunTimer)
             {
                 hasFleeingDirection = false;
                 oneRunTimerCounter = 0f;
@@ -119,11 +130,10 @@ public class FarmerControls : MonoBehaviour
                 Debug.Log("done fleeing");
             }
 
-            
+
+
         }
         else { canBeStunned = true; attackColliderHolder.SetActive(true); if (!isFollowing) { farmerRb.velocity = Vector2.zero; } }
-
-
 
 
 
@@ -159,8 +169,12 @@ public class FarmerControls : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isFollowing = true;
-            surpriseFX.SetActive(true);
+            if (!isFleeing)
+            {
+                isFollowing = true;
+                surpriseFX.SetActive(true);
+            }
+
         }
     }
 
@@ -168,9 +182,13 @@ public class FarmerControls : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (!isFollowing)
+            if (!isFollowing )
             {
-                isFollowing = true;
+                if (!isFleeing)
+                {
+                    isFollowing = true;
+                }
+
             }
                
         }

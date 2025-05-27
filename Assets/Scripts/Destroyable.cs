@@ -101,7 +101,7 @@ public class Destroyable : MonoBehaviour
                     IsRegen = true; Debug.Log("regen");
                 }*/
 
-                Debug.Log("not full health not burning");
+                //Debug.Log("not full health not burning");
             }
         }
 

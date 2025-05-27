@@ -75,6 +75,8 @@ public class BulletControls : MonoBehaviour
             }
         }
 
+        Destroy (this.gameObject);
+
     }
 
 }
