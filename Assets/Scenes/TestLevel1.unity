@@ -504,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VirtualCamera: {fileID: 333849139}
+  Camera: {fileID: 0}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
 --- !u!114 &333849139
 MonoBehaviour:
@@ -527,7 +528,7 @@ MonoBehaviour:
   m_Follow: {fileID: 485512210}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 100
+    OrthographicSize: 80
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1037,7 +1038,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 100
+  orthographic size: 80
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1114,6 +1115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   thisGoldValue: {fileID: 0}
+  PlayerHealthAndMana: {fileID: 0}
 --- !u!1 &610979612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1695,7 @@ MonoBehaviour:
   DeathPanel: {fileID: 0}
   currentPlayerHealthAndMana: {fileID: 0}
   playerData: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &946806038
 GameObject:
   m_ObjectHideFlags: 0

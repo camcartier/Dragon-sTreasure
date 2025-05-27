@@ -6,6 +6,7 @@ using UnityEngine;
 public class CameraCoroutines : MonoBehaviour
 {
     public CinemachineVirtualCamera VirtualCamera;
+    public Camera Camera;
     [SerializeField] PlayerData playerData;
 
     void Start()
@@ -20,6 +21,33 @@ public class CameraCoroutines : MonoBehaviour
         }
         
     }
+
+    public IEnumerator LerpDezoomCamera()
+    {
+
+        //ouais ça marche pas
+        /*
+         * float startValue = Camera.transform.position.z;
+        float elapsed = 0f;
+
+
+
+        while (elapsed < 2f)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / 1f;
+
+            Vector3 camPos = Camera.transform.position;
+            camPos.z = Mathf.Lerp(startValue, -20, t);
+            Camera.transform.position = camPos;
+
+            yield return null;
+        }
+        */
+        yield return null;
+
+    }
+
     public IEnumerator LerpXYDamping()
     {
         float XstartValue = VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping;

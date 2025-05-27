@@ -16,6 +16,9 @@ public class PlayerLevelingUpState : PlayerBaseState
         stateMachine.GameManager.PauseGame();
 
         stateMachine.LevelingUpTimer.StartCoroutine(stateMachine.LevelingUpTimer.countingLevelUp());
+        //stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpDezoomCamera());
+
+        
         
     }
     public override void Tick(float deltaTime)
@@ -27,6 +30,9 @@ public class PlayerLevelingUpState : PlayerBaseState
         stateMachine.currentLevelStored += 1;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         stateMachine.GameManager.UnPauseGame();
+
+        //a remplacer par des valeurs choisies au préalable et faire un lerp
+        stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize = stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize * 1.1f;
     }
 
 

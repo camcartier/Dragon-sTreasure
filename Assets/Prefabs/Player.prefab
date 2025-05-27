@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 5001503474633560126}
   - component: {fileID: 8964317341285677106}
   - component: {fileID: -8877131050200906242}
+  - component: {fileID: 706902093216072592}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -521,7 +522,7 @@ MonoBehaviour:
   <knockBackDistance>k__BackingField: 0
   <isDead>k__BackingField: 0
   <isInvulnerable>k__BackingField: 0
-  <PlayerCoroutinesScript>k__BackingField: {fileID: 0}
+  <PlayerCoroutinesScript>k__BackingField: {fileID: 706902093216072592}
   <isUsing>k__BackingField: 0
   <dashDuration>k__BackingField: 0.3
   <lastMovementDirection>k__BackingField: {x: 0, y: 0}
@@ -572,6 +573,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStateMachine: {fileID: 9033838750334023689}
+--- !u!114 &706902093216072592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509603958421342453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b27b0c35eee724bad474894b25ed26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStateMachine: {fileID: 9033838750334023689}
+  playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
 --- !u!1 &7175643183065341082
 GameObject:
   m_ObjectHideFlags: 0
