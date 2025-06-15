@@ -35,11 +35,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        if (player.GetComponent<PlayerStateMachine>().isDead)
+        if(SceneManager.GetActiveScene().buildIndex > 1)
         {
-            player.GetComponent<PlayerStateMachine>().isDead = false;
+            if (player.GetComponent<PlayerStateMachine>().isDead)
+            {
+                player.GetComponent<PlayerStateMachine>().isDead = false;
+            }
         }
+
             
         UnPauseGame();
         
@@ -74,5 +77,10 @@ public class GameManager : MonoBehaviour
     public void UnPauseGame()
     {
         Time.timeScale = 1f;
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
