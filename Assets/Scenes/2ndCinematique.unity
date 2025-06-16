@@ -446,7 +446,6 @@ GameObject:
   - component: {fileID: 340321981}
   - component: {fileID: 340321983}
   - component: {fileID: 340321982}
-  - component: {fileID: 340321984}
   m_Layer: 5
   m_Name: NarrationPanel
   m_TagString: Untagged
@@ -514,18 +513,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340321980}
   m_CullTransparentMesh: 1
---- !u!114 &340321984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340321980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f8c9a9f99738c94cbcfe3bb336b46bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &512923472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,8 +1338,16 @@ MonoBehaviour:
   - It shines, although you do not know what it is you are drawn to it
   - It rises a fire within you. The closer you are to it, the stronger you feel
   - Whatever it is, it is yours. And you want more.
-  - 
+  - ...
   textToRead: {fileID: 1128546561}
+  startImage: {fileID: 2045125259}
+  arrayOfBGImages:
+  - {fileID: 2045125259}
+  - {fileID: 1676910835}
+  - {fileID: 1321501842}
+  - {fileID: 33159984}
+  - {fileID: 33159984}
+  - {fileID: 33159984}
 --- !u!4 &1936054692
 Transform:
   m_ObjectHideFlags: 0
