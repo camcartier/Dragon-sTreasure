@@ -3711,7 +3711,7 @@ MonoBehaviour:
   m_Follow: {fileID: 529638461}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 80
+    OrthographicSize: 55
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -4151,7 +4151,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 80
+  orthographic size: 55
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4274,6 +4274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeOnScreen: 5
+  EndOfAnimationCounter: 0
 --- !u!1001 &1496460978
 PrefabInstance:
   m_ObjectHideFlags: 0
