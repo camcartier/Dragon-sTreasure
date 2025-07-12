@@ -72,6 +72,8 @@ public class PlayerStateMachine : StateMachine
 
     public CinemachineVirtualCamera CinemachineVirtualCamera { get; set; }
 
+    [field: SerializeField] public GameObject StartingTextPanel { get; private set; }
+
     void Start()
     {
         GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -79,7 +81,7 @@ public class PlayerStateMachine : StateMachine
         MainCameraTransform = Camera.main.transform;
         CinemachineVirtualCamera = GameObject.Find("CinemachineVirtualCamera").GetComponent<CinemachineVirtualCamera>();
 
-        SwitchState(new PlayerMainState(this));
+        SwitchState(new PlayerStartGameState(this));
     }
 
 }
