@@ -1442,7 +1442,7 @@ PrefabInstance:
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <CameraCoroutines>k__BackingField
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1035734181}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <CinemachineCamera>k__BackingField
       value: 
