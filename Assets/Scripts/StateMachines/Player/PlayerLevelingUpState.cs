@@ -32,7 +32,7 @@ public class PlayerLevelingUpState : PlayerBaseState
         stateMachine.GameManager.UnPauseGame();
 
         //a remplacer par des valeurs choisies au préalable et faire un lerp
-        stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize = stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize * 1.1f;
+        stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize = stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize * 1.5f;
     }
 
 
