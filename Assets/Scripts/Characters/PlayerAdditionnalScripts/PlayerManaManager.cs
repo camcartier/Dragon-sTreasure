@@ -46,6 +46,9 @@ public class PlayerManaManager : MonoBehaviour
 
         if (playerCurrentHealthAndMana.manaMinimumDelayCounter <= playerData.ManaRegenMinimumDelay)
         {
+            //if (PlayerMainState.isFiring= false)
+            //{
+            //}
             playerCurrentHealthAndMana.manaMinimumDelayCounter += 1;
         }
         if(playerCurrentHealthAndMana.manaMinimumDelayCounter >= playerData.ManaRegenMinimumDelay)

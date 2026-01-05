@@ -1694,7 +1694,7 @@ MonoBehaviour:
   TimeBeforeIncrement: 3
   DeathPanel: {fileID: 0}
   currentPlayerHealthAndMana: {fileID: 0}
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 0cc369ca499706a4d89a68604c66adeb, type: 2}
   player: {fileID: 0}
 --- !u!1 &946806038
 GameObject:

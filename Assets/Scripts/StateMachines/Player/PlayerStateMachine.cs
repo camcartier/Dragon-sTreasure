@@ -24,6 +24,7 @@ public class PlayerStateMachine : StateMachine
 
     //Firing bullets
     [field: SerializeField] public bool canFire { get; private set; }
+    [field: SerializeField] public bool isFiring { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
     
 

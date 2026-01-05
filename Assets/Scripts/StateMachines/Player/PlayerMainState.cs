@@ -9,7 +9,7 @@ public class PlayerMainState : PlayerBaseState
   
     Vector2 movement = new Vector2();
 
-    private bool isFiring;
+    public bool isFiring;
     private GameObject BulletStartPoint;
 
 
@@ -84,22 +84,7 @@ public class PlayerMainState : PlayerBaseState
         }
 
 
-        /*
-        movement.x = stateMachine.InputReader.MovementValue.x;
-        movement.y = 0f;
-        movement.z = stateMachine.InputReader.MovementValue.y;*/
 
-        /*
-        if (stateMachine.InputReader.MovementValue == Vector2.zero)
-        {
-            stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
-            return;
-        }
-        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
-        */
-
-        //old version
-        //FaceMovementDirection(movement, deltaTime);
     }
     public override void Exit()
     {
@@ -111,29 +96,6 @@ public class PlayerMainState : PlayerBaseState
     }
 
 
-    
-    //private Vector3 CalculateMovement()
-    //{
-
-        /*
-        Vector3 forward = stateMachine.MainCameraTransform.forward;
-        Vector3 right = stateMachine.MainCameraTransform.right;
-
-        forward.y = 0; right.y = 0;
-
-        forward.Normalize(); right.Normalize();
-
-        return forward * stateMachine.InputReader.MovementValue.y + right * stateMachine.InputReader.MovementValue.x;
-
-        */
-    //}
-
-    /*
-    private void OnMove()
-    {
-
-    }
-    */
 
     private void OnUse()
     {
@@ -144,11 +106,11 @@ public class PlayerMainState : PlayerBaseState
     {
 
 
-
         if (stateMachine.PlayerCurrentHealthAndMana.currentMana >= 5)
         {
-            //to make sure the timer doesn't start when firing i thought i'd seeen someyhing weird before
-            stateMachine.PlayerManaManager.ManaDepletionTimerCounter = 0f;
+            isFiring = true;
+
+            //stateMachine.PlayerManaManager.ManaDepletionTimerCounter = 0f;
             stateMachine.PlayerData.canRegenMana = false;
 
 
@@ -210,15 +172,5 @@ public class PlayerMainState : PlayerBaseState
     }*/
 
 
-    /*
-    private void FaceMovementDirection(Vector3 movement, float deltaTime)
-    {
-        stateMachine.transform.rotation = Quaternion.Lerp(
-            stateMachine.transform.rotation, 
-            Quaternion.LookRotation(movement),
-            deltaTime * stateMachine.RotationDamping);
-    }
 
-
-    */
 }

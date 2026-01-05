@@ -21,4 +21,10 @@ public class PlayerCoroutinesScript : MonoBehaviour
         playerStateMachine.SwitchState(new PlayerMainState(playerStateMachine));
 
     }
+
+    public IEnumerator timeBeforeIsFiringFalse()
+    {
+        yield return new WaitForSecondsRealtime(1);
+        new PlayerMainState(playerStateMachine).isFiring = true;
+    }
 }

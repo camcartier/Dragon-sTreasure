@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NarrationTXTManager : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class NarrationTXTManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI textToRead;
     private int currentTXTIndex;
     [SerializeField] GameObject startImage;
+    [SerializeField] AudioSource paperAudio;
 
     public GameObject[] arrayOfBGImages = new GameObject[6];
+
+    //[SerializeField] EndButton
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +48,19 @@ public class NarrationTXTManager : MonoBehaviour
         {
             currentTXTIndex += 1; 
         }
-        else { currentTXTIndex = arrayOfBGImages.Length - 1; }
+        else 
+        { 
+            currentTXTIndex = arrayOfBGImages.Length - 1;
+            LoadGameScene();
+            //dans une fonction comme ça on pourra personnaliser plus tard
+        }
 
+        paperAudio.Play();
+    }
+
+
+    private void LoadGameScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
