@@ -56,6 +56,8 @@ public class PlayerStateMachine : StateMachine
 
 
     //Dash
+    [field: SerializeField] public bool canDash { get; set; }
+    [field: SerializeField] public bool isDashing { get; set; }
     [field: SerializeField] public float dashDuration { get; private set; }
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 

@@ -17,6 +17,7 @@ public class PlayerStartGameState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.Animator.Play("WakingUp");
+        stateMachine.canDash = true;
 
         //Debug.Log(stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length);
     }

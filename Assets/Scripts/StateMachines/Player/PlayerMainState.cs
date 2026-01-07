@@ -99,7 +99,9 @@ public class PlayerMainState : PlayerBaseState
 
     private void OnUse()
     {
+        //Debug.Log("i pressed E");
         stateMachine.SwitchState(new PlayerUsingState(stateMachine));
+
     }
 
     private void OnFire()
@@ -133,7 +135,7 @@ public class PlayerMainState : PlayerBaseState
 
     private void OnDash()
     {
-        if (stateMachine.PlayerData.canDash)
+        if (stateMachine.canDash)
         {
             stateMachine.SwitchState(new PlayerEnterDashState(stateMachine));
         }

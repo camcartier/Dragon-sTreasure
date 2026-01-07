@@ -36,6 +36,9 @@ public class PlayerDashingState : PlayerBaseState
 
     public override void Exit()
     {
+        stateMachine.isDashing = false;
+        Debug.Log(stateMachine.isDashing);
+
         dashDurationCounter = 0f;
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = true;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;

@@ -27,4 +27,10 @@ public class PlayerCoroutinesScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(1);
         new PlayerMainState(playerStateMachine).isFiring = true;
     }
+
+    public IEnumerator countingDashReload()
+    {
+        yield return new WaitForSecondsRealtime(3);
+        playerStateMachine.canDash = true;
+    }
 }
