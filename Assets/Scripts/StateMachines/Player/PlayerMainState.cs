@@ -135,7 +135,7 @@ public class PlayerMainState : PlayerBaseState
     {
         if (stateMachine.PlayerData.canDash)
         {
-            stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+            stateMachine.SwitchState(new PlayerEnterDashState(stateMachine));
         }
 
     }
