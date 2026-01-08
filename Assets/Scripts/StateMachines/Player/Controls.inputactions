@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Fireball",
+                    "type": "Button",
+                    "id": "531d5771-79a2-47cc-93b3-af4cb41431d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -159,7 +168,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Main",
                     "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -181,7 +190,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Main",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -192,7 +201,7 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Main",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -205,6 +214,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "409a3f64-d945-4b4f-9c0d-ac653fd5c714",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Main",
+                    "action": "Fireball",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

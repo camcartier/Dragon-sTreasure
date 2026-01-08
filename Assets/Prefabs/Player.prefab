@@ -185,6 +185,7 @@ Transform:
   - {fileID: 3534380203122937055}
   - {fileID: 6855757345211780610}
   - {fileID: 769869981878959873}
+  - {fileID: 6159479818231201813}
   - {fileID: 160584106019905025}
   m_Father: {fileID: 5303012427385822974}
   m_RootOrder: 0
@@ -405,7 +406,38 @@ Transform:
   - {fileID: 2261841399839379207}
   - {fileID: 4234049467796356805}
   m_Father: {fileID: 9025353642850110306}
-  m_RootOrder: 4
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5973742268995107800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4905174381984655247}
+  m_Layer: 3
+  m_Name: FireballEndingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4905174381984655247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973742268995107800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6159479818231201813}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6509603958421342453
 GameObject:
@@ -513,6 +545,7 @@ MonoBehaviour:
   <PlayerCurrentHealthAndMana>k__BackingField: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
   PlayerManaManager: {fileID: 8964317341285677106}
   <canFire>k__BackingField: 0
+  <isFiring>k__BackingField: 0
   <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
   <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <isStunnable>k__BackingField: 0
@@ -525,13 +558,19 @@ MonoBehaviour:
   <isInvulnerable>k__BackingField: 0
   <PlayerCoroutinesScript>k__BackingField: {fileID: 706902093216072592}
   <isUsing>k__BackingField: 0
+  <canDash>k__BackingField: 0
+  <isDashing>k__BackingField: 0
   <dashDuration>k__BackingField: 0.3
   <lastMovementDirection>k__BackingField: {x: 0, y: 0}
+  <canFireball>k__BackingField: 0
+  <fireballStartingPoint>k__BackingField: {fileID: 8639601430443596979}
+  <FireballPrefab>k__BackingField: {fileID: 0}
   <currentLevelStored>k__BackingField: 0
   <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}
   <CameraCoroutines>k__BackingField: {fileID: 0}
   <CameraData>k__BackingField: {fileID: 0}
+  <StartingTextPanel>k__BackingField: {fileID: 0}
 --- !u!114 &5001503474633560126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +756,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8639601430443596979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6159479818231201813}
+  m_Layer: 3
+  m_Name: FireballStartingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6159479818231201813
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8639601430443596979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4905174381984655247}
+  m_Father: {fileID: 9025353642850110306}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9029347491675121963
 GameObject:
   m_ObjectHideFlags: 0

@@ -737,6 +737,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
+      propertyPath: <FireballPrefab>k__BackingField
+      value: 
+      objectReference: {fileID: 5303679083573354517, guid: 1f00432c582f4884eade419f7e98a082, type: 3}
+    - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <knockbackForce>k__BackingField
       value: 10000
       objectReference: {fileID: 0}
@@ -2225,6 +2229,7 @@ GameObject:
   - component: {fileID: 687114996}
   - component: {fileID: 687114998}
   - component: {fileID: 687114997}
+  - component: {fileID: 687114999}
   m_Layer: 5
   m_Name: FireballIcon
   m_TagString: Untagged
@@ -2290,6 +2295,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687114995}
   m_CullTransparentMesh: 1
+--- !u!114 &687114999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687114995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d23210c0aac5444ca225badbebf4030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStateMachine: {fileID: 176185318}
 --- !u!1 &746939832
 GameObject:
   m_ObjectHideFlags: 0

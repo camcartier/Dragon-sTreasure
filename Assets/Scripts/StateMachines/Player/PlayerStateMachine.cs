@@ -61,6 +61,10 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float dashDuration { get; private set; }
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 
+    //Fireball
+    [field: SerializeField] public bool canFireball { get; set; }
+    [field: SerializeField] public GameObject fireballStartingPoint { get; private set; }
+    [field: SerializeField] public GameObject FireballPrefab { get; private set; }
 
     //Leveling up
     [field: SerializeField] public int currentLevelStored { get; set; }

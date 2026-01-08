@@ -62,6 +62,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fireball"",
+                    ""type"": ""Button"",
+                    ""id"": ""531d5771-79a2-47cc-93b3-af4cb41431d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -181,7 +190,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Main"",
                     ""action"": ""Use"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -203,7 +212,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Main"",
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -214,7 +223,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Main"",
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -227,6 +236,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""409a3f64-d945-4b4f-9c0d-ac653fd5c714"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Main"",
+                    ""action"": ""Fireball"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -247,6 +267,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Main_Use = m_Main.FindAction("Use", throwIfNotFound: true);
         m_Main_Fire = m_Main.FindAction("Fire", throwIfNotFound: true);
         m_Main_Dash = m_Main.FindAction("Dash", throwIfNotFound: true);
+        m_Main_Fireball = m_Main.FindAction("Fireball", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -310,6 +331,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Use;
     private readonly InputAction m_Main_Fire;
     private readonly InputAction m_Main_Dash;
+    private readonly InputAction m_Main_Fireball;
     public struct MainActions
     {
         private @Controls m_Wrapper;
@@ -318,6 +340,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Use => m_Wrapper.m_Main_Use;
         public InputAction @Fire => m_Wrapper.m_Main_Fire;
         public InputAction @Dash => m_Wrapper.m_Main_Dash;
+        public InputAction @Fireball => m_Wrapper.m_Main_Fireball;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -339,6 +362,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Dash.started -= m_Wrapper.m_MainActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnDash;
+                @Fireball.started -= m_Wrapper.m_MainActionsCallbackInterface.OnFireball;
+                @Fireball.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnFireball;
+                @Fireball.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnFireball;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -355,6 +381,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @Fireball.started += instance.OnFireball;
+                @Fireball.performed += instance.OnFireball;
+                @Fireball.canceled += instance.OnFireball;
             }
         }
     }
@@ -374,5 +403,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnUse(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnFireball(InputAction.CallbackContext context);
     }
 }

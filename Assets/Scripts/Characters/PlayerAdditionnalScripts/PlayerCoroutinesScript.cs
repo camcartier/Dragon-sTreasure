@@ -33,4 +33,10 @@ public class PlayerCoroutinesScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(3);
         playerStateMachine.canDash = true;
     }
+
+    public IEnumerator countingFireballReload()
+    {
+        yield return new WaitForSecondsRealtime(7);
+        playerStateMachine.canFireball = true;
+    }
 }

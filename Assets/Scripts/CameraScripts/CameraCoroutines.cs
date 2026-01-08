@@ -22,6 +22,7 @@ public class CameraCoroutines : MonoBehaviour
         
     }
 
+
     public IEnumerator LerpDezoomCamera()
     {
 
@@ -86,6 +87,26 @@ public class CameraCoroutines : MonoBehaviour
         }
 
         // S'assure que la valeur finale est bien atteinte
+        VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0;
+        VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 0;
+    }
+
+
+    public IEnumerator FireballCameraShake()
+    {
+        float AmplitudeStartValue = VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain;
+        float FrequencyStartValue = VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain;
+        float elapsed = 0f;
+
+        while (elapsed < 5f)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / 1f;
+            VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Mathf.Lerp(AmplitudeStartValue, 0, t);
+            VirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Mathf.Lerp(FrequencyStartValue, 0, t);
+            yield return null;
+        }
+
         VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = 0;
         VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_YDamping = 0;
     }

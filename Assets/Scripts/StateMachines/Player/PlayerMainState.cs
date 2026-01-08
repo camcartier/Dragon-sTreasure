@@ -34,6 +34,7 @@ public class PlayerMainState : PlayerBaseState
         stateMachine.InputReader.UseEvent += OnUse;
         stateMachine.InputReader.FireEvent += OnFire;
         stateMachine.InputReader.DashEvent += OnDash;
+        stateMachine.InputReader.FireballEvent += OnFireball;
 
         BulletStartPoint = stateMachine.gameObject.GetComponentInChildren<BulletStartPoint>().gameObject;
 
@@ -142,7 +143,13 @@ public class PlayerMainState : PlayerBaseState
 
     }
 
-
+    private void OnFireball()
+    {
+        if(stateMachine.canFireball)
+        {
+            stateMachine.SwitchState(new PlayerFireballState(stateMachine));
+        }    
+    }
 
     private void FaceMovementDirecton()
     {

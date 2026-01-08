@@ -18,6 +18,7 @@ public class PlayerStartGameState : PlayerBaseState
     {
         stateMachine.Animator.Play("WakingUp");
         stateMachine.canDash = true;
+        stateMachine.canFireball = true;
 
         //Debug.Log(stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length);
     }

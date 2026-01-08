@@ -8,7 +8,7 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 {
     private Controls controls;
 
-    public event Action  UseEvent, FireEvent, DashEvent; 
+    public event Action  UseEvent, FireEvent, DashEvent, FireballEvent;
     //MoveEvent,
 
     public Vector2 MovementValue { get; private set; }
@@ -54,4 +54,11 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
         DashEvent?.Invoke();
     }
 
+    public void OnFireball(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        FireballEvent?.Invoke();
+
+    }
 }

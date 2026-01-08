@@ -13,6 +13,9 @@ public class CameraData : ScriptableObject
     public float AmplitudeGain;
     public float FrequencyGain;
 
+    public float FireballAmplitudeGain;
+    public float FireballFrequencyGain;
+
     public float[] cameraOrthoSize = new float[6];
 
 }

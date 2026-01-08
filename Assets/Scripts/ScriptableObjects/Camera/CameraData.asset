@@ -18,3 +18,12 @@ MonoBehaviour:
   HurtYDamping: 0
   AmplitudeGain: 5
   FrequencyGain: 5
+  FireballAmplitudeGain: 10
+  FireballFrequencyGain: 80
+  cameraOrthoSize:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
