@@ -17,7 +17,7 @@ public class PlayerEnterDashState : PlayerBaseState
         stateMachine.isDashing = true;
         stateMachine.canDash = false;
         stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingDashReload());
-        Debug.Log(stateMachine.isDashing);
+        //Debug.Log(stateMachine.isDashing);
 
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = false;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;

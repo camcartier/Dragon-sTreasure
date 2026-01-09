@@ -45,11 +45,8 @@ public class BulletControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if(bulletTimeAlive < bulletLifeExpectancy)
         {
-            //Debug.Log("ayoooooo");
             bulletTimeAlive += Time.deltaTime;
         }
         else { Destroy(this.gameObject); }

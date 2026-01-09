@@ -47,7 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc48f0abbb491414cad0950c1970afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 80
+  EndOfFireballFX: {fileID: 5859511849390294588, guid: 390d211d4d64efb4cb204665f10816c1, type: 3}
+  fireballSpeed: 50
+  fireballDamage: 0
+  fireballLifeExpectancy: 1
 --- !u!50 &5780444541157509846
 Rigidbody2D:
   serializedVersion: 4
