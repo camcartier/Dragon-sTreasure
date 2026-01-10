@@ -217,14 +217,18 @@ public class Destroyable : MonoBehaviour
 
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        /*
-        if (collision.gameObject.CompareTag("Player"))
-        {
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Fireball"))
+        {
+            Debug.Log("fireball touched");
+            MyCurrentHealth -= bulletData.FireballDamageArray[1];
         }
-        */
     }
+
+
+
 
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3066497507662337311}
   - component: {fileID: 6872132853585158508}
   - component: {fileID: 5780444541157509846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: Fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EndOfFireballFX: {fileID: 5859511849390294588, guid: 390d211d4d64efb4cb204665f10816c1, type: 3}
   fireballSpeed: 50
-  fireballDamage: 0
+  fireballDamage: 50
   fireballLifeExpectancy: 1
 --- !u!50 &5780444541157509846
 Rigidbody2D:
@@ -83,9 +83,9 @@ GameObject:
   - component: {fileID: 6089022624244914053}
   - component: {fileID: 7192529893468300000}
   - component: {fileID: 3165733655012261925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: Fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 1.1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &6965946086722114419
 GameObject:
@@ -157,9 +157,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5436463741650689564}
   - component: {fileID: 3158593462531594630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpriteHolder
-  m_TagString: Untagged
+  m_TagString: Fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

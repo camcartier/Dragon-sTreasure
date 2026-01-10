@@ -14,7 +14,7 @@ public class PlayerFireballState : PlayerBaseState
 
     public override void Enter()
     {
-        Debug.Log("fireball");
+        //Debug.Log("fireball");
         stateMachine.canFireball = false;
         stateMachine.isStunnable = false;
 

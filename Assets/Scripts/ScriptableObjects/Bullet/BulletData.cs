@@ -21,4 +21,11 @@ public class BulletData : ScriptableObject
     public int LVL5_bulletSpeed;
     public int LVL6_bulletSpeed;
 
+    [Header("regular bullet damage array")]
+    public int[] BulletDamageArray = new int[6];
+
+    [Header ("fireball damage array")]
+    public int[] FireballDamageArray = new int[6];
+
+
 }
