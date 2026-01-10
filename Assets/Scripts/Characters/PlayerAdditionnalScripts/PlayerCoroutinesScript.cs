@@ -39,4 +39,13 @@ public class PlayerCoroutinesScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(7);
         playerStateMachine.canFireball = true;
     }
+
+
+    public IEnumerator UnlimitedManaDuration()
+    {
+
+        yield return new WaitForSecondsRealtime(5);
+        playerStateMachine.GetComponentInParent<PlayerStateMachine>().hasInfiniteMana = false;
+        Debug.Log("unlimited mana finished");
+    }
 }

@@ -26,7 +26,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public bool canFire { get; private set; }
     [field: SerializeField] public bool isFiring { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
-    
+    [field: SerializeField] public bool hasInfiniteMana { get; set; }
 
     //FXs
     [field: SerializeField] public GameObject diggingFX { get; private set; }

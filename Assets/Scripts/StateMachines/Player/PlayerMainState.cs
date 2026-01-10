@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -107,29 +108,44 @@ public class PlayerMainState : PlayerBaseState
 
     private void OnFire()
     {
-
-
-        if (stateMachine.PlayerCurrentHealthAndMana.currentMana >= 5)
+        if( stateMachine.hasInfiniteMana == true)
         {
             isFiring = true;
-
-            //stateMachine.PlayerManaManager.ManaDepletionTimerCounter = 0f;
             stateMachine.PlayerData.canRegenMana = false;
+            stateMachine.PlayerCurrentHealthAndMana.currentMana = stateMachine.PlayerData.MaxMana;
+
+
+            stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.UnlimitedManaDuration());
 
 
             stateMachine.Animator.CrossFadeInFixedTime(FiringHash, CrossFadeDuration);
-
             GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
-            stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
-              
-                  
-            if (stateMachine.PlayerCurrentHealthAndMana.currentMana - 5 < 0)
-            {
-                stateMachine.PlayerCurrentHealthAndMana.currentMana = 0;
-            }
-            else {  stateMachine.PlayerCurrentHealthAndMana.currentMana -= 5; }
         }
-        else { Debug.Log("not enough mana"); }
+        else
+        {
+            if (stateMachine.PlayerCurrentHealthAndMana.currentMana >= 5)
+            {
+                isFiring = true;
+
+                //stateMachine.PlayerManaManager.ManaDepletionTimerCounter = 0f;
+                stateMachine.PlayerData.canRegenMana = false;
+
+
+                stateMachine.Animator.CrossFadeInFixedTime(FiringHash, CrossFadeDuration);
+
+                GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
+                stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
+
+
+                if (stateMachine.PlayerCurrentHealthAndMana.currentMana - 5 < 0)
+                {
+                    stateMachine.PlayerCurrentHealthAndMana.currentMana = 0;
+                }
+                else { stateMachine.PlayerCurrentHealthAndMana.currentMana -= 5; }
+            }
+            else { Debug.Log("not enough mana"); }
+
+        }
 
 
     }
