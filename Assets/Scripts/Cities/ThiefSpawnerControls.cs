@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ThiefSpawnerControls : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color startColor;
 
-    // Start is called before the first frame update
+    private bool hasStartedInvoke;
+
+    [SerializeField] GameObject ThiefPrefab;
+    [SerializeField] GameObject SpawnPoint;
+    public float timeBeforeNextSpawn;
+
     void Start()
     {
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
@@ -27,11 +33,32 @@ public class ThiefSpawnerControls : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if(timeBeforeNextSpawn != 0)
+            {
+                if (!hasStartedInvoke)
+                {
+                    InvokeRepeating(nameof(SpawnThief), 0, timeBeforeNextSpawn);
+                    hasStartedInvoke = true;
+                }
+                
+            }
+            else { Debug.Log("missing value"); }
+        }
+    }
+
     public IEnumerator TimeSpentRed()
     {
         yield return new WaitForSecondsRealtime(3);
         spriteRenderer.color = startColor;
     }
 
-
+    private void SpawnThief()
+    {
+        Debug.Log("+1thief");
+        Instantiate(ThiefPrefab, new Vector2(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y), Quaternion.identity);
+    }
 }
