@@ -10,7 +10,7 @@ public class PlayerEnterDashState : PlayerBaseState
     }
 
     private float ChargeDurationCounter;
-    private float ChargeDuration = 0.1f;
+    private float ChargeDuration = 0.05f;
 
     public override void Enter()
     {

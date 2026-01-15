@@ -27,6 +27,7 @@ public class ObjectsData : ScriptableObject
     public float damageCooldown;
     public float stunDuration;
 
+    //idk if i'll use this...
     [Header("Turn Stats")]
     public float timeBeforeTurn;
     // d'apres chat gpt ne doit pas etre dans le scriptable pour eviter des conflits avec les autres objets

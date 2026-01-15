@@ -19,6 +19,7 @@ public class SpawnersControls : MonoBehaviour
 
     [Header("Spawn Stats")]
     public float delayBetweenSpawns;
+    public float storedDelayBetweenSpawns;
     public bool hasStartedSpawning;
     private float spawnTimerCounter;
     public float spawnMultiplier;
@@ -56,6 +57,7 @@ public class SpawnersControls : MonoBehaviour
             if(spawnTimerCounter >= delayBetweenSpawns * spawnMultiplier)
             {
                 SpawnEnemies();
+                delayBetweenSpawns = storedDelayBetweenSpawns;
                 spawnTimerCounter = 0f;
             }
             else

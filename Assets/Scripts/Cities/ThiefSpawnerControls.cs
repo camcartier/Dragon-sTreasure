@@ -9,19 +9,31 @@ public class ThiefSpawnerControls : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color startColor;
 
-    private bool hasStartedInvoke;
+    private SpawnersControls spawnerControls;
+    public float amount;
 
-    [SerializeField] GameObject ThiefPrefab;
-    [SerializeField] GameObject SpawnPoint;
-    public float timeBeforeNextSpawn;
+    [SerializeField] PlayerData playerData;
+
+    //private bool hasStartedInvoke;
+
+    //[SerializeField] GameObject ThiefPrefab;
+    //[SerializeField] GameObject SpawnPoint;
+    //public float timeBeforeNextSpawn;
 
     void Start()
     {
+        spawnerControls = GetComponent<SpawnersControls>();
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
         startColor = spriteRenderer.color;
     }
 
-
+    void Update()
+    {
+        if (playerData.currentLevel > 0)
+        {
+            spawnerControls.hasStartedSpawning = true;
+        }
+    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,9 +42,14 @@ public class ThiefSpawnerControls : MonoBehaviour
         {
             spriteRenderer.color = Color.red;
             StartCoroutine(TimeSpentRed());
+
+
+            spawnerControls.delayBetweenSpawns += amount;
         }
     }
 
+    //old code
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -48,7 +65,7 @@ public class ThiefSpawnerControls : MonoBehaviour
             }
             else { Debug.Log("missing value"); }
         }
-    }
+    }*/
 
     public IEnumerator TimeSpentRed()
     {
@@ -56,9 +73,10 @@ public class ThiefSpawnerControls : MonoBehaviour
         spriteRenderer.color = startColor;
     }
 
+    /*
     private void SpawnThief()
     {
         Debug.Log("+1thief");
         Instantiate(ThiefPrefab, new Vector2(SpawnPoint.transform.position.x, SpawnPoint.transform.position.y), Quaternion.identity);
-    }
+    }*/
 }

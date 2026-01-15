@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class ThiefControls : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D thiefRb;
+    private Rigidbody2D thiefRb;
     [SerializeField] ObjectsData thiefData;
     [SerializeField] PlayerData playerData;
     [SerializeField] TreasureData treasureData;
@@ -38,8 +38,14 @@ public class ThiefControls : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    //new code
+    public int[] amountToSteal = new int[6];
+
+
     void Start()
     {
+        thiefRb = GetComponent<Rigidbody2D>();
+
         treasure = GameObject.Find("Treasure");
         Player = GameObject.Find("Player");
         MinusPanel = GameObject.Find("MinusPanel");
@@ -57,31 +63,33 @@ public class ThiefControls : MonoBehaviour
 
         if (hasStolen)
         {
-            isMovingToTreasure = false;
-            hasDirection = false;
+            thiefRb.velocity = Vector2.zero;
+            //isMovingToTreasure = false;
+            //hasDirection = false;
             //MinusPanel.SetActive(true);
 
             //thiefRb.velocity = GetDirectionToTreasure(treasure.transform.position.x*-1, treasure.transform.position.y*-1).normalized * thiefData.walkSpeed;
-            
-            
-            disappearTimerCounter += Time.deltaTime;
 
+
+            //disappearTimerCounter += Time.deltaTime;
+
+            /*
             if (disappearTimerCounter > disappearDuration * (treasureData.CurrentStep +1))
             {
                 Destroy(gameObject);
-            }
+            }*/
+
+
+            Destroy(gameObject);
         }
 
+        /*
         if (isMovingAwayFromTreasure)
         {
             thiefRb.velocity = dirAway.normalized * thiefData.walkSpeed;
         }
+        */
 
-        /*
-        if (disappearTimerCounter > disappearDuration)
-        {
-            Destroy(this.gameObject);
-        }*/
 
 
 
@@ -91,12 +99,15 @@ public class ThiefControls : MonoBehaviour
             hasDirection = true;
         }
 
+        //pareil j'enleve le voleur qui part apres avoir volé
+        /*
         if (!hasDirection && hasStolen)
         {
             dirAway = -dirToTreasure;
             hasDirection = true;
             isMovingAwayFromTreasure = true;
         }
+        */
 
        
 
@@ -111,6 +122,8 @@ public class ThiefControls : MonoBehaviour
             thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed;
         }
 
+        //je n'ai plus envie de la mecanique de fuite
+        /*
         if (isFleeing && !hasStolen)
         {
             isMovingToTreasure = false;
@@ -125,6 +138,7 @@ public class ThiefControls : MonoBehaviour
             isMovingToTreasure = true;
             fleeingTimerCounter= 0;
         }
+        */
 
     }
 
@@ -174,16 +188,18 @@ public class ThiefControls : MonoBehaviour
         if (collision.CompareTag("Treasure"))
         {
             hasStolen = true;
-            isFleeing = false;
+            //isFleeing = false;
             spriteRenderer.color = Color.blue;
             Debug.Log("has stolen");
-            if (treasureData.GoldCount < 50)
+            
+            //old code
+            /*if (treasureData.GoldCount < 50)
             {
                 currentGoldCarried += treasureData.GoldCount;
                 treasureData.GoldCount = 0;
             }
             else { currentGoldCarried += 50; treasureData.GoldCount -= 50; }
-
+            */
         }
 
     }
@@ -209,13 +225,13 @@ public class ThiefControls : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            isFleeing = true;
+            //isFleeing = true;
             //Debug.Log(collision.transform.position);
         }
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            isFleeing = true;
+            //isFleeing = true;
         }
     }
 

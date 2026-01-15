@@ -74,7 +74,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 11}
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 7
 --- !u!1 &276867896046686866
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0688db14bf785740bde3961d2438730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefRb: {fileID: 1028294303609873676}
   thiefData: {fileID: 11400000, guid: 8e9cac55c107e6b4fa067cefb532744a, type: 2}
   playerData: {fileID: 11400000, guid: 0cc369ca499706a4d89a68604c66adeb, type: 2}
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
@@ -187,6 +186,7 @@ MonoBehaviour:
   hasStolen: 0
   isFleeing: 0
   disappearDuration: 5
+  amountToSteal: 000000000000000000000000000000000000000000000000
 --- !u!114 &2411617863815039248
 MonoBehaviour:
   m_ObjectHideFlags: 0
