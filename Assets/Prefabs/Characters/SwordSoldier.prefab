@@ -118,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7281034259432771423}
   - component: {fileID: 8559410311498402211}
+  - component: {fileID: 6503994665546756375}
   m_Layer: 7
   m_Name: CollisionCollider
   m_TagString: Untagged
@@ -147,7 +148,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2232829806478616904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -166,6 +167,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.110608, y: 14.449272}
   m_EdgeRadius: 0
+--- !u!58 &6503994665546756375
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232829806478616904}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 18}
+  serializedVersion: 2
+  m_Radius: 15.16
 --- !u!1 &3055691317479082156
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6262012030644287067}
   - component: {fileID: -5292730713564269550}
+  - component: {fileID: 8476879661157924612}
   m_Layer: 7
   m_Name: SwordSoldier
   m_TagString: Untagged
@@ -562,6 +580,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8476879661157924612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512618063938855508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfda9de81a03784abb0d57592918007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectData: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
+  directionX: 0
+  directionY: 0
+  isFollowing: 0
 --- !u!1 &7653139990179804991
 GameObject:
   m_ObjectHideFlags: 0

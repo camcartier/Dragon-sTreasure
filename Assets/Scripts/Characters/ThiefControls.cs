@@ -59,7 +59,8 @@ public class ThiefControls : MonoBehaviour
         {
             isMovingToTreasure = false;
             hasDirection = false;
-            MinusPanel.SetActive(true);
+            //MinusPanel.SetActive(true);
+
             //thiefRb.velocity = GetDirectionToTreasure(treasure.transform.position.x*-1, treasure.transform.position.y*-1).normalized * thiefData.walkSpeed;
             
             

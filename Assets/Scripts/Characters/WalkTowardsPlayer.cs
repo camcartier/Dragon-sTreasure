@@ -39,13 +39,25 @@ public class WalkTowardsPlayer : MonoBehaviour
         else { directionY = 1; }
 
 
-
+        //Walk towards the player
         if(isFollowing)
         {
             rb2D.velocity = new Vector2(directionX, directionY) * objectData.walkSpeed;
 
         }
         
+        //Turning the prefab
+        if (isFollowing)
+        {
+            if(player.transform.position.x > gameObject.transform.position.x)
+            {
+                gameObject.transform.localScale = new Vector3(-1,1,1);
+            }
+            else
+            {
+                gameObject.transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
             
     }
 
