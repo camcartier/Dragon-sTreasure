@@ -289,8 +289,9 @@ MonoBehaviour:
   ListOfRightSpawnPoints:
   - {fileID: 2246729694049297346}
   delayBetweenSpawns: 2
+  hasStartedSpawning: 0
+  spawnMultiplier: 1
   numberOfPrefabs: 0
-  numberOfSpawnPoints: 0
   numberOfLeftSpawnPoints: 0
   numberOfRightSpawnPoints: 0
 --- !u!1 &5506894420558007663

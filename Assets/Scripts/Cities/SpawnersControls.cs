@@ -16,30 +16,57 @@ public class SpawnersControls : MonoBehaviour
     public List<GameObject> ListOfLeftSpawnPoints = new List<GameObject>();
     public List<GameObject> ListOfRightSpawnPoints = new List<GameObject>();
 
-    public float delayBetweenSpawns;
-    private bool hasStartedSpawning;
 
+    [Header("Spawn Stats")]
+    public float delayBetweenSpawns;
+    public bool hasStartedSpawning;
+    private float spawnTimerCounter;
+    public float spawnMultiplier;
+
+
+    [Header("numbers")]
     public int numberOfPrefabs;
-    public int numberOfSpawnPoints;
+    //public int numberOfSpawnPoints;
     public int numberOfLeftSpawnPoints;
     public int numberOfRightSpawnPoints;
 
     private GameObject player;
 
+
+
     void Start()
     {
         numberOfPrefabs = ListOfPrefabs.Count;
-
-        numberOfSpawnPoints = ListOfSpwanPoints.Count;
         numberOfLeftSpawnPoints = ListOfLeftSpawnPoints.Count;
         numberOfRightSpawnPoints = ListOfRightSpawnPoints.Count;
 
+        spawnTimerCounter = delayBetweenSpawns;
+        spawnMultiplier = 1f;
+
+
         player = GameObject.Find("Player");
+
     }
 
     void Update()
     {
-        
+        if (hasStartedSpawning)
+        {
+            
+            if(spawnTimerCounter >= delayBetweenSpawns * spawnMultiplier)
+            {
+                SpawnEnemies();
+                spawnTimerCounter = 0f;
+            }
+            else
+            {
+                spawnTimerCounter += Time.deltaTime;
+            }
+
+
+
+        }
+
     }
 
     
@@ -50,7 +77,11 @@ public class SpawnersControls : MonoBehaviour
             Debug.Log("spawner sees you");
             if (!hasStartedSpawning)
             {
-                InvokeRepeating(nameof(SpawnEnemies), 0, delayBetweenSpawns); hasStartedSpawning = true;
+
+                hasStartedSpawning = true;
+
+
+                //InvokeRepeating(nameof(SpawnEnemies), 0, delayBetweenSpawns); hasStartedSpawning = true;
             }
 
         }

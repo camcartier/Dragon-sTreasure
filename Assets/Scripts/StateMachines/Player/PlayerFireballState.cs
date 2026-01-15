@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerFireballState : PlayerBaseState
 {
-    private float fireballEmissionDuration = 200f;
+    private float fireballEmissionDuration = 90f;
     private float fireballTimerCounter = 0f;
     //private GameObject fireballStartingPoint;
     public PlayerFireballState(PlayerStateMachine stateMachine) : base(stateMachine)
