@@ -85,7 +85,12 @@ public class PlayerMainState : PlayerBaseState
             else { stateMachine.PlayerData.canDash = true; dashDelayCounter = 0f; }
         }
 
+        if (stateMachine.InputReader.Fire.ReadValue<float>() > 0)
+        {
+            Debug.Log("fire continuously");
+        }
 
+        Debug.Log(stateMachine.InputReader.Fire.ReadValue<float>());
 
     }
     public override void Exit()
@@ -173,28 +178,18 @@ public class PlayerMainState : PlayerBaseState
 
         if (movement.x < 0)
         {
-            //Debug.Log("facing left");
+            
             this.stateMachine.gameObject.transform.rotation = new Quaternion (0, 180, 0, 0); 
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
         else {
-            //Debug.Log("facing right");
+            
             this.stateMachine.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = false;
             }
         }
 
-    //this can not work as the script is not derived from MonoBehavior
-    /*private void OnCollisionEnter2D(Collision collision)
-    {
-        Debug.Log("collided");
 
-        if (collision.collider.gameObject.GetComponent<CanDamage>() !=null)
-        {
-            stateMachine.SwitchState(new PlayerHurtState(stateMachine));
-        }
-        else { Debug.Log("not found"); }
-    }*/
 
 
 

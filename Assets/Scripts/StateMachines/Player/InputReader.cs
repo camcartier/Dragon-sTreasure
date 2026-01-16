@@ -10,6 +10,8 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 
     public event Action  UseEvent, FireEvent, DashEvent, FireballEvent;
     //MoveEvent,
+    
+    public InputAction Fire;
 
     public Vector2 MovementValue { get; private set; }
 
@@ -18,6 +20,18 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
         controls = new Controls(); controls.Main.SetCallbacks(this);
 
         controls.Main.Enable();
+
+        Fire = controls.Main.Fire;
+    }
+
+    private void OnEnable()
+    {
+        Fire.Enable();
+    }
+
+    private void OnDisable()
+    {
+        Fire.Disable();
     }
 
     void OnDestroy()
