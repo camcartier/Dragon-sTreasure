@@ -42,7 +42,7 @@ MonoBehaviour:
   - 0
   canDash: 1
   MaxHealth: 15
-  MaxMana: 50
+  MaxMana: 500
   maxHealthArray:
   - 15
   - 30
@@ -61,6 +61,6 @@ MonoBehaviour:
   canRegenHealth: 0
   HealthRegenDelay: 5
   HealthRegenAmount: 0
-  canRegenMana: 1
+  canRegenMana: 0
   ManaRegenMinimumDelay: 500
   fireDelay: 0

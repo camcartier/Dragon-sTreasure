@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        treasureData.GoldCount = 1;
+        //treasureData.GoldCount = 1;
 
         currentPlayerHealthAndMana.currentMana = playerData.MaxMana;
         currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;

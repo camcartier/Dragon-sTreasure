@@ -20,7 +20,7 @@ MonoBehaviour:
   burningAmount: 0.01
   burningSpeed: 0
   minHealthBurnsStop: 0
-  walkSpeed: 8
+  walkSpeed: 10
   outOfRangeDetachTime: 0
   damageAmount: 0
   damageCooldown: 0

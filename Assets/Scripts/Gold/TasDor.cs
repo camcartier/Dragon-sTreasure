@@ -8,13 +8,10 @@ public class TasDor : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] TreasureData treasureData;
+    [SerializeField] PlayerData playerData;
 
     [Header ("Visuals")]
-    //[SerializeField] GameObject Tas1;
-    //[SerializeField] GameObject Tas2;
-    //[SerializeField] GameObject Tas3;
-    //[SerializeField] GameObject Tas4;
-    //[SerializeField] GameObject Tas5;
+
     public GameObject[] StepArrayGameObjects = new GameObject[5];
     public int CurrentSpriteNumber;
 
@@ -24,13 +21,15 @@ public class TasDor : MonoBehaviour
     {
         DetectorTrigger = GameObject.Find("DetectionCircle").GetComponent<CircleCollider2D>();
 
-        CurrentSpriteNumber = 0;
+        CurrentSpriteNumber = playerData.currentLevel;
         StepArrayGameObjects[CurrentSpriteNumber].SetActive(true);
 
+        /*
         for (int i = 1; i < StepArrayGameObjects.Length; i++)
         {
             StepArrayGameObjects[i].SetActive(false);
         }
+        */
 
     }
 
@@ -56,32 +55,6 @@ public class TasDor : MonoBehaviour
         }
 
 
-        /*
-        if (treasureData.GoldCount > 10)
-        {
-            Tas2.SetActive (true);
-            Tas1.SetActive(false);
-            DetectorTrigger.radius = 4f;
-        }
-        if (treasureData.GoldCount > 50)
-        {
-            Tas3.SetActive (true);
-            Tas2.SetActive(false);
-            DetectorTrigger.radius = 8f;
-        }
-        if (treasureData.GoldCount > 100)
-        {
-            Tas4.SetActive (true);
-            Tas3.SetActive(false);
-            DetectorTrigger.radius = 16f;
-        }
-        if (treasureData.GoldCount > 500)
-        {
-            Tas5.SetActive (true);
-            Tas4.SetActive(false);
-            DetectorTrigger.radius = 32f;
-        }
-        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

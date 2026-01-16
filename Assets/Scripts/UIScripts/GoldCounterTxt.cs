@@ -16,8 +16,7 @@ public class GoldCounterTxt : MonoBehaviour
 
         treasureSaveValue = treasureData.GoldCount;
 
-        treasureData.CurrentStep = 0;
-        treasureData.GoldCount = 0;
+
     }
 
     // Update is called once per frame

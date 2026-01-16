@@ -22,7 +22,7 @@ public class ThiefControls : MonoBehaviour
     public bool hasStolen;
     public bool isFleeing;
 
-    private float fleeingDuration = 5f;
+    //private float fleeingDuration = 5f;
     private float fleeingTimerCounter;
 
     [Header ("Disappear after stealing")]

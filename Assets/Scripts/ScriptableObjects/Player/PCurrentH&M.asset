@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753735c93ec4cf049a18c16386251802, type: 3}
   m_Name: PCurrentH&M
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  currentMana: 50
-  manaMinimumDelayCounter: 333
+  currentHealth: 15
+  currentMana: 420
+  manaMinimumDelayCounter: 292
+  stamina: 0

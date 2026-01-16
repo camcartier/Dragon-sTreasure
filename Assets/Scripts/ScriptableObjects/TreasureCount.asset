@@ -15,9 +15,8 @@ MonoBehaviour:
   GoldCount: 0
   CurrentStep: 0
   StepArray: 0500000032000000c8000000f4010000d007000088130000
-  FirstStep: 5
-  SecondStep: 50
-  ThirstStep: 200
-  FourthStep: 500
-  FifthStep: 2000
-  SixthStep: 5000
+  LVL1: 0
+  LVL2: 0
+  LVL3: 0
+  LVL4: 0
+  LVL5: 0

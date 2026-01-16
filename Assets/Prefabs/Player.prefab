@@ -539,6 +539,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7b6f14395055e46b60c8c05cccd0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Fire:
+    m_Name: Fire
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 34d3e8a1-94d1-475c-b142-d7c13ab44be0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!114 &9033838750334023689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +569,7 @@ MonoBehaviour:
   <canFire>k__BackingField: 0
   <isFiring>k__BackingField: 0
   <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
+  <hasInfiniteMana>k__BackingField: 0
   <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <isStunnable>k__BackingField: 0
   <stunDuration>k__BackingField: 100

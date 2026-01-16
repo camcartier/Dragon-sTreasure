@@ -88,9 +88,12 @@ public class PlayerMainState : PlayerBaseState
         if (stateMachine.InputReader.Fire.ReadValue<float>() > 0)
         {
             Debug.Log("fire continuously");
+
+            //isFiring = true;
+
         }
 
-        Debug.Log(stateMachine.InputReader.Fire.ReadValue<float>());
+        //Debug.Log(stateMachine.InputReader.Fire.ReadValue<float>());
 
     }
     public override void Exit()

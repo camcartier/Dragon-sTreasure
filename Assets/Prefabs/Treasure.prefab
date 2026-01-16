@@ -520,7 +520,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 32, y: 16}
+    oldSize: {x: 42.666668, y: 21.333334}
     newSize: {x: 1.28, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
+  playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   StepArrayGameObjects:
   - {fileID: 563976575377410412}
   - {fileID: 5581019924667508841}
@@ -711,7 +712,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 32, y: 16}
+    oldSize: {x: 42.666668, y: 21.333334}
     newSize: {x: 1.28, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
