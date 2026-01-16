@@ -12,7 +12,8 @@ public class GoldCounterTxt : MonoBehaviour
 
     void Start()
     {
-        goldCounterTxt.text = "0/5";
+        //ne prend pas en compte le depassement d'honoraire
+        goldCounterTxt.text = (treasureData.GoldCount + "/" + treasureData.StepArray[treasureData.CurrentStep]);
 
         treasureSaveValue = treasureData.GoldCount;
 

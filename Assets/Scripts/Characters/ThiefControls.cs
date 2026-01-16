@@ -23,7 +23,7 @@ public class ThiefControls : MonoBehaviour
     public bool isFleeing;
 
     //private float fleeingDuration = 5f;
-    private float fleeingTimerCounter;
+    //private float fleeingTimerCounter;
 
     [Header ("Disappear after stealing")]
     public float disappearDuration = 1f;
@@ -58,38 +58,17 @@ public class ThiefControls : MonoBehaviour
 
 
     void Update()
-    {
-
+    { 
+        Debug.Log(amountToSteal[playerData.currentLevel] + " the amount that should be stolen");
+        Debug.Log(playerData.currentLevel + " the player's current level");
+        Debug.Log(treasureData.GoldCount + " the current gold amount");
 
         if (hasStolen)
         {
             thiefRb.velocity = Vector2.zero;
-            //isMovingToTreasure = false;
-            //hasDirection = false;
-            //MinusPanel.SetActive(true);
-
-            //thiefRb.velocity = GetDirectionToTreasure(treasure.transform.position.x*-1, treasure.transform.position.y*-1).normalized * thiefData.walkSpeed;
-
-
-            //disappearTimerCounter += Time.deltaTime;
-
-            /*
-            if (disappearTimerCounter > disappearDuration * (treasureData.CurrentStep +1))
-            {
-                Destroy(gameObject);
-            }*/
-
 
             Destroy(gameObject);
         }
-
-        /*
-        if (isMovingAwayFromTreasure)
-        {
-            thiefRb.velocity = dirAway.normalized * thiefData.walkSpeed;
-        }
-        */
-
 
 
 
@@ -184,55 +163,19 @@ public class ThiefControls : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-
         if (collision.CompareTag("Treasure"))
         {
-            hasStolen = true;
-            //isFleeing = false;
+            if (!hasStolen)
+            {
+                treasureData.GoldCount -= amountToSteal[playerData.currentLevel];
+                hasStolen = true;
+            }
             spriteRenderer.color = Color.blue;
             Debug.Log("has stolen");
+
             
-            //old code
-            /*if (treasureData.GoldCount < 50)
-            {
-                currentGoldCarried += treasureData.GoldCount;
-                treasureData.GoldCount = 0;
-            }
-            else { currentGoldCarried += 50; treasureData.GoldCount -= 50; }
-            */
         }
 
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        /*
-        if (collision.CompareTag("Player"))
-        {
-            Debug.Log("not touching anymore");
-
-            //isFleeing = false;
-            //playerPosAtCollision= Vector2.zero;
-        }
-        */
-
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //isFleeing = true;
-            //Debug.Log(collision.transform.position);
-        }
-
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            //isFleeing = true;
-        }
     }
 
 

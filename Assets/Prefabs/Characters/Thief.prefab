@@ -186,7 +186,7 @@ MonoBehaviour:
   hasStolen: 0
   isFleeing: 0
   disappearDuration: 5
-  amountToSteal: 000000000000000000000000000000000000000000000000
+  amountToSteal: 020000000400000006000000080000000a0000000c000000
 --- !u!114 &2411617863815039248
 MonoBehaviour:
   m_ObjectHideFlags: 0
