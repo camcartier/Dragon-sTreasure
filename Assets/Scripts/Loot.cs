@@ -8,7 +8,7 @@ public class Loot : MonoBehaviour
 {
     [SerializeField] TreasureData treasureData;
 
-    [SerializeField] GoldValue thisGoldValue;
+    [SerializeField] LootValues thisLootValue;
 
     [SerializeField] PlayerCurrentHealthAndMana PlayerHealthAndMana;
 
@@ -22,15 +22,17 @@ public class Loot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")){
 
-            treasureData.GoldCount += thisGoldValue.Value;
-            PlayerHealthAndMana.currentMana += thisGoldValue.ManaValue;
+            treasureData.GoldCount += thisLootValue.GoldValue;
+            PlayerHealthAndMana.currentMana += thisLootValue.ManaValue;
             Destroy(this.gameObject);
         }
 
+        /*
         if (collision.gameObject.CompareTag("Thief"))
         {
             collision.gameObject.GetComponentInChildren<ThiefControls>().currentGoldCarried += thisGoldValue.Value;
             Destroy(this.gameObject);
         }
+        */
     }
 }
