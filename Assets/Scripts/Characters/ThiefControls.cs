@@ -17,8 +17,10 @@ public class ThiefControls : MonoBehaviour
 
     [Header ("General stats")]
     public int currentGoldCarried;
+    /*
     public bool isMovingToTreasure;
     public bool isMovingAwayFromTreasure;
+    */
     public bool hasStolen;
     public bool isFleeing;
 
@@ -28,19 +30,20 @@ public class ThiefControls : MonoBehaviour
     [Header ("Disappear after stealing")]
     public float disappearDuration = 1f;
     private float disappearTimerCounter;  
-
+    /*
     private bool hasDirection;
     private bool hasFleeingDirection;
     private Vector2 dirToTreasure;
     private Vector2 dirAway;
     private Vector2 dirFromPlayer;
     private Vector2 playerPosAtCollision;
-
+    */
     private SpriteRenderer spriteRenderer;
 
     //new code
     public int[] amountToSteal = new int[6];
 
+    [SerializeField] WalkTowards walkTowards;
 
     void Start()
     {
@@ -50,7 +53,7 @@ public class ThiefControls : MonoBehaviour
         Player = GameObject.Find("Player");
         MinusPanel = GameObject.Find("MinusPanel");
 
-        isMovingToTreasure = true;
+        //isMovingToTreasure = true;
         //MinusPanel.SetActive(false);
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -65,18 +68,19 @@ public class ThiefControls : MonoBehaviour
 
         if (hasStolen)
         {
+            
             thiefRb.velocity = Vector2.zero;
 
             Destroy(gameObject);
         }
 
 
-
+        /*
         if (!hasDirection && !hasStolen)
         {
             dirToTreasure = GetDirectionToTreasure(treasure.transform.position.x, treasure.transform.position.y);
             hasDirection = true;
-        }
+        }*/
 
         //pareil j'enleve le voleur qui part apres avoir volé
         /*
@@ -89,7 +93,7 @@ public class ThiefControls : MonoBehaviour
         */
 
        
-
+        /*
         if (!isFleeing && !hasStolen)
         {
             isMovingToTreasure = true;
@@ -100,6 +104,7 @@ public class ThiefControls : MonoBehaviour
         {
             thiefRb.velocity = dirToTreasure.normalized * thiefData.walkSpeed;
         }
+        */
 
         //je n'ai plus envie de la mecanique de fuite
         /*
@@ -121,12 +126,14 @@ public class ThiefControls : MonoBehaviour
 
     }
 
+    
     void MoveToTreasure()
     {
         Vector2 direction = new Vector2 (treasure.transform.position.x- thiefRb.position.x, treasure.transform.position.y- thiefRb.position.y);
         thiefRb.velocity = new Vector2 (direction.x, direction.y).normalized * thiefData.walkSpeed;
     }
 
+    
     Vector3 GetDirectionToTreasure(float posX, float posY)
     {
         if (gameObject.transform.position.x- posX > gameObject.transform.position.x)

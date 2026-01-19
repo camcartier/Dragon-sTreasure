@@ -74,7 +74,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 11}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 11.24
 --- !u!1 &276867896046686866
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 1028294303609873676}
   - component: {fileID: 1069143312979619331}
   - component: {fileID: 2411617863815039248}
+  - component: {fileID: 7289694450756475118}
   - component: {fileID: 5362810986666985590}
   m_Layer: 7
   m_Name: Thief
@@ -153,14 +154,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486838616963046477}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -182,12 +183,11 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: 0cc369ca499706a4d89a68604c66adeb, type: 2}
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   currentGoldCarried: 0
-  isMovingToTreasure: 0
-  isMovingAwayFromTreasure: 0
   hasStolen: 0
   isFleeing: 0
   disappearDuration: 5
   amountToSteal: 020000000400000006000000080000000a0000000c000000
+  walkTowards: {fileID: 0}
 --- !u!114 &2411617863815039248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,23 @@ MonoBehaviour:
   - {fileID: 1699467609051321577, guid: 7426cbd462c0ce0409c9e3dd1319de17, type: 3}
   - {fileID: 4907049712102308116, guid: 11ff29149b0af2549b3b30f727f2f2fd, type: 3}
   - {fileID: 0}
+--- !u!114 &7289694450756475118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486838616963046477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfda9de81a03784abb0d57592918007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectData: {fileID: 11400000, guid: 8e9cac55c107e6b4fa067cefb532744a, type: 2}
+  directionX: 0
+  directionY: 0
+  isFollowing: 0
+  isTurning: 0
 --- !u!114 &5362810986666985590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 1028294303609873676}
-  bumpForce: 1000000
+  bumpForce: 2000
   direction: {x: 0, y: 0}
+  walkTowards: {fileID: 7289694450756475118}
 --- !u!1 &4126246011608522992
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +666,7 @@ SpriteRenderer:
   m_SortingOrder: 9
   m_Sprite: {fileID: -915038959, guid: 634db3590310f8342bc1646b2acd4051, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkTowardsPlayer : MonoBehaviour
+public class WalkTowards : MonoBehaviour
 {
-    private GameObject player;
+    private GameObject toFollow;
     private Rigidbody2D rb2D;
     [SerializeField] ObjectsData objectData;
 
@@ -12,27 +12,34 @@ public class WalkTowardsPlayer : MonoBehaviour
     public float directionY;
 
     public bool isFollowing;
+    public bool isTurning;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");  
-        rb2D = GetComponent<Rigidbody2D>();
+        if (gameObject.tag != "Thief")
+        {
+            toFollow = GameObject.Find("Player");
+        }
+        else { toFollow = GameObject.Find("Treasure"); }
+            rb2D = GetComponent<Rigidbody2D>();
 
         isFollowing = true;
+        isTurning = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Mathf.Sign(gameObject.transform.position.x - player.transform.position.x) > 0)
+        if (Mathf.Sign(gameObject.transform.position.x - toFollow.transform.position.x) > 0)
         {
             directionX = -1;
         }
         else { directionX = 1; }
 
-        if (Mathf.Sign(gameObject.transform.position.y - player.transform.position.y) > 0)
+        if (Mathf.Sign(gameObject.transform.position.y - toFollow.transform.position.y) > 0)
         {
             directionY = -1;
         }
@@ -45,13 +52,20 @@ public class WalkTowardsPlayer : MonoBehaviour
             rb2D.velocity = new Vector2(directionX, directionY) * objectData.walkSpeed;
 
         }
-        
-        //Turning the prefab
-        if (isFollowing)
+
+        if (Mathf.Abs(toFollow.transform.position.x - gameObject.transform.position.x) <= 0.5f)
         {
-            if(player.transform.position.x > gameObject.transform.position.x)
+            isTurning = false;
+        }
+        else { isTurning = true; }
+
+
+        //Turning the prefab
+        if (isFollowing && isTurning)
+        {
+            if (toFollow.transform.position.x > gameObject.transform.position.x)
             {
-                gameObject.transform.localScale = new Vector3(-1,1,1);
+                gameObject.transform.localScale = new Vector3(-1, 1, 1);
             }
             else
             {

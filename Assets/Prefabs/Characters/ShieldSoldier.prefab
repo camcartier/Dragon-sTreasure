@@ -118,7 +118,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.08325958, y: 18}
-  m_Size: {x: 25, y: 25}
+  m_Size: {x: 35, y: 35}
   m_Direction: 0
 --- !u!1 &2679582788365381538
 GameObject:
@@ -231,10 +231,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4508757924862019298}
   - component: {fileID: -95864150484674536}
-  - component: {fileID: 8647513304360189759}
   - component: {fileID: 7869589743604368178}
   - component: {fileID: 3734673022220493830}
   - component: {fileID: -2151252311815318612}
+  - component: {fileID: 8647513304360189759}
   - component: {fileID: 3606853418390296394}
   m_Layer: 7
   m_Name: ShieldSoldier
@@ -283,22 +283,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8647513304360189759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3213012083092160188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbfda9de81a03784abb0d57592918007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectData: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
-  directionX: 0
-  directionY: 0
-  isFollowing: 0
 --- !u!114 &7869589743604368178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +334,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   objectData: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
+--- !u!114 &8647513304360189759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012083092160188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfda9de81a03784abb0d57592918007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectData: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
+  directionX: 0
+  directionY: 0
+  isFollowing: 0
+  isTurning: 0
 --- !u!114 &3606853418390296394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,8 +364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: -95864150484674536}
-  bumpForce: 2000
+  bumpForce: 400
   direction: {x: 0, y: 0}
+  walkTowards: {fileID: 8647513304360189759}
 --- !u!1 &3719910465070521073
 GameObject:
   m_ObjectHideFlags: 0

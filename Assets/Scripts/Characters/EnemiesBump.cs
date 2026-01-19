@@ -9,6 +9,7 @@ public class EnemiesBump : MonoBehaviour
     public float bumpForce;
     public Vector2 direction;
 
+    [SerializeField] WalkTowards walkTowards;
    
 
     private void OnCollisionEnter2D(Collision2D collision)
