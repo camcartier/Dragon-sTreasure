@@ -8,8 +8,4 @@ public class CanDamage : MonoBehaviour
     public int contactDamage;
 
 
-    private void Start()
-    {
-
-    }
 }

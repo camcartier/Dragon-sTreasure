@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
-  thisGoldValue: {fileID: 11400000, guid: 471498253388a3c498f29b3781f92d32, type: 2}
+  thisLootValue: {fileID: 11400000, guid: ac129892186a5cf468190af4f92c2342, type: 2}
   PlayerHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
 --- !u!1 &7003406726932789604
 GameObject:

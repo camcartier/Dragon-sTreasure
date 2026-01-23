@@ -27,12 +27,6 @@ public class Loot : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        /*
-        if (collision.gameObject.CompareTag("Thief"))
-        {
-            collision.gameObject.GetComponentInChildren<ThiefControls>().currentGoldCarried += thisGoldValue.Value;
-            Destroy(this.gameObject);
-        }
-        */
+
     }
 }

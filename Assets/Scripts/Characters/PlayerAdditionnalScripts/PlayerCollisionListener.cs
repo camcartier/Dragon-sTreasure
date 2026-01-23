@@ -37,13 +37,13 @@ public class PlayerCollisionListener : MonoBehaviour
                   ?? collision.collider.GetComponentInParent<CanDamage>()
                   ?? collision.collider.GetComponentInChildren<CanDamage>();
 
-
+        /*
         if (collision.gameObject.CompareTag("Thief"))
         {
             stateMachine.rb2D.velocity = Vector2.zero;
 
 
-        }
+        }*/
 
         if (!stateMachine.isDead )
         {
