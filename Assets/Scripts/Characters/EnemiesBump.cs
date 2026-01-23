@@ -49,24 +49,12 @@ public class EnemiesBump : MonoBehaviour
             Debug.Log("bump should happen");
 
             hasBeenBumped = true;
-            if (collision.transform.position.x > gameObject.transform.position.x)
-            {
-                if (collision.transform.position.y > gameObject.transform.position.y)
-                {
-                    
-                    direction = new Vector2(gameObject.transform.position.x - collision.transform.position.x, gameObject.transform.position.y - collision.transform.position.y).normalized;
-                }
 
-                else { direction = new Vector2(gameObject.transform.position.x - collision.transform.position.x, collision.transform.position.y - gameObject.transform.position.y).normalized; }
-
-            }
-            else
-            {
-                direction = new Vector2(collision.transform.position.x - gameObject.transform.position.x, gameObject.transform.position.y - collision.transform.position.y).normalized;
-            }
+            direction = (collision.transform.position - transform.position).normalized;
+            direction *= -1;
 
             walkTowards.isFollowing = false;
-                //rb2d.AddForce(direction * bumpForce, ForceMode2D.Impulse);
+                
         }
 
         if (collision.gameObject.CompareTag("Enemies"))
