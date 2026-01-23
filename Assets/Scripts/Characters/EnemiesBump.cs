@@ -23,7 +23,7 @@ public class EnemiesBump : MonoBehaviour
         {
             rb2d.velocity = Vector2.zero;
             rb2d.AddForce(direction * bumpForce, ForceMode2D.Impulse );
-
+            //rb2d.AddForce(direction * bumpForce);
 
         }
 
@@ -57,6 +57,7 @@ public class EnemiesBump : MonoBehaviour
                 
         }
 
+        /*
         if (collision.gameObject.CompareTag("Enemies"))
         {
             if (hasBeenBumped == true)
@@ -64,7 +65,7 @@ public class EnemiesBump : MonoBehaviour
                 collision.gameObject.GetComponent<WalkTowards>().isFollowing = false;
             }
             
-        }
+        }*/
     }
 
 

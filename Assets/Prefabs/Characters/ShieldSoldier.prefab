@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: -95864150484674536}
-  bumpForce: 200
+  bumpForce: 100
   direction: {x: 0, y: 0}
   walkTowards: {fileID: 8647513304360189759}
   timeForBump: 0.1
