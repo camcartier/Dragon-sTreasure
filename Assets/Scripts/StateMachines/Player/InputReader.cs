@@ -8,7 +8,7 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 {
     private Controls controls;
 
-    public event Action  UseEvent, FireEvent, DashEvent, FireballEvent;
+    public event Action  UseEvent, FireEvent, DashEvent, FireballEvent, RepulseEvent;
     //MoveEvent,
     
     public InputAction Fire;
@@ -74,5 +74,12 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 
         FireballEvent?.Invoke();
 
+    }
+
+    public void OnRepulse(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+
+        RepulseEvent?.Invoke();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerFireballState : PlayerBaseState
 {
-    private float fireballEmissionDuration = 90f;
+    private float fireballEmissionDuration = 1.1f;
     private float fireballTimerCounter = 0f;
     //private GameObject fireballStartingPoint;
     public PlayerFireballState(PlayerStateMachine stateMachine) : base(stateMachine)
@@ -36,7 +36,7 @@ public class PlayerFireballState : PlayerBaseState
     {
         if (fireballTimerCounter < fireballEmissionDuration)
         {
-            fireballTimerCounter++;
+            fireballTimerCounter += Time.deltaTime;
         }
         else
         {

@@ -36,6 +36,7 @@ public class PlayerMainState : PlayerBaseState
         stateMachine.InputReader.FireEvent += OnFire;
         stateMachine.InputReader.DashEvent += OnDash;
         stateMachine.InputReader.FireballEvent += OnFireball;
+        stateMachine.InputReader.RepulseEvent += OnRepulse;
 
         BulletStartPoint = stateMachine.gameObject.GetComponentInChildren<BulletStartPoint>().gameObject;
 
@@ -102,6 +103,7 @@ public class PlayerMainState : PlayerBaseState
         stateMachine.InputReader.UseEvent -= OnUse;
         stateMachine.InputReader.FireEvent -= OnFire;
         stateMachine.InputReader.DashEvent -= OnDash;
+        stateMachine.InputReader.RepulseEvent -= OnRepulse;
 
     }
 
@@ -174,6 +176,16 @@ public class PlayerMainState : PlayerBaseState
             stateMachine.SwitchState(new PlayerFireballState(stateMachine));
         }    
     }
+
+    private void OnRepulse()
+    {
+        if (stateMachine.canRepulse)
+        {
+            stateMachine.SwitchState(new PlayerRepulseState(stateMachine));
+        }
+
+    }
+
 
     private void FaceMovementDirecton()
     {

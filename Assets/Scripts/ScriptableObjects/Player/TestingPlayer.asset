@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelMax: 5
   currentLevel: 0
-  movementSpeed: 60
+  movementSpeed: 90
   movementSpeedArray:
   - 0
   - 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   - 0
   stunDuration: 0.3
   invulnerabilityDuration: 1
-  dashSpeed: 120
+  dashSpeed: 140
   dashSpeedArray:
   - 0
   - 0

@@ -71,6 +71,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Repulse"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a861ee3-bc24-45fc-b609-ae16ff1ad7aa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -249,6 +258,17 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Fireball"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d06a8c2-e8eb-4ad9-8d5e-512c45668e6a"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Repulse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -268,6 +288,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Main_Fire = m_Main.FindAction("Fire", throwIfNotFound: true);
         m_Main_Dash = m_Main.FindAction("Dash", throwIfNotFound: true);
         m_Main_Fireball = m_Main.FindAction("Fireball", throwIfNotFound: true);
+        m_Main_Repulse = m_Main.FindAction("Repulse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -332,6 +353,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Fire;
     private readonly InputAction m_Main_Dash;
     private readonly InputAction m_Main_Fireball;
+    private readonly InputAction m_Main_Repulse;
     public struct MainActions
     {
         private @Controls m_Wrapper;
@@ -341,6 +363,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Main_Fire;
         public InputAction @Dash => m_Wrapper.m_Main_Dash;
         public InputAction @Fireball => m_Wrapper.m_Main_Fireball;
+        public InputAction @Repulse => m_Wrapper.m_Main_Repulse;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -365,6 +388,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Fireball.started -= m_Wrapper.m_MainActionsCallbackInterface.OnFireball;
                 @Fireball.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnFireball;
                 @Fireball.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnFireball;
+                @Repulse.started -= m_Wrapper.m_MainActionsCallbackInterface.OnRepulse;
+                @Repulse.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnRepulse;
+                @Repulse.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnRepulse;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -384,6 +410,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Fireball.started += instance.OnFireball;
                 @Fireball.performed += instance.OnFireball;
                 @Fireball.canceled += instance.OnFireball;
+                @Repulse.started += instance.OnRepulse;
+                @Repulse.performed += instance.OnRepulse;
+                @Repulse.canceled += instance.OnRepulse;
             }
         }
     }
@@ -404,5 +433,6 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnFireball(InputAction.CallbackContext context);
+        void OnRepulse(InputAction.CallbackContext context);
     }
 }

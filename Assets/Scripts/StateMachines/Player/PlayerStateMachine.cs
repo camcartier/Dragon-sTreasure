@@ -66,6 +66,9 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject fireballStartingPoint { get; private set; }
     [field: SerializeField] public GameObject FireballPrefab { get; private set; }
 
+    //Repulse
+    [field: SerializeField] public bool canRepulse { get; set; }
+
     //Leveling up
     [field: SerializeField] public int currentLevelStored { get; set; }
     [field: SerializeField] public TreasureData TreasureData { get; set; }
