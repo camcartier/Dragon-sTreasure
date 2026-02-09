@@ -13,6 +13,10 @@ public class WalkTowards : MonoBehaviour
 
     public bool isFollowing;
     public bool isTurning;
+    public bool isStunned;
+
+    private float stunTimer;
+    private float stunTimerCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +28,29 @@ public class WalkTowards : MonoBehaviour
         else { toFollow = GameObject.Find("Treasure"); }
             rb2D = GetComponent<Rigidbody2D>();
 
+        if(stunTimer ==0)
+        {
+            stunTimer = 1f;
+        }
+
         isFollowing = true;
         isTurning = true;
-        
+        isStunned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isStunned)
+        {
+            rb2D.velocity = Vector3.zero;
+            stunTimerCounter += Time.deltaTime;
+            if (stunTimerCounter>= stunTimer)
+            {
+                isStunned= false;
+                stunTimerCounter= 0f;
+            }
+        }
 
         if (Mathf.Sign(gameObject.transform.position.x - toFollow.transform.position.x) > 0)
         {
@@ -47,7 +66,7 @@ public class WalkTowards : MonoBehaviour
 
 
         //Walk towards the player
-        if(isFollowing)
+        if(isFollowing && !isStunned)
         {
             rb2D.velocity = new Vector2(directionX, directionY) * objectData.walkSpeed;
 
@@ -61,7 +80,7 @@ public class WalkTowards : MonoBehaviour
 
 
         //Turning the prefab
-        if (isFollowing && isTurning)
+        if (isFollowing && isTurning && !isStunned)
         {
             if (toFollow.transform.position.x > gameObject.transform.position.x)
             {

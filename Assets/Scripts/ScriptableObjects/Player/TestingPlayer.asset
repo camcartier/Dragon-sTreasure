@@ -64,3 +64,5 @@ MonoBehaviour:
   canRegenMana: 0
   ManaRegenMinimumDelay: 500
   fireDelay: 0
+  repulseForce: 100
+  repulseRadius: 100

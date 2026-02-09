@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 3734673022220493830}
   - component: {fileID: 8647513304360189759}
   - component: {fileID: 3606853418390296394}
+  - component: {fileID: 8045212653309751890}
   m_Layer: 7
   m_Name: ShieldSoldier
   m_TagString: Enemies
@@ -309,6 +310,7 @@ MonoBehaviour:
   directionY: 0
   isFollowing: 0
   isTurning: 0
+  isStunned: 0
 --- !u!114 &3606853418390296394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +330,18 @@ MonoBehaviour:
   timeForBump: 0.1
   storedTimeForBump: 0
   hasBeenBumped: 0
+--- !u!114 &8045212653309751890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012083092160188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4271e02e10b53a14b845b17691084a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3719910465070521073
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +737,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6347865312309281848}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -44,5 +44,9 @@ public class PlayerData : ScriptableObject
     [Header("Firing Info")]
     public float fireDelay;
 
+    [Header("Repulse Info")]
+    public float repulseForce;
+    public float repulseRadius;
+
 
 }
