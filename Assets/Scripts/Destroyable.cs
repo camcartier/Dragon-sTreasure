@@ -19,6 +19,7 @@ public class Destroyable : MonoBehaviour
     [SerializeField] IAMAPS destructionFx;
     [SerializeField] IAMAPS burningFx;
     [SerializeField] BulletData bulletData;
+    [SerializeField] PlayerData playerData;
 
 
     private IAMAPS burningFxInstance;
@@ -29,6 +30,7 @@ public class Destroyable : MonoBehaviour
     public bool IsBurning { get; private set; }
     private bool burningFxHasSpawned;
     public bool IsRegen { get; private set; }
+    public bool IsRepulsed { get; set; }    
 
 
     private float currentWaitAfterLastAttack;
@@ -105,7 +107,11 @@ public class Destroyable : MonoBehaviour
             }
         }
 
-
+        if (IsRepulsed)
+        {
+            MyCurrentHealth -= playerData.repulseDamageArray[playerData.currentLevel];
+            IsRepulsed = false;
+        }
 
         if (IsRegen)
         {

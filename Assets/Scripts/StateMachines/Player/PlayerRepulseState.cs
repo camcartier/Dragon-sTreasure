@@ -63,11 +63,23 @@ public class PlayerRepulseState : PlayerBaseState
         {
             Rigidbody2D rb2d = collider.gameObject.GetComponentInParent<Rigidbody2D>();
             GetsRepulsed getsRepulsed = collider.gameObject.GetComponentInParent<GetsRepulsed>();
-
+            Vector2 repulseDirection = new Vector2(collider.transform.position.x - stateMachine.transform.position.x, collider.transform.position.y - stateMachine.transform.position.y);
 
             if(getsRepulsed != null)
             {
-                collider.GetComponentInParent<WalkTowards>().isStunned= true;
+                if (collider.GetComponentInParent<WalkTowards>() != null)
+                {
+                    collider.GetComponentInParent<WalkTowards>().isStunned = true;
+                }
+
+                //collider.GetComponentInParent<WalkTowards>().isStunned= true;
+                //rb2d.AddForce(repulseDirection.normalized * stateMachine.repulseForce, ForceMode2D.Impulse );
+                rb2d.AddForce(repulseDirection.normalized * stateMachine.PlayerData.repulseAmountArray[stateMachine.PlayerData.currentLevel]);
+
+                if(collider.GetComponentInParent<Destroyable>() != null)
+                {
+                    collider.GetComponentInParent<Destroyable>().IsRepulsed = true;
+                }
             }
             else { Debug.Log("no repulsed"); }
         }

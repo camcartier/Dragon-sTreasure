@@ -64,5 +64,13 @@ MonoBehaviour:
   canRegenMana: 0
   ManaRegenMinimumDelay: 500
   fireDelay: 0
-  repulseForce: 100
   repulseRadius: 100
+  repulseAmountArray: a861000050c30000f8240100905f010038c10100d0fb0100
+  repulseRadiusArray:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  repulseDamageArray: 050000000a0000000f00000014000000190000001e000000

@@ -795,7 +795,7 @@ MonoBehaviour:
   <hasInfiniteMana>k__BackingField: 0
   <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <isStunnable>k__BackingField: 0
-  <stunDuration>k__BackingField: 100
+  <stunDuration>k__BackingField: 1
   <knockbackDirection>k__BackingField: {x: 0, y: 0}
   <knockbackForce>k__BackingField: 5000
   <knockBackDuration>k__BackingField: 25
@@ -811,6 +811,8 @@ MonoBehaviour:
   <canFireball>k__BackingField: 0
   <fireballStartingPoint>k__BackingField: {fileID: 8639601430443596979}
   <FireballPrefab>k__BackingField: {fileID: 0}
+  <canRepulse>k__BackingField: 0
+  <repulseForce>k__BackingField: 50000
   <currentLevelStored>k__BackingField: 0
   <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}

@@ -68,6 +68,7 @@ public class PlayerStateMachine : StateMachine
 
     //Repulse
     [field: SerializeField] public bool canRepulse { get; set; }
+    [field: SerializeField] public int repulseForce { get; set; }
 
     //Leveling up
     [field: SerializeField] public int currentLevelStored { get; set; }

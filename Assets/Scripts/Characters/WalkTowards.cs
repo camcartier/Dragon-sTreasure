@@ -43,12 +43,15 @@ public class WalkTowards : MonoBehaviour
     {
         if (isStunned)
         {
+            
             rb2D.velocity = Vector3.zero;
+            rb2D.mass = 10f; 
             stunTimerCounter += Time.deltaTime;
             if (stunTimerCounter>= stunTimer)
             {
                 isStunned= false;
                 stunTimerCounter= 0f;
+                rb2D.mass = 1f;
             }
         }
 
