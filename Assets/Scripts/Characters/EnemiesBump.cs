@@ -57,15 +57,7 @@ public class EnemiesBump : MonoBehaviour
                 
         }
 
-        /*
-        if (collision.gameObject.CompareTag("Enemies"))
-        {
-            if (hasBeenBumped == true)
-            {
-                collision.gameObject.GetComponent<WalkTowards>().isFollowing = false;
-            }
-            
-        }*/
+
     }
 
 

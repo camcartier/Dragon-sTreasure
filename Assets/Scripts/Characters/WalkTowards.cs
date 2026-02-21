@@ -17,9 +17,8 @@ public class WalkTowards : MonoBehaviour
     public bool isTurning;
     public bool isStunned;
 
-    //gestion dans un autre script
-    //public bool canAttack;
-    //public bool isAttacking;
+    public bool canAttack;
+    public bool isAttacking;
 
     [field: SerializeField] public float stunTimer { get; private set; }
     private float stunTimerCounter;
@@ -47,17 +46,23 @@ public class WalkTowards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isFollowing)
+        {
+            rb2D.velocity = Vector3.zero;
+            Debug.Log("stop");
+        }
+
         if (isStunned)
         {
             
             rb2D.velocity = Vector3.zero;
-            rb2D.mass = 100f; 
+            rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             stunTimerCounter += Time.deltaTime;
             if (stunTimerCounter>= stunTimer)
             {
                 isStunned= false;
                 stunTimerCounter= 0f;
-                rb2D.mass = 1f;
+                rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
 
@@ -85,7 +90,7 @@ public class WalkTowards : MonoBehaviour
             if (Physics2D.Raycast(gameObject.transform.position, direction, distance) == true)
             {
                 
-                Debug.Log("obstacle");
+                
 
                 if (direction.x > 0) { rb2D.velocity = new Vector2(directionX + 1, directionY).normalized * objectData.walkSpeed; }
                 else { rb2D.velocity = new Vector2(directionX - 1, directionY).normalized * objectData.walkSpeed; }
