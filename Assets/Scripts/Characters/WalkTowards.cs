@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class WalkTowards : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class WalkTowards : MonoBehaviour
     public bool isTurning;
     public bool isStunned;
 
-    private float stunTimer;
+    [field: SerializeField] public float stunTimer { get; private set; }
     private float stunTimerCounter;
 
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class WalkTowards : MonoBehaviour
 
         if(stunTimer ==0)
         {
-            stunTimer = 1f;
+            stunTimer = 1.5f;
         }
 
         isFollowing = true;
@@ -45,7 +47,7 @@ public class WalkTowards : MonoBehaviour
         {
             
             rb2D.velocity = Vector3.zero;
-            rb2D.mass = 10f; 
+            rb2D.mass = 100f; 
             stunTimerCounter += Time.deltaTime;
             if (stunTimerCounter>= stunTimer)
             {
@@ -71,6 +73,11 @@ public class WalkTowards : MonoBehaviour
         //Walk towards the player
         if(isFollowing && !isStunned)
         {
+            float distance = Vector2.Distance(gameObject.transform.position, toFollow.transform.position);
+            if (Physics2D.Raycast(gameObject.transform.position, new Vector2(toFollow.transform.position.x- gameObject.transform.position.x, toFollow.transform.position.y - gameObject.transform.position.y), distance) == true)
+            {
+                Debug.Log("obstacle");
+            }
             rb2D.velocity = new Vector2(directionX, directionY) * objectData.walkSpeed;
 
         }

@@ -90,8 +90,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08325958, y: 21.8}
-  m_Size: {x: 31.1, y: 37.6}
+  m_Offset: {x: -0.08325958, y: 17.27}
+  m_Size: {x: 35, y: 35}
   m_Direction: 0
 --- !u!1 &2679582788365381538
 GameObject:
@@ -312,6 +312,7 @@ MonoBehaviour:
   isFollowing: 0
   isTurning: 0
   isStunned: 0
+  <stunTimer>k__BackingField: 0
 --- !u!114 &3606853418390296394
 MonoBehaviour:
   m_ObjectHideFlags: 0

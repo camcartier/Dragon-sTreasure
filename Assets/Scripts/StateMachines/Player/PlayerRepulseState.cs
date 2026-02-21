@@ -46,7 +46,7 @@ public class PlayerRepulseState : PlayerBaseState
         repulseTimerCounter = 0f;
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
-        Debug.Log("exit repulse state");
+        //Debug.Log("exit repulse state");
     }
 
     public void ApplyExplosionForce()
@@ -54,10 +54,11 @@ public class PlayerRepulseState : PlayerBaseState
         Vector3 explosionPosition = stateMachine.gameObject.transform.position;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPosition, stateMachine.PlayerData.repulseRadius, affectedLayers);
 
+        /*
         if(colliders.Length > 0 )
         {
             Debug.Log(colliders[0].name);
-        }
+        }*/
         
          foreach (Collider2D collider in colliders)
         {
@@ -81,7 +82,7 @@ public class PlayerRepulseState : PlayerBaseState
                     collider.GetComponentInParent<Destroyable>().IsRepulsed = true;
                 }
             }
-            else { Debug.Log("no repulsed"); }
+            //else { Debug.Log("no repulsed"); }
         }
     }
 }
