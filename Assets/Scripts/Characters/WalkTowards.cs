@@ -17,6 +17,10 @@ public class WalkTowards : MonoBehaviour
     public bool isTurning;
     public bool isStunned;
 
+    //gestion dans un autre script
+    //public bool canAttack;
+    //public bool isAttacking;
+
     [field: SerializeField] public float stunTimer { get; private set; }
     private float stunTimerCounter;
 
