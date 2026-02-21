@@ -74,11 +74,27 @@ public class WalkTowards : MonoBehaviour
         if(isFollowing && !isStunned)
         {
             float distance = Vector2.Distance(gameObject.transform.position, toFollow.transform.position);
-            if (Physics2D.Raycast(gameObject.transform.position, new Vector2(toFollow.transform.position.x- gameObject.transform.position.x, toFollow.transform.position.y - gameObject.transform.position.y), distance) == true)
+            Vector2 direction = new Vector2(toFollow.transform.position.x - gameObject.transform.position.x, toFollow.transform.position.y - gameObject.transform.position.y);
+            //debug
+            Debug.DrawRay(transform.position, direction * distance, Color.red);
+
+            if (Physics2D.Raycast(gameObject.transform.position, direction, distance) == true)
             {
+                
                 Debug.Log("obstacle");
+
+                if (direction.x > 0) { rb2D.velocity = new Vector2(directionX + 1, directionY).normalized * objectData.walkSpeed; }
+                else { rb2D.velocity = new Vector2(directionX - 1, directionY).normalized * objectData.walkSpeed; }
+                if (direction.y > 0) { rb2D.velocity = new Vector2(directionX, directionY +1).normalized * objectData.walkSpeed; }
+                else { rb2D.velocity = new Vector2(directionX, directionY -1).normalized * objectData.walkSpeed; }
+
+                    
             }
-            rb2D.velocity = new Vector2(directionX, directionY) * objectData.walkSpeed;
+            else
+            {
+                rb2D.velocity = new Vector2(directionX, directionY) * objectData.walkSpeed;
+            }
+                
 
         }
 
