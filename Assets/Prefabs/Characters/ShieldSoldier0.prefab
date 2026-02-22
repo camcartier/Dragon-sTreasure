@@ -256,9 +256,12 @@ GameObject:
   - component: {fileID: 3734673022220493830}
   - component: {fileID: 8045212653309751890}
   - component: {fileID: 7869589743604368178}
+  - component: {fileID: 8647513304360189759}
+  - component: {fileID: 2477271886145452072}
+  - component: {fileID: 3606853418390296394}
   - component: {fileID: 8514696761159953119}
   m_Layer: 7
-  m_Name: ShieldSoldier
+  m_Name: ShieldSoldier0
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +364,6 @@ MonoBehaviour:
   burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
-  stateMachine: {fileID: 8514696761159953119}
   listOfPossibleLoots:
   - {fileID: 0}
   - {fileID: 0}
@@ -369,6 +371,60 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &8647513304360189759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012083092160188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbfda9de81a03784abb0d57592918007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectData: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
+  directionX: 0
+  directionY: 0
+  isFollowing: 0
+  isTurning: 0
+  isStunned: 0
+  canAttack: 0
+  isAttacking: 0
+  <stunTimer>k__BackingField: 0
+--- !u!114 &2477271886145452072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012083092160188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d617bfc5745bbac4784b44345cff8233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkTowards: {fileID: 8647513304360189759}
+  enemyIDN: {fileID: 126109405560006348}
+--- !u!114 &3606853418390296394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012083092160188}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0785f5bf6f08f46bc76b829afe13e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: -95864150484674536}
+  bumpForce: 75
+  direction: {x: 0, y: 0}
+  walkTowards: {fileID: 8647513304360189759}
+  timeForBump: 0.1
+  storedTimeForBump: 0
+  hasBeenBumped: 0
 --- !u!114 &8514696761159953119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,15 +440,15 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 0}
   <rb2D>k__BackingField: {fileID: -95864150484674536}
   <enemyID>k__BackingField: {fileID: 126109405560006348}
-  <characterData>k__BackingField: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
-  <destroyableInfo>k__BackingField: {fileID: 7869589743604368178}
+  <spriteRenderer>k__BackingField: {fileID: 5158632203479419821}
+  <characterData>k__BackingField: {fileID: 0}
+  <destroyableInfo>k__BackingField: {fileID: 0}
   <canAttack>k__BackingField: 0
   <canBeBumped>k__BackingField: 0
   <isFollowing>k__BackingField: 0
   <isHurt>k__BackingField: 0
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
-  <spriteRenderer>k__BackingField: {fileID: 5158632203479419821}
 --- !u!1 &3719910465070521073
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +905,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 129
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -872,7 +928,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 20
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 39e5b6322c6e56b42a477969770efe82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

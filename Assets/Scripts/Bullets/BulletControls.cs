@@ -8,7 +8,7 @@ public class BulletControls : MonoBehaviour
     [SerializeField] PlayerData playerData;
     [SerializeField] BulletData bulletData;
 
-    private CharacterData characterData;
+    //private CharacterData characterData;
 
     [SerializeField] GameObject boooomBaby;
 

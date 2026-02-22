@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDeathState : MonoBehaviour
+public class EnemyDeathState : EnemyBaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnemyDeathState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        stateMachine.spriteRenderer.color = Color.black;
     }
+
+    public override void Exit()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Tick(float deltaTime)
+    {
+        throw new System.NotImplementedException();
+    }
+
 }

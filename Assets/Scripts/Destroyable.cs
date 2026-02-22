@@ -20,7 +20,7 @@ public class Destroyable : MonoBehaviour
     [SerializeField] IAMAPS burningFx;
     [SerializeField] BulletData bulletData;
     [SerializeField] PlayerData playerData;
-
+    [SerializeField] EnemyStateMachine stateMachine;
 
     private IAMAPS burningFxInstance;
 
@@ -62,7 +62,6 @@ public class Destroyable : MonoBehaviour
     private void Start()
     {
         SetMaxHealth(objectData.maxHealth);
-        //Debug.Log(objectData.maxHealth);
 
         MyCurrentHealth = objectData.maxHealth;
         MyCurrentStoredHealth = objectData.maxHealth;
@@ -72,8 +71,6 @@ public class Destroyable : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("burning is" + IsBurning);
-        //Debug.Log("regen is" + IsRegen);
         if (MyCurrentHealth != objectData.maxHealth)
         {   healthPanel.gameObject.SetActive(true); }
 
@@ -82,30 +79,17 @@ public class Destroyable : MonoBehaviour
             UpdateHealthBar(MyCurrentHealth); MyCurrentStoredHealth  = MyCurrentHealth;
         }
 
+
+
         if (MyCurrentHealth >= objectData.maxHealth)
         {
             MyCurrentHealth = objectData.maxHealth;
             IsRegen = false;
-            //Debug.Log("regen stopped");
 
         }
 
 
 
-        if (MyCurrentHealth < objectData.maxHealth)
-        {
-            if (!IsBurning)
-            {
-                //not sure about that one
-                /*currentWaitAfterLastAttack += Time.deltaTime;
-                if (currentWaitAfterLastAttack > objectData.regenFirstWait)
-                {
-                    IsRegen = true; Debug.Log("regen");
-                }*/
-
-                //Debug.Log("not full health not burning");
-            }
-        }
 
         if (IsRepulsed)
         {
@@ -154,11 +138,6 @@ public class Destroyable : MonoBehaviour
         }
         else 
         {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white; 
-            
-            //idk makes error pop but still runs
-            //ParticleSystem ps = burningFxInstance.GetComponentInChildren<ParticleSystem>();
-            //if (ps != null) ps.Stop();
             
             burningFxHasSpawned = false;
         }
@@ -209,6 +188,8 @@ public class Destroyable : MonoBehaviour
             MyCurrentHealth -= bulletData.LVL1_bulletDamage;
             Destroy(collision.gameObject);
             lastColliderIsBullet = true;
+
+            stateMachine.isHurt = true;
 
         }
 

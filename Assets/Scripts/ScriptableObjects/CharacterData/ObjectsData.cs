@@ -15,6 +15,9 @@ public class ObjectsData : ScriptableObject
     [Header("Loot")]
     public int goldLoot;
 
+    [Header("hurt info")]
+    public float hurtTimer;
+
     [Header("Burning Stats")]
     public float burningAmount;
     public float burningSpeed;
@@ -28,11 +31,9 @@ public class ObjectsData : ScriptableObject
     public float stunDuration;
 
     //idk if i'll use this...
-    [Header("Turn Stats")]
-    public float timeBeforeTurn;
-    // d'apres chat gpt ne doit pas etre dans le scriptable pour eviter des conflits avec les autres objets
-    //public bool canTurn;
-    public bool hasTurnedOnce;
+    //[Header("Turn Stats")]
+    //public float timeBeforeTurn;
+    //public bool hasTurnedOnce;
 
     [Header ("Contact with player stats")]
     public bool isHurtFromContact;
