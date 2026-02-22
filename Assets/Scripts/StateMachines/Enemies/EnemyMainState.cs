@@ -18,12 +18,17 @@ public class EnemyMainState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.spriteRenderer.color = Color.white;
-        Debug.Log("main");
+        //Debug.Log("main");
 
         toFollow = GameObject.Find("Player");
     }
     public override void Tick(float deltaTime)
     {
+        if (stateMachine.isDead) 
+        { 
+            stateMachine.SwitchState(new EnemyDeathState(stateMachine)); 
+        }
+
         if (stateMachine.isHurt)
         {
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));

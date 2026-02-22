@@ -146,21 +146,24 @@ public class Destroyable : MonoBehaviour
 
         if (MyCurrentHealth <= 0)
         {
-            Instantiate(destructionFx, transform.position, Quaternion.identity);
-
+            //Instantiate(destructionFx, transform.position, Quaternion.identity);
+            stateMachine.isDead = true;
+            
             if (gameObject.CompareTag("Yakkuru") == true)
             {
                 int lootnum = Random.Range(0, 2);
                 Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
             if (gameObject.CompareTag("Farmer") == true)
             {
                 Instantiate(listOfPossibleLoots[3], transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
 
 
             //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
@@ -193,6 +196,7 @@ public class Destroyable : MonoBehaviour
 
         }
 
+        //je ne sais pas si je vais l'utiliser
         if (collision.gameObject.CompareTag("Player"))
         {
             lastColliderIsBullet = false;

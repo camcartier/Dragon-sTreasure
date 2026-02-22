@@ -10,17 +10,21 @@ public class EnemyDeathState : EnemyBaseState
 
     public override void Enter()
     {
+        
         stateMachine.spriteRenderer.color = Color.black;
-    }
 
-    public override void Exit()
-    {
-        throw new System.NotImplementedException();
+        Debug.Log(stateMachine.rb2D);
     }
 
     public override void Tick(float deltaTime)
     {
-        throw new System.NotImplementedException();
+        stateMachine.rb2D.velocity = Vector2.zero;
     }
+
+    public override void Exit()
+    {
+        
+    }
+
 
 }

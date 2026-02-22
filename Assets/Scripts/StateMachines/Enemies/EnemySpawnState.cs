@@ -12,8 +12,8 @@ public class EnemySpawnState : EnemyBaseState
     }
     public override void Enter()
     {
-        stateMachine.spriteRenderer.color = Color.black;
-        Debug.Log("spawn");
+        stateMachine.spriteRenderer.color = Color.yellow;
+        //Debug.Log("spawn");
     }
 
     public override void Tick(float deltaTime)

@@ -17,7 +17,7 @@ MonoBehaviour:
   regenSpeed: 1
   regenFirstWait: 5
   goldLoot: 50
-  hurtTimer: 1
+  hurtTimer: 1.5
   burningAmount: 0
   burningSpeed: 0
   minHealthBurnsStop: 0
