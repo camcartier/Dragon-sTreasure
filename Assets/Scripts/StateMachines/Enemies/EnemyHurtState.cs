@@ -25,7 +25,13 @@ public class EnemyHurtState : EnemyBaseState
             stateMachine.SwitchState(new EnemyDeathState(stateMachine));
         }
 
-        if (stateMachine.hurtIsReset)
+        if (stateMachine.isBurning)
+        {
+            stateMachine.SwitchState(new EnemyBurningState(stateMachine));
+        }
+
+
+            if (stateMachine.hurtIsReset)
         {
             hurtTimerCounter = 0f; stateMachine.hurtIsReset = false;
         }

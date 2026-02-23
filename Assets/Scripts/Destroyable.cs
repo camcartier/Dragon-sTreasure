@@ -107,7 +107,7 @@ public class Destroyable : MonoBehaviour
             else { RegenHealth(); currentWaitBeforeRegen = 0;  }
         }
 
-
+        /*
         if (MyCurrentHealth <= objectData.maxHealth / 2)
         {
             if (lastColliderIsBullet)
@@ -119,11 +119,20 @@ public class Destroyable : MonoBehaviour
             if (MyCurrentHealth <= objectData.minHealthBurnsStop)
             {
                 IsBurning = false;
-            }*/
+            }
 
+        }*/
+
+        if (MyCurrentHealth - bulletData.BulletDamageArray[playerData.currentLevel] < objectData.maxHealth / 2 
+            && !stateMachineEnemy.isBurning 
+            && !stateMachineEnemy.hasAlreadyBurnt)
+        {
+            stateMachineEnemy.isBurning = true;
         }
+        else { stateMachineEnemy.isBurning = false; }
 
-        
+
+        /*
         if (IsBurning)
         {
             
@@ -144,8 +153,8 @@ public class Destroyable : MonoBehaviour
         {
             
             burningFxHasSpawned = false;
-        }
-        
+        }*/
+
 
 
 
@@ -153,7 +162,7 @@ public class Destroyable : MonoBehaviour
         {
             Instantiate(destructionFx, transform.position, Quaternion.identity);
             stateMachineEnemy.isDead = true;
-            
+
             if (gameObject.CompareTag("Yakkuru") == true)
             {
                 int lootnum = Random.Range(0, 2);
@@ -197,15 +206,20 @@ public class Destroyable : MonoBehaviour
 
             MyCurrentHealth -= bulletData.BulletDamageArray[playerData.currentLevel];
             
-            /*
-            if (MyCurrentHealth - bulletData.BulletDamageArray[playerData.currentLevel] < objectData.maxHealth && enemyIDNumber.IDNumber < 2)
-            {
-                stateMachineEnemy.isBurning = true;
-            }
-            */ 
+            
 
-            stateMachineEnemy.isHurt = true; 
-            stateMachineEnemy.hurtIsReset = true;   
+             
+            if (!stateMachineEnemy.isHurt)
+            {
+                stateMachineEnemy.isHurt = true;
+            }
+
+            if (!stateMachineEnemy.isBurning)
+            {
+                stateMachineEnemy.hurtIsReset = true;
+            }
+             
+   
 
             Destroy(collision.gameObject);
             lastColliderIsBullet = true;

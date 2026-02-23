@@ -23,6 +23,8 @@ public class EnemyStateMachine : StateMachine
 
 
     [field: SerializeField] public bool isBurning { get; set; }
+
+    [field: SerializeField] public bool hasAlreadyBurnt{ get; set; }
     [field: SerializeField] public bool isStuned { get; set; }
     [field: SerializeField] public bool isDead { get; set; }
 

@@ -14,9 +14,12 @@ public class EnemyBurningState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.spriteRenderer.color = Color.yellow;
+        Debug.Log("burning");
     }
     public override void Tick(float deltaTime)
     {
+        stateMachine.rb2D.velocity = Vector2.zero ;
+
         if (burningTimerCounter < stateMachine.characterData.burningTimer) 
         {
             burningTimerCounter+= Time.deltaTime;
@@ -29,6 +32,8 @@ public class EnemyBurningState : EnemyBaseState
 
     public override void Exit()
     {
+
+        stateMachine.hasAlreadyBurnt = true;
         Debug.Log("stopped burning");
     }
 

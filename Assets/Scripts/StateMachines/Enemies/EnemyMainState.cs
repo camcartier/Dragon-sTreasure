@@ -34,10 +34,14 @@ public class EnemyMainState : EnemyBaseState
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
         }
 
-        if (stateMachine.isBurning)
+        if (stateMachine.enemyID.IDNumber >= 2)
         {
-            stateMachine.SwitchState(new EnemyBurningState(stateMachine));
+            if (stateMachine.isBurning)
+            {
+                stateMachine.SwitchState(new EnemyBurningState(stateMachine));
+            }
         }
+
 
 
         if (Mathf.Sign(stateMachine.gameObject.transform.position.x - toFollow.transform.position.x) > 0) { directionX = -1; }
