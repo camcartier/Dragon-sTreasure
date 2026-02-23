@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7888c0ceb5dae9c4281125a629b1b8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDNumber: 0
+  IDNumber: 1
   IDAttackTimer: 100
 --- !u!114 &3734673022220493830
 MonoBehaviour:
@@ -361,7 +361,8 @@ MonoBehaviour:
   burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
-  stateMachine: {fileID: 8514696761159953119}
+  stateMachineEnemy: {fileID: 8514696761159953119}
+  enemyIDNumber: {fileID: 126109405560006348}
   listOfPossibleLoots:
   - {fileID: 0}
   - {fileID: 0}
@@ -390,6 +391,7 @@ MonoBehaviour:
   <canBeBumped>k__BackingField: 0
   <isFollowing>k__BackingField: 0
   <isHurt>k__BackingField: 0
+  <isBurning>k__BackingField: 0
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
   <spriteRenderer>k__BackingField: {fileID: 5158632203479419821}

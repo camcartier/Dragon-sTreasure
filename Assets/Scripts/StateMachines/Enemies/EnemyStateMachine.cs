@@ -18,6 +18,11 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public bool isFollowing { get; set; }
     [field: SerializeField] public bool isHurt { get; set; }
+
+    [field: SerializeField] public bool hurtIsReset { get; set; }
+
+
+    [field: SerializeField] public bool isBurning { get; set; }
     [field: SerializeField] public bool isStuned { get; set; }
     [field: SerializeField] public bool isDead { get; set; }
 

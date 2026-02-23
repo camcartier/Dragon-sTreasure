@@ -15,6 +15,8 @@ public class EnemyHurtState : EnemyBaseState
         //stateMachine.rb2D.velocity = Vector2.zero;
         stateMachine.spriteRenderer.color = Color.red;
         //Debug.Log("hurt");
+
+        
     }
     public override void Tick(float deltaTime)
     {
@@ -23,21 +25,21 @@ public class EnemyHurtState : EnemyBaseState
             stateMachine.SwitchState(new EnemyDeathState(stateMachine));
         }
 
+        if (stateMachine.hurtIsReset)
+        {
+            hurtTimerCounter = 0f; stateMachine.hurtIsReset = false;
+        }
 
         stateMachine.rb2D.velocity = Vector2.zero;
 
-        if (hurtTimerCounter < stateMachine.characterData.hurtTimer && stateMachine.destroyableInfo.MyCurrentHealth > 0)
+        if (hurtTimerCounter < stateMachine.characterData.hurtTimer)
         {
             hurtTimerCounter += Time.deltaTime;
             
         }
         else { stateMachine.SwitchState(new EnemyMainState(stateMachine)); }
 
-        /*
-        else if (hurtTimerCounter < stateMachine.characterData.hurtTimer && stateMachine.destroyableInfo.MyCurrentHealth <= 0)
-        {
-            stateMachine.SwitchState(new EnemyDeathState(stateMachine));
-        }*/
+
     }
 
     public override void Exit()

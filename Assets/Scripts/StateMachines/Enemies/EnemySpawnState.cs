@@ -12,7 +12,7 @@ public class EnemySpawnState : EnemyBaseState
     }
     public override void Enter()
     {
-        stateMachine.spriteRenderer.color = Color.yellow;
+        stateMachine.spriteRenderer.color = Color.gray;
         //Debug.Log("spawn");
     }
 

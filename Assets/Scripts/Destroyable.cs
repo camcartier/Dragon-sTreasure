@@ -20,12 +20,13 @@ public class Destroyable : MonoBehaviour
     [SerializeField] IAMAPS burningFx;
     [SerializeField] BulletData bulletData;
     [SerializeField] PlayerData playerData;
-    [SerializeField] EnemyStateMachine stateMachine;
+    [SerializeField] EnemyStateMachine stateMachineEnemy;
+    [SerializeField] EnemyIDNumber enemyIDNumber;
 
     private IAMAPS burningFxInstance;
 
 
-    public float MyCurrentHealth { get; private set; }
+    public float MyCurrentHealth;
     public float MyCurrentStoredHealth { get; private set; }
     public bool IsBurning { get; private set; }
     private bool burningFxHasSpawned;
@@ -66,7 +67,7 @@ public class Destroyable : MonoBehaviour
         MyCurrentHealth = objectData.maxHealth;
         MyCurrentStoredHealth = objectData.maxHealth;
 
-        burningFxHasSpawned = false;
+        //burningFxHasSpawned = false;
     }
 
     private void Update()
@@ -111,18 +112,21 @@ public class Destroyable : MonoBehaviour
         {
             if (lastColliderIsBullet)
             {
-                IsBurning = true; IsRegen = false; 
+                IsBurning = true; IsRegen = false;
             }
+
+            /*
             if (MyCurrentHealth <= objectData.minHealthBurnsStop)
             {
-                IsBurning = false; 
-            }
+                IsBurning = false;
+            }*/
 
         }
 
+        
         if (IsBurning)
         {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            
             if (!burningFxHasSpawned)
             {
                 burningFxInstance = Instantiate(burningFx, new Vector3(transform.position.x, transform.position.y + 16, transform.position.z), Quaternion.identity, gameObject.transform);
@@ -141,13 +145,14 @@ public class Destroyable : MonoBehaviour
             
             burningFxHasSpawned = false;
         }
+        
 
 
 
         if (MyCurrentHealth <= 0)
         {
-            //Instantiate(destructionFx, transform.position, Quaternion.identity);
-            stateMachine.isDead = true;
+            Instantiate(destructionFx, transform.position, Quaternion.identity);
+            stateMachineEnemy.isDead = true;
             
             if (gameObject.CompareTag("Yakkuru") == true)
             {
@@ -162,8 +167,8 @@ public class Destroyable : MonoBehaviour
             }
 
 
-            //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
-            //Destroy(gameObject);
+            destructionFx.GetComponentInChildren<ParticleSystem>().Play();
+            Destroy(gameObject);
         }
     }
 
@@ -188,15 +193,29 @@ public class Destroyable : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            MyCurrentHealth -= bulletData.LVL1_bulletDamage;
+
+
+            MyCurrentHealth -= bulletData.BulletDamageArray[playerData.currentLevel];
+            
+            /*
+            if (MyCurrentHealth - bulletData.BulletDamageArray[playerData.currentLevel] < objectData.maxHealth && enemyIDNumber.IDNumber < 2)
+            {
+                stateMachineEnemy.isBurning = true;
+            }
+            */ 
+
+            stateMachineEnemy.isHurt = true; 
+            stateMachineEnemy.hurtIsReset = true;   
+
             Destroy(collision.gameObject);
             lastColliderIsBullet = true;
 
-            stateMachine.isHurt = true;
+            
 
         }
 
         //je ne sais pas si je vais l'utiliser
+        
         if (collision.gameObject.CompareTag("Player"))
         {
             lastColliderIsBullet = false;
@@ -205,6 +224,7 @@ public class Destroyable : MonoBehaviour
                 MyCurrentHealth -= objectData.contactDamageTaken;
             }
         }
+        
 
     }
 
@@ -215,7 +235,7 @@ public class Destroyable : MonoBehaviour
         if (collision.gameObject.CompareTag("Fireball"))
         {
             Debug.Log("fireball touched");
-            MyCurrentHealth -= bulletData.FireballDamageArray[1];
+            MyCurrentHealth -= bulletData.FireballDamageArray[playerData.currentLevel];
         }
     }
 

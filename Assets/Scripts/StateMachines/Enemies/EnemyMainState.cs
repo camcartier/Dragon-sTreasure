@@ -34,6 +34,11 @@ public class EnemyMainState : EnemyBaseState
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
         }
 
+        if (stateMachine.isBurning)
+        {
+            stateMachine.SwitchState(new EnemyBurningState(stateMachine));
+        }
+
 
         if (Mathf.Sign(stateMachine.gameObject.transform.position.x - toFollow.transform.position.x) > 0) { directionX = -1; }
         else { directionX = 1; }

@@ -19,6 +19,7 @@ public class ObjectsData : ScriptableObject
     public float hurtTimer;
 
     [Header("Burning Stats")]
+    public float burningTimer;
     public float burningAmount;
     public float burningSpeed;
     public float minHealthBurnsStop;

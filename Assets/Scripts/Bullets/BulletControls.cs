@@ -59,9 +59,6 @@ public class BulletControls : MonoBehaviour
         if (collision.gameObject.GetComponentInParent<Destroyable>())
         {
            
-            //Destroyable now deals with health going up and down
-
-
             if (player.transform.rotation.y > 0)
             {
                 Instantiate(boooomBaby, new Vector2(collision.otherCollider.gameObject.transform.position.x, collision.otherCollider.gameObject.transform.position.y), Quaternion.Euler(0, 180, 0));
