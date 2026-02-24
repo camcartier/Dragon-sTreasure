@@ -28,7 +28,7 @@ public class ObjectsData : ScriptableObject
     public float walkSpeed;
     public float outOfRangeDetachTime;
     public float damageAmount;
-    public float damageCooldown;
+    //public float damageCooldown;
     public float stunDuration;
 
     //idk if i'll use this...
@@ -41,9 +41,10 @@ public class ObjectsData : ScriptableObject
     public int contactDamageTaken;
 
     [Header("Character Special Stats")]
-    public int goldCarried;
-    public int defenseSpe;
+    //public int goldCarried;
+    //public int defenseSpe;
     public int runSpeed;
+    public float timeBetweenProjectile;
 
     [Header("Spawn Stats")]
     public int maxSpawnCapacity;

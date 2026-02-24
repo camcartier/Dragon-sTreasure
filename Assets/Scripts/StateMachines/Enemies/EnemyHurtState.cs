@@ -31,7 +31,7 @@ public class EnemyHurtState : EnemyBaseState
         }
 
 
-            if (stateMachine.hurtIsReset)
+        if (stateMachine.hurtIsReset)
         {
             hurtTimerCounter = 0f; stateMachine.hurtIsReset = false;
         }

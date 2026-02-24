@@ -34,6 +34,12 @@ public class EnemyMainState : EnemyBaseState
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
         }
 
+        if (stateMachine.isAtttacking)
+        {
+            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+        }
+
+
         if (stateMachine.enemyID.IDNumber >= 2)
         {
             if (stateMachine.isBurning)

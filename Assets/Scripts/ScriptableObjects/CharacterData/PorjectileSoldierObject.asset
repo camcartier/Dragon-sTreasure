@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8357bfb1d6b81af4db804ce601ab5c22, type: 3}
-  m_Name: SoldierObject
+  m_Name: PorjectileSoldierObject
   m_EditorClassIdentifier: 
   maxHealth: 100
   regenAmount: 5
@@ -22,14 +22,12 @@ MonoBehaviour:
   burningAmount: 0
   burningSpeed: 0
   minHealthBurnsStop: 0
-  walkSpeed: 15
+  walkSpeed: 5
   outOfRangeDetachTime: 0
   damageAmount: 10
-  damageCooldown: 0
   stunDuration: 0
   isHurtFromContact: 0
   contactDamageTaken: 10
-  goldCarried: 0
-  defenseSpe: 0
   runSpeed: 0
+  timeBetweenProjectile: 0
   maxSpawnCapacity: 0

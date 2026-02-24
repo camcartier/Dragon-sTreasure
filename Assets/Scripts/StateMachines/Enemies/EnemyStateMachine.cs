@@ -12,7 +12,12 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public Destroyable destroyableInfo { get; private set; }
 
 
-    [field: SerializeField] public bool canAttack { get; private set; }
+    [field: SerializeField] public bool canAttack { get;  set; }
+    [field: SerializeField] public bool isAtttacking { get; set; }
+    [field: SerializeField] public float attackTimer { get; set; }
+    [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }
+    [field: SerializeField] public bool hasInstantiated { get; set; }
+
     [field: SerializeField] public bool canBeBumped { get; private set; }
 
 
