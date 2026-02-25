@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   simpleProjectile: {fileID: 732928035866324335, guid: 285d437a21743d5419e8d4f4606f14ca, type: 3}
+  projectileStartPoint: {fileID: 2227315471200344517}
 --- !u!114 &5358311925558631669
 MonoBehaviour:
   m_ObjectHideFlags: 0

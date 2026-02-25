@@ -22,7 +22,7 @@ public class SimpleProjectileControls : MonoBehaviour
         rb2d =  gameObject.GetComponent<Rigidbody2D>();
 
         rb2d.velocity = new Vector2(player.transform.position.x - gameObject.transform.position.x,
-                                    player.transform.position.y - gameObject.transform.position.y) * projectileSpeed;
+                                    player.transform.position.y - gameObject.transform.position.y).normalized * projectileSpeed;
                                     
     }
 

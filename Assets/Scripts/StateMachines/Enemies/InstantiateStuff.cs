@@ -6,6 +6,8 @@ public class InstantiateStuff : MonoBehaviour
 {
     [SerializeField] GameObject simpleProjectile;
 
+    [SerializeField] GameObject projectileStartPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,8 +16,8 @@ public class InstantiateStuff : MonoBehaviour
 
     public void InstantiateProjectile()
     {
-        Instantiate(simpleProjectile, new Vector3(gameObject.transform.position.x,
-                                                  gameObject.transform.position.y,
-                                                  gameObject.transform.position.z), Quaternion.identity);
+        Instantiate(simpleProjectile, new Vector3(projectileStartPoint.transform.position.x,
+                                                  projectileStartPoint.transform.position.y,
+                                                  projectileStartPoint.transform.position.z), Quaternion.identity);
     }
 }

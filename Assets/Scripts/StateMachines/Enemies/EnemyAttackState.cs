@@ -9,6 +9,10 @@ public class EnemyAttackState : EnemyBaseState
     private float timebeforechangeState = 2f;
     private float timebeforechangeStateCounter;
 
+    //turning the prefab
+    private bool isTurning;
+    private GameObject toFollow;
+
     public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -16,6 +20,11 @@ public class EnemyAttackState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.rb2D.velocity = Vector2.zero;
+
+
+        //turning the prefab
+        toFollow = GameObject.Find("Player");
+
     }
     public override void Tick(float deltaTime)
     {
@@ -34,11 +43,32 @@ public class EnemyAttackState : EnemyBaseState
 
         timebeforechangeStateCounter += Time.deltaTime;
 
+
+        //ENEMY ID 3
         if (stateMachine.enemyID.IDNumber == 3 && !stateMachine.hasInstantiated)
         {
+
+            //Turning the prefab
+            isTurning = true;
+            if (isTurning)
+            {
+                if (toFollow.transform.position.x > stateMachine.transform.position.x)
+                {
+                    stateMachine.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                }
+                else
+                {
+                    stateMachine.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                }
+            }
             stateMachine.instantiateStuff.InstantiateProjectile();
             stateMachine.hasInstantiated = true;
             timebeforechangeStateCounter = 0f;
+
+
+
+
+
 
         }
 
