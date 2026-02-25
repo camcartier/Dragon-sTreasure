@@ -364,6 +364,9 @@ MonoBehaviour:
   burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+  stateMachineEnemy: {fileID: 0}
+  enemyIDNumber: {fileID: 0}
+  MyCurrentHealth: 0
   listOfPossibleLoots:
   - {fileID: 0}
   - {fileID: 0}
@@ -440,15 +443,22 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 0}
   <rb2D>k__BackingField: {fileID: -95864150484674536}
   <enemyID>k__BackingField: {fileID: 126109405560006348}
-  <spriteRenderer>k__BackingField: {fileID: 5158632203479419821}
   <characterData>k__BackingField: {fileID: 0}
   <destroyableInfo>k__BackingField: {fileID: 0}
   <canAttack>k__BackingField: 0
+  <isAtttacking>k__BackingField: 0
+  <attackTimer>k__BackingField: 0
+  <instantiateStuff>k__BackingField: {fileID: 0}
+  <hasInstantiated>k__BackingField: 0
   <canBeBumped>k__BackingField: 0
   <isFollowing>k__BackingField: 0
   <isHurt>k__BackingField: 0
+  <hurtIsReset>k__BackingField: 0
+  <isBurning>k__BackingField: 0
+  <hasAlreadyBurnt>k__BackingField: 0
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
+  <spriteRenderer>k__BackingField: {fileID: 5158632203479419821}
 --- !u!1 &3719910465070521073
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,7 +940,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 39e5b6322c6e56b42a477969770efe82, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

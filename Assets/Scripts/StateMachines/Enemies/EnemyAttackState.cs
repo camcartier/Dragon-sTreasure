@@ -28,26 +28,25 @@ public class EnemyAttackState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.isHurt)
-        {
-            stateMachine.SwitchState(new EnemyHurtState(stateMachine));
-        }
+        if (stateMachine.isHurt){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
         
-        if (stateMachine.isDead)
-        {
-            stateMachine.SwitchState(new EnemyDeathState(stateMachine));
-        }
-
+        if (stateMachine.isDead){stateMachine.SwitchState(new EnemyDeathState(stateMachine));}
 
         stateMachine.rb2D.velocity = Vector2.zero;
 
+        
         timebeforechangeStateCounter += Time.deltaTime;
 
+        //ENEMY ID 1 ?
+        //ENEMY ID 2
+        if (stateMachine.enemyID.IDNumber == 2)
+        {
+
+        }
 
         //ENEMY ID 3
         if (stateMachine.enemyID.IDNumber == 3 && !stateMachine.hasInstantiated)
         {
-
             //Turning the prefab
             isTurning = true;
             if (isTurning)
@@ -64,13 +63,12 @@ public class EnemyAttackState : EnemyBaseState
             stateMachine.instantiateStuff.InstantiateProjectile();
             stateMachine.hasInstantiated = true;
             timebeforechangeStateCounter = 0f;
-
-
-
-
-
-
         }
+
+
+        //ENEMY ID 4
+        //ENEMY ID 5
+
 
         if (attackTimerCounter < stateMachine.attackTimer)
         {
