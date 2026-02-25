@@ -17,6 +17,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public float attackTimer { get; set; }
     [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }
     [field: SerializeField] public bool hasInstantiated { get; set; }
+    [field: SerializeField] public Collider2D hitCollider { get; set; }
 
     [field: SerializeField] public bool canBeBumped { get; private set; }
 

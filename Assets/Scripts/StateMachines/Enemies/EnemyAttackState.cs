@@ -9,6 +9,13 @@ public class EnemyAttackState : EnemyBaseState
     private float timebeforechangeState = 2f;
     private float timebeforechangeStateCounter;
 
+    //enemy ID 2
+    private float delayAfterEnterStateAndBeforeHit = 1f;
+    private float delayAESABHCounter;
+    private bool startAttack;
+    private float timeAllotedForAttack =0.5f;
+    private float timeAFACounter;
+
     //turning the prefab
     private bool isTurning;
     private GameObject toFollow;
@@ -24,6 +31,8 @@ public class EnemyAttackState : EnemyBaseState
 
         //turning the prefab
         toFollow = GameObject.Find("Player");
+
+        Debug.Log("enter attack state");
 
     }
     public override void Tick(float deltaTime)
@@ -41,7 +50,24 @@ public class EnemyAttackState : EnemyBaseState
         //ENEMY ID 2
         if (stateMachine.enemyID.IDNumber == 2)
         {
+            if (delayAESABHCounter < delayAfterEnterStateAndBeforeHit)
+            {
+                stateMachine.spriteRenderer.color = Color.blue;
+                delayAESABHCounter += Time.deltaTime;
+            }
+            else { startAttack = true;  delayAESABHCounter = 0f; }
 
+            if (startAttack)
+            {
+                stateMachine.spriteRenderer.color = Color.cyan;
+                //stateMachine.hitCollider.enabled = true;
+                
+                
+                
+            }
+
+
+            
         }
 
         //ENEMY ID 3
@@ -89,6 +115,12 @@ public class EnemyAttackState : EnemyBaseState
     {
         //attackTimerCounter  = 0f;
         stateMachine.hasInstantiated = false;
+
+        startAttack = false;
+        stateMachine.spriteRenderer.color = Color.white;
+
+        Debug.Log("exit attack state");
+
     }
 
 

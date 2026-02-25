@@ -14,7 +14,7 @@ public class EnemyHurtState : EnemyBaseState
     {
         //stateMachine.rb2D.velocity = Vector2.zero;
         stateMachine.spriteRenderer.color = Color.red;
-        //Debug.Log("hurt");
+        Debug.Log("player hurt");
 
         
     }

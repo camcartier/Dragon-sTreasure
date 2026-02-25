@@ -395,6 +395,7 @@ MonoBehaviour:
   <attackTimer>k__BackingField: 0
   <instantiateStuff>k__BackingField: {fileID: 3252396919721509634}
   <hasInstantiated>k__BackingField: 0
+  <hitCollider>k__BackingField: {fileID: 0}
   <canBeBumped>k__BackingField: 0
   <isFollowing>k__BackingField: 0
   <isHurt>k__BackingField: 0
@@ -615,6 +616,54 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &4846765161104811731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5457259769163910634}
+  - component: {fileID: 9100447310208416568}
+  m_Layer: 7
+  m_Name: HitCollider
+  m_TagString: Attack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5457259769163910634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846765161104811731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2165149062052352246}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &9100447310208416568
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846765161104811731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -12.8, y: 18.6}
+  serializedVersion: 2
+  m_Radius: 28.16
 --- !u!1 &4926012360163978221
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +882,7 @@ Transform:
   - {fileID: 4877195938237550276}
   - {fileID: 9144676302517457389}
   - {fileID: 8125140309206846064}
+  - {fileID: 5457259769163910634}
   m_Father: {fileID: 4508757924862019298}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

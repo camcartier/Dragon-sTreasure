@@ -25,7 +25,16 @@ public class PlayerCollisionListener : MonoBehaviour
     {
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Attack"))
+        {
+            Debug.Log("player was attacked");
+            //stateMachine.SwitchState(new PlayerHurtState(stateMachine));
+        }
+    }
 
+    //c etait pour les degats de collision jcrois bien
     //chat gpt says add var
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -37,13 +46,7 @@ public class PlayerCollisionListener : MonoBehaviour
                   ?? collision.collider.GetComponentInParent<CanDamage>()
                   ?? collision.collider.GetComponentInChildren<CanDamage>();
 
-        /*
-        if (collision.gameObject.CompareTag("Thief"))
-        {
-            stateMachine.rb2D.velocity = Vector2.zero;
 
-
-        }*/
 
         if (!stateMachine.isDead )
         {

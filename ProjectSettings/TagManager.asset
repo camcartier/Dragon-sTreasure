@@ -16,6 +16,7 @@ TagManager:
   - Yakkuru
   - Fireball
   - Enemies
+  - Attack
   layers:
   - Default
   - TransparentFX
