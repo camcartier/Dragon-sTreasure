@@ -27,10 +27,22 @@ public class PlayerCollisionListener : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+        //Debug.Log(collision.name);
+
         if (collision.CompareTag("Attack"))
         {
-            Debug.Log("player was attacked");
-            //stateMachine.SwitchState(new PlayerHurtState(stateMachine));
+            if (collision.GetComponentInParent<EnemyStateMachine>().isAttacking)
+            {
+
+                knockbackDirection = new Vector2(gameObject.transform.position.x - collision.transform.position.x, gameObject.transform.position.y - collision.transform.position.y);
+                stateMachine.knockbackDirection = knockbackDirection;
+
+                stateMachine.isHurt = true;
+
+                Debug.Log("player was attacked");
+            }
+
+
         }
     }
 
@@ -59,10 +71,6 @@ public class PlayerCollisionListener : MonoBehaviour
                     if (stateMachine.PlayerCurrentHealthAndMana.currentHealth - damageScript.contactDamage < 0)
                     {
                         stateMachine.PlayerCurrentHealthAndMana.currentHealth = 0;
-                        //stateMachine.SwitchState(new PlayerDyingState(stateMachine));
-                        //quand j'avais laissé ça, on entrait dans le dying state et en sortait directement
-                        //maintenant on passe en dying state seulement apres avoir été rentré dans le hurt state, je ne sais pas si c'est LA solution 
-                        //mais c'est UNE solution
                     }
                     else { stateMachine.PlayerCurrentHealthAndMana.currentHealth -= damageScript.contactDamage; }
 

@@ -12,7 +12,7 @@ public class EnemyAttackState : EnemyBaseState
     //enemy ID 2
     private float delayAfterEnterStateAndBeforeHit = 1f;
     private float delayAESABHCounter;
-    private bool startAttack;
+    //private bool startAttack;
     private float timeAllotedForAttack =0.5f;
     private float timeAFACounter;
 
@@ -54,15 +54,21 @@ public class EnemyAttackState : EnemyBaseState
             {
                 stateMachine.spriteRenderer.color = Color.blue;
                 delayAESABHCounter += Time.deltaTime;
+                //stateMachine.isAtttacking = false;
             }
-            else { startAttack = true;  delayAESABHCounter = 0f; }
+            else { stateMachine.isAttacking = true;  delayAESABHCounter = 0f; }
 
-            if (startAttack)
+            if (stateMachine.isAttacking)
             {
                 stateMachine.spriteRenderer.color = Color.cyan;
                 //stateMachine.hitCollider.enabled = true;
-                
-                
+
+                if (timeAllotedForAttack < timeAFACounter)
+                {
+                    stateMachine.isAttacking = false;
+
+                }
+                else { timeAFACounter += Time.deltaTime; }
                 
             }
 
@@ -104,7 +110,7 @@ public class EnemyAttackState : EnemyBaseState
 
 
 
-        if (!stateMachine.isAtttacking && timebeforechangeStateCounter > timebeforechangeState)
+        if (!stateMachine.isAttacking && timebeforechangeStateCounter > timebeforechangeState)
         {
             stateMachine.SwitchState(new EnemyMainState(stateMachine));
         }
@@ -116,11 +122,11 @@ public class EnemyAttackState : EnemyBaseState
         //attackTimerCounter  = 0f;
         stateMachine.hasInstantiated = false;
 
-        startAttack = false;
+        //startAttack = false;
         stateMachine.spriteRenderer.color = Color.white;
 
         Debug.Log("exit attack state");
-
+        stateMachine.isInAttackState = false;
     }
 
 

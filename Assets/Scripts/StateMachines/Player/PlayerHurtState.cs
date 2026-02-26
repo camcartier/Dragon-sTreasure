@@ -20,11 +20,15 @@ public class PlayerHurtState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.red;
+
+        Debug.Log("enter hurt state");
+
         stateMachine.isStunnable = false;
         stateMachine.isInvulnerable = true;
         stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingInvulnerability());
 
-        stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+
 
         stateMachine.rb2D.velocity = Vector3.zero;
         
@@ -69,11 +73,11 @@ public class PlayerHurtState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.white;
 
         knockbackDurationCounter = 0f;
 
-
+        stateMachine.isHurt = false;
     }
      
 

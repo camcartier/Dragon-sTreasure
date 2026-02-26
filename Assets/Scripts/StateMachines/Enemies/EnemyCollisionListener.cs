@@ -21,7 +21,7 @@ public class EnemyCollisionListener : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-             gameObject.GetComponent<EnemyStateMachine>().isAtttacking = true;
+             gameObject.GetComponent<EnemyStateMachine>().isInAttackState = true;
         }
     }
 
@@ -31,7 +31,7 @@ public class EnemyCollisionListener : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameObject.GetComponent<EnemyStateMachine>().isAtttacking = false;
+            gameObject.GetComponent<EnemyStateMachine>().isInAttackState = false;
         }
     }
 }

@@ -13,6 +13,10 @@ public class PlayerStateMachine : StateMachine
     //Movement
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Rigidbody2D rb2D { get; private set; }
+    [field: SerializeField] public SpriteRenderer MainSpriteRenderer { get; private set; }
+
+    [field: SerializeField] public SpriteRenderer[] MainSpriteRendererArray { get; private set; }
+
 
 
     //Stats, Health and Mana
@@ -45,7 +49,9 @@ public class PlayerStateMachine : StateMachine
 
     //so we don't get back in hurt state when in contact and dead
     [field: SerializeField] public bool isDead { get; set; }
-    
+
+    [field: SerializeField] public bool isHurt { get; set; }
+
     //pour qu'on se fasse pas marave comme une victime
     [field: SerializeField] public bool isInvulnerable  { get; set; }
     [field: SerializeField] public PlayerCoroutinesScript PlayerCoroutinesScript { get; private set; }

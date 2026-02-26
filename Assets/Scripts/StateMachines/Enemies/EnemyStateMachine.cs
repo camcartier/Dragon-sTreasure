@@ -13,7 +13,8 @@ public class EnemyStateMachine : StateMachine
 
 
     [field: SerializeField] public bool canAttack { get;  set; }
-    [field: SerializeField] public bool isAtttacking { get; set; }
+    [field: SerializeField] public bool isInAttackState { get; set; }
+    [field: SerializeField] public bool isAttacking { get; set; }
     [field: SerializeField] public float attackTimer { get; set; }
     [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }
     [field: SerializeField] public bool hasInstantiated { get; set; }

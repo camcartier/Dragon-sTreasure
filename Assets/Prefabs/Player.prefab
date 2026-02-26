@@ -520,7 +520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2261841399839379207
 Transform:
   m_ObjectHideFlags: 0
@@ -835,6 +835,9 @@ MonoBehaviour:
   <InputReader>k__BackingField: {fileID: 172299199858803786}
   <Animator>k__BackingField: {fileID: 8057751363925601226}
   <rb2D>k__BackingField: {fileID: 3319847874230943825}
+  <MainSpriteRenderer>k__BackingField: {fileID: 9050391348230091813}
+  <MainSpriteRendererArray>k__BackingField:
+  - {fileID: 9050391348230091813}
   <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   <PlayerCurrentHealthAndMana>k__BackingField: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
   PlayerManaManager: {fileID: 8964317341285677106}
@@ -850,6 +853,7 @@ MonoBehaviour:
   <knockBackDuration>k__BackingField: 25
   <knockBackDistance>k__BackingField: 0
   <isDead>k__BackingField: 0
+  <isHurt>k__BackingField: 0
   <isInvulnerable>k__BackingField: 0
   <PlayerCoroutinesScript>k__BackingField: {fileID: 706902093216072592}
   <isUsing>k__BackingField: 0

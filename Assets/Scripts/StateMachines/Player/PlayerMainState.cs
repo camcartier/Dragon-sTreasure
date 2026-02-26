@@ -56,6 +56,8 @@ public class PlayerMainState : PlayerBaseState
             stateMachine.SwitchState(new PlayerLevelingUpState(stateMachine));
         }
 
+        if (stateMachine.isHurt) { stateMachine.SwitchState(new PlayerHurtState(stateMachine));  }
+
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
         movement.Normalize();
 

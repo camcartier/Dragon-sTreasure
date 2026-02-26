@@ -34,7 +34,7 @@ public class EnemyMainState : EnemyBaseState
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
         }
 
-        if (stateMachine.isAtttacking)
+        if (stateMachine.isInAttackState)
         {
             stateMachine.SwitchState(new EnemyAttackState(stateMachine));
         }

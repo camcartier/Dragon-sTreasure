@@ -140,7 +140,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -12.8, y: 18.6}
   serializedVersion: 2
-  m_Radius: 28.16
+  m_Radius: 20.8
 --- !u!1 &2679582788365381538
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +391,8 @@ MonoBehaviour:
   <characterData>k__BackingField: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
   <destroyableInfo>k__BackingField: {fileID: 7869589743604368178}
   <canAttack>k__BackingField: 0
-  <isAtttacking>k__BackingField: 0
+  <isInAttackState>k__BackingField: 0
+  <isAttacking>k__BackingField: 0
   <attackTimer>k__BackingField: 0
   <instantiateStuff>k__BackingField: {fileID: 3252396919721509634}
   <hasInstantiated>k__BackingField: 0
@@ -661,9 +662,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -12.8, y: 18.6}
+  m_Offset: {x: -14.1, y: 18.6}
   serializedVersion: 2
-  m_Radius: 28.16
+  m_Radius: 29.57
 --- !u!1 &4926012360163978221
 GameObject:
   m_ObjectHideFlags: 0
