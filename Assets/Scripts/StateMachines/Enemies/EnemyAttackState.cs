@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAttackState : EnemyBaseState
 {
     private float attackTimerCounter;
+    private float ID2AttackTimerCounter;
 
     private float timebeforechangeState = 2f;
     private float timebeforechangeStateCounter;
@@ -13,8 +14,7 @@ public class EnemyAttackState : EnemyBaseState
     private float delayAfterEnterStateAndBeforeHit = 1f;
     private float delayAESABHCounter;
     //private bool startAttack;
-    private float timeAllotedForAttack =0.5f;
-    private float timeAFACounter;
+   
 
     //turning the prefab
     private bool isTurning;
@@ -38,42 +38,29 @@ public class EnemyAttackState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         if (stateMachine.isHurt){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
-        
         if (stateMachine.isDead){stateMachine.SwitchState(new EnemyDeathState(stateMachine));}
 
         stateMachine.rb2D.velocity = Vector2.zero;
 
-        
         timebeforechangeStateCounter += Time.deltaTime;
 
-        //ENEMY ID 1 ?
+
         //ENEMY ID 2
         if (stateMachine.enemyID.IDNumber == 2)
         {
-            if (delayAESABHCounter < delayAfterEnterStateAndBeforeHit)
-            {
-                stateMachine.spriteRenderer.color = Color.blue;
-                delayAESABHCounter += Time.deltaTime;
-                //stateMachine.isAtttacking = false;
-            }
-            else { stateMachine.isAttacking = true;  delayAESABHCounter = 0f; }
 
             if (stateMachine.isAttacking)
             {
                 stateMachine.spriteRenderer.color = Color.cyan;
-                //stateMachine.hitCollider.enabled = true;
-
-                if (timeAllotedForAttack < timeAFACounter)
-                {
-                    stateMachine.isAttacking = false;
-
-                }
-                else { timeAFACounter += Time.deltaTime; }
                 
             }
 
-
-            
+            if(stateMachine.characterData.attackTimer < ID2AttackTimerCounter)
+            {
+                stateMachine.SwitchState(new EnemyMainState(stateMachine));
+            }
+            else { ID2AttackTimerCounter += Time.deltaTime; }
+    
         }
 
         //ENEMY ID 3
@@ -106,7 +93,7 @@ public class EnemyAttackState : EnemyBaseState
         {
             attackTimerCounter += Time.deltaTime;
         }
-        else { stateMachine.hasInstantiated = false; attackTimerCounter = 0f;}
+        else { stateMachine.hasInstantiated = false; attackTimerCounter = 0f; }
 
 
 
@@ -121,6 +108,8 @@ public class EnemyAttackState : EnemyBaseState
     {
         //attackTimerCounter  = 0f;
         stateMachine.hasInstantiated = false;
+
+        stateMachine.isAttacking = false;
 
         //startAttack = false;
         stateMachine.spriteRenderer.color = Color.white;

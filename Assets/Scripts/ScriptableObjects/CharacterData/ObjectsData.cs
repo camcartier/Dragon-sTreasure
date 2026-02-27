@@ -30,6 +30,8 @@ public class ObjectsData : ScriptableObject
     public float damageAmount;
     //public float damageCooldown;
     public float stunDuration;
+    public float loadAttackTimer; 
+    public float attackTimer;
 
     //idk if i'll use this...
     //[Header("Turn Stats")]

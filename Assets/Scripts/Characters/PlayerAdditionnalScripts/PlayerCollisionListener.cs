@@ -25,26 +25,38 @@ public class PlayerCollisionListener : MonoBehaviour
     {
     }
 
+    //utiliser on trigger enter et ontrigger exit pour comparer qui est dans la liste des collision et qui en est sorti
+    //si player a exit alors pas contact t'a pigé?
+    //creer liste
+    //dans le enemyCollisionListener
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+
+    /*
     private void OnTriggerStay2D(Collider2D collision)
     {
         //Debug.Log(collision.name);
 
-        if (collision.CompareTag("Attack"))
+        if (collision.CompareTag("Attack") && collision.GetComponentInParent<EnemyStateMachine>().isAttacking)
         {
-            if (collision.GetComponentInParent<EnemyStateMachine>().isAttacking)
-            {
+            stateMachine.isHurt = true;
 
+            if (stateMachine.rb2D.velocity != Vector2.zero)
+            {
                 knockbackDirection = new Vector2(gameObject.transform.position.x - collision.transform.position.x, gameObject.transform.position.y - collision.transform.position.y);
                 stateMachine.knockbackDirection = knockbackDirection;
-
-                stateMachine.isHurt = true;
-
-                Debug.Log("player was attacked");
             }
+
+
+            Debug.Log("player was attacked");
 
 
         }
     }
+    */
 
     //c etait pour les degats de collision jcrois bien
     //chat gpt says add var

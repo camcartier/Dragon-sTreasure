@@ -26,6 +26,8 @@ MonoBehaviour:
   outOfRangeDetachTime: 0
   damageAmount: 10
   stunDuration: 0
+  loadAttackTimer: 1
+  attackTimer: 2
   isHurtFromContact: 0
   contactDamageTaken: 10
   runSpeed: 0

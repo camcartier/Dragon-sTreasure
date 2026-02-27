@@ -36,7 +36,12 @@ public class EnemyMainState : EnemyBaseState
 
         if (stateMachine.isInAttackState)
         {
-            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+            if (stateMachine.enemyID.IDNumber == 2)
+            {
+                stateMachine.SwitchState(new EnemyLoadingAttackState(stateMachine));
+            }
+            else { stateMachine.SwitchState(new EnemyAttackState(stateMachine)); }
+                
         }
 
 
