@@ -17,7 +17,7 @@ public class EnemyCollisionListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.GetComponentInParent<EnemyStateMachine>().isAttacking && collisionsList.Count > 0)
+        if(gameObject.GetComponentInParent<EnemyStateMachine>().isAttacking && collisionsList.Count > 0 && !Player.GetComponent<PlayerStateMachine>().isInvulnerable)
         {
             Player.GetComponent<PlayerStateMachine>().isHurt = true;
 
