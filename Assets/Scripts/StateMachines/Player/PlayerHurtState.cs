@@ -34,7 +34,7 @@ stateMachine.rb2D.velocity = Vector3.zero;
         stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized*stateMachine.knockbackForce, ForceMode2D.Force) ;
         //direction comes from Player Collision Listener
         //and EnemyCollisionListener?
-
+        //va falloir fix cette marde
 
 
         //noise on impact
@@ -53,6 +53,7 @@ stateMachine.rb2D.velocity = Vector3.zero;
     }
     public override void Tick(float deltaTime)
     {
+        /*
         if (knockbackDurationCounter < stateMachine.knockBackDuration)
         {
             knockbackDurationCounter += Time.deltaTime;
@@ -60,7 +61,7 @@ stateMachine.rb2D.velocity = Vector3.zero;
         else
         {
             //stateMachine.rb2D.velocity = Vector3.zero;
-        }
+        }*/
 
         if (stunDurationCounter < stateMachine.PlayerData.stunDuration)
         {
@@ -79,6 +80,7 @@ stateMachine.rb2D.velocity = Vector3.zero;
         stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.white;
 
         knockbackDurationCounter = 0f;
+        stunDurationCounter = 0f;
 
         stateMachine.isHurt = false;
     }
