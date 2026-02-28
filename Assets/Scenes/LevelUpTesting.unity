@@ -5232,7 +5232,7 @@ PrefabInstance:
       objectReference: {fileID: 5303679083573354517, guid: 1f00432c582f4884eade419f7e98a082, type: 3}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <knockbackForce>k__BackingField
-      value: 10000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 9033838750334023689, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: <CameraCoroutines>k__BackingField
