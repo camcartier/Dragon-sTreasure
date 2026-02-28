@@ -102,6 +102,11 @@ public class EnemyAttackState : EnemyBaseState
             stateMachine.SwitchState(new EnemyMainState(stateMachine));
         }
 
+        if(stateMachine.isInAttackState && timebeforechangeStateCounter > timebeforechangeState && stateMachine.enemyID.IDNumber == 2)
+        {
+            stateMachine.SwitchState(new EnemyLoadingAttackState(stateMachine));
+        }
+
     }
 
     public override void Exit()
@@ -116,6 +121,8 @@ public class EnemyAttackState : EnemyBaseState
 
         Debug.Log("exit attack state");
         stateMachine.isInAttackState = false;
+
+        timebeforechangeStateCounter = 0f;
     }
 
 

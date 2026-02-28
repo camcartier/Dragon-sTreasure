@@ -848,10 +848,10 @@ MonoBehaviour:
   <hasInfiniteMana>k__BackingField: 0
   <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <isStunnable>k__BackingField: 0
-  <stunDuration>k__BackingField: 1
+  <stunDuration>k__BackingField: 0.5
   <knockbackDirection>k__BackingField: {x: 0, y: 0}
-  <knockbackForce>k__BackingField: 5000
-  <knockBackDuration>k__BackingField: 25
+  <knockbackForce>k__BackingField: 2000
+  <knockBackDuration>k__BackingField: 15
   <knockBackDistance>k__BackingField: 0
   <isDead>k__BackingField: 0
   <isHurt>k__BackingField: 0

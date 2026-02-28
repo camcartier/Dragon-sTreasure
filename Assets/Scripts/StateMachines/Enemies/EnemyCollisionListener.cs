@@ -23,6 +23,12 @@ public class EnemyCollisionListener : MonoBehaviour
 
             //need to implement isInvulnerable
         }
+
+        /*
+        if (Player.GetComponent<PlayerStateMachine>().knockbackDirection != Vector2.zero)
+        {
+            Debug.Log("not 0");
+        }*/
     }
 
     
@@ -32,10 +38,31 @@ public class EnemyCollisionListener : MonoBehaviour
         {
              gameObject.GetComponent<EnemyStateMachine>().isInAttackState = true;
              collisionsList.Add(collision.gameObject);
+
+            if (Player.GetComponent<PlayerStateMachine>().knockbackDirection == Vector2.zero)
+            {
+                if (collision.transform.position.x > gameObject.transform.position.x)
+                {
+                    Player.GetComponent<PlayerStateMachine>().knockbackDirection = new Vector2(collision.transform.position.x - gameObject.transform.position.x,
+                                                                                            0);
+                }
+                else
+                {
+                    Player.GetComponent<PlayerStateMachine>().knockbackDirection = new Vector2( gameObject.transform.position.x - collision.transform.position.x,
+                                                                                             0);
+                }
+                
+            }
         }
     }
 
-    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<EnemyStateMachine>().isInAttackState = true;
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {

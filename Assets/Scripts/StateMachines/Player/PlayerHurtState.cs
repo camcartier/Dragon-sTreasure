@@ -28,16 +28,18 @@ public class PlayerHurtState : PlayerBaseState
         stateMachine.isInvulnerable = true;
         stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingInvulnerability());
 
-
-
-        stateMachine.rb2D.velocity = Vector3.zero;
+stateMachine.rb2D.velocity = Vector3.zero;
         
-        stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized*stateMachine.knockbackForce) ;
+
+        stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized*stateMachine.knockbackForce, ForceMode2D.Force) ;
         //direction comes from Player Collision Listener
+        //and EnemyCollisionListener?
+
 
 
         //noise on impact
-        if (stateMachine.PlayerCurrentHealthAndMana.currentHealth < stateMachine.PlayerData.MaxHealth / 2) 
+        /*
+          if (stateMachine.PlayerCurrentHealthAndMana.currentHealth < stateMachine.PlayerData.MaxHealth / 2) 
         {
             stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = stateMachine.CameraData.AmplitudeGain;
             stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = stateMachine.CameraData.FrequencyGain;
@@ -46,6 +48,7 @@ public class PlayerHurtState : PlayerBaseState
             //stopping noise progressively
             stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpCameraNoise());
         }
+        */
 
     }
     public override void Tick(float deltaTime)
@@ -56,7 +59,7 @@ public class PlayerHurtState : PlayerBaseState
         }
         else
         {
-            stateMachine.rb2D.velocity = Vector3.zero;
+            //stateMachine.rb2D.velocity = Vector3.zero;
         }
 
         if (stunDurationCounter < stateMachine.PlayerData.stunDuration)
