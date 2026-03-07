@@ -10,12 +10,28 @@ public class PlayerRepulseState : PlayerBaseState
 
     public LayerMask affectedLayers = LayerMask.GetMask("Destroyable"); // All layers by default
 
+
+    private readonly int LVL1_RepulseHash = Animator.StringToHash("LVL1_Repulse");
+    private readonly int LVL2_RepulseHash = Animator.StringToHash("LVL2_Repulse");
+    private readonly int LVL3_RepulseHash = Animator.StringToHash("LVL3_Repulse");
+    private readonly int LVL4_RepulseHash = Animator.StringToHash("LVL4_Repulse");
+    private readonly int LVL5_RepulseHash = Animator.StringToHash("LVL5_Repulse");
+    //each for each level
+    private List<int> listOfRepulseHash = new List<int>();
+
     public PlayerRepulseState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
+        listOfRepulseHash.Add(LVL1_RepulseHash);
+        listOfRepulseHash.Add(LVL2_RepulseHash);
+        listOfRepulseHash.Add(LVL3_RepulseHash);
+        listOfRepulseHash.Add(LVL4_RepulseHash);
+        listOfRepulseHash.Add(LVL5_RepulseHash);
+
+
         stateMachine.canRepulse = false;
 
         stateMachine.rb2D.velocity = Vector3.zero;

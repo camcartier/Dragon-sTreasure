@@ -13,6 +13,15 @@ public class PlayerHurtState : PlayerBaseState
 
     private PlayerCollisionListener collisionListener;
 
+
+    private readonly int LVL1_HurtHash = Animator.StringToHash("LVL1_Hurt");
+    private readonly int LVL2_HurtHash = Animator.StringToHash("LVL2_Hurt");
+    private readonly int LVL3_HurtHash = Animator.StringToHash("LVL3_Hurt");
+    private readonly int LVL4_HurtHash = Animator.StringToHash("LVL4_Hurt");
+    private readonly int LVL5_HurtHash = Animator.StringToHash("LVL5_Hurt");
+    //each for each level
+    private List<int> listOfHurtHash = new List<int>();
+
     //also knockback state
     public PlayerHurtState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -20,6 +29,14 @@ public class PlayerHurtState : PlayerBaseState
 
     public override void Enter()
     {
+        listOfHurtHash.Add(LVL1_HurtHash);
+        listOfHurtHash.Add(LVL2_HurtHash);
+        listOfHurtHash.Add(LVL3_HurtHash);
+        listOfHurtHash.Add(LVL4_HurtHash);
+        listOfHurtHash.Add(LVL5_HurtHash);
+
+
+
         stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.red;
 
         Debug.Log("enter hurt state");

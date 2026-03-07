@@ -8,12 +8,27 @@ public class PlayerFireballState : PlayerBaseState
     private float fireballEmissionDuration = 1.1f;
     private float fireballTimerCounter = 0f;
     //private GameObject fireballStartingPoint;
+
+    private readonly int LVL1_FireballHash = Animator.StringToHash("LVL1_Fireball");
+    private readonly int LVL2_FireballHash = Animator.StringToHash("LVL2_Fireball");
+    private readonly int LVL3_FireballHash = Animator.StringToHash("LVL3_Fireball");
+    private readonly int LVL4_FireballHash = Animator.StringToHash("LVL4_Fireball");
+    private readonly int LVL5_FireballHash = Animator.StringToHash("LVL5_Fireball");
+    //each for each level
+    private List<int> listOfFireballHash = new List<int>();
     public PlayerFireballState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
+        listOfFireballHash.Add(LVL1_FireballHash);
+        listOfFireballHash.Add(LVL2_FireballHash);
+        listOfFireballHash.Add(LVL3_FireballHash);
+        listOfFireballHash.Add(LVL4_FireballHash);
+        listOfFireballHash.Add(LVL5_FireballHash);
+
+
         //Debug.Log("fireball");
         stateMachine.canFireball = false;
         stateMachine.isStunnable = false;

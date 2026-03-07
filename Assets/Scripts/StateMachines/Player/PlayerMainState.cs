@@ -13,14 +13,24 @@ public class PlayerMainState : PlayerBaseState
     public bool isFiring;
     private GameObject BulletStartPoint;
 
-
+    [Header("Idle Animation")]
     private readonly int LVL1_IdleHash = Animator.StringToHash("LVL1_Idle");
+    private readonly int LVL2_IdleHash = Animator.StringToHash("LVL2_Idle");
+    private readonly int LVL3_IdleHash = Animator.StringToHash("LVL3_Idle");
+    private readonly int LVL4_IdleHash = Animator.StringToHash("LVL4_Idle");
+    private readonly int LVL5_IdleHash = Animator.StringToHash("LVL5_Idle");
     //each for each level
-    //private readonly int LVL2_IdleHash = Animator.StringToHash("LVL2_Idle");
-    //private const float AnimatorDampTime = 0.1f;
+    private List<int> listOfIdleHash = new List<int>();
+    
+
 
     [Header ("Everything about firing Bullets")]
-    private readonly int FiringHash = Animator.StringToHash("LVL1_Fire");
+    private readonly int LVL1_FiringHash = Animator.StringToHash("LVL1_Fire");
+    private readonly int LVL2_FiringHash = Animator.StringToHash("LVL2_Fire");
+    private readonly int LVL3_FiringHash = Animator.StringToHash("LVL3_Fire");
+    private readonly int LVL4_FiringHash = Animator.StringToHash("LVL4_Fire");
+    private readonly int LVL5_FiringHash = Animator.StringToHash("LVL5_Fire");
+    private List<int> listOfFiringHash = new List<int>();
     private const float CrossFadeDuration = 0.1f;
     private float TimerCounter;
 
@@ -30,6 +40,19 @@ public class PlayerMainState : PlayerBaseState
 
     public override void Enter()
     {
+        listOfIdleHash.Add(LVL1_IdleHash);
+        listOfIdleHash.Add(LVL2_IdleHash);
+        listOfIdleHash.Add(LVL3_IdleHash);
+        listOfIdleHash.Add(LVL4_IdleHash);
+        listOfIdleHash.Add(LVL5_IdleHash);
+        //Same with every level
+        listOfFiringHash.Add(LVL1_FiringHash);
+        listOfFiringHash.Add(LVL2_FiringHash);
+        listOfFiringHash.Add(LVL3_FiringHash);
+        listOfFiringHash.Add(LVL4_FiringHash);
+        listOfFiringHash.Add(LVL5_FiringHash);
+        //Same with every level
+
         stateMachine.isStunnable = true;
 
         stateMachine.InputReader.UseEvent += OnUse;
@@ -76,7 +99,7 @@ public class PlayerMainState : PlayerBaseState
         {
             TimerCounter += Time.deltaTime;
         }
-        else { stateMachine.Animator.CrossFadeInFixedTime(LVL1_IdleHash, CrossFadeDuration); TimerCounter = 0f;  }
+        else { stateMachine.Animator.CrossFadeInFixedTime(listOfIdleHash[stateMachine.currentLevelStored], CrossFadeDuration); TimerCounter = 0f;  }
 
 
         if (!stateMachine.PlayerData.canDash)
@@ -130,7 +153,7 @@ public class PlayerMainState : PlayerBaseState
             stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.UnlimitedManaDuration());
 
 
-            stateMachine.Animator.CrossFadeInFixedTime(FiringHash, CrossFadeDuration);
+            stateMachine.Animator.CrossFadeInFixedTime(listOfFiringHash[stateMachine.currentLevelStored], CrossFadeDuration);
             GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
         }
         else
@@ -143,7 +166,7 @@ public class PlayerMainState : PlayerBaseState
                 stateMachine.PlayerData.canRegenMana = false;
 
 
-                stateMachine.Animator.CrossFadeInFixedTime(FiringHash, CrossFadeDuration);
+                stateMachine.Animator.CrossFadeInFixedTime(listOfFiringHash[stateMachine.currentLevelStored], CrossFadeDuration);
 
                 GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
                 stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;

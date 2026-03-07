@@ -5,8 +5,13 @@ using UnityEngine;
 public class PlayerDyingState : PlayerBaseState
 {
 
-    private readonly int DyingHash = Animator.StringToHash("LVL1_Die");
+    private readonly int LVL1_DyingHash = Animator.StringToHash("LVL1_Die");
+    private readonly int LVL2_DyingHash = Animator.StringToHash("LVL2_Die");
+    private readonly int LVL3_DyingHash = Animator.StringToHash("LVL3_Die");
+    private readonly int LVL4_DyingHash = Animator.StringToHash("LVL4_Die");
+    private readonly int LVL5_DyingHash = Animator.StringToHash("LVL5_Die");
     private const float CrossFadeDuration = 0.1f;
+    private List<int> ListOfDyingHash = new List<int>();
 
     private float TimerCounter;
 
@@ -16,9 +21,17 @@ public class PlayerDyingState : PlayerBaseState
 
     public override void Enter()
     {
+        ListOfDyingHash.Add(LVL1_DyingHash);
+        ListOfDyingHash.Add(LVL2_DyingHash);
+        ListOfDyingHash.Add(LVL3_DyingHash);
+        ListOfDyingHash.Add(LVL4_DyingHash);
+        ListOfDyingHash.Add(LVL5_DyingHash);
+
+
+
         stateMachine.isDead = true;
 
-        stateMachine.Animator.CrossFadeInFixedTime(DyingHash, CrossFadeDuration);
+        stateMachine.Animator.CrossFadeInFixedTime(ListOfDyingHash[stateMachine.currentLevelStored], CrossFadeDuration);
 
     }
     public override void Tick(float deltaTime)
