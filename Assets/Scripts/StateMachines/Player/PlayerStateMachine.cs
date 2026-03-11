@@ -11,7 +11,7 @@ public class PlayerStateMachine : StateMachine
     //n a pas servi avec ce nom la 
 
     //Movement
-    [field: SerializeField] public Animator Animator { get; private set; }
+    [field: SerializeField] public Animator Animator { get; set; }
     [field: SerializeField] public Rigidbody2D rb2D { get; private set; }
     [field: SerializeField] public SpriteRenderer MainSpriteRenderer { get; private set; }
 
@@ -81,6 +81,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public TreasureData TreasureData { get; set; }
     [field: SerializeField] public LevelingUpTimer LevelingUpTimer { get; set; }
 
+    public List<GameObject> LvlsObjects = new List<GameObject> ();
+
     //General
     public GameManager GameManager { get; set; }
     public Transform MainCameraTransform { get; private set; }
@@ -98,7 +100,14 @@ public class PlayerStateMachine : StateMachine
         MainCameraTransform = Camera.main.transform;
         CinemachineVirtualCamera = GameObject.Find("CinemachineVirtualCamera").GetComponent<CinemachineVirtualCamera>();
 
+        if (Animator == null)
+        {
+            Animator = gameObject.GetComponentInChildren<Animator>();
+        }
+        
         SwitchState(new PlayerStartGameState(this));
+
+        
     }
 
 }

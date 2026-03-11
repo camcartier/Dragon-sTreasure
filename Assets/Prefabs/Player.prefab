@@ -1002,6 +1002,9 @@ MonoBehaviour:
   <currentLevelStored>k__BackingField: 0
   <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}
+  LvlsObjects:
+  - {fileID: 1134238745312961694}
+  - {fileID: 3337073727820840336}
   <CameraCoroutines>k__BackingField: {fileID: 0}
   <CameraData>k__BackingField: {fileID: 0}
   <StartingTextPanel>k__BackingField: {fileID: 0}

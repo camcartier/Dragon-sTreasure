@@ -31,8 +31,13 @@ public class PlayerLevelingUpState : PlayerBaseState
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         stateMachine.GameManager.UnPauseGame();
 
+        stateMachine.LvlsObjects[stateMachine.currentLevelStored].SetActive(true);
+        stateMachine.LvlsObjects[stateMachine.currentLevelStored -1].SetActive(false);
+
         //a remplacer par des valeurs choisies au préalable et faire un lerp
         stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize = stateMachine.CinemachineVirtualCamera.m_Lens.OrthographicSize * 1.5f;
+
+        stateMachine.Animator = stateMachine.GetComponentInChildren<Animator>();
     }
 
 
