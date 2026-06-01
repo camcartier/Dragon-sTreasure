@@ -364,8 +364,8 @@ MonoBehaviour:
   burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
-  stateMachineEnemy: {fileID: 0}
-  enemyIDNumber: {fileID: 0}
+  stateMachineEnemy: {fileID: 8514696761159953119}
+  enemyIDNumber: {fileID: 126109405560006348}
   MyCurrentHealth: 0
   listOfPossibleLoots:
   - {fileID: 0}
@@ -443,13 +443,15 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 0}
   <rb2D>k__BackingField: {fileID: -95864150484674536}
   <enemyID>k__BackingField: {fileID: 126109405560006348}
-  <characterData>k__BackingField: {fileID: 0}
-  <destroyableInfo>k__BackingField: {fileID: 0}
+  <characterData>k__BackingField: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
+  <destroyableInfo>k__BackingField: {fileID: 7869589743604368178}
   <canAttack>k__BackingField: 0
-  <isAtttacking>k__BackingField: 0
+  <isInAttackState>k__BackingField: 0
+  <isAttacking>k__BackingField: 0
   <attackTimer>k__BackingField: 0
   <instantiateStuff>k__BackingField: {fileID: 0}
   <hasInstantiated>k__BackingField: 0
+  <hitCollider>k__BackingField: {fileID: 0}
   <canBeBumped>k__BackingField: 0
   <isFollowing>k__BackingField: 0
   <isHurt>k__BackingField: 0

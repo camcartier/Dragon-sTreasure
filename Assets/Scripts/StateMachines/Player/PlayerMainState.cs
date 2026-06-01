@@ -219,7 +219,7 @@ public class PlayerMainState : PlayerBaseState
         if (movement.x < 0)
         {
             
-            this.stateMachine.gameObject.transform.rotation = new Quaternion (0, 180, 0, 0); 
+            this.stateMachine.gameObject.transform.rotation = new Quaternion (0, -180, 0, 0); 
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
         else {
