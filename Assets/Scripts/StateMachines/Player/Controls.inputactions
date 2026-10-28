@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Use",
+                    "name": "Headbutt",
                     "type": "Button",
                     "id": "90246d65-03af-4480-9fde-7cf45b469298",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire",
+                    "name": "Bite",
                     "type": "Button",
                     "id": "9352c8c9-268f-4237-9cb6-94bf4494d5fd",
                     "expectedControlType": "Button",
@@ -174,22 +174,11 @@
                 {
                     "name": "",
                     "id": "4c4815aa-06fc-43d4-b2d4-d53cf5d290c3",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Main",
-                    "action": "Use",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d433ca90-0aa5-4f45-a033-5d4f3065c724",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Use",
+                    "action": "Headbutt",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -200,14 +189,14 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Main",
-                    "action": "Fire",
+                    "action": "Bite",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "e55e653f-7a47-456c-820e-5963cb507158",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Main",

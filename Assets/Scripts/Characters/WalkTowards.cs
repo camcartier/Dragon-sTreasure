@@ -49,7 +49,7 @@ public class WalkTowards : MonoBehaviour
         if (!isFollowing)
         {
             rb2D.velocity = Vector3.zero;
-            Debug.Log("stop");
+            //Debug.Log("stop");
         }
 
         if (isStunned)

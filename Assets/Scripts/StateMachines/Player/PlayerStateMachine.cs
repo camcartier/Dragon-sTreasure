@@ -17,6 +17,7 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public SpriteRenderer[] MainSpriteRendererArray { get; private set; }
 
+    [field: SerializeField] public GameObject PlayerVisualsAndCollidersGO { get; private set; }
 
 
     //Stats, Health and Mana

@@ -37,7 +37,7 @@ public class PlayerHurtState : PlayerBaseState
 
 
 
-        stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.red;
+        //stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.red;
 
         Debug.Log("enter hurt state");
 
@@ -94,7 +94,7 @@ stateMachine.rb2D.velocity = Vector3.zero;
 
     public override void Exit()
     {
-        stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.white;
+        //stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.white;
 
         knockbackDurationCounter = 0f;
         stunDurationCounter = 0f;

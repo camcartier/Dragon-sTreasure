@@ -13,6 +13,10 @@ public class PlayerMainState : PlayerBaseState
     public bool isFiring;
     private GameObject BulletStartPoint;
 
+
+    private readonly int NBase_Idle = Animator.StringToHash("NBase_Idle");
+
+    /*
     [Header("Idle Animation")]
     private readonly int LVL1_IdleHash = Animator.StringToHash("LVL1_Idle");
     private readonly int LVL2_IdleHash = Animator.StringToHash("LVL2_Idle");
@@ -22,8 +26,6 @@ public class PlayerMainState : PlayerBaseState
     //each for each level
     private List<int> listOfIdleHash = new List<int>();
     
-
-
     [Header ("Everything about firing Bullets")]
     private readonly int LVL1_FiringHash = Animator.StringToHash("LVL1_Fire");
     private readonly int LVL2_FiringHash = Animator.StringToHash("LVL2_Fire");
@@ -34,12 +36,16 @@ public class PlayerMainState : PlayerBaseState
     private const float CrossFadeDuration = 0.1f;
     private float TimerCounter;
 
+    */
+
+
     private float dashDelayCounter;
 
     public PlayerMainState(PlayerStateMachine stateMachine) : base(stateMachine) {}
 
     public override void Enter()
     {
+        /*
         listOfIdleHash.Add(LVL1_IdleHash);
         listOfIdleHash.Add(LVL2_IdleHash);
         listOfIdleHash.Add(LVL3_IdleHash);
@@ -52,22 +58,33 @@ public class PlayerMainState : PlayerBaseState
         listOfFiringHash.Add(LVL4_FiringHash);
         listOfFiringHash.Add(LVL5_FiringHash);
         //Same with every level
+        */
+
 
         stateMachine.isStunnable = true;
 
-        stateMachine.InputReader.UseEvent += OnUse;
-        stateMachine.InputReader.FireEvent += OnFire;
+        stateMachine.InputReader.HeadbuttEvent += OnHeadbutt;
+        stateMachine.InputReader.BiteEvent += OnBite;
         stateMachine.InputReader.DashEvent += OnDash;
         stateMachine.InputReader.FireballEvent += OnFireball;
         stateMachine.InputReader.RepulseEvent += OnRepulse;
 
         BulletStartPoint = stateMachine.gameObject.GetComponentInChildren<BulletStartPoint>().gameObject;
 
-
+        /*
         if (stateMachine.PlayerData.currentLevel < 2)
         {
             stateMachine.Animator.Play(LVL1_IdleHash);
         }
+        else
+        {
+            stateMachine.Animator.Play(LVL1_IdleHash);
+        }
+        */
+
+
+        //new animation
+        stateMachine.Animator.Play(NBase_Idle);
 
 
         //stateMachine.Animator.Play(FreeLookBlendTreeHash);
@@ -93,14 +110,15 @@ public class PlayerMainState : PlayerBaseState
         FaceMovementDirecton();
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed;
 
-
+        /*
+        //jme souviens pas ce que ça fait
         //seems to be working
         if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)
         {
             TimerCounter += Time.deltaTime;
         }
         else { stateMachine.Animator.CrossFadeInFixedTime(listOfIdleHash[stateMachine.currentLevelStored], CrossFadeDuration); TimerCounter = 0f;  }
-
+        */
 
         if (!stateMachine.PlayerData.canDash)
         {
@@ -111,6 +129,7 @@ public class PlayerMainState : PlayerBaseState
             else { stateMachine.PlayerData.canDash = true; dashDelayCounter = 0f; }
         }
 
+        /*
         if (stateMachine.InputReader.Fire.ReadValue<float>() > 0)
         {
             Debug.Log("fire continuously");
@@ -118,6 +137,7 @@ public class PlayerMainState : PlayerBaseState
             //isFiring = true;
 
         }
+        */
 
         //Debug.Log(stateMachine.InputReader.Fire.ReadValue<float>());
 
@@ -125,8 +145,8 @@ public class PlayerMainState : PlayerBaseState
     public override void Exit()
     {
 
-        stateMachine.InputReader.UseEvent -= OnUse;
-        stateMachine.InputReader.FireEvent -= OnFire;
+        stateMachine.InputReader.HeadbuttEvent -= OnHeadbutt;
+        stateMachine.InputReader.BiteEvent -= OnBite;
         stateMachine.InputReader.DashEvent -= OnDash;
         stateMachine.InputReader.RepulseEvent -= OnRepulse;
 
@@ -134,13 +154,19 @@ public class PlayerMainState : PlayerBaseState
 
 
 
-    private void OnUse()
+    private void OnHeadbutt()
     {
-        //Debug.Log("i pressed E");
-        stateMachine.SwitchState(new PlayerUsingState(stateMachine));
+        
+        stateMachine.SwitchState(new PlayerHeadbuttState(stateMachine));
 
     }
 
+    private void OnBite()
+    {
+        stateMachine.SwitchState(new PlayerBiteState(stateMachine));
+    }
+
+    /*
     private void OnFire()
     {
         if( stateMachine.hasInfiniteMana == true)
@@ -153,7 +179,7 @@ public class PlayerMainState : PlayerBaseState
             stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.UnlimitedManaDuration());
 
 
-            stateMachine.Animator.CrossFadeInFixedTime(listOfFiringHash[stateMachine.currentLevelStored], CrossFadeDuration);
+            //stateMachine.Animator.CrossFadeInFixedTime(listOfFiringHash[stateMachine.currentLevelStored], CrossFadeDuration);
             GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
         }
         else
@@ -166,7 +192,7 @@ public class PlayerMainState : PlayerBaseState
                 stateMachine.PlayerData.canRegenMana = false;
 
 
-                stateMachine.Animator.CrossFadeInFixedTime(listOfFiringHash[stateMachine.currentLevelStored], CrossFadeDuration);
+                //stateMachine.Animator.CrossFadeInFixedTime(listOfFiringHash[stateMachine.currentLevelStored], CrossFadeDuration);
 
                 GameObject.Instantiate(stateMachine.BulletPrefab, new Vector2(BulletStartPoint.transform.position.x, BulletStartPoint.transform.position.y), Quaternion.identity);
                 stateMachine.PlayerCurrentHealthAndMana.manaMinimumDelayCounter = 0;
@@ -184,6 +210,7 @@ public class PlayerMainState : PlayerBaseState
 
 
     }
+    */
 
     private void OnDash()
     {

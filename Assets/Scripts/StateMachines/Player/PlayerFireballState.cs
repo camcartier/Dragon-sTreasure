@@ -16,17 +16,27 @@ public class PlayerFireballState : PlayerBaseState
     private readonly int LVL5_FireballHash = Animator.StringToHash("LVL5_Fireball");
     //each for each level
     private List<int> listOfFireballHash = new List<int>();
+
+    private readonly int NBase_Fireball = Animator.StringToHash("NBase_Fireball");
+    //private readonly int NBase_Fireball = Animator.StringToHash("NBase_Bite");
+
     public PlayerFireballState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
+        /*
         listOfFireballHash.Add(LVL1_FireballHash);
         listOfFireballHash.Add(LVL2_FireballHash);
         listOfFireballHash.Add(LVL3_FireballHash);
         listOfFireballHash.Add(LVL4_FireballHash);
         listOfFireballHash.Add(LVL5_FireballHash);
+        */
+
+
+        //animation
+        stateMachine.Animator.Play(NBase_Fireball);
 
 
         //Debug.Log("fireball");

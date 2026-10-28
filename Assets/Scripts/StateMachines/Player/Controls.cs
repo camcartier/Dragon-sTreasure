@@ -37,7 +37,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Use"",
+                    ""name"": ""Headbutt"",
                     ""type"": ""Button"",
                     ""id"": ""90246d65-03af-4480-9fde-7cf45b469298"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Fire"",
+                    ""name"": ""Bite"",
                     ""type"": ""Button"",
                     ""id"": ""9352c8c9-268f-4237-9cb6-94bf4494d5fd"",
                     ""expectedControlType"": ""Button"",
@@ -196,22 +196,11 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4c4815aa-06fc-43d4-b2d4-d53cf5d290c3"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Main"",
-                    ""action"": ""Use"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d433ca90-0aa5-4f45-a033-5d4f3065c724"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Use"",
+                    ""action"": ""Headbutt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -222,14 +211,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Main"",
-                    ""action"": ""Fire"",
+                    ""action"": ""Bite"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""e55e653f-7a47-456c-820e-5963cb507158"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Main"",
@@ -284,8 +273,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_Move = m_Main.FindAction("Move", throwIfNotFound: true);
-        m_Main_Use = m_Main.FindAction("Use", throwIfNotFound: true);
-        m_Main_Fire = m_Main.FindAction("Fire", throwIfNotFound: true);
+        m_Main_Headbutt = m_Main.FindAction("Headbutt", throwIfNotFound: true);
+        m_Main_Bite = m_Main.FindAction("Bite", throwIfNotFound: true);
         m_Main_Dash = m_Main.FindAction("Dash", throwIfNotFound: true);
         m_Main_Fireball = m_Main.FindAction("Fireball", throwIfNotFound: true);
         m_Main_Repulse = m_Main.FindAction("Repulse", throwIfNotFound: true);
@@ -349,8 +338,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Main;
     private IMainActions m_MainActionsCallbackInterface;
     private readonly InputAction m_Main_Move;
-    private readonly InputAction m_Main_Use;
-    private readonly InputAction m_Main_Fire;
+    private readonly InputAction m_Main_Headbutt;
+    private readonly InputAction m_Main_Bite;
     private readonly InputAction m_Main_Dash;
     private readonly InputAction m_Main_Fireball;
     private readonly InputAction m_Main_Repulse;
@@ -359,8 +348,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         private @Controls m_Wrapper;
         public MainActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Main_Move;
-        public InputAction @Use => m_Wrapper.m_Main_Use;
-        public InputAction @Fire => m_Wrapper.m_Main_Fire;
+        public InputAction @Headbutt => m_Wrapper.m_Main_Headbutt;
+        public InputAction @Bite => m_Wrapper.m_Main_Bite;
         public InputAction @Dash => m_Wrapper.m_Main_Dash;
         public InputAction @Fireball => m_Wrapper.m_Main_Fireball;
         public InputAction @Repulse => m_Wrapper.m_Main_Repulse;
@@ -376,12 +365,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMove;
-                @Use.started -= m_Wrapper.m_MainActionsCallbackInterface.OnUse;
-                @Use.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnUse;
-                @Use.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnUse;
-                @Fire.started -= m_Wrapper.m_MainActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnFire;
+                @Headbutt.started -= m_Wrapper.m_MainActionsCallbackInterface.OnHeadbutt;
+                @Headbutt.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnHeadbutt;
+                @Headbutt.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnHeadbutt;
+                @Bite.started -= m_Wrapper.m_MainActionsCallbackInterface.OnBite;
+                @Bite.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnBite;
+                @Bite.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnBite;
                 @Dash.started -= m_Wrapper.m_MainActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnDash;
@@ -398,12 +387,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Use.started += instance.OnUse;
-                @Use.performed += instance.OnUse;
-                @Use.canceled += instance.OnUse;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
+                @Headbutt.started += instance.OnHeadbutt;
+                @Headbutt.performed += instance.OnHeadbutt;
+                @Headbutt.canceled += instance.OnHeadbutt;
+                @Bite.started += instance.OnBite;
+                @Bite.performed += instance.OnBite;
+                @Bite.canceled += instance.OnBite;
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
@@ -429,8 +418,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     public interface IMainActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnUse(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
+        void OnHeadbutt(InputAction.CallbackContext context);
+        void OnBite(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnFireball(InputAction.CallbackContext context);
         void OnRepulse(InputAction.CallbackContext context);

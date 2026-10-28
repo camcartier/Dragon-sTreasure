@@ -8,10 +8,10 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 {
     private Controls controls;
 
-    public event Action  UseEvent, FireEvent, DashEvent, FireballEvent, RepulseEvent;
+    public event Action  HeadbuttEvent, BiteEvent, DashEvent, FireballEvent, RepulseEvent;
     //MoveEvent,
     
-    public InputAction Fire;
+    //public InputAction Fire;
 
     public Vector2 MovementValue { get; private set; }
 
@@ -21,17 +21,17 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 
         controls.Main.Enable();
 
-        Fire = controls.Main.Fire;
+        //Fire = controls.Main.Fire;
     }
 
     private void OnEnable()
     {
-        Fire.Enable();
+        //Fire.Enable();
     }
 
     private void OnDisable()
     {
-        Fire.Disable();
+        //Fire.Disable();
     }
 
     void OnDestroy()
@@ -46,18 +46,18 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
     }
     
 
-    public void OnUse(InputAction.CallbackContext context)
+    public void OnHeadbutt(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
 
-        UseEvent?.Invoke();
+        HeadbuttEvent?.Invoke();
     }
 
-    public void OnFire(InputAction.CallbackContext context)
+    public void OnBite(InputAction.CallbackContext context)
     {
         if (!context.performed) { return; }
 
-        FireEvent?.Invoke();
+        BiteEvent?.Invoke();
 
     }
 
@@ -82,4 +82,6 @@ public class InputReader : MonoBehaviour, Controls.IMainActions
 
         RepulseEvent?.Invoke();
     }
+
+
 }

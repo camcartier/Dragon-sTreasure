@@ -54,16 +54,16 @@ public class EnemyMainState : EnemyBaseState
         }
 
 
-
+        //direction
         if (Mathf.Sign(stateMachine.gameObject.transform.position.x - toFollow.transform.position.x) > 0) { directionX = -1; }
         else { directionX = 1; }
         if (Mathf.Sign(stateMachine.gameObject.transform.position.y - toFollow.transform.position.y) > 0) { directionY = -1; }
         else { directionY = 1; }
 
-
+        //marche
         stateMachine.rb2D.velocity = new Vector2(directionX, directionY) * stateMachine.characterData.walkSpeed;
 
-
+        //limite pour se tourner
         if (Mathf.Abs(toFollow.transform.position.x - stateMachine.gameObject.transform.position.x) <= 0.5f)
         {
             isTurning = false;

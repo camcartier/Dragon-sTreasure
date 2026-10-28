@@ -17,17 +17,25 @@ public class PlayerDashingState : PlayerBaseState
     private List<int> listOfDashingHash = new List<int>();
 
 
+    private readonly int NBase_Dash = Animator.StringToHash("NBase_Dash");
+
+
     public PlayerDashingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
+        /*
         listOfDashingHash.Add(LVL1_DashingHash);
         listOfDashingHash.Add(LVL2_DashingHash);
         listOfDashingHash.Add(LVL3_DashingHash);
         listOfDashingHash.Add(LVL4_DashingHash);
         listOfDashingHash.Add(LVL5_DashingHash);
+        */
+
+        //animation
+        stateMachine.Animator.Play(NBase_Dash);
 
 
 
@@ -59,7 +67,7 @@ public class PlayerDashingState : PlayerBaseState
 
         dashDurationCounter = 0f;
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = true;
-        stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        
         stateMachine.PlayerData.canDash = false;
         //stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = Mathf.Lerp(2, 0, Time.deltaTime * 5f);
 

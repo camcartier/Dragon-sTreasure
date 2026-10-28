@@ -24,7 +24,7 @@ MonoBehaviour:
   - 0
   stunDuration: 0.3
   invulnerabilityDuration: 2
-  dashSpeed: 140
+  dashSpeed: 200
   dashSpeedArray:
   - 0
   - 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   canRegenHealth: 0
   HealthRegenDelay: 5
   HealthRegenAmount: 0
-  canRegenMana: 0
+  canRegenMana: 1
   ManaRegenMinimumDelay: 500
   fireDelay: 0
   repulseRadius: 100

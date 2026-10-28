@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 5961826141067821993}
   - component: {fileID: 6599733396899705006}
   - component: {fileID: 4366104757987002797}
+  - component: {fileID: 6786908380470263328}
   m_Layer: 7
   m_Name: Peasant
   m_TagString: Farmer
@@ -247,6 +248,10 @@ MonoBehaviour:
   destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
   burningFx: {fileID: 5388006730220716888, guid: 78ad6c915b65b784c88ea028af70b3b6, type: 3}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
+  playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
+  stateMachineEnemy: {fileID: 0}
+  enemyIDNumber: {fileID: 6786908380470263328}
+  MyCurrentHealth: 0
   listOfPossibleLoots:
   - {fileID: 117661991500826913, guid: 5c8e6770a95cc024091ce991a7c78bd7, type: 3}
   - {fileID: 117661991500826913, guid: d530272aaa8967b4eb9b7e1ddf373247, type: 3}
@@ -293,6 +298,20 @@ MonoBehaviour:
   player: {fileID: 0}
   characterData: {fileID: 11400000, guid: db7aa6159f2d0ed479cf7472d9225849, type: 2}
   healthCanvas: {fileID: 1728061189113049858}
+--- !u!114 &6786908380470263328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410063474788455525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7888c0ceb5dae9c4281125a629b1b8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IDNumber: 0
+  IDAttackTimer: 0
 --- !u!1 &2819632776329361316
 GameObject:
   m_ObjectHideFlags: 0

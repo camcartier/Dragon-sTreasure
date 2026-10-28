@@ -45,7 +45,7 @@ public class EnemyAttackState : EnemyBaseState
         timebeforechangeStateCounter += Time.deltaTime;
 
 
-        //ENEMY ID 2
+        //ENEMY ID 2 shield
         if (stateMachine.enemyID.IDNumber == 2)
         {
 
@@ -63,7 +63,7 @@ public class EnemyAttackState : EnemyBaseState
     
         }
 
-        //ENEMY ID 3
+        //ENEMY ID 3 archer
         if (stateMachine.enemyID.IDNumber == 3 && !stateMachine.hasInstantiated)
         {
             //Turning the prefab
@@ -88,13 +88,13 @@ public class EnemyAttackState : EnemyBaseState
         //ENEMY ID 4
         //ENEMY ID 5
 
-
+        
         if (attackTimerCounter < stateMachine.attackTimer)
         {
             attackTimerCounter += Time.deltaTime;
         }
         else { stateMachine.hasInstantiated = false; attackTimerCounter = 0f; }
-
+        
 
 
         if (!stateMachine.isAttacking && timebeforechangeStateCounter > timebeforechangeState)
