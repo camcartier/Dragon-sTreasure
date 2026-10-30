@@ -15,6 +15,8 @@ public class PlayerDyingState : PlayerBaseState
 
     private float TimerCounter;
 
+    private readonly int NBase_Death = Animator.StringToHash("NBase_Death");
+
     public PlayerDyingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -31,8 +33,9 @@ public class PlayerDyingState : PlayerBaseState
 
         stateMachine.isDead = true;
 
-        stateMachine.Animator.CrossFadeInFixedTime(ListOfDyingHash[stateMachine.currentLevelStored], CrossFadeDuration);
+        //stateMachine.Animator.CrossFadeInFixedTime(ListOfDyingHash[stateMachine.currentLevelStored], CrossFadeDuration);
 
+        stateMachine.Animator.Play(NBase_Death);
     }
     public override void Tick(float deltaTime)
     {

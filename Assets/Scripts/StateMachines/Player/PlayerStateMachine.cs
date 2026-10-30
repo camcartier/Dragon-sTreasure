@@ -61,6 +61,13 @@ public class PlayerStateMachine : StateMachine
     //Use
     [field: SerializeField] public bool isUsing { get; set; }
 
+    //Animation curves
+    [field: SerializeField] public AnimationCurve HeadbuttCurve { get; set; }
+    [field: SerializeField] public GameObject HeadbuttFXPOS { get; set; }
+    [field: SerializeField] public GameObject HeadbuttFXPrefab { get; set; }
+    [field: SerializeField] public AnimationCurve BiteCurve { get; set; }
+    [field: SerializeField] public AnimationCurve DashCurve { get; set; }
+
 
     //Dash
     [field: SerializeField] public bool canDash { get; set; }
@@ -86,6 +93,7 @@ public class PlayerStateMachine : StateMachine
 
     //General
     public GameManager GameManager { get; set; }
+    [field: SerializeField] public PlayerInstantiateStuff InstantiateStuff { get; set; }
     public Transform MainCameraTransform { get; private set; }
     [field: SerializeField] public CameraCoroutines CameraCoroutines { get; private set; }
     [field: SerializeField] public CameraData CameraData { get; set; }

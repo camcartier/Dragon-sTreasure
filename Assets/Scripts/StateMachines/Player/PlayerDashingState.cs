@@ -40,7 +40,7 @@ public class PlayerDashingState : PlayerBaseState
 
 
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = false;
-        stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+        //stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
 
         stateMachine.rb2D.velocity = stateMachine.lastMovementDirection * stateMachine.PlayerData.dashSpeed;
 
@@ -62,8 +62,8 @@ public class PlayerDashingState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.isDashing = false;
-        //Debug.Log(stateMachine.isDashing);
+        //stateMachine.isDashing = false;
+        Debug.Log(stateMachine.isDashing);
 
         dashDurationCounter = 0f;
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = true;

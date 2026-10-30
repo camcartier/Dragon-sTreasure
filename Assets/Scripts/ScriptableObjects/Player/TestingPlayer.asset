@@ -32,7 +32,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  dashDelay: 1
+  dashDelay: 0.5
   dashDelayArray:
   - 0
   - 0
@@ -61,7 +61,7 @@ MonoBehaviour:
   canRegenHealth: 0
   HealthRegenDelay: 5
   HealthRegenAmount: 0
-  canRegenMana: 1
+  canRegenMana: 0
   ManaRegenMinimumDelay: 500
   fireDelay: 0
   repulseRadius: 100

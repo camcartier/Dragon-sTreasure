@@ -22,6 +22,8 @@ public class PlayerHurtState : PlayerBaseState
     //each for each level
     private List<int> listOfHurtHash = new List<int>();
 
+    private readonly int NBase_Hurt = Animator.StringToHash("NBase_Hurt");
+
     //also knockback state
     public PlayerHurtState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -35,7 +37,7 @@ public class PlayerHurtState : PlayerBaseState
         listOfHurtHash.Add(LVL4_HurtHash);
         listOfHurtHash.Add(LVL5_HurtHash);
 
-
+        stateMachine.Animator.Play(NBase_Hurt);
 
         //stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.red;
 
