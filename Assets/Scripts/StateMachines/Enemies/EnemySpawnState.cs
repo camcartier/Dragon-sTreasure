@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawnState : EnemyBaseState
 {
-    private float waitTimeAtSpawn = 2f;
+    private float waitTimeAtSpawn = 1f;
     private float waitTimeCounter;
 
     public EnemySpawnState(EnemyStateMachine stateMachine) : base(stateMachine)
@@ -12,6 +12,7 @@ public class EnemySpawnState : EnemyBaseState
     }
     public override void Enter()
     {
+        //stateMachine.walkTowards.isFollowing = false;
         stateMachine.spriteRenderer.color = Color.gray;
         //Debug.Log("spawn");
     }
@@ -32,6 +33,7 @@ public class EnemySpawnState : EnemyBaseState
     public override void Exit()
     {
         waitTimeCounter = 0f;
+        //stateMachine.walkTowards.isFollowing = true;
     }
 
 }

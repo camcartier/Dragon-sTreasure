@@ -66,6 +66,7 @@ public class WalkTowards : MonoBehaviour
             }
         }
 
+
         if (Mathf.Sign(gameObject.transform.position.x - toFollow.transform.position.x) > 0)
         {
             directionX = -1;

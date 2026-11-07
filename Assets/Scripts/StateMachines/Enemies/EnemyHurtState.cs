@@ -6,16 +6,18 @@ public class EnemyHurtState : EnemyBaseState
 {
     private float hurtTimerCounter;
 
+    private readonly int Hurt = Animator.StringToHash("Hurt");
+
     public EnemyHurtState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
-        //stateMachine.rb2D.velocity = Vector2.zero;
-        stateMachine.spriteRenderer.color = Color.red;
-        Debug.Log("player hurt");
+        //stateMachine.walkTowards.isFollowing = false;
+        stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
+        stateMachine.Animator.Play("Hurt");
         
     }
     public override void Tick(float deltaTime)
@@ -25,10 +27,12 @@ public class EnemyHurtState : EnemyBaseState
             stateMachine.SwitchState(new EnemyDeathState(stateMachine));
         }
 
+        /*
         if (stateMachine.isBurning)
         {
             stateMachine.SwitchState(new EnemyBurningState(stateMachine));
         }
+        */
 
 
         if (stateMachine.hurtIsReset)
@@ -52,5 +56,8 @@ public class EnemyHurtState : EnemyBaseState
     {
         hurtTimerCounter = 0f;
         stateMachine.isHurt = false;
+        stateMachine.isHit = false;
+
+        //stateMachine.walkTowards.isFollowing = true;
     }
 }

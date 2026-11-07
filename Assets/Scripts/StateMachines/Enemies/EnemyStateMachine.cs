@@ -15,6 +15,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool canAttack { get;  set; }
     [field: SerializeField] public bool isInAttackState { get; set; }
     [field: SerializeField] public bool isAttacking { get; set; }
+    [field: SerializeField] public bool stillAttacking { get; set; }
     [field: SerializeField] public float attackTimer { get; set; }
     [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }
     [field: SerializeField] public bool hasInstantiated { get; set; }
@@ -24,6 +25,7 @@ public class EnemyStateMachine : StateMachine
 
 
     [field: SerializeField] public bool isFollowing { get; set; }
+    [field: SerializeField] public bool isHit { get; set; }
     [field: SerializeField] public bool isHurt { get; set; }
 
     [field: SerializeField] public bool hurtIsReset { get; set; }
@@ -38,6 +40,10 @@ public class EnemyStateMachine : StateMachine
 
 
     [field: SerializeField] public SpriteRenderer spriteRenderer { get; set; }
+
+
+    //[field: SerializeField] public WalkTowards walkTowards { get; set; }
+
 
     void Start()
     {

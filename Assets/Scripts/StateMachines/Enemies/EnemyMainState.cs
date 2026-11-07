@@ -11,16 +11,20 @@ public class EnemyMainState : EnemyBaseState
 
     private bool isTurning;
 
+    private readonly int Walk = Animator.StringToHash("Walk");
+
     public EnemyMainState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
-        stateMachine.spriteRenderer.color = Color.white;
+        stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         //Debug.Log("main");
 
         toFollow = GameObject.Find("Player");
+
+        stateMachine.Animator.Play("Walk");
     }
     public override void Tick(float deltaTime)
     {
@@ -34,14 +38,22 @@ public class EnemyMainState : EnemyBaseState
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
         }
 
-        if (stateMachine.isInAttackState)
+        if (stateMachine.isHit) 
         {
+            stateMachine.SwitchState(new EnemyHurtState(stateMachine));
+        }
+
+        if (stateMachine.isAttacking)
+        {
+            /*
             if (stateMachine.enemyID.IDNumber == 2)
             {
                 stateMachine.SwitchState(new EnemyLoadingAttackState(stateMachine));
             }
             else { stateMachine.SwitchState(new EnemyAttackState(stateMachine)); }
-                
+            */
+
+            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
         }
 
 

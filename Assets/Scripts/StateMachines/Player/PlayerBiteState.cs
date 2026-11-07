@@ -8,7 +8,7 @@ public class PlayerBiteState : PlayerBaseState
     private float BiteTimerCounter;
     private float ImpulseForce = 50f;
 
-    private float BiteDistance = 1f;
+    private float BiteDistance = .5f;
     private float BiteDuration = 0.15f;
     private float BiteMoveTimer;
     private float BiteDirection;
@@ -26,7 +26,7 @@ public class PlayerBiteState : PlayerBaseState
     {
         BiteTimerCounter = 0f;
         stateMachine.rb2D.velocity = Vector3.zero;
-
+        stateMachine.isAttacking = true;
 
          
 
@@ -38,7 +38,7 @@ public class PlayerBiteState : PlayerBaseState
 
     public override void Exit()
     {
-        
+        stateMachine.isAttacking = false;
     }
 
     public override void Tick(float deltaTime)

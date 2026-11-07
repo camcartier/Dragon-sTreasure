@@ -36,6 +36,8 @@ public class PlayerStateMachine : StateMachine
     //FXs
     [field: SerializeField] public GameObject diggingFX { get; private set; }
 
+    [field: SerializeField] public bool isAttacking { get; set; }
+
 
     //stun and knockback
     [field: SerializeField] public bool isStunnable { get;  set; }

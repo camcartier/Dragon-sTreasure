@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAttackState : EnemyBaseState
 {
+    private float attackTimer;
     private float attackTimerCounter;
     private float ID2AttackTimerCounter;
 
@@ -20,6 +21,9 @@ public class EnemyAttackState : EnemyBaseState
     private bool isTurning;
     private GameObject toFollow;
 
+
+    private readonly int Attack = Animator.StringToHash("Attack");
+
     public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -27,18 +31,22 @@ public class EnemyAttackState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.rb2D.velocity = Vector2.zero;
+        //stateMachine.rb2D.constraints = RigidbodyConstraints2D.FreezePosition;
+        //stateMachine.rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        stateMachine.rb2D.bodyType = RigidbodyType2D.Kinematic;
 
+        stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.grey;
 
         //turning the prefab
         toFollow = GameObject.Find("Player");
 
-        Debug.Log("enter attack state");
-
+        //Debug.Log("enter attack state");
+        stateMachine.Animator.Play("Attack",0 ,0f);
     }
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.isHurt){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
-        if (stateMachine.isDead){stateMachine.SwitchState(new EnemyDeathState(stateMachine));}
+        //if (stateMachine.isHurt){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
+        //if (stateMachine.isDead){stateMachine.SwitchState(new EnemyDeathState(stateMachine));}
 
         stateMachine.rb2D.velocity = Vector2.zero;
 
@@ -49,19 +57,24 @@ public class EnemyAttackState : EnemyBaseState
         if (stateMachine.enemyID.IDNumber == 2)
         {
 
-            if (stateMachine.isAttacking)
-            {
-                stateMachine.spriteRenderer.color = Color.cyan;
-                
-            }
 
             if(stateMachine.characterData.attackTimer < ID2AttackTimerCounter)
             {
-                stateMachine.SwitchState(new EnemyMainState(stateMachine));
+                if (stateMachine.stillAttacking)
+                {
+                    stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                }
+                else
+                {
+                    stateMachine.SwitchState(new EnemyMainState(stateMachine));
+                }
+                   
             }
             else { ID2AttackTimerCounter += Time.deltaTime; }
+            
     
         }
+
 
         //ENEMY ID 3 archer
         if (stateMachine.enemyID.IDNumber == 3 && !stateMachine.hasInstantiated)
@@ -85,8 +98,7 @@ public class EnemyAttackState : EnemyBaseState
         }
 
 
-        //ENEMY ID 4
-        //ENEMY ID 5
+
 
         
         if (attackTimerCounter < stateMachine.attackTimer)
@@ -96,16 +108,23 @@ public class EnemyAttackState : EnemyBaseState
         else { stateMachine.hasInstantiated = false; attackTimerCounter = 0f; }
         
 
-
-        if (!stateMachine.isAttacking && timebeforechangeStateCounter > timebeforechangeState)
+        /*
+        if (!stateMachine.stillAttacking && timebeforechangeStateCounter > timebeforechangeState)
         {
             stateMachine.SwitchState(new EnemyMainState(stateMachine));
         }
+        else if (stateMachine.stillAttacking && timebeforechangeStateCounter > timebeforechangeState)
+        {
+            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+        }
+        */
 
+        /*
         if(stateMachine.isInAttackState && timebeforechangeStateCounter > timebeforechangeState && stateMachine.enemyID.IDNumber == 2)
         {
             stateMachine.SwitchState(new EnemyLoadingAttackState(stateMachine));
         }
+        */
 
     }
 
@@ -119,10 +138,14 @@ public class EnemyAttackState : EnemyBaseState
         //startAttack = false;
         stateMachine.spriteRenderer.color = Color.white;
 
-        Debug.Log("exit attack state");
+        //Debug.Log("exit attack state");
         stateMachine.isInAttackState = false;
 
         timebeforechangeStateCounter = 0f;
+
+
+        stateMachine.rb2D.bodyType = RigidbodyType2D.Dynamic;
+        //stateMachine.rb2D.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
     }
 
 

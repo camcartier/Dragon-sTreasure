@@ -9,7 +9,7 @@ public class PlayerHeadbuttState : PlayerBaseState
     private float HeadbuttTimerCounter = 0f;
     private float ImpulseForce = 50f;
 
-    private float HeadbuttDistance = 1.5f;
+    private float HeadbuttDistance = 1f;
     private float HeadbuttDuration = 0.1f;
     private float HeadbuttMoveTimer;
     private float HeadbuttDirection;
