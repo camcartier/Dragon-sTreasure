@@ -35,7 +35,7 @@ public class PlayerHeadbuttState : PlayerBaseState
         stateMachine.rb2D.velocity = Vector3.zero;
 
 
-
+        stateMachine.isAttacking = true;
             
 
         stateMachine.Animator.Play(NBase_Headbutt);
@@ -48,8 +48,8 @@ public class PlayerHeadbuttState : PlayerBaseState
         HeadbuttTimerCounter = 0f;
         
         isBiting = false;
+        stateMachine.isAttacking = false;
 
-        
     }
 
     public override void Tick(float deltaTime)

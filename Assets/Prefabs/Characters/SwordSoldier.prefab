@@ -29,6 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7281034259432771423}
+  - {fileID: 7429498009845286831}
   m_Father: {fileID: 6262012030644287067}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135,6 +136,99 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1279745285425800901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3053591026041977024}
+  m_Layer: 7
+  m_Name: attackPSPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3053591026041977024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279745285425800901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: 20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6262012030644287067}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1958664827255367644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7429498009845286831}
+  - component: {fileID: 7103138798172558704}
+  - component: {fileID: 7224213598381612638}
+  m_Layer: 7
+  m_Name: AttackCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7429498009845286831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958664827255367644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2827230403296616688}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &7103138798172558704
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958664827255367644}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -11.681992, y: 20.130688}
+  m_Size: {x: 24.9114, y: 42.46087}
+  m_Direction: 0
+--- !u!114 &7224213598381612638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958664827255367644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f066f079b02cb546a354b2e05a6e61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStateMachine: {fileID: 5299425713507165692}
 --- !u!1 &2232829806478616904
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,8 +570,9 @@ GameObject:
   - component: {fileID: 6262012030644287067}
   - component: {fileID: -5292730713564269550}
   - component: {fileID: 5299425713507165692}
-  - component: {fileID: 6862377192765784903}
+  - component: {fileID: 8904081398941232037}
   - component: {fileID: 3872224751413010044}
+  - component: {fileID: 6862377192765784903}
   m_Layer: 7
   m_Name: SwordSoldier
   m_TagString: Soldier
@@ -501,6 +596,7 @@ Transform:
   - {fileID: 2827230403296616688}
   - {fileID: 3029881382475110981}
   - {fileID: 8888030864989248489}
+  - {fileID: 3053591026041977024}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -546,8 +642,10 @@ MonoBehaviour:
   <isInAttackState>k__BackingField: 0
   <isAttacking>k__BackingField: 0
   <stillAttacking>k__BackingField: 0
+  <isHitting>k__BackingField: 0
+  <hasHit>k__BackingField: 0
   <attackTimer>k__BackingField: 0
-  <instantiateStuff>k__BackingField: {fileID: 0}
+  <instantiateStuff>k__BackingField: {fileID: 8904081398941232037}
   <hasInstantiated>k__BackingField: 0
   <hitCollider>k__BackingField: {fileID: 0}
   <canBeBumped>k__BackingField: 0
@@ -560,7 +658,9 @@ MonoBehaviour:
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
   <spriteRenderer>k__BackingField: {fileID: 7694351713912350198}
---- !u!114 &6862377192765784903
+  <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 48ec1afacc07d604181579786ab89e03, type: 3}
+  <attackPSAirposition>k__BackingField: {fileID: 1279745285425800901}
+--- !u!114 &8904081398941232037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,11 +669,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6512618063938855508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7888c0ceb5dae9c4281125a629b1b8ce, type: 3}
+  m_Script: {fileID: 11500000, guid: f841fe10b70808f49b5da787e84f7b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IDNumber: 0
-  IDAttackTimer: 0
+  simpleProjectile: {fileID: 0}
+  projectileStartPoint: {fileID: 0}
+  enemyStateMachine: {fileID: 5299425713507165692}
 --- !u!114 &3872224751413010044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +704,20 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &6862377192765784903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512618063938855508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7888c0ceb5dae9c4281125a629b1b8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IDNumber: 2
+  IDAttackTimer: 2
 --- !u!1 &7653139990179804991
 GameObject:
   m_ObjectHideFlags: 0

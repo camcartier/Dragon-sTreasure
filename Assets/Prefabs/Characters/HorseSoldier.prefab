@@ -46,8 +46,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -9.429655, y: 15.600216}
-  m_Size: {x: 26.88361, y: 64.12885}
+  m_Offset: {x: -2.6831303, y: 15.600216}
+  m_Size: {x: 13.39056, y: 64.12885}
   m_Direction: 0
 --- !u!114 &4833803556994010588
 MonoBehaviour:
@@ -151,6 +151,8 @@ GameObject:
   - component: {fileID: 5869800528027535412}
   - component: {fileID: 2786489220749007960}
   - component: {fileID: 3796159524634505120}
+  - component: {fileID: 9126180534701047209}
+  - component: {fileID: 4470532395947896573}
   m_Layer: 0
   m_Name: HorseSoldier
   m_TagString: Untagged
@@ -174,6 +176,8 @@ Transform:
   - {fileID: 9046286665224122463}
   - {fileID: 2157502217749877921}
   - {fileID: 7639339439364537940}
+  - {fileID: 5509371018032508085}
+  - {fileID: 6260385990308264907}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -219,8 +223,10 @@ MonoBehaviour:
   <isInAttackState>k__BackingField: 0
   <isAttacking>k__BackingField: 0
   <stillAttacking>k__BackingField: 0
+  <isHitting>k__BackingField: 0
+  <hasHit>k__BackingField: 0
   <attackTimer>k__BackingField: 0
-  <instantiateStuff>k__BackingField: {fileID: 0}
+  <instantiateStuff>k__BackingField: {fileID: 4470532395947896573}
   <hasInstantiated>k__BackingField: 0
   <hitCollider>k__BackingField: {fileID: 0}
   <canBeBumped>k__BackingField: 0
@@ -233,6 +239,10 @@ MonoBehaviour:
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
   <spriteRenderer>k__BackingField: {fileID: 4785121132205214600}
+  <attackPSGround>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
+  <attackPSGroundposition>k__BackingField: {fileID: 7561599684817672347}
+  <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 48ec1afacc07d604181579786ab89e03, type: 3}
+  <attackPSAirposition>k__BackingField: {fileID: 5245956542749725251}
 --- !u!114 &2786489220749007960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,6 +286,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDNumber: 2
   IDAttackTimer: 2
+--- !u!114 &9126180534701047209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687805170673511512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f066f079b02cb546a354b2e05a6e61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStateMachine: {fileID: 5869800528027535412}
+--- !u!114 &4470532395947896573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687805170673511512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f841fe10b70808f49b5da787e84f7b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleProjectile: {fileID: 0}
+  projectileStartPoint: {fileID: 0}
+  enemyStateMachine: {fileID: 5869800528027535412}
 --- !u!1 &2855821170590074529
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +450,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &5245956542749725251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6260385990308264907}
+  m_Layer: 0
+  m_Name: FXPOS_hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6260385990308264907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245956542749725251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40, y: 12.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5343236944167473052}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5758525038177844157
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,9 +870,40 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.8145335, y: 33.103184}
-  m_Size: {x: 87.048744, y: 67.86172}
+  m_Offset: {x: 4.1647305, y: 33.103184}
+  m_Size: {x: 73.09063, y: 67.86173}
   m_Direction: 1
+--- !u!1 &7561599684817672347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5509371018032508085}
+  m_Layer: 0
+  m_Name: FXPOS_ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5509371018032508085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561599684817672347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5343236944167473052}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8415824198043782520
 GameObject:
   m_ObjectHideFlags: 0

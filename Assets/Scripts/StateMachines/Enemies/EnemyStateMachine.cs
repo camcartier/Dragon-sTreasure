@@ -16,6 +16,8 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool isInAttackState { get; set; }
     [field: SerializeField] public bool isAttacking { get; set; }
     [field: SerializeField] public bool stillAttacking { get; set; }
+    [field: SerializeField] public bool isHitting { get; set; }
+    [field: SerializeField] public bool hasHit { get; set; }
     [field: SerializeField] public float attackTimer { get; set; }
     [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }
     [field: SerializeField] public bool hasInstantiated { get; set; }
@@ -41,6 +43,10 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public SpriteRenderer spriteRenderer { get; set; }
 
+   // [field: SerializeField] public GameObject attackPSGround { get; set; }
+    // [field: SerializeField] public GameObject attackPSGroundposition { get; set; }
+    [field: SerializeField] public GameObject attackPSHit { get; set; }
+    [field: SerializeField] public GameObject attackPSAirposition { get; set; }
 
     //[field: SerializeField] public WalkTowards walkTowards { get; set; }
 

@@ -69,6 +69,8 @@ stateMachine.rb2D.velocity = Vector3.zero;
         }
         */
 
+        stateMachine.MainSpriteRenderer.color = Color.red;
+
     }
     public override void Tick(float deltaTime)
     {
@@ -102,6 +104,8 @@ stateMachine.rb2D.velocity = Vector3.zero;
         stunDurationCounter = 0f;
 
         stateMachine.isHurt = false;
+
+        stateMachine.MainSpriteRenderer.color = Color.white;
     }
      
 

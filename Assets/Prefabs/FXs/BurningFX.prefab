@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 546734236794723427}
   - component: {fileID: 5388006730220716888}
   m_Layer: 0
-  m_Name: BurniongFX
+  m_Name: BurningFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

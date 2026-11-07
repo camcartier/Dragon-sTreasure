@@ -11,6 +11,8 @@ public class EnemyAttackState : EnemyBaseState
     private float timebeforechangeState = 2f;
     private float timebeforechangeStateCounter;
 
+    
+
     //enemy ID 2
     private float delayAfterEnterStateAndBeforeHit = 1f;
     private float delayAESABHCounter;
@@ -22,6 +24,8 @@ public class EnemyAttackState : EnemyBaseState
     private GameObject toFollow;
 
 
+    private bool hasInstantiatedHitPS;
+
     private readonly int Attack = Animator.StringToHash("Attack");
 
     public EnemyAttackState(EnemyStateMachine stateMachine) : base(stateMachine)
@@ -31,8 +35,7 @@ public class EnemyAttackState : EnemyBaseState
     public override void Enter()
     {
         stateMachine.rb2D.velocity = Vector2.zero;
-        //stateMachine.rb2D.constraints = RigidbodyConstraints2D.FreezePosition;
-        //stateMachine.rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
         stateMachine.rb2D.bodyType = RigidbodyType2D.Kinematic;
 
         stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.grey;
@@ -40,8 +43,9 @@ public class EnemyAttackState : EnemyBaseState
         //turning the prefab
         toFollow = GameObject.Find("Player");
 
-        //Debug.Log("enter attack state");
+
         stateMachine.Animator.Play("Attack",0 ,0f);
+
     }
     public override void Tick(float deltaTime)
     {
@@ -52,6 +56,17 @@ public class EnemyAttackState : EnemyBaseState
 
         timebeforechangeStateCounter += Time.deltaTime;
 
+
+        if (timebeforechangeStateCounter >= timebeforechangeState / 5)
+        {
+            stateMachine.isHitting = true;
+            if (!hasInstantiatedHitPS)
+            {
+                stateMachine.instantiateStuff.InstantiateFX(stateMachine.attackPSHit, stateMachine.attackPSAirposition);
+                hasInstantiatedHitPS = true;
+            }
+            
+        }
 
         //ENEMY ID 2 shield
         if (stateMachine.enemyID.IDNumber == 2)
@@ -130,15 +145,16 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Exit()
     {
+        //startAttack = false;
+        stateMachine.spriteRenderer.color = Color.white;
+
+
         //attackTimerCounter  = 0f;
         stateMachine.hasInstantiated = false;
 
         stateMachine.isAttacking = false;
-
-        //startAttack = false;
-        stateMachine.spriteRenderer.color = Color.white;
-
-        //Debug.Log("exit attack state");
+        stateMachine.isHitting = false;
+        stateMachine.hasHit = false;
         stateMachine.isInAttackState = false;
 
         timebeforechangeStateCounter = 0f;
