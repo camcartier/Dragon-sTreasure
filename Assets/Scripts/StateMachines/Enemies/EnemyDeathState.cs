@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyDeathState : EnemyBaseState
 {
+    private readonly int Death = Animator.StringToHash("Death");
+
     public EnemyDeathState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -11,9 +13,11 @@ public class EnemyDeathState : EnemyBaseState
     public override void Enter()
     {
         
-        stateMachine.spriteRenderer.color = Color.black;
+        //stateMachine.spriteRenderer.color = Color.black;
 
-        Debug.Log(stateMachine.rb2D);
+        //Debug.Log(stateMachine.rb2D);
+
+        stateMachine.Animator.Play("Death");
     }
 
     public override void Tick(float deltaTime)

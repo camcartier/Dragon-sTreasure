@@ -1,11 +1,12 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-using NaughtyAttributes;
 
 
 public class Destroyable : MonoBehaviour
@@ -160,7 +161,7 @@ public class Destroyable : MonoBehaviour
 
         if (MyCurrentHealth <= 0)
         {
-            Instantiate(destructionFx, transform.position, Quaternion.identity);
+            //Instantiate(destructionFx, transform.position, Quaternion.identity);
             stateMachineEnemy.isDead = true;
 
             if (gameObject.CompareTag("Yakkuru") == true)
@@ -176,8 +177,19 @@ public class Destroyable : MonoBehaviour
             }
 
 
-            destructionFx.GetComponentInChildren<ParticleSystem>().Play();
-            Destroy(gameObject);
+            //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
+
+            AnimatorStateInfo stateInfo = stateMachineEnemy.Animator.GetCurrentAnimatorStateInfo(0);
+
+            if (stateInfo.IsName("Death"))
+            {
+                if (stateInfo.normalizedTime >= 1f)
+                {
+                    Destroy(gameObject);
+                }
+            }
+
+  
         }
     }
 

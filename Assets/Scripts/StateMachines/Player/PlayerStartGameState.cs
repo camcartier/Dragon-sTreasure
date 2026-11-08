@@ -35,7 +35,7 @@ public class PlayerStartGameState : PlayerBaseState
     }
     public override void Exit()
     {
-        stateMachine.StartingTextPanel.SetActive(true);
+        //stateMachine.StartingTextPanel.SetActive(true);
     }
 
 }

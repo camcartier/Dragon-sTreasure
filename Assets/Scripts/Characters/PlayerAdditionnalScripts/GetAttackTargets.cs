@@ -17,7 +17,14 @@ public class GetAttackTargets : MonoBehaviour
         {
             foreach (GameObject gameObject in enemiesInReach)
             {
-                gameObject.GetComponentInParent<EnemyStateMachine>().isHit = true;
+                EnemyStateMachine enemyStateMachine = gameObject.GetComponentInParent<EnemyStateMachine>();
+                if (enemyStateMachine != null)
+                {
+                    gameObject.GetComponentInParent<EnemyStateMachine>().isHit = true;
+                }
+
+
+                
             }
         } 
     }
