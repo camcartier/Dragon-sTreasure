@@ -32,7 +32,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  dashDelay: 0.5
+  dashDelay: 0.8
   dashDelayArray:
   - 0
   - 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  canDash: 1
+  canDash: 0
   MaxHealth: 15
   MaxMana: 500
   maxHealthArray:
@@ -74,3 +74,4 @@ MonoBehaviour:
   - 0
   - 0
   repulseDamageArray: 050000000a0000000f00000014000000190000001e000000
+  fireballDelay: 5

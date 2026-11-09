@@ -11,9 +11,6 @@ public class PlayerFireballState : PlayerBaseState
 
     private readonly int LVL1_FireballHash = Animator.StringToHash("LVL1_Fireball");
     private readonly int LVL2_FireballHash = Animator.StringToHash("LVL2_Fireball");
-    private readonly int LVL3_FireballHash = Animator.StringToHash("LVL3_Fireball");
-    private readonly int LVL4_FireballHash = Animator.StringToHash("LVL4_Fireball");
-    private readonly int LVL5_FireballHash = Animator.StringToHash("LVL5_Fireball");
     //each for each level
     private List<int> listOfFireballHash = new List<int>();
 
@@ -26,14 +23,7 @@ public class PlayerFireballState : PlayerBaseState
 
     public override void Enter()
     {
-        /*
-        listOfFireballHash.Add(LVL1_FireballHash);
-        listOfFireballHash.Add(LVL2_FireballHash);
-        listOfFireballHash.Add(LVL3_FireballHash);
-        listOfFireballHash.Add(LVL4_FireballHash);
-        listOfFireballHash.Add(LVL5_FireballHash);
-        */
-
+        stateMachine.fireballCooldownCounter = stateMachine.PlayerData.fireballDelay;
 
         //animation
         stateMachine.Animator.Play(NBase_Fireball);
@@ -47,16 +37,11 @@ public class PlayerFireballState : PlayerBaseState
 
         stateMachine.rb2D.velocity = Vector3.zero;
 
-        stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingFireballReload());
+        //stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingFireballReload());
 
         GameObject.Instantiate(stateMachine.FireballPrefab, new Vector2(stateMachine.fireballStartingPoint.transform.position.x, stateMachine.fireballStartingPoint.transform.position.y), Quaternion.identity);
         
-        //stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = stateMachine.CameraData.FireballAmplitudeGain;
-        //stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = stateMachine.CameraData.FireballFrequencyGain;
-
-
-        //stopping noise progressively
-        //stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.FireballCameraShake());
+        
     }
     public override void Tick(float deltaTime)
     {

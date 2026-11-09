@@ -75,12 +75,16 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public bool canDash { get; set; }
     [field: SerializeField] public bool isDashing { get; set; }
     [field: SerializeField] public float dashDuration { get; private set; }
+    [field: SerializeField] public float dashCooldownCounter { get;  set; }
+    //[field: SerializeField] public float dashCooldown { get; private set; }
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 
     //Fireball
     [field: SerializeField] public bool canFireball { get; set; }
+    [field: SerializeField] public float fireballCooldownCounter { get; set; }
     [field: SerializeField] public GameObject fireballStartingPoint { get; private set; }
     [field: SerializeField] public GameObject FireballPrefab { get; private set; }
+
 
     //Repulse
     [field: SerializeField] public bool canRepulse { get; set; }

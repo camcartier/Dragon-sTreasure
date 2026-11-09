@@ -19,6 +19,9 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool isHitting { get; set; }
     [field: SerializeField] public bool hasHit { get; set; }
     [field: SerializeField] public float attackTimer { get; set; }
+    [field: SerializeField] public AudioSource attackSound { get; set; }
+
+
     [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }
     [field: SerializeField] public bool hasInstantiated { get; set; }
     [field: SerializeField] public Collider2D hitCollider { get; set; }
@@ -28,6 +31,8 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public bool isFollowing { get; set; }
     [field: SerializeField] public bool isHit { get; set; }
+    [field: SerializeField] public bool isInvulnerable { get; set; }
+
     [field: SerializeField] public bool isHurt { get; set; }
 
     [field: SerializeField] public bool hurtIsReset { get; set; }

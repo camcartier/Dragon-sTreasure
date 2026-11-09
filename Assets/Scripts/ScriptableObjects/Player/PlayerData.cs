@@ -51,4 +51,6 @@ public class PlayerData : ScriptableObject
     public float[] repulseRadiusArray = new float[6];
     public int[] repulseDamageArray = new int[6];
 
+    [Header("Fireball Info")]
+    public float fireballDelay;
 }

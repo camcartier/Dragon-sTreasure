@@ -18,6 +18,16 @@ public class EnemyBurningState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
+        if (stateMachine.isDead)
+        {
+            stateMachine.SwitchState(new EnemyDeathState(stateMachine));
+        }
+
+        if (stateMachine.isHit)
+        {
+            stateMachine.SwitchState(new EnemyHurtState(stateMachine));
+        }
+
         stateMachine.rb2D.velocity = Vector2.zero ;
 
         if (burningTimerCounter < stateMachine.characterData.burningTimer) 

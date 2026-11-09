@@ -11,16 +11,20 @@ public class GetAttackTargets : MonoBehaviour
 
     void Update()
     {
+        enemiesInReach.RemoveAll(enemy => enemy == null);
         //Debug.Log(enemiesInReach.Count);
 
         if (playerStateMachine.isAttacking)
         {
             foreach (GameObject gameObject in enemiesInReach)
             {
+                if (gameObject == null)
+                    continue;
+
                 EnemyStateMachine enemyStateMachine = gameObject.GetComponentInParent<EnemyStateMachine>();
                 if (enemyStateMachine != null)
                 {
-                    gameObject.GetComponentInParent<EnemyStateMachine>().isHit = true;
+                    enemyStateMachine.isHit = true;
                 }
 
 

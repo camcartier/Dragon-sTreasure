@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerDashingState : PlayerBaseState
@@ -26,13 +27,11 @@ public class PlayerDashingState : PlayerBaseState
 
     public override void Enter()
     {
-        /*
-        listOfDashingHash.Add(LVL1_DashingHash);
-        listOfDashingHash.Add(LVL2_DashingHash);
-        listOfDashingHash.Add(LVL3_DashingHash);
-        listOfDashingHash.Add(LVL4_DashingHash);
-        listOfDashingHash.Add(LVL5_DashingHash);
-        */
+        stateMachine.canDash = false;
+
+        //ajouté pour l'UI
+        //
+        stateMachine.dashCooldownCounter = stateMachine.PlayerData.dashDelay;
 
         //animation
         stateMachine.Animator.Play(NBase_Dash);
@@ -63,7 +62,7 @@ public class PlayerDashingState : PlayerBaseState
     public override void Exit()
     {
         //stateMachine.isDashing = false;
-        Debug.Log(stateMachine.isDashing);
+        //Debug.Log(stateMachine.isDashing);
 
         dashDurationCounter = 0f;
         stateMachine.gameObject.GetComponentInChildren<Collider2D>().enabled = true;
@@ -72,7 +71,9 @@ public class PlayerDashingState : PlayerBaseState
         //stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_XDamping = Mathf.Lerp(2, 0, Time.deltaTime * 5f);
 
         stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpXYDamping());
-        
+
+
+        stateMachine.dashCooldownCounter = 0f;
     }
 
 

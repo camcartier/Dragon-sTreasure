@@ -45,11 +45,11 @@ public class EnemyAttackState : EnemyBaseState
 
 
         stateMachine.Animator.Play("Attack",0 ,0f);
-
+        stateMachine.attackSound.Play();
     }
     public override void Tick(float deltaTime)
     {
-        //if (stateMachine.isHurt){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
+        if (stateMachine.isHit){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
         //if (stateMachine.isDead){stateMachine.SwitchState(new EnemyDeathState(stateMachine));}
 
         stateMachine.rb2D.velocity = Vector2.zero;
@@ -60,6 +60,8 @@ public class EnemyAttackState : EnemyBaseState
         if (timebeforechangeStateCounter >= timebeforechangeState / 5)
         {
             stateMachine.isHitting = true;
+            
+
             if (!hasInstantiatedHitPS)
             {
                 stateMachine.instantiateStuff.InstantiateFX(stateMachine.attackPSHit, stateMachine.attackPSAirposition);

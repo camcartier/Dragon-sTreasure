@@ -13,7 +13,7 @@ public class EnemyDeathState : EnemyBaseState
     public override void Enter()
     {
         
-        //stateMachine.spriteRenderer.color = Color.black;
+        stateMachine.spriteRenderer.color = Color.white;
 
         //Debug.Log(stateMachine.rb2D);
 

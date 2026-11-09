@@ -16,28 +16,6 @@ public class PlayerMainState : PlayerBaseState
 
     private readonly int NBase_Idle = Animator.StringToHash("NBase_Idle");
 
-    /*
-    [Header("Idle Animation")]
-    private readonly int LVL1_IdleHash = Animator.StringToHash("LVL1_Idle");
-    private readonly int LVL2_IdleHash = Animator.StringToHash("LVL2_Idle");
-    private readonly int LVL3_IdleHash = Animator.StringToHash("LVL3_Idle");
-    private readonly int LVL4_IdleHash = Animator.StringToHash("LVL4_Idle");
-    private readonly int LVL5_IdleHash = Animator.StringToHash("LVL5_Idle");
-    //each for each level
-    private List<int> listOfIdleHash = new List<int>();
-    
-    [Header ("Everything about firing Bullets")]
-    private readonly int LVL1_FiringHash = Animator.StringToHash("LVL1_Fire");
-    private readonly int LVL2_FiringHash = Animator.StringToHash("LVL2_Fire");
-    private readonly int LVL3_FiringHash = Animator.StringToHash("LVL3_Fire");
-    private readonly int LVL4_FiringHash = Animator.StringToHash("LVL4_Fire");
-    private readonly int LVL5_FiringHash = Animator.StringToHash("LVL5_Fire");
-    private List<int> listOfFiringHash = new List<int>();
-    private const float CrossFadeDuration = 0.1f;
-    private float TimerCounter;
-
-    */
-
 
     private float dashDelayCounter;
 
@@ -45,21 +23,8 @@ public class PlayerMainState : PlayerBaseState
 
     public override void Enter()
     {
-        /*
-        listOfIdleHash.Add(LVL1_IdleHash);
-        listOfIdleHash.Add(LVL2_IdleHash);
-        listOfIdleHash.Add(LVL3_IdleHash);
-        listOfIdleHash.Add(LVL4_IdleHash);
-        listOfIdleHash.Add(LVL5_IdleHash);
-        //Same with every level
-        listOfFiringHash.Add(LVL1_FiringHash);
-        listOfFiringHash.Add(LVL2_FiringHash);
-        listOfFiringHash.Add(LVL3_FiringHash);
-        listOfFiringHash.Add(LVL4_FiringHash);
-        listOfFiringHash.Add(LVL5_FiringHash);
-        //Same with every level
-        */
 
+        
 
         stateMachine.isStunnable = true;
 
@@ -91,10 +56,13 @@ public class PlayerMainState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
+        //on ne fait plus de leveling
+        /*
         if (stateMachine.currentLevelStored != stateMachine.TreasureData.CurrentStep)
         {
             stateMachine.SwitchState(new PlayerLevelingUpState(stateMachine));
         }
+        */
 
         if (!stateMachine.isInvulnerable && stateMachine.isHurt) { stateMachine.SwitchState(new PlayerHurtState(stateMachine));  }
 
@@ -109,25 +77,26 @@ public class PlayerMainState : PlayerBaseState
 
         FaceMovementDirecton();
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed;
+        Debug.Log(dashDelayCounter);
 
-        /*
-        //jme souviens pas ce que ça fait
-        //seems to be working
-        if (TimerCounter < stateMachine.Animator.GetCurrentAnimatorStateInfo(0).length)
+        if (!stateMachine.canDash)
         {
-            TimerCounter += Time.deltaTime;
-        }
-        else { stateMachine.Animator.CrossFadeInFixedTime(listOfIdleHash[stateMachine.currentLevelStored], CrossFadeDuration); TimerCounter = 0f;  }
-        */
-
-        if (!stateMachine.PlayerData.canDash)
-        {
-            if (dashDelayCounter < stateMachine.PlayerData.dashDelay)
+            if (stateMachine.dashCooldownCounter < stateMachine.PlayerData.dashDelay)
             {
-                dashDelayCounter += Time.deltaTime;
+                stateMachine.dashCooldownCounter += Time.deltaTime;
             }
-            else { stateMachine.PlayerData.canDash = true; dashDelayCounter = 0f; }
+            else { stateMachine.canDash = true;  }
         }
+
+        if (!stateMachine.canFireball)
+        {
+            if (stateMachine.fireballCooldownCounter < stateMachine.PlayerData.fireballDelay)
+            {
+                stateMachine.fireballCooldownCounter += Time.deltaTime;
+            }
+            else { stateMachine.canFireball = true; }
+        }
+
 
         /*
         if (stateMachine.InputReader.Fire.ReadValue<float>() > 0)
@@ -140,6 +109,17 @@ public class PlayerMainState : PlayerBaseState
         */
 
         //Debug.Log(stateMachine.InputReader.Fire.ReadValue<float>());
+
+        /*
+        if (stateMachine.canDash)
+        {
+            stateMachine.MainSpriteRenderer.color = Color.green;
+        }
+        else
+        {
+            stateMachine.MainSpriteRenderer.color = Color.white;
+        }
+        */
 
     }
     public override void Exit()
@@ -216,7 +196,9 @@ public class PlayerMainState : PlayerBaseState
     {
         if (stateMachine.canDash)
         {
-            stateMachine.SwitchState(new PlayerEnterDashState(stateMachine));
+            stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+            stateMachine.dashCooldownCounter = 0f;
+            
         }
 
     }
@@ -226,6 +208,7 @@ public class PlayerMainState : PlayerBaseState
         if(stateMachine.canFireball)
         {
             stateMachine.SwitchState(new PlayerFireballState(stateMachine));
+            stateMachine.fireballCooldownCounter = 0f;
         }    
     }
 

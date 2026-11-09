@@ -23,6 +23,9 @@ public class Destroyable : MonoBehaviour
     [SerializeField] PlayerData playerData;
     [SerializeField] EnemyStateMachine stateMachineEnemy;
     [SerializeField] EnemyIDNumber enemyIDNumber;
+    private GetAttackTargets getAttackTargets;
+
+
 
     private IAMAPS burningFxInstance;
 
@@ -69,6 +72,7 @@ public class Destroyable : MonoBehaviour
         MyCurrentStoredHealth = objectData.maxHealth;
 
         //burningFxHasSpawned = false;
+        getAttackTargets = GameObject.Find("Player").GetComponentInChildren<GetAttackTargets>();
     }
 
     private void Update()
@@ -164,6 +168,8 @@ public class Destroyable : MonoBehaviour
             //Instantiate(destructionFx, transform.position, Quaternion.identity);
             stateMachineEnemy.isDead = true;
 
+            getAttackTargets.enemiesInReach.Remove(this.gameObject);
+
             if (gameObject.CompareTag("Yakkuru") == true)
             {
                 int lootnum = Random.Range(0, 2);
@@ -185,7 +191,9 @@ public class Destroyable : MonoBehaviour
             {
                 if (stateInfo.normalizedTime >= 1f)
                 {
-                    Destroy(gameObject);
+                    
+                    
+                        Destroy(gameObject);
                 }
             }
 
@@ -226,10 +234,12 @@ public class Destroyable : MonoBehaviour
                 stateMachineEnemy.isHurt = true;
             }
 
+            /*
             if (!stateMachineEnemy.isBurning)
             {
                 stateMachineEnemy.hurtIsReset = true;
             }
+            */
              
    
 
