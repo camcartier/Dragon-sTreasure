@@ -31,7 +31,7 @@ public class PlayerBiteState : PlayerBaseState
          
 
         stateMachine.Animator.Play(NBase_Bite);
-        
+        stateMachine.flappingSound.Stop();
 
 
     }

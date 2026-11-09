@@ -45,6 +45,7 @@ public class EnemyAttackState : EnemyBaseState
 
 
         stateMachine.Animator.Play("Attack",0 ,0f);
+        stateMachine.shadowAnimator.Play("Shadow_move_toAttack");
         stateMachine.attackSound.Play();
     }
     public override void Tick(float deltaTime)
@@ -163,6 +164,8 @@ public class EnemyAttackState : EnemyBaseState
 
 
         stateMachine.rb2D.bodyType = RigidbodyType2D.Dynamic;
+
+        stateMachine.shadowAnimator.Play("Shadow_POS");
         //stateMachine.rb2D.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
     }
 

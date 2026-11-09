@@ -31,58 +31,31 @@ public class PlayerHurtState : PlayerBaseState
 
     public override void Enter()
     {
-        listOfHurtHash.Add(LVL1_HurtHash);
-        listOfHurtHash.Add(LVL2_HurtHash);
-        listOfHurtHash.Add(LVL3_HurtHash);
-        listOfHurtHash.Add(LVL4_HurtHash);
-        listOfHurtHash.Add(LVL5_HurtHash);
-
+        stateMachine.flappingSound.Stop();
         stateMachine.Animator.Play(NBase_Hurt);
-
-        //stateMachine.MainSpriteRendererArray[stateMachine.currentLevelStored].color = Color.red;
 
         Debug.Log("enter hurt state");
 
         stateMachine.isStunnable = false;
         stateMachine.isInvulnerable = true;
         stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingInvulnerability());
+        stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.invulnerableBlinkingRed());
 
-stateMachine.rb2D.velocity = Vector3.zero;
+        stateMachine.rb2D.velocity = Vector3.zero;
         
 
         stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized*stateMachine.knockbackForce, ForceMode2D.Force) ;
-        //direction comes from Player Collision Listener
-        //and EnemyCollisionListener?
-        //va falloir fix cette marde
 
 
-        //noise on impact
-        /*
-          if (stateMachine.PlayerCurrentHealthAndMana.currentHealth < stateMachine.PlayerData.MaxHealth / 2) 
-        {
-            stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = stateMachine.CameraData.AmplitudeGain;
-            stateMachine.CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = stateMachine.CameraData.FrequencyGain;
 
-
-            //stopping noise progressively
-            stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpCameraNoise());
-        }
-        */
+        stateMachine.isHurt = false;
 
         stateMachine.MainSpriteRenderer.color = Color.red;
 
     }
     public override void Tick(float deltaTime)
     {
-        /*
-        if (knockbackDurationCounter < stateMachine.knockBackDuration)
-        {
-            knockbackDurationCounter += Time.deltaTime;
-        }
-        else
-        {
-            //stateMachine.rb2D.velocity = Vector3.zero;
-        }*/
+
 
         if (stunDurationCounter < stateMachine.PlayerData.stunDuration)
         {
@@ -102,8 +75,9 @@ stateMachine.rb2D.velocity = Vector3.zero;
 
         knockbackDurationCounter = 0f;
         stunDurationCounter = 0f;
+        stateMachine.knockbackDirection = Vector2.zero;
 
-        stateMachine.isHurt = false;
+        
 
         stateMachine.MainSpriteRenderer.color = Color.white;
     }

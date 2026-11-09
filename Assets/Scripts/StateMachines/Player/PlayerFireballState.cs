@@ -27,7 +27,8 @@ public class PlayerFireballState : PlayerBaseState
 
         //animation
         stateMachine.Animator.Play(NBase_Fireball);
-
+        stateMachine.flappingSound.Stop();
+        //stateMachine.fireballSound.Play();
 
         //Debug.Log("fireball");
         stateMachine.canFireball = false;
@@ -60,6 +61,7 @@ public class PlayerFireballState : PlayerBaseState
     {
         stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
+        //stateMachine.fireballSound.Stop();
         //stateMachine.canFireball = true;
 
     }

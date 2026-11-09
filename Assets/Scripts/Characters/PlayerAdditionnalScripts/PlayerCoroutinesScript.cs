@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 
 public class PlayerCoroutinesScript : MonoBehaviour
@@ -11,6 +12,23 @@ public class PlayerCoroutinesScript : MonoBehaviour
     {
         yield return new WaitForSeconds(playerData.invulnerabilityDuration);
         playerStateMachine.isInvulnerable = false;
+    }
+
+    public IEnumerator invulnerableBlinkingRed()
+    {
+        float totalElapsedTime = 0f;
+        while (totalElapsedTime < playerData.invulnerabilityDuration) 
+        {
+
+            yield return new WaitForSeconds(0.25f);
+            playerStateMachine.MainSpriteRenderer.color = Color.red;
+            totalElapsedTime += 0.25f;
+            yield return new WaitForSeconds(0.25f);
+            playerStateMachine.MainSpriteRenderer.color = Color.white;
+            totalElapsedTime += 0.25f;
+        }
+        
+
     }
 
     //le temps pris par l'animation d'evolution

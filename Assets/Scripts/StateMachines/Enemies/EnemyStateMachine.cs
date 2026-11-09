@@ -20,6 +20,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool hasHit { get; set; }
     [field: SerializeField] public float attackTimer { get; set; }
     [field: SerializeField] public AudioSource attackSound { get; set; }
+    [field: SerializeField] public Animator shadowAnimator { get; set; }
 
 
     [field: SerializeField] public InstantiateStuff instantiateStuff { get; set; }

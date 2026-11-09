@@ -35,6 +35,8 @@ public class PlayerDashingState : PlayerBaseState
 
         //animation
         stateMachine.Animator.Play(NBase_Dash);
+        //stateMachine.flappingSound.Stop();
+        //stateMachine.dashingSound.Play();
 
 
 

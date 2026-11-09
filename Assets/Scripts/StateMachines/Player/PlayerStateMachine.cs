@@ -15,7 +15,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Rigidbody2D rb2D { get; private set; }
     [field: SerializeField] public SpriteRenderer MainSpriteRenderer { get; private set; }
 
-    [field: SerializeField] public SpriteRenderer[] MainSpriteRendererArray { get; private set; }
+    //[field: SerializeField] public SpriteRenderer[] MainSpriteRendererArray { get; private set; }
 
     [field: SerializeField] public GameObject PlayerVisualsAndCollidersGO { get; private set; }
 
@@ -106,7 +106,12 @@ public class PlayerStateMachine : StateMachine
 
     public CinemachineVirtualCamera CinemachineVirtualCamera { get; set; }
 
-    [field: SerializeField] public GameObject StartingTextPanel { get; private set; }
+
+    [field: SerializeField] public AudioSource flappingSound { get; set; }
+    [field: SerializeField] public AudioSource dashingSound { get; set; }
+    [field: SerializeField] public AudioSource fireballSound { get; set; }
+
+    //[field: SerializeField] public GameObject StartingTextPanel { get; private set; }
 
     void Start()
     {

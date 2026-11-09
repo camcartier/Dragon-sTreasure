@@ -51,6 +51,7 @@ public class PlayerMainState : PlayerBaseState
         //new animation
         stateMachine.Animator.Play(NBase_Idle);
 
+        stateMachine.flappingSound.Play();
 
         //stateMachine.Animator.Play(FreeLookBlendTreeHash);
     }

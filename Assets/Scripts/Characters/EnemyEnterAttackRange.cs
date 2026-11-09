@@ -31,22 +31,22 @@ public class EnemyEnterAttackRange : MonoBehaviour
 
             if (enemyStateMachine.isHitting)
             {
-                if (!enemyStateMachine.hasHit)
+                if (!enemyStateMachine.hasHit && !playerStateMachine.isInvulnerable)
                 {
                     playerStateMachine.isHurt = true;
                     enemyStateMachine.hasHit = true;
+
+                    playerStateMachine.PlayerCurrentHealthAndMana.currentHealth -= enemyStateMachine.characterData.damageAmount;
 
                     if (playerStateMachine.knockbackDirection == Vector2.zero)
                     {
                         if (collision.transform.position.x > gameObject.transform.position.x)
                         {
-                            playerStateMachine.knockbackDirection = new Vector2(collision.transform.position.x - gameObject.transform.position.x,
-                                                                                                    0);
+                            playerStateMachine.knockbackDirection = Vector2.right;
                         }
-                        else
+                        else if (collision.transform.position.x < gameObject.transform.position.x)
                         {
-                            playerStateMachine.knockbackDirection = new Vector2(gameObject.transform.position.x - collision.transform.position.x,
-                                                                                                     0);
+                            playerStateMachine.knockbackDirection = Vector2.left;
                         }
 
                     }

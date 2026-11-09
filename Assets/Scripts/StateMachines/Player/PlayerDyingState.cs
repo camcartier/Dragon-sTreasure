@@ -5,11 +5,7 @@ using UnityEngine;
 public class PlayerDyingState : PlayerBaseState
 {
 
-    private readonly int LVL1_DyingHash = Animator.StringToHash("LVL1_Die");
-    private readonly int LVL2_DyingHash = Animator.StringToHash("LVL2_Die");
-    private readonly int LVL3_DyingHash = Animator.StringToHash("LVL3_Die");
-    private readonly int LVL4_DyingHash = Animator.StringToHash("LVL4_Die");
-    private readonly int LVL5_DyingHash = Animator.StringToHash("LVL5_Die");
+
     private const float CrossFadeDuration = 0.1f;
     private List<int> ListOfDyingHash = new List<int>();
 
@@ -23,11 +19,10 @@ public class PlayerDyingState : PlayerBaseState
 
     public override void Enter()
     {
-        ListOfDyingHash.Add(LVL1_DyingHash);
-        ListOfDyingHash.Add(LVL2_DyingHash);
-        ListOfDyingHash.Add(LVL3_DyingHash);
-        ListOfDyingHash.Add(LVL4_DyingHash);
-        ListOfDyingHash.Add(LVL5_DyingHash);
+
+        stateMachine.PlayerCoroutinesScript.StopAllCoroutines();
+        stateMachine.flappingSound.Stop();
+        stateMachine.MainSpriteRenderer.color = Color.white;    
 
 
 
