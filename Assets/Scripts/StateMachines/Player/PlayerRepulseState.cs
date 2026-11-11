@@ -5,17 +5,13 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerRepulseState : PlayerBaseState
 {
-    private float repulseTimer = 0.8f;
+    private float repulseTimer = 0.5f;
     private float repulseTimerCounter;
 
     public LayerMask affectedLayers = LayerMask.GetMask("Destroyable"); // All layers by default
 
 
-    private readonly int LVL1_RepulseHash = Animator.StringToHash("LVL1_Repulse");
-    private readonly int LVL2_RepulseHash = Animator.StringToHash("LVL2_Repulse");
-    private readonly int LVL3_RepulseHash = Animator.StringToHash("LVL3_Repulse");
-    private readonly int LVL4_RepulseHash = Animator.StringToHash("LVL4_Repulse");
-    private readonly int LVL5_RepulseHash = Animator.StringToHash("LVL5_Repulse");
+
     //each for each level
     private List<int> listOfRepulseHash = new List<int>();
 
@@ -25,17 +21,14 @@ public class PlayerRepulseState : PlayerBaseState
 
     public override void Enter()
     {
-        listOfRepulseHash.Add(LVL1_RepulseHash);
-        listOfRepulseHash.Add(LVL2_RepulseHash);
-        listOfRepulseHash.Add(LVL3_RepulseHash);
-        listOfRepulseHash.Add(LVL4_RepulseHash);
-        listOfRepulseHash.Add(LVL5_RepulseHash);
+
+
 
 
         stateMachine.canRepulse = false;
 
         stateMachine.rb2D.velocity = Vector3.zero;
-        stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+        stateMachine.MainSpriteRenderer.color = Color.green;
 
 
         Debug.Log("enter repulse state");
@@ -57,10 +50,10 @@ public class PlayerRepulseState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.canRepulse = true;
+        //stateMachine.canRepulse = true;
 
         repulseTimerCounter = 0f;
-        stateMachine.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        stateMachine.MainSpriteRenderer.color = Color.white;
 
         //Debug.Log("exit repulse state");
     }
@@ -80,23 +73,21 @@ public class PlayerRepulseState : PlayerBaseState
         {
             Rigidbody2D rb2d = collider.gameObject.GetComponentInParent<Rigidbody2D>();
             GetsRepulsed getsRepulsed = collider.gameObject.GetComponentInParent<GetsRepulsed>();
+            
             Vector2 repulseDirection = new Vector2(collider.transform.position.x - stateMachine.transform.position.x, collider.transform.position.y - stateMachine.transform.position.y);
 
             if(getsRepulsed != null)
             {
-                if (collider.GetComponentInParent<WalkTowards>() != null)
-                {
-                    collider.GetComponentInParent<WalkTowards>().isStunned = true;
-                }
 
-                //collider.GetComponentInParent<WalkTowards>().isStunned= true;
-                //rb2d.AddForce(repulseDirection.normalized * stateMachine.repulseForce, ForceMode2D.Impulse );
-                rb2d.AddForce(repulseDirection.normalized * stateMachine.PlayerData.repulseAmountArray[stateMachine.PlayerData.currentLevel]);
 
+                rb2d.AddForce(repulseDirection.normalized * stateMachine.PlayerData.repulseAmount);
+
+                /*
                 if(collider.GetComponentInParent<Destroyable>() != null)
                 {
                     collider.GetComponentInParent<Destroyable>().IsRepulsed = true;
                 }
+                */
             }
             //else { Debug.Log("no repulsed"); }
         }

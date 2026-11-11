@@ -65,7 +65,7 @@ public class PlayerMainState : PlayerBaseState
         }
         */
 
-        if (!stateMachine.isInvulnerable && stateMachine.isHurt) { stateMachine.SwitchState(new PlayerHurtState(stateMachine));  }
+        if (!stateMachine.isInvulnerable && stateMachine.isHurt) { stateMachine.SwitchState(new PlayerHurtState(stateMachine)); return;  }
 
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
         movement.Normalize();
@@ -98,6 +98,14 @@ public class PlayerMainState : PlayerBaseState
             else { stateMachine.canFireball = true; }
         }
 
+        if (!stateMachine.canRepulse)
+        {
+            if (stateMachine.repulseCooldownCounter < stateMachine.PlayerData.repulseDelay)
+            {
+                stateMachine.repulseCooldownCounter += Time.deltaTime;
+            }
+            else { stateMachine.canRepulse = true; }
+        }
 
         /*
         if (stateMachine.InputReader.Fire.ReadValue<float>() > 0)
@@ -109,18 +117,7 @@ public class PlayerMainState : PlayerBaseState
         }
         */
 
-        //Debug.Log(stateMachine.InputReader.Fire.ReadValue<float>());
 
-        /*
-        if (stateMachine.canDash)
-        {
-            stateMachine.MainSpriteRenderer.color = Color.green;
-        }
-        else
-        {
-            stateMachine.MainSpriteRenderer.color = Color.white;
-        }
-        */
 
     }
     public override void Exit()
@@ -218,6 +215,7 @@ public class PlayerMainState : PlayerBaseState
         if (stateMachine.canRepulse)
         {
             stateMachine.SwitchState(new PlayerRepulseState(stateMachine));
+            stateMachine.repulseCooldownCounter = 0f;
         }
 
     }

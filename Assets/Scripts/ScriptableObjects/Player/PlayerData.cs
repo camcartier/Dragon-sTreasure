@@ -49,6 +49,8 @@ public class PlayerData : ScriptableObject
     [Header("Repulse Info")]
     //public float repulseForce;
     public float repulseRadius;
+    public int repulseAmount;
+    public float repulseDelay;
     public int[] repulseAmountArray = new int[6];
     public float[] repulseRadiusArray = new float[6];
     public int[] repulseDamageArray = new int[6];

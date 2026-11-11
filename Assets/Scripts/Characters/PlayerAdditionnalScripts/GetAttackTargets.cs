@@ -43,6 +43,10 @@ public class GetAttackTargets : MonoBehaviour
         {
             enemiesInReach.Add(collision.gameObject);
 
+
+            Vector2 direction = (collision.transform.position - transform.position).normalized;
+            collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = direction;
+            /*
             if (collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection == Vector2.zero)
             {
                 if (collision.transform.position.x > gameObject.transform.position.x)
@@ -54,7 +58,7 @@ public class GetAttackTargets : MonoBehaviour
                     collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = Vector2.left;
                 }
 
-            }
+            }*/
         }
     }
 

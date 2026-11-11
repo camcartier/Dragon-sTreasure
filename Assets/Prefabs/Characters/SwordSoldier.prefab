@@ -896,6 +896,7 @@ GameObject:
   - component: {fileID: 3872224751413010044}
   - component: {fileID: 6862377192765784903}
   - component: {fileID: 6171647689702217080}
+  - component: {fileID: 7804423687709110913}
   m_Layer: 7
   m_Name: SwordSoldier
   m_TagString: Soldier
@@ -944,7 +945,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5299425713507165692
 MonoBehaviour:
@@ -1064,6 +1065,18 @@ MonoBehaviour:
   sortingOrderBase: 5
   offset: 0
   precision: 100
+--- !u!114 &7804423687709110913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512618063938855508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4271e02e10b53a14b845b17691084a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6899483899994604748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1234,7 @@ GameObject:
   - component: {fileID: 7858706465245252815}
   - component: {fileID: 6533025818083396672}
   - component: {fileID: 357299460586810601}
+  - component: {fileID: 6371505721148943238}
   m_Layer: 3
   m_Name: Shadow_Regular
   m_TagString: Untagged
@@ -1315,6 +1329,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6371505721148943238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333849750431080125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e533577b720ef4eba878791de7b311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 4
+  offset: 0
+  precision: 100
 --- !u!1 &8659699265349139584
 GameObject:
   m_ObjectHideFlags: 0

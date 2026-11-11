@@ -7,6 +7,7 @@ public class UI_cooldown_image : MonoBehaviour
 {
     [SerializeField] Image dashFillImage;
     [SerializeField] Image fireballFillImage;
+    [SerializeField] Image repulseFillImage;
     private PlayerStateMachine playerStateMachine;
 
     private float cooldownTimer;
@@ -23,7 +24,7 @@ public class UI_cooldown_image : MonoBehaviour
 
         dashFillImage.fillAmount = 0f;
         fireballFillImage.fillAmount = 0f;
-
+        repulseFillImage.fillAmount = 0f;
         //dashFillImage.enabled = false;
     }
 
@@ -32,7 +33,7 @@ public class UI_cooldown_image : MonoBehaviour
     {
         float dashcooldown = playerStateMachine.PlayerData.dashDelay;
         float fireballcooldown = playerStateMachine.PlayerData.fireballDelay;
-   
+        float repulsecooldown = playerStateMachine.PlayerData.repulseDelay;
         
 
 
@@ -44,5 +45,8 @@ public class UI_cooldown_image : MonoBehaviour
         1f - (playerStateMachine.fireballCooldownCounter / fireballcooldown)
         );
 
+        repulseFillImage.fillAmount = Mathf.Clamp01(
+        1f - (playerStateMachine.repulseCooldownCounter / repulsecooldown)
+        );
     }
 }

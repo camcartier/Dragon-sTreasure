@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 7047373786798758838}
   - component: {fileID: 1188621958592113741}
   - component: {fileID: 2716410740648724870}
+  - component: {fileID: 5315500132685217666}
   m_Layer: 3
   m_Name: Shadow_Regular
   m_TagString: Untagged
@@ -167,6 +168,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5315500132685217666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078867953726089002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e533577b720ef4eba878791de7b311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingOrderBase: 4
+  offset: 0
+  precision: 100
 --- !u!1 &1466501954933412534
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +324,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5869800528027535412
 MonoBehaviour:

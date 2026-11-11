@@ -55,6 +55,8 @@ MonoBehaviour:
   HealthRegenAmount: 0
   fireDelay: 0
   repulseRadius: 100
+  repulseAmount: 50000
+  repulseDelay: 2
   repulseAmountArray: a861000050c30000f8240100905f010038c10100d0fb0100
   repulseRadiusArray:
   - 0
