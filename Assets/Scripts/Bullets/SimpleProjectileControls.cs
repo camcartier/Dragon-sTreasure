@@ -21,8 +21,8 @@ public class SimpleProjectileControls : MonoBehaviour
         player = GameObject.Find("Player");
         rb2d =  gameObject.GetComponent<Rigidbody2D>();
 
-        rb2d.velocity = new Vector2(player.transform.position.x - gameObject.transform.position.x,
-                                    player.transform.position.y - gameObject.transform.position.y).normalized * projectileSpeed;
+        //rb2d.velocity = new Vector2(player.transform.position.x - gameObject.transform.position.x,
+          //                          player.transform.position.y - gameObject.transform.position.y).normalized * projectileSpeed;
                                     
     }
 
@@ -35,7 +35,8 @@ public class SimpleProjectileControls : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Debug.Log(" life over");
+            //Destroy(gameObject);
         }
     }
 
@@ -44,8 +45,8 @@ public class SimpleProjectileControls : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            Destroy(gameObject);
+            Debug.Log("touching player");
+            //Destroy(gameObject);
         }
     }
 }

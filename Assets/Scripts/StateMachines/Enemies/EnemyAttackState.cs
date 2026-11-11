@@ -7,6 +7,7 @@ public class EnemyAttackState : EnemyBaseState
     private float attackTimer;
     private float attackTimerCounter;
     private float ID2AttackTimerCounter;
+    private float ID3AttackTimerCounter;
 
     private float timebeforechangeState = 2f;
     private float timebeforechangeStateCounter;
@@ -51,7 +52,7 @@ public class EnemyAttackState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         if (stateMachine.isHit){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
-        //if (stateMachine.isDead){stateMachine.SwitchState(new EnemyDeathState(stateMachine));}
+        
 
         stateMachine.rb2D.velocity = Vector2.zero;
 
@@ -95,24 +96,35 @@ public class EnemyAttackState : EnemyBaseState
 
 
         //ENEMY ID 3 archer
-        if (stateMachine.enemyID.IDNumber == 3 && !stateMachine.hasInstantiated)
+        if (stateMachine.enemyID.IDNumber == 3 )
         {
-            //Turning the prefab
-            isTurning = true;
-            if (isTurning)
+
+
+            Debug.Log("i am archer");
+
+            if (!stateMachine.hasInstantiated)
             {
-                if (toFollow.transform.position.x > stateMachine.transform.position.x)
+                //Turning the prefab
+                isTurning = true;
+                if (isTurning)
                 {
-                    stateMachine.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                    if (toFollow.transform.position.x > stateMachine.transform.position.x)
+                    {
+                        stateMachine.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                    }
+                    else
+                    {
+                        stateMachine.gameObject.transform.localScale = new Vector3(1, 1, 1);
+                    }
                 }
-                else
-                {
-                    stateMachine.gameObject.transform.localScale = new Vector3(1, 1, 1);
-                }
+                stateMachine.instantiateStuff.InstantiateProjectile();
+                stateMachine.hasInstantiated = true;
+
+                stateMachine.SwitchState (new  EnemyMainState(stateMachine));
+               
+
             }
-            stateMachine.instantiateStuff.InstantiateProjectile();
-            stateMachine.hasInstantiated = true;
-            timebeforechangeStateCounter = 0f;
+
         }
 
 
@@ -126,23 +138,9 @@ public class EnemyAttackState : EnemyBaseState
         else { stateMachine.hasInstantiated = false; attackTimerCounter = 0f; }
         
 
-        /*
-        if (!stateMachine.stillAttacking && timebeforechangeStateCounter > timebeforechangeState)
-        {
-            stateMachine.SwitchState(new EnemyMainState(stateMachine));
-        }
-        else if (stateMachine.stillAttacking && timebeforechangeStateCounter > timebeforechangeState)
-        {
-            stateMachine.SwitchState(new EnemyAttackState(stateMachine));
-        }
-        */
 
-        /*
-        if(stateMachine.isInAttackState && timebeforechangeStateCounter > timebeforechangeState && stateMachine.enemyID.IDNumber == 2)
-        {
-            stateMachine.SwitchState(new EnemyLoadingAttackState(stateMachine));
-        }
-        */
+
+
 
     }
 

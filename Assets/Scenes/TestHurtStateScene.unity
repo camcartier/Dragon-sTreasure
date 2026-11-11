@@ -332,7 +332,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &34952660
 GameObject:
@@ -667,120 +667,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51659690}
   m_CullTransparentMesh: 1
---- !u!1001 &68540951
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 132.19318
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -188.13919
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (11)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
---- !u!1001 &77788168
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -271.07568
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -129.84958
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (8)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &87156525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,63 +903,6 @@ MonoBehaviour:
   currentPlayerHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   player: {fileID: 0}
---- !u!1001 &200844771
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -227.06108
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -239.29128
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (19)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &219822354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1358,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238244697}
   m_CullTransparentMesh: 1
+--- !u!1001 &247987943
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -253.26286
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 142.43921
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512618063938855508, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_Name
+      value: SorcererSoldier (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
 --- !u!1 &259888024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,65 +1860,8 @@ Transform:
   m_Children:
   - {fileID: 1170175873}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &373340278
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 121.51076
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -95.45431
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &375298327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,63 +1999,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375298327}
   m_CullTransparentMesh: 1
---- !u!1001 &386169897
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 194.05151
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -136.98709
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (12)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &395037003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,7 +2477,7 @@ Transform:
   - {fileID: 2039866862}
   - {fileID: 1664514886}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519504901
 GameObject:
@@ -2741,7 +2513,7 @@ Transform:
   - {fileID: 1964346278}
   - {fileID: 2119789479}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520857799
 GameObject:
@@ -3270,65 +3042,8 @@ Transform:
   m_Children:
   - {fileID: 264243340}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &743632614
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -116.429794
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 156.84006
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (21)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &746489030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,63 +3502,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822307300}
   m_CullTransparentMesh: 1
---- !u!1001 &828704625
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 263.04736
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -79.88708
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (13)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &862356175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,63 +3837,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869532168}
   m_CullTransparentMesh: 1
---- !u!1001 &869999013
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.234814
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -177.43295
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (10)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &910884883
 GameObject:
   m_ObjectHideFlags: 0
@@ -4775,7 +4376,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &935111272
 GameObject:
@@ -4962,65 +4563,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &984850070
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -95.017296
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -211.93088
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (9)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1000717859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,7 +4705,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043758941
 GameObject:
@@ -5285,63 +4829,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048873171}
   m_CullTransparentMesh: 1
---- !u!1001 &1052198666
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -211.86281
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 84.60859
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1055400416
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,63 +5291,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147286874}
   m_CullTransparentMesh: 1
---- !u!1001 &1164426692
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 211.8953
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 140.1859
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (16)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1170175872
 GameObject:
   m_ObjectHideFlags: 0
@@ -5989,63 +5419,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1226545077
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -124.75688
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -194.0871
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (18)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1233668552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,7 +5504,7 @@ Transform:
   m_Children:
   - {fileID: 1619327256}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1245487666
 GameObject:
@@ -6446,63 +5819,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8057751363925601226, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
   m_PrefabInstance: {fileID: 1450945579}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1407337841
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -137.77979
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -70.75996
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1428659665
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,7 +5922,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1436095989
 GameObject:
@@ -6674,7 +5990,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1447034193
 GameObject:
@@ -6765,7 +6081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303012427385822974, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5303012427385822974, guid: 861077c5607b6ea4f835ccccdc9827fd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7289,120 +6605,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521101157}
   m_CullTransparentMesh: 1
---- !u!1001 &1528235024
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 81.38246
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 53.740665
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
---- !u!1001 &1541000945
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 258.28903
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.891224
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (14)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1557511787
 GameObject:
   m_ObjectHideFlags: 0
@@ -7737,6 +6939,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1657735955
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -156
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262012030644287067, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512618063938855508, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
+      propertyPath: m_Name
+      value: SorcererSoldier
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90e96070355d3f74e8106a9c00ed5e89, type: 3}
 --- !u!1 &1664214787
 GameObject:
   m_ObjectHideFlags: 0
@@ -7922,65 +7181,65 @@ Transform:
   m_Children:
   - {fileID: 910884884}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1674311128
+--- !u!1001 &1689042361
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 393267096205815869, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
+      propertyPath: m_Name
+      value: IceSpell
+      objectReference: {fileID: 0}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -172.76344
+      value: -98.363556
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -57.383858
+      value: -11.95314
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+    - target: {fileID: 6147367233146416330, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 15287336474ac4a49a4c9c2998e3fefc, type: 3}
 --- !u!1 &1731584511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8088,63 +7347,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &1738819691
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -155.27159
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 49.624947
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1739409383
 GameObject:
   m_ObjectHideFlags: 0
@@ -8337,63 +7539,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757996043}
   m_CullTransparentMesh: 1
---- !u!1001 &1758506240
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -235.52821
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -24.458076
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1766356306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8652,7 +7797,7 @@ Transform:
   - {fileID: 11118338}
   - {fileID: 520857800}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1887755852
 GameObject:
@@ -8783,63 +7928,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1899393791
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 242.82446
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 59.29421
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (15)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1922376805
 GameObject:
   m_ObjectHideFlags: 0
@@ -8916,63 +8004,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922376805}
   m_CullTransparentMesh: 1
---- !u!1001 &1930010821
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -17.694359
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 175.8734
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (20)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1937826226
 GameObject:
   m_ObjectHideFlags: 0
@@ -9070,63 +8101,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &1955552790
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -125.43263
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.0241165
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262012030644287067, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6512618063938855508, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
-      propertyPath: m_Name
-      value: SwordSoldier (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9b1a4ef85ccdb4b4e88a43b4f5634a25, type: 3}
 --- !u!1 &1964346277
 GameObject:
   m_ObjectHideFlags: 0
@@ -9699,7 +8673,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119789478
 GameObject:
