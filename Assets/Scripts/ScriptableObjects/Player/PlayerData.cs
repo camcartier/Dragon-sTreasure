@@ -26,10 +26,10 @@ public class PlayerData : ScriptableObject
     public bool canDash;
 
     [Header ("Health&Mana")]
-    public float MaxHealth;
-    public float MaxMana;
+    public int MaxHealth;
+    //public float MaxMana;
     public float[] maxHealthArray = new float[6];
-    public float[] maxManaArray = new float[6];
+    //public float[] maxManaArray = new float[6];
     public float invulnerabilityTimer;
 
     [Header("Health Regen")]
@@ -37,9 +37,11 @@ public class PlayerData : ScriptableObject
     public float HealthRegenDelay;
     public float HealthRegenAmount;
 
+    /*
     [Header("Mana Regen")]
     public bool canRegenMana;
     public float ManaRegenMinimumDelay;
+    */
 
     [Header("Firing Info")]
     public float fireDelay;

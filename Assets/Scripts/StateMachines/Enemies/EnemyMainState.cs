@@ -31,16 +31,19 @@ public class EnemyMainState : EnemyBaseState
         if (stateMachine.isDead) 
         { 
             stateMachine.SwitchState(new EnemyDeathState(stateMachine)); 
+            return;
         }
 
         if (stateMachine.isHurt)
         {
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
+            return;
         }
 
         if (stateMachine.isHit) 
         {
             stateMachine.SwitchState(new EnemyHurtState(stateMachine));
+            return;
         }
 
         if (stateMachine.isAttacking)
@@ -54,6 +57,7 @@ public class EnemyMainState : EnemyBaseState
             */
 
             stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+            return;
         }
 
 
@@ -62,6 +66,7 @@ public class EnemyMainState : EnemyBaseState
             if (stateMachine.isBurning)
             {
                 stateMachine.SwitchState(new EnemyBurningState(stateMachine));
+                return;
             }
         }
 

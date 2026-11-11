@@ -7,5 +7,5 @@ using UnityEngine;
 public class LootValues : ScriptableObject  
 {
     public int GoldValue;
-    public int ManaValue;
+    public int HealthValue;
 }

@@ -8,7 +8,7 @@ public class PlayerBiteState : PlayerBaseState
     private float BiteTimerCounter;
     private float ImpulseForce = 50f;
 
-    private float BiteDistance = .5f;
+    private float BiteDistance = .3f;
     private float BiteDuration = 0.15f;
     private float BiteMoveTimer;
     private float BiteDirection;

@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class Loot : MonoBehaviour
 {
-    [SerializeField] TreasureData treasureData;
-
+    //[SerializeField] TreasureData treasureData;
+    [SerializeField] GoldData goldCount;
     [SerializeField] LootValues thisLootValue;
 
     [SerializeField] PlayerCurrentHealthAndMana PlayerHealthAndMana;
@@ -22,8 +22,8 @@ public class Loot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")){
 
-            treasureData.GoldCount += thisLootValue.GoldValue;
-            PlayerHealthAndMana.currentMana += thisLootValue.ManaValue;
+            goldCount.goldCount += thisLootValue.GoldValue;
+            PlayerHealthAndMana.currentHealth += thisLootValue.HealthValue;
             Destroy(this.gameObject);
         }
 

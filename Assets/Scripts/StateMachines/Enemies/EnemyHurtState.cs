@@ -14,33 +14,37 @@ public class EnemyHurtState : EnemyBaseState
 
     public override void Enter()
     {
-        //stateMachine.walkTowards.isFollowing = false;
+        Debug.Log("in hurt state");
+        
         stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
         stateMachine.Animator.Play("Hurt");
+
+        stateMachine.attackSound.Stop();
+
         
+        Debug.Log(stateMachine.knockbackDirection);
+        stateMachine.rb2D.velocity = Vector2.zero;
+        Debug.Log("Velocity après reset : " + stateMachine.rb2D.velocity);
+
+        stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized * stateMachine.knockbackForce, ForceMode2D.Impulse);
     }
     public override void Tick(float deltaTime)
     {
         if (stateMachine.isDead)
         {
             stateMachine.SwitchState(new EnemyDeathState(stateMachine));
+            return;
         }
 
-        /*
-        if (stateMachine.isBurning)
-        {
-            stateMachine.SwitchState(new EnemyBurningState(stateMachine));
-        }
-        */
-
+        //Debug.Log(stateMachine.rb2D.velocity);
 
         if (stateMachine.hurtIsReset)
         {
             hurtTimerCounter = 0f; stateMachine.hurtIsReset = false;
         }
 
-        stateMachine.rb2D.velocity = Vector2.zero;
+        
 
         if (hurtTimerCounter < stateMachine.characterData.hurtTimer)
         {
@@ -57,6 +61,8 @@ public class EnemyHurtState : EnemyBaseState
         hurtTimerCounter = 0f;
         stateMachine.isHurt = false;
         stateMachine.isHit = false;
+
+        Debug.Log("out hurt state");
 
         //stateMachine.walkTowards.isFollowing = true;
     }

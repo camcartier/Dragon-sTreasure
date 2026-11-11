@@ -7,6 +7,8 @@ public class GetAttackTargets : MonoBehaviour
     private Collider2D playerColliderTrigger;
     public List<GameObject> enemiesInReach = new List<GameObject>();
     public PlayerStateMachine playerStateMachine;
+    //private EnemyStateMachine enemyStateMachine;
+
 
 
     void Update()
@@ -25,6 +27,8 @@ public class GetAttackTargets : MonoBehaviour
                 if (enemyStateMachine != null)
                 {
                     enemyStateMachine.isHit = true;
+
+
                 }
 
 
@@ -38,6 +42,19 @@ public class GetAttackTargets : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemies"))
         {
             enemiesInReach.Add(collision.gameObject);
+
+            if (collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection == Vector2.zero)
+            {
+                if (collision.transform.position.x > gameObject.transform.position.x)
+                {
+                    collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = Vector2.right;
+                }
+                else if (collision.transform.position.x < gameObject.transform.position.x)
+                {
+                    collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = Vector2.left;
+                }
+
+            }
         }
     }
 

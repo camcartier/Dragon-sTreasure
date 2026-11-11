@@ -44,7 +44,7 @@ public class EnemyBurningState : EnemyBaseState
     {
 
         stateMachine.hasAlreadyBurnt = true;
-        Debug.Log("stopped burning");
+        //Debug.Log("stopped burning");
     }
 
 

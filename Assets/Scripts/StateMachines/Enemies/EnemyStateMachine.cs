@@ -38,6 +38,9 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public bool hurtIsReset { get; set; }
 
+    [field: SerializeField] public Vector2 knockbackDirection { get; set; }
+    [field: SerializeField] public float knockbackForce { get; set; }
+
 
     [field: SerializeField] public bool isBurning { get; set; }
 
@@ -54,7 +57,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public GameObject attackPSHit { get; set; }
     [field: SerializeField] public GameObject attackPSAirposition { get; set; }
 
-    //[field: SerializeField] public WalkTowards walkTowards { get; set; }
+    
 
 
     void Start()

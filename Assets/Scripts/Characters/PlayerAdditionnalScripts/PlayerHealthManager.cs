@@ -21,7 +21,7 @@ public class PlayerHealthManager : MonoBehaviour
     {
         if (playerData.canRegenHealth)
         {
-            playerCurrentHealthAndMana.currentHealth += 0.1f;
+            //playerCurrentHealthAndMana.currentHealth += 0.1f;
         }
 
 

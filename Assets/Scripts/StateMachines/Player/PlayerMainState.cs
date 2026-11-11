@@ -78,7 +78,7 @@ public class PlayerMainState : PlayerBaseState
 
         FaceMovementDirecton();
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed;
-        Debug.Log(dashDelayCounter);
+        //Debug.Log(dashDelayCounter);
 
         if (!stateMachine.canDash)
         {

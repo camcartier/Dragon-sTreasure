@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23aafef25fa7b7f408828726987a701d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
+  goldCount: {fileID: 11400000, guid: 421070bd531b09c4aaa9b22276157187, type: 2}
   thisLootValue: {fileID: 11400000, guid: 5f58e71844d9c7649be07a1ed3877d85, type: 2}
   PlayerHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
 --- !u!1 &6325354317133666022

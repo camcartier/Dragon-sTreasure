@@ -38,7 +38,7 @@ public class EnemyAttackState : EnemyBaseState
 
         stateMachine.rb2D.bodyType = RigidbodyType2D.Kinematic;
 
-        stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.grey;
+        //stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.grey;
 
         //turning the prefab
         toFollow = GameObject.Find("Player");

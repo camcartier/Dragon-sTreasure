@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerCurrentHealthAndMana : ScriptableObject
 {
     [Header("Health and Mana")]
-    public float currentHealth;
+    public int currentHealth;
     public float currentMana;
     public float manaMinimumDelayCounter;
 

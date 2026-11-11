@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         //treasureData.GoldCount = 1;
 
-        currentPlayerHealthAndMana.currentMana = playerData.MaxMana;
+        //currentPlayerHealthAndMana.currentMana = playerData.MaxMana;
         currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;
         
         player = GameObject.Find("Player");

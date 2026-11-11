@@ -13,14 +13,14 @@ public class UIMana : MonoBehaviour
 
     void Start()
     {
-        manaSlider.maxValue = playerData.MaxMana;
-        manaSlider.value = playerData.MaxMana;
+        //manaSlider.maxValue = playerData.MaxMana;
+        //manaSlider.value = playerData.MaxMana;
     }
 
     // Update is called once per frame
     void Update()
     {
-        manaSlider.value = PlayerCurrentHealthAndMana.currentMana;
+        //manaSlider.value = PlayerCurrentHealthAndMana.currentMana;
         
 
     }

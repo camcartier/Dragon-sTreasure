@@ -12,7 +12,7 @@ public class PlayerManaManager : MonoBehaviour
 
     //public float ManaMinimumDelayCounter;
 
-
+    /*
     void Start()
     {
         playerData.canRegenMana = false;
@@ -39,7 +39,7 @@ public class PlayerManaManager : MonoBehaviour
             ManaDepletionTimerCounter += 1;
             if (ManaDepletionTimerCounter > ManaDepletionTimer)
             {
-                playerData.canRegenMana = true;
+                //playerData.canRegenMana = true;
                 ManaDepletionTimerCounter = 0f;
             }
         }
@@ -62,4 +62,5 @@ public class PlayerManaManager : MonoBehaviour
 
 
     }
+    */
 }

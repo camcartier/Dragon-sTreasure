@@ -27,7 +27,7 @@ public class ObjectsData : ScriptableObject
     [Header("Character Stats")]
     public float walkSpeed;
     public float outOfRangeDetachTime;
-    public float damageAmount;
+    public int damageAmount;
     //public float damageCooldown;
     public float stunDuration;
     public float loadAttackTimer; 

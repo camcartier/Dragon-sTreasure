@@ -48,7 +48,7 @@ public class Destroyable : MonoBehaviour
 
     //Loot Generation
     public GameObject[] listOfPossibleLoots = new GameObject[6];
-
+    public bool hasInstantiatedLoot;
 
     /*
     private void OnValidate()
@@ -170,17 +170,28 @@ public class Destroyable : MonoBehaviour
 
             getAttackTargets.enemiesInReach.Remove(this.gameObject);
 
-            if (gameObject.CompareTag("Yakkuru") == true)
+            if (!hasInstantiatedLoot)
             {
-                int lootnum = Random.Range(0, 2);
-                Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                if (gameObject.CompareTag("Yakkuru") == true)
+                {
+                    int lootnum = Random.Range(0, 2);
+                    Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
+                    hasInstantiatedLoot = true;
+                }
+                if (gameObject.CompareTag("Farmer") == true)
+                {
+
+                    Instantiate(listOfPossibleLoots[3], transform.position, Quaternion.identity);
+                    hasInstantiatedLoot = true;
+                }
+                if (gameObject.CompareTag("Soldier") == true)
+                {
+                    int lootnum = Random.Range(4, 6);
+                    Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
+                    hasInstantiatedLoot = true;
+                }
             }
-            if (gameObject.CompareTag("Farmer") == true)
-            {
-                Instantiate(listOfPossibleLoots[3], transform.position, Quaternion.identity);
-                Destroy(gameObject);
-            }
+
 
 
             //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
