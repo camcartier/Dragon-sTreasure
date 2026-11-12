@@ -24,6 +24,10 @@ public class PlayerDyingState : PlayerBaseState
         stateMachine.flappingSound.Stop();
         stateMachine.MainSpriteRenderer.color = Color.white;    
 
+        foreach (Collider2D coll in stateMachine.Colliders)
+        {
+            coll.enabled = false;
+        }
 
 
         stateMachine.isDead = true;
@@ -50,5 +54,12 @@ public class PlayerDyingState : PlayerBaseState
     public override void Exit()
     {
         Debug.Log("why is it happening");
+
+        foreach (Collider2D coll in stateMachine.Colliders)
+        {
+            coll.enabled = true;
+        }
+
+
     }
 }

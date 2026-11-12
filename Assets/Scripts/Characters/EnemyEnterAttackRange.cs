@@ -18,6 +18,7 @@ public class EnemyEnterAttackRange : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            
             enemyStateMachine.isAttacking = true;
         }
     }
@@ -33,23 +34,34 @@ public class EnemyEnterAttackRange : MonoBehaviour
             {
                 if (!enemyStateMachine.hasHit && !playerStateMachine.isInvulnerable)
                 {
-                    playerStateMachine.isHurt = true;
-                    enemyStateMachine.hasHit = true;
-
-                    playerStateMachine.PlayerCurrentHealthAndMana.currentHealth -= enemyStateMachine.characterData.damageAmount;
-
-                    if (playerStateMachine.knockbackDirection == Vector2.zero)
+                    if (gameObject.GetComponentInParent<EnemyIDNumber>() != null)
                     {
-                        if (collision.transform.position.x > gameObject.transform.position.x)
+                        if (gameObject.GetComponentInParent<EnemyIDNumber>().IDNumber != 3)
                         {
-                            playerStateMachine.knockbackDirection = Vector2.right;
-                        }
-                        else if (collision.transform.position.x < gameObject.transform.position.x)
-                        {
-                            playerStateMachine.knockbackDirection = Vector2.left;
-                        }
+                            playerStateMachine.isHurt = true;
+                            enemyStateMachine.hasHit = true;
 
+                            if (playerStateMachine.PlayerCurrentHealthAndMana.currentHealth >0)
+                            {
+                                playerStateMachine.PlayerCurrentHealthAndMana.currentHealth -= enemyStateMachine.characterData.damageAmount;
+                            }
+                            
+
+                            if (playerStateMachine.knockbackDirection == Vector2.zero)
+                            {
+                                if (collision.transform.position.x > gameObject.transform.position.x)
+                                {
+                                    playerStateMachine.knockbackDirection = Vector2.right;
+                                }
+                                else if (collision.transform.position.x < gameObject.transform.position.x)
+                                {
+                                    playerStateMachine.knockbackDirection = Vector2.left;
+                                }
+
+                            }
+                        }
                     }
+
                 }
                 
             }

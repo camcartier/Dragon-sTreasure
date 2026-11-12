@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6452369964186766768}
   - component: {fileID: 3624536504580458432}
   - component: {fileID: 4833803556994010588}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 1188621958592113741}
   - component: {fileID: 2716410740648724870}
   - component: {fileID: 5315500132685217666}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadow_Regular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,8 @@ GameObject:
   - component: {fileID: 9126180534701047209}
   - component: {fileID: 4470532395947896573}
   - component: {fileID: 5328525442719019268}
-  m_Layer: 0
+  - component: {fileID: 2676081429050656589}
+  m_Layer: 7
   m_Name: HorseSoldier
   m_TagString: Soldier
   m_Icon: {fileID: 0}
@@ -457,6 +458,18 @@ MonoBehaviour:
   sortingOrderBase: 5
   offset: 0
   precision: 100
+--- !u!114 &2676081429050656589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687805170673511512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4271e02e10b53a14b845b17691084a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2480740733333913192
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3907003129647904421}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4302291612081592174}
   - component: {fileID: 6991884091813877034}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio_attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +673,7 @@ GameObject:
   - component: {fileID: 3660334127463350506}
   - component: {fileID: 4785121132205214600}
   - component: {fileID: 7161416709162830674}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HorseSoldier_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6260385990308264907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FXPOS_hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3557971740729420705}
   - component: {fileID: 4666903787003425961}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadow_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1084,7 +1097,7 @@ GameObject:
   - component: {fileID: 782325275077334383}
   - component: {fileID: 1995251800398183626}
   - component: {fileID: 1884984671272199077}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio_footsteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2157502217749877921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348318918115956134}
   - component: {fileID: 6838308105326579969}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CollisionCollider
   m_TagString: Enemies
   m_Icon: {fileID: 0}
@@ -1412,7 +1425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5509371018032508085}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FXPOS_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612371266071299380}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}

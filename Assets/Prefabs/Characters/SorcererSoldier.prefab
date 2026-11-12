@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600242997365686281}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279745285425800901}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 20, z: 0}
+  m_LocalPosition: {x: -25.3, y: 24.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,7 +280,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 20}
-  m_Size: {x: 150, y: 150}
+  m_Size: {x: 300, y: 300}
   m_Direction: 0
 --- !u!114 &7224213598381612638
 MonoBehaviour:
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b59195f29fca44aadfe7379eb80d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pitchValue: 1.3
+  pitchValue: 1.8
 --- !u!1 &3055691317479082156
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1188812000, guid: 904ba5470c411ac4fb59373ca0c8447b, type: 3}
+  m_Sprite: {fileID: 408477733, guid: f9949bf764535ad4689f854e67df7913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
   <spriteRenderer>k__BackingField: {fileID: 7694351713912350198}
-  <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 48ec1afacc07d604181579786ab89e03, type: 3}
+  <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 038caee82b91021408d3bd45bf408987, type: 3}
   <attackPSAirposition>k__BackingField: {fileID: 1279745285425800901}
 --- !u!114 &8904081398941232037
 MonoBehaviour:
@@ -1133,7 +1133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2941541015302687049}
   - component: {fileID: 5612830264591034615}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadow_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1281,7 +1281,7 @@ GameObject:
   - component: {fileID: 6533025818083396672}
   - component: {fileID: 357299460586810601}
   - component: {fileID: 6371505721148943238}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadow_Regular
   m_TagString: Untagged
   m_Icon: {fileID: 0}

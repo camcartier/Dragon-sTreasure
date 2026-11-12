@@ -52,6 +52,7 @@ public class PlayerStateMachine : StateMachine
 
     //so we don't get back in hurt state when in contact and dead
     [field: SerializeField] public bool isDead { get; set; }
+    [field: SerializeField] public List<Collider2D> Colliders { get;  set; }
 
     [field: SerializeField] public bool isHurt { get; set; }
 

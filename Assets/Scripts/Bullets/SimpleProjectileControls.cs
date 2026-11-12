@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SimpleProjectileControls : MonoBehaviour
 {
+    [SerializeField] PlayerCurrentHealthAndMana playerCurrentHealthAndMana;
+    [SerializeField] GameObject iceSpellExplosion;
 
     private GameObject player;
     private Rigidbody2D rb2d;
@@ -21,9 +23,16 @@ public class SimpleProjectileControls : MonoBehaviour
         player = GameObject.Find("Player");
         rb2d =  gameObject.GetComponent<Rigidbody2D>();
 
-        //rb2d.velocity = new Vector2(player.transform.position.x - gameObject.transform.position.x,
-          //                          player.transform.position.y - gameObject.transform.position.y).normalized * projectileSpeed;
-                                    
+        rb2d.velocity = new Vector2(player.transform.position.x - gameObject.transform.position.x,
+                                    player.transform.position.y - gameObject.transform.position.y).normalized * projectileSpeed;
+
+
+        //turning the prefab
+        if (gameObject.transform.position.x - player.transform.position.x > 0)
+        {
+
+            gameObject.transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +47,8 @@ public class SimpleProjectileControls : MonoBehaviour
             Debug.Log(" life over");
             //Destroy(gameObject);
         }
+
+
     }
 
 
@@ -47,6 +58,18 @@ public class SimpleProjectileControls : MonoBehaviour
         {
             Debug.Log("touching player");
             //Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("ice spell hit");
+            player.GetComponent<PlayerStateMachine>().isHurt = true;
+            playerCurrentHealthAndMana.currentHealth -= projectileDamage;
+            Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

@@ -104,6 +104,7 @@ public class EnemyAttackState : EnemyBaseState
 
             if (!stateMachine.hasInstantiated)
             {
+                
                 //Turning the prefab
                 isTurning = true;
                 if (isTurning)
@@ -117,26 +118,41 @@ public class EnemyAttackState : EnemyBaseState
                         stateMachine.gameObject.transform.localScale = new Vector3(1, 1, 1);
                     }
                 }
+                
                 stateMachine.instantiateStuff.InstantiateProjectile();
-                stateMachine.hasInstantiated = true;
+                stateMachine.hasInstantiated = true;  
+            }
 
-                stateMachine.SwitchState (new  EnemyMainState(stateMachine));
-               
+            if (stateMachine.characterData.attackTimer < ID3AttackTimerCounter)
+            {
+                if (stateMachine.stillAttacking)
+                {
+                    stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                }
+                else
+                {
+                    stateMachine.SwitchState(new EnemyMainState(stateMachine));
+                }
 
             }
+            else { ID3AttackTimerCounter += Time.deltaTime; }
+
+            
+
 
         }
 
 
 
 
-        
+        /*
         if (attackTimerCounter < stateMachine.attackTimer)
         {
             attackTimerCounter += Time.deltaTime;
         }
-        else { stateMachine.hasInstantiated = false; attackTimerCounter = 0f; }
-        
+        else { //stateMachine.hasInstantiated = false;
+               attackTimerCounter = 0f; }
+        */
 
 
 

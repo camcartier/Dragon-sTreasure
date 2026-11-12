@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9150943, g: 0.72590435, b: 0.16834284, a: 1}
+      maxColor: {r: 0.033018887, g: 1, b: 0.86962837, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7442800505892011719}
   m_Layer: 0
-  m_Name: EnemyHitPS
+  m_Name: SorcererHitPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

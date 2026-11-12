@@ -37,6 +37,13 @@ public class HeartsManager : MonoBehaviour
     {
         for (int i = hearts.Length-1; i >= playerCurrentHealth.currentHealth; i--)
         {
+            if (i < 0 || i >= hearts.Length)
+            {
+                Debug.LogError("OUT OF BOUNDS ! Index : " + i +
+                               " | Hearts Length : " + hearts.Length);
+                break;
+            }
+
             hearts[i].SetActive(false);
         }
     }

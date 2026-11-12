@@ -36,24 +36,13 @@ public class PlayerMainState : PlayerBaseState
 
         BulletStartPoint = stateMachine.gameObject.GetComponentInChildren<BulletStartPoint>().gameObject;
 
-        /*
-        if (stateMachine.PlayerData.currentLevel < 2)
-        {
-            stateMachine.Animator.Play(LVL1_IdleHash);
-        }
-        else
-        {
-            stateMachine.Animator.Play(LVL1_IdleHash);
-        }
-        */
-
 
         //new animation
         stateMachine.Animator.Play(NBase_Idle);
 
         stateMachine.flappingSound.Play();
 
-        //stateMachine.Animator.Play(FreeLookBlendTreeHash);
+
     }
     public override void Tick(float deltaTime)
     {

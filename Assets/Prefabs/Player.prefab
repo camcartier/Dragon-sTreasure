@@ -757,6 +757,11 @@ MonoBehaviour:
   <knockBackDuration>k__BackingField: 15
   <knockBackDistance>k__BackingField: 0
   <isDead>k__BackingField: 0
+  <Colliders>k__BackingField:
+  - {fileID: 3440130041001935661}
+  - {fileID: 6417471170307618114}
+  - {fileID: 8781117240163386826}
+  - {fileID: 2855730870007515908}
   <isHurt>k__BackingField: 0
   <isInvulnerable>k__BackingField: 0
   <PlayerCoroutinesScript>k__BackingField: {fileID: 706902093216072592}
@@ -864,6 +869,7 @@ MonoBehaviour:
   <FireballPrefab>k__BackingField: {fileID: 5303679083573354517, guid: 1f00432c582f4884eade419f7e98a082, type: 3}
   <canRepulse>k__BackingField: 0
   <repulseForce>k__BackingField: 50000
+  <repulseCooldownCounter>k__BackingField: 0
   <currentLevelStored>k__BackingField: 0
   <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}
