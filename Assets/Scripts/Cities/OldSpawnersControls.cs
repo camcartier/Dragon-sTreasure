@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnersControls : MonoBehaviour
+public class OldSpawnersControls : MonoBehaviour
 {
 
     //public GameObject[] prefabsToSpawn = new GameObject[10];

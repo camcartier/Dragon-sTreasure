@@ -9,7 +9,7 @@ public class ThiefSpawnerControls : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color startColor;
 
-    private SpawnersControls spawnerControls;
+    private OldSpawnersControls spawnerControls;
     public float amount;
 
     [SerializeField] PlayerData playerData;
@@ -22,7 +22,7 @@ public class ThiefSpawnerControls : MonoBehaviour
 
     void Start()
     {
-        spawnerControls = GetComponent<SpawnersControls>();
+        spawnerControls = GetComponent<OldSpawnersControls>();
         spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>();
         startColor = spriteRenderer.color;
     }

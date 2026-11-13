@@ -19,17 +19,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerData playerData;
     public GameObject player;
 
+    public int currentSelectedLoverIndex;
+
     private void Awake()
     {
-        //treasureData.GoldCount = 1;
 
-        //currentPlayerHealthAndMana.currentMana = playerData.MaxMana;
         currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;
         
         player = GameObject.Find("Player");
 
-        //currentPlayerData = GameObject.Find("ScriptableObjectsManager").GetComponent<ScriptableGestionnaire>().PlayerCurrentHealthAndMana;
-        //playerData = GameObject.Find("ScriptableObjectsManager").GetComponent<ScriptableGestionnaire>().PlayerData;
+
     }
 
     // Start is called before the first frame update
@@ -43,7 +42,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-            
         UnPauseGame();
         
     }
