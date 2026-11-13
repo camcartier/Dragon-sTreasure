@@ -67,9 +67,24 @@ public class SimpleProjectileControls : MonoBehaviour
         {
             Debug.Log("ice spell hit");
             player.GetComponent<PlayerStateMachine>().isHurt = true;
-            playerCurrentHealthAndMana.currentHealth -= projectileDamage;
+
+            if (playerCurrentHealthAndMana.currentHealth >0)
+            {
+                playerCurrentHealthAndMana.currentHealth -= projectileDamage;
+            }
+
+            
+            Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Soldier"))
+        {
+            collision.gameObject.GetComponentInParent<Destroyable>().MyCurrentHealth -= projectileDamage;
             Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
+
+    
 }
