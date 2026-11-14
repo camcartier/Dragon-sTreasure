@@ -40,6 +40,7 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public Vector2 knockbackDirection { get; set; }
     [field: SerializeField] public float knockbackForce { get; set; }
+    [field: SerializeField] public Vector2 pendingKnockback { get; set; }
 
 
     [field: SerializeField] public bool isBurning { get; set; }

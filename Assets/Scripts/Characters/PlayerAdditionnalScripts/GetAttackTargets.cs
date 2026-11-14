@@ -45,7 +45,7 @@ public class GetAttackTargets : MonoBehaviour
 
 
             Vector2 direction = (collision.transform.position - transform.position).normalized;
-            collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = direction;
+            collision.GetComponentInParent<EnemyStateMachine>().pendingKnockback = direction * playerStateMachine.PlayerData.knockbackAmount;
             /*
             if (collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection == Vector2.zero)
             {

@@ -23,11 +23,16 @@ public class EnemyHurtState : EnemyBaseState
         stateMachine.attackSound.Stop();
 
         
-        Debug.Log(stateMachine.knockbackDirection);
+        //Debug.Log(stateMachine.knockbackDirection);
         stateMachine.rb2D.velocity = Vector2.zero;
-        Debug.Log("Velocity après reset : " + stateMachine.rb2D.velocity);
+        //Debug.Log("Velocity après reset : " + stateMachine.rb2D.velocity);
 
-        stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized * stateMachine.knockbackForce, ForceMode2D.Impulse);
+
+        //stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized * stateMachine.knockbackForce, ForceMode2D.Impulse);
+        
+        stateMachine.rb2D.AddForce(stateMachine.pendingKnockback, ForceMode2D.Impulse);
+        stateMachine.pendingKnockback = Vector2.zero;
+
     }
     public override void Tick(float deltaTime)
     {

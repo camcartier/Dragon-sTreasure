@@ -42,6 +42,9 @@ public class PlayerData : ScriptableObject
     public bool canRegenMana;
     public float ManaRegenMinimumDelay;
     */
+    [Header("knockback")]
+    public float knockbackAmount;
+
 
     [Header("Firing Info")]
     public float fireDelay;

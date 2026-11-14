@@ -63,33 +63,47 @@ public class PlayerRepulseState : PlayerBaseState
         Vector3 explosionPosition = stateMachine.gameObject.transform.position;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionPosition, stateMachine.PlayerData.repulseRadius, affectedLayers);
 
-        /*
-        if(colliders.Length > 0 )
-        {
-            Debug.Log(colliders[0].name);
-        }*/
         
-         foreach (Collider2D collider in colliders)
+        //c'est une collection qui ne contient jamais de doublon
+        //La méthode Add() renvoie un bool : true si l’élément a été ajouté, false s’il était déjà là
+        HashSet<Rigidbody2D> alreadyPushed = new HashSet<Rigidbody2D>();
+
+
+        foreach (Collider2D collider in colliders)
         {
             Rigidbody2D rb2d = collider.gameObject.GetComponentInParent<Rigidbody2D>();
             GetsRepulsed getsRepulsed = collider.gameObject.GetComponentInParent<GetsRepulsed>();
             
-            Vector2 repulseDirection = new Vector2(collider.transform.position.x - stateMachine.transform.position.x, collider.transform.position.y - stateMachine.transform.position.y);
 
             if(getsRepulsed != null)
             {
 
-
-                rb2d.AddForce(repulseDirection.normalized * stateMachine.PlayerData.repulseAmount);
-
-                /*
-                if(collider.GetComponentInParent<Destroyable>() != null)
+                if (alreadyPushed.Add(rb2d))
                 {
-                    collider.GetComponentInParent<Destroyable>().IsRepulsed = true;
+                    EnemyStateMachine enemy = collider.GetComponentInParent<EnemyStateMachine>();
+
+                    //mis ici pour etre sur qu'il y a un rb2d 
+                    Vector2 repulseDirection = new Vector2(enemy.transform.position.x - stateMachine.rb2D.transform.position.x, 
+                                                            enemy.transform.position.y - stateMachine.rb2D.transform.position.y);
+
+                    collider.GetComponentInParent<EnemyStateMachine>().isHit = true;
+
+                    enemy.pendingKnockback = repulseDirection.normalized * stateMachine.PlayerData.repulseAmount;
+
+                    //a mettre dans hurt state
+                    //rb2d.AddForce(repulseDirection.normalized * stateMachine.PlayerData.repulseAmount,  ForceMode2D.Impulse);
+
+                    /*
+                    if(collider.GetComponentInParent<Destroyable>() != null)
+                    {
+                        collider.GetComponentInParent<Destroyable>().IsRepulsed = true;
+                    }
+                    */
                 }
-                */
+
+
             }
-            //else { Debug.Log("no repulsed"); }
+            
         }
     }
 }

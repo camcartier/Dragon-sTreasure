@@ -37,7 +37,7 @@ public class EnemyAttackState : EnemyBaseState
     {
         stateMachine.rb2D.velocity = Vector2.zero;
 
-        stateMachine.rb2D.bodyType = RigidbodyType2D.Kinematic;
+        stateMachine.rb2D.constraints |= RigidbodyConstraints2D.FreezePositionX;
 
         //stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.grey;
 
@@ -177,7 +177,7 @@ public class EnemyAttackState : EnemyBaseState
         timebeforechangeStateCounter = 0f;
 
 
-        stateMachine.rb2D.bodyType = RigidbodyType2D.Dynamic;
+        stateMachine.rb2D.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
 
         stateMachine.shadowAnimator.Play("Shadow_POS");
         //stateMachine.rb2D.constraints &= ~RigidbodyConstraints2D.FreezePositionX;

@@ -89,7 +89,7 @@ public class PlayerStateMachine : StateMachine
 
     //Repulse
     [field: SerializeField] public bool canRepulse { get; set; }
-    [field: SerializeField] public int repulseForce { get; set; }
+    //[field: SerializeField] public int repulseForce { get; set; }
     [field: SerializeField] public float repulseCooldownCounter { get; set; }
 
     //Leveling up
