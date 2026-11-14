@@ -73,5 +73,7 @@ public class SpawnerControls : MonoBehaviour
 
         Instantiate(SoldierPrefab, new Vector2 (SpawnPOS[index].transform.position.x,
                                                  SpawnPOS[index].transform.position.y + Random.Range(-300,300)), Quaternion.identity);
+        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS[2].transform.position.x + Random.Range(-300, 300),
+                                               SpawnPOS[2].transform.position.y), Quaternion.identity);
     }
 }

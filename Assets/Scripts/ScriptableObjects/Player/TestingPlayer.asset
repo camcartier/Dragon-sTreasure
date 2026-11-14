@@ -53,10 +53,12 @@ MonoBehaviour:
   canRegenHealth: 0
   HealthRegenDelay: 5
   HealthRegenAmount: 0
-  fireDelay: 0
-  repulseRadius: 100
-  repulseAmount: 50000
-  repulseDelay: 2
+  knockbackAmount: 15
+  biteDamage: 50
+  repulseRadius: 150
+  repulseAmount: 35
+  repulseDelay: 1
+  repulseDamage: 10
   repulseAmountArray: a861000050c30000f8240100905f010038c10100d0fb0100
   repulseRadiusArray:
   - 0

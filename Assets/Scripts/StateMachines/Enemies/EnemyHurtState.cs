@@ -32,7 +32,8 @@ public class EnemyHurtState : EnemyBaseState
         
         stateMachine.rb2D.AddForce(stateMachine.pendingKnockback, ForceMode2D.Impulse);
         stateMachine.pendingKnockback = Vector2.zero;
-
+        stateMachine.destroyableInfo.MyCurrentHealth -= stateMachine.pendingDamage;
+        stateMachine.pendingDamage = 0;
     }
     public override void Tick(float deltaTime)
     {

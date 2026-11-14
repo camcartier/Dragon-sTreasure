@@ -38,6 +38,8 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public bool hurtIsReset { get; set; }
 
+    [field: SerializeField] public float pendingDamage { get; set; }
+
     [field: SerializeField] public Vector2 knockbackDirection { get; set; }
     [field: SerializeField] public float knockbackForce { get; set; }
     [field: SerializeField] public Vector2 pendingKnockback { get; set; }

@@ -45,15 +45,21 @@ public class PlayerData : ScriptableObject
     [Header("knockback")]
     public float knockbackAmount;
 
+    [Header("Bite Attack")]
+    public float biteDamage;
 
+    /*
     [Header("Firing Info")]
     public float fireDelay;
+    */
+
 
     [Header("Repulse Info")]
     //public float repulseForce;
     public float repulseRadius;
     public int repulseAmount;
     public float repulseDelay;
+    public float repulseDamage;
     public int[] repulseAmountArray = new int[6];
     public float[] repulseRadiusArray = new float[6];
     public int[] repulseDamageArray = new int[6];

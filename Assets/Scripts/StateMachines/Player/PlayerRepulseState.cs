@@ -89,6 +89,7 @@ public class PlayerRepulseState : PlayerBaseState
                     collider.GetComponentInParent<EnemyStateMachine>().isHit = true;
 
                     enemy.pendingKnockback = repulseDirection.normalized * stateMachine.PlayerData.repulseAmount;
+                    enemy.pendingDamage = stateMachine.PlayerData.repulseDamage;
 
                     //a mettre dans hurt state
                     //rb2d.AddForce(repulseDirection.normalized * stateMachine.PlayerData.repulseAmount,  ForceMode2D.Impulse);

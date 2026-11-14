@@ -27,7 +27,7 @@ public class GetAttackTargets : MonoBehaviour
                 if (enemyStateMachine != null)
                 {
                     enemyStateMachine.isHit = true;
-
+                    enemyStateMachine.pendingDamage = playerStateMachine.PlayerData.biteDamage;
 
                 }
 
@@ -46,19 +46,7 @@ public class GetAttackTargets : MonoBehaviour
 
             Vector2 direction = (collision.transform.position - transform.position).normalized;
             collision.GetComponentInParent<EnemyStateMachine>().pendingKnockback = direction * playerStateMachine.PlayerData.knockbackAmount;
-            /*
-            if (collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection == Vector2.zero)
-            {
-                if (collision.transform.position.x > gameObject.transform.position.x)
-                {
-                    collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = Vector2.right;
-                }
-                else if (collision.transform.position.x < gameObject.transform.position.x)
-                {
-                    collision.GetComponentInParent<EnemyStateMachine>().knockbackDirection = Vector2.left;
-                }
 
-            }*/
         }
     }
 
