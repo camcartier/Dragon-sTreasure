@@ -25,7 +25,7 @@ public class PlayerUsingState : PlayerBaseState
 
         stateMachine.isUsing = true;
 
-        GameObject.Instantiate(stateMachine.diggingFX, new Vector2(DigginFXStartPoint.transform.position.x, DigginFXStartPoint.transform.position.y), Quaternion.identity);
+        //GameObject.Instantiate(stateMachine.diggingFX, new Vector2(DigginFXStartPoint.transform.position.x, DigginFXStartPoint.transform.position.y), Quaternion.identity);
         
 
     }

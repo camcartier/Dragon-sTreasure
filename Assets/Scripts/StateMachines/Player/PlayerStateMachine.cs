@@ -27,14 +27,18 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public PlayerManaManager PlayerManaManager;
 
 
+    [field: SerializeField] public bool facingRight { get;  set; }
+
+
+
     //Firing bullets
     [field: SerializeField] public bool canFire { get; private set; }
     [field: SerializeField] public bool isFiring { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
-    [field: SerializeField] public bool hasInfiniteMana { get; set; }
+    //[field: SerializeField] public bool hasInfiniteMana { get; set; }
 
     //FXs
-    [field: SerializeField] public GameObject diggingFX { get; private set; }
+    //[field: SerializeField] public GameObject diggingFX { get; private set; }
 
     [field: SerializeField] public bool isAttacking { get; set; }
 
@@ -75,7 +79,7 @@ public class PlayerStateMachine : StateMachine
     //Dash
     [field: SerializeField] public bool canDash { get; set; }
     [field: SerializeField] public bool isDashing { get; set; }
-    [field: SerializeField] public float dashDuration { get; private set; }
+    //[field: SerializeField] public float dashDuration { get; private set; }
     [field: SerializeField] public float dashCooldownCounter { get;  set; }
     //[field: SerializeField] public float dashCooldown { get; private set; }
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
@@ -85,6 +89,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float fireballCooldownCounter { get; set; }
     [field: SerializeField] public GameObject fireballStartingPoint { get; private set; }
     [field: SerializeField] public GameObject FireballPrefab { get; private set; }
+    [field: SerializeField] public GameObject FireBreathPS { get; private set; }
 
 
     //Repulse
@@ -112,6 +117,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public AudioSource flappingSound { get; set; }
     [field: SerializeField] public AudioSource dashingSound { get; set; }
     [field: SerializeField] public AudioSource fireballSound { get; set; }
+
+
 
     //[field: SerializeField] public GameObject StartingTextPanel { get; private set; }
 

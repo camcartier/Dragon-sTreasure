@@ -22,16 +22,12 @@ public class PlayerRepulseState : PlayerBaseState
     public override void Enter()
     {
 
-
-
-
         stateMachine.canRepulse = false;
 
         stateMachine.rb2D.velocity = Vector3.zero;
         stateMachine.MainSpriteRenderer.color = Color.green;
 
-
-        Debug.Log("enter repulse state");
+        stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingRepulseReload());
 
         ApplyExplosionForce();
     }

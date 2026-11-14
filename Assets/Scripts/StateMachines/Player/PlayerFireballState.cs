@@ -38,11 +38,17 @@ public class PlayerFireballState : PlayerBaseState
 
         stateMachine.rb2D.velocity = Vector3.zero;
 
-        //stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingFireballReload());
+        stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingFireballReload());
+
+
 
         GameObject.Instantiate(stateMachine.FireballPrefab, new Vector2(stateMachine.fireballStartingPoint.transform.position.x, stateMachine.fireballStartingPoint.transform.position.y), Quaternion.identity);
-        
-        
+
+        GameObject.Instantiate(stateMachine.FireBreathPS, new Vector2(stateMachine.fireballStartingPoint.transform.position.x, stateMachine.fireballStartingPoint.transform.position.y), new Quaternion(stateMachine.transform.localRotation.x,
+                                                                                                                                                                                                        stateMachine.transform.localRotation.y,
+                                                                                                                                                                                                        stateMachine.transform.localRotation.z,
+                                                                                                                                                                                                        stateMachine.transform.localRotation.w));
+
     }
     public override void Tick(float deltaTime)
     {

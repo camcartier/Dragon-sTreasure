@@ -19,6 +19,7 @@ public class PlayerData : ScriptableObject
     //public float knockbackDuration;
 
     [Header("Dash attributes")]
+    public float dashDuration;
     public float dashSpeed;
     public float[] dashSpeedArray = new float[6];
     public float dashDelay;

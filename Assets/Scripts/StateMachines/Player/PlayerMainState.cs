@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class PlayerMainState : PlayerBaseState
 {
-  
+
     Vector2 movement = new Vector2();
 
     public bool isFiring;
@@ -19,12 +19,12 @@ public class PlayerMainState : PlayerBaseState
 
     private float dashDelayCounter;
 
-    public PlayerMainState(PlayerStateMachine stateMachine) : base(stateMachine) {}
+    public PlayerMainState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
 
-        
+
 
         stateMachine.isStunnable = true;
 
@@ -54,7 +54,7 @@ public class PlayerMainState : PlayerBaseState
         }
         */
 
-        if (!stateMachine.isInvulnerable && stateMachine.isHurt) { stateMachine.SwitchState(new PlayerHurtState(stateMachine)); return;  }
+        if (!stateMachine.isInvulnerable && stateMachine.isHurt) { stateMachine.SwitchState(new PlayerHurtState(stateMachine)); return; }
 
         movement = new Vector2(stateMachine.InputReader.MovementValue.x, stateMachine.InputReader.MovementValue.y);
         movement.Normalize();
@@ -69,13 +69,15 @@ public class PlayerMainState : PlayerBaseState
         stateMachine.rb2D.velocity = movement * stateMachine.PlayerData.movementSpeed;
         //Debug.Log(dashDelayCounter);
 
+
+        /*
         if (!stateMachine.canDash)
         {
             if (stateMachine.dashCooldownCounter < stateMachine.PlayerData.dashDelay)
             {
                 stateMachine.dashCooldownCounter += Time.deltaTime;
             }
-            else { stateMachine.canDash = true;  }
+            else { stateMachine.canDash = true; }
         }
 
         if (!stateMachine.canFireball)
@@ -95,6 +97,10 @@ public class PlayerMainState : PlayerBaseState
             }
             else { stateMachine.canRepulse = true; }
         }
+        */
+
+
+
 
         /*
         if (stateMachine.InputReader.Fire.ReadValue<float>() > 0)
@@ -123,7 +129,7 @@ public class PlayerMainState : PlayerBaseState
 
     private void OnHeadbutt()
     {
-        
+
         stateMachine.SwitchState(new PlayerHeadbuttState(stateMachine));
 
     }
@@ -185,18 +191,18 @@ public class PlayerMainState : PlayerBaseState
         {
             stateMachine.SwitchState(new PlayerDashingState(stateMachine));
             stateMachine.dashCooldownCounter = 0f;
-            
+
         }
 
     }
 
     private void OnFireball()
     {
-        if(stateMachine.canFireball)
+        if (stateMachine.canFireball)
         {
             stateMachine.SwitchState(new PlayerFireballState(stateMachine));
             stateMachine.fireballCooldownCounter = 0f;
-        }    
+        }
     }
 
     private void OnRepulse()
@@ -212,20 +218,20 @@ public class PlayerMainState : PlayerBaseState
 
     private void FaceMovementDirecton()
     {
-        if(movement.x ==  0) { return; }
+        if (movement.x == 0) { return; }
 
         if (movement.x < 0)
         {
-            
-            this.stateMachine.gameObject.transform.rotation = new Quaternion (0, -180, 0, 0); 
+            //stateMachine.facingRight = false;
+            this.stateMachine.gameObject.transform.rotation = new Quaternion(0, -180, 0, 0);
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
         else {
-            
+            //stateMachine.facingRight = true;
             this.stateMachine.gameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
             //GameObject.Find("PlayerLVL1").GetComponentInChildren<SpriteRenderer>().flipX = false;
-            }
         }
+    }
 
 
 

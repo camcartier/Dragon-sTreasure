@@ -17,7 +17,7 @@ public class InfinteManaPotion : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("mana");
-            Player.GetComponent<PlayerStateMachine>().hasInfiniteMana = true;
+            //Player.GetComponent<PlayerStateMachine>().hasInfiniteMana = true;
 
             Destroy(this.gameObject);
         }

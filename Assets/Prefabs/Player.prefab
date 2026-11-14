@@ -867,8 +867,8 @@ MonoBehaviour:
   <fireballCooldownCounter>k__BackingField: 0
   <fireballStartingPoint>k__BackingField: {fileID: 8639601430443596979}
   <FireballPrefab>k__BackingField: {fileID: 5303679083573354517, guid: 1f00432c582f4884eade419f7e98a082, type: 3}
+  <FireBreathPS>k__BackingField: {fileID: 69400686310139866, guid: 23fddc2d68e248f4eae877b491099b0d, type: 3}
   <canRepulse>k__BackingField: 0
-  <repulseForce>k__BackingField: 0
   <repulseCooldownCounter>k__BackingField: 0
   <currentLevelStored>k__BackingField: 0
   <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}

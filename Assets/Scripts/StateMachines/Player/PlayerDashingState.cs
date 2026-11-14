@@ -9,15 +9,6 @@ public class PlayerDashingState : PlayerBaseState
 {
     private float dashDurationCounter;
 
-    private readonly int LVL1_DashingHash = Animator.StringToHash("LVL1_Dashing");
-    private readonly int LVL2_DashingHash = Animator.StringToHash("LVL2_Dashing");
-    private readonly int LVL3_DashingHash = Animator.StringToHash("LVL3_Dashing");
-    private readonly int LVL4_DashingHash = Animator.StringToHash("LVL4_Dashing");
-    private readonly int LVL5_DashingHash = Animator.StringToHash("LVL5_Dashing");
-    //each for each level
-    private List<int> listOfDashingHash = new List<int>();
-
-
     private readonly int NBase_Dash = Animator.StringToHash("NBase_Dash");
 
 
@@ -31,7 +22,9 @@ public class PlayerDashingState : PlayerBaseState
 
         //ajouté pour l'UI
         //
-        stateMachine.dashCooldownCounter = stateMachine.PlayerData.dashDelay;
+        //stateMachine.dashCooldownCounter = stateMachine.PlayerData.dashDelay;
+
+        stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingDashReload());
 
         //animation
         stateMachine.Animator.Play(NBase_Dash);
@@ -53,7 +46,7 @@ public class PlayerDashingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if (dashDurationCounter < stateMachine.dashDuration)
+        if (dashDurationCounter < stateMachine.PlayerData.dashDuration)
         { 
             dashDurationCounter += deltaTime;
         }

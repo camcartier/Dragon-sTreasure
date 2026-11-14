@@ -38,15 +38,15 @@ public class UI_cooldown_image : MonoBehaviour
 
 
         dashFillImage.fillAmount = Mathf.Clamp01(
-            1f - (playerStateMachine.dashCooldownCounter / dashcooldown)
+            1f - (playerStateMachine.PlayerCoroutinesScript.dashCooldownCounter / dashcooldown)
         );
 
         fireballFillImage.fillAmount = Mathf.Clamp01(
-        1f - (playerStateMachine.fireballCooldownCounter / fireballcooldown)
+        1f - (playerStateMachine.PlayerCoroutinesScript.fireballCooldownCounter / fireballcooldown)
         );
 
         repulseFillImage.fillAmount = Mathf.Clamp01(
-        1f - (playerStateMachine.repulseCooldownCounter / repulsecooldown)
+        1f - (playerStateMachine.PlayerCoroutinesScript.repulseCooldownCounter / repulsecooldown)
         );
     }
 }

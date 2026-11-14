@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8357bfb1d6b81af4db804ce601ab5c22, type: 3}
   m_Name: HorseSoldierObject
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   regenAmount: 5
   regenSpeed: 1
   regenFirstWait: 5
@@ -22,7 +22,7 @@ MonoBehaviour:
   burningAmount: 0
   burningSpeed: 0
   minHealthBurnsStop: 0
-  walkSpeed: 40
+  walkSpeed: 50
   outOfRangeDetachTime: 0
   damageAmount: 1
   stunDuration: 0
