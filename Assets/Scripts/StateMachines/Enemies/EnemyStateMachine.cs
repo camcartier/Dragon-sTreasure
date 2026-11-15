@@ -33,16 +33,17 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool isFollowing { get; set; }
     [field: SerializeField] public bool isHit { get; set; }
     [field: SerializeField] public bool isInvulnerable { get; set; }
-
     [field: SerializeField] public bool isHurt { get; set; }
-
     [field: SerializeField] public bool hurtIsReset { get; set; }
-
     [field: SerializeField] public float pendingDamage { get; set; }
+
 
     [field: SerializeField] public Vector2 knockbackDirection { get; set; }
     [field: SerializeField] public float knockbackForce { get; set; }
     [field: SerializeField] public Vector2 pendingKnockback { get; set; }
+
+
+    [field: SerializeField] public Vector2 pendingRepulse { get; set; }
 
 
     [field: SerializeField] public bool isBurning { get; set; }
@@ -50,7 +51,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool hasAlreadyBurnt{ get; set; }
     [field: SerializeField] public bool isStuned { get; set; }
     [field: SerializeField] public bool isDead { get; set; }
-
+    [field: SerializeField] public GameObject Skull { get; private set; }
 
 
     [field: SerializeField] public SpriteRenderer spriteRenderer { get; set; }

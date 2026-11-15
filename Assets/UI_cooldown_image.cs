@@ -20,7 +20,9 @@ public class UI_cooldown_image : MonoBehaviour
     {
         playerStateMachine = GameObject.Find("Player").GetComponent<PlayerStateMachine>();
 
-
+        dashFillImage.gameObject.SetActive(false);
+        fireballFillImage.gameObject.SetActive(false);
+        repulseFillImage.gameObject.SetActive(false);
 
         dashFillImage.fillAmount = 0f;
         fireballFillImage.fillAmount = 0f;

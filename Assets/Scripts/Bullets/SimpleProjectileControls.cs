@@ -58,33 +58,46 @@ public class SimpleProjectileControls : MonoBehaviour
         {
             Debug.Log("touching player");
             //Destroy(gameObject);
+            
+            player.GetComponent<PlayerStateMachine>().isHurt = true;
+
+            if (playerCurrentHealthAndMana.currentHealth > 0)
+            {
+                playerCurrentHealthAndMana.currentHealth -= projectileDamage;
+            }
+
+
+            Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+
+        }
+        
+        if (collision.gameObject.CompareTag("Soldier"))
+        {
+            collision.gameObject.GetComponentInParent<Destroyable>().MyCurrentHealth -= projectileDamage;
+            Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
+            //Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Fireball"))
+        {
+            Destroy (gameObject);
         }
     }
 
+    /*
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("ice spell hit");
-            player.GetComponent<PlayerStateMachine>().isHurt = true;
-
-            if (playerCurrentHealthAndMana.currentHealth >0)
-            {
-                playerCurrentHealthAndMana.currentHealth -= projectileDamage;
-            }
-
             
-            Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
-            Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Soldier"))
-        {
-            collision.gameObject.GetComponentInParent<Destroyable>().MyCurrentHealth -= projectileDamage;
-            Instantiate(iceSpellExplosion, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
+
+    }*/
+
+
 
     
 }

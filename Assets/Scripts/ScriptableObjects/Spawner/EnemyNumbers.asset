@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07d4e70214a2834183371ede2ce14fd, type: 3}
   m_Name: EnemyNumbers
   m_EditorClassIdentifier: 
-  totalEnemyNumber: 14000000
-  swordsMaxNumber: 05000000
-  horsesMaxNumber: 02000000
-  sorceresMaxNumber: 03000000
+  totalEnemyNumber: 19000000
+  swordsMaxNumber: 19000000
+  horsesMaxNumber: 0a000000
+  sorceresMaxNumber: 05000000

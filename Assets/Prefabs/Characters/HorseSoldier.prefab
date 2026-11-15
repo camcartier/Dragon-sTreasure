@@ -303,6 +303,7 @@ Transform:
   - {fileID: 6260385990308264907}
   - {fileID: 612371266071299380}
   - {fileID: 3907003129647904421}
+  - {fileID: 5419518139256659121}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,8 +363,11 @@ MonoBehaviour:
   <isInvulnerable>k__BackingField: 0
   <isHurt>k__BackingField: 0
   <hurtIsReset>k__BackingField: 0
+  <pendingDamage>k__BackingField: 0
   <knockbackDirection>k__BackingField: {x: 0, y: 0}
   <knockbackForce>k__BackingField: 100
+  <pendingKnockback>k__BackingField: {x: 0, y: 0}
+  <pendingRepulse>k__BackingField: {x: 0, y: 0}
   <isBurning>k__BackingField: 0
   <hasAlreadyBurnt>k__BackingField: 0
   <isStuned>k__BackingField: 0
@@ -1512,4 +1516,35 @@ Transform:
   - {fileID: 8290954786686559008}
   m_Father: {fileID: 5343236944167473052}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9118805020062264896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5419518139256659121}
+  m_Layer: 7
+  m_Name: LootSpawnPOS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5419518139256659121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118805020062264896}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5343236944167473052}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

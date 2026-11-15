@@ -60,7 +60,7 @@ public class EnemyMainState : EnemyBaseState
             return;
         }
 
-
+        /*
         if (stateMachine.enemyID.IDNumber >= 2)
         {
             if (stateMachine.isBurning)
@@ -69,6 +69,7 @@ public class EnemyMainState : EnemyBaseState
                 return;
             }
         }
+        */
 
 
         //direction

@@ -51,8 +51,9 @@ public class EnemyAttackState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
-        if (stateMachine.isHit){stateMachine.SwitchState(new EnemyHurtState(stateMachine));}
-        
+        if (stateMachine.isHit){stateMachine.SwitchState(new EnemyHurtState(stateMachine)); return; }
+        if (stateMachine.isDead) { stateMachine.SwitchState(new  EnemyDeathState(stateMachine)); return; }
+   
 
         stateMachine.rb2D.velocity = Vector2.zero;
 

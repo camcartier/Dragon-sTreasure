@@ -23,13 +23,11 @@ public class EnemyHurtState : EnemyBaseState
         stateMachine.attackSound.Stop();
 
         
-        //Debug.Log(stateMachine.knockbackDirection);
         stateMachine.rb2D.velocity = Vector2.zero;
-        //Debug.Log("Velocity après reset : " + stateMachine.rb2D.velocity);
 
 
-        //stateMachine.rb2D.AddForce(new Vector2(stateMachine.knockbackDirection.x, stateMachine.knockbackDirection.y).normalized * stateMachine.knockbackForce, ForceMode2D.Impulse);
-        
+        stateMachine.rb2D.AddForce(stateMachine.pendingRepulse, ForceMode2D.Impulse);
+        stateMachine.pendingRepulse = Vector2.zero;    
         stateMachine.rb2D.AddForce(stateMachine.pendingKnockback, ForceMode2D.Impulse);
         stateMachine.pendingKnockback = Vector2.zero;
         stateMachine.destroyableInfo.MyCurrentHealth -= stateMachine.pendingDamage;
@@ -43,7 +41,6 @@ public class EnemyHurtState : EnemyBaseState
             return;
         }
 
-        //Debug.Log(stateMachine.rb2D.velocity);
 
         if (stateMachine.hurtIsReset)
         {

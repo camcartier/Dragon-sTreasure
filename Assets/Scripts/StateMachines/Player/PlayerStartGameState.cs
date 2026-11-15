@@ -16,7 +16,7 @@ public class PlayerStartGameState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.Play("WakingUp");
+        //stateMachine.Animator.Play("WakingUp");
         stateMachine.canDash = true;
         stateMachine.canFireball = true;
         stateMachine.canRepulse = true;

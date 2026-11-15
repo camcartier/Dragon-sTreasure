@@ -203,7 +203,7 @@ public class Destroyable : MonoBehaviour
                 if (stateInfo.normalizedTime >= 1f)
                 {
                     
-                    
+                        //Instantiate(gameObject.GetComponent<EnemyStateMachine>().Skull, transform.position, new Quaternion(0,0,0,0));
                         Destroy(gameObject);
                 }
             }
@@ -283,6 +283,8 @@ public class Destroyable : MonoBehaviour
         {
             Debug.Log("fireball touched");
             MyCurrentHealth -= bulletData.FireballDamageArray[playerData.currentLevel];
+
+            gameObject.GetComponent<EnemyStateMachine>().isHit = true;
         }
     }
 
