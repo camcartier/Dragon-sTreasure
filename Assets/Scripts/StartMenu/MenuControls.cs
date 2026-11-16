@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class StartControls : MonoBehaviour
+public class MenuControls : MonoBehaviour
 {
-    [SerializeField] GameObject MenuButtonsPanel;
+    //[SerializeField] GameObject MenuButtonsPanel;
 
     
     void Start()
@@ -24,12 +24,12 @@ public class StartControls : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
-    private void LoadNextScene()
+    public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

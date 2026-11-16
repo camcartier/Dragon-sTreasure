@@ -48,28 +48,10 @@ public class EnemyMainState : EnemyBaseState
 
         if (stateMachine.isAttacking)
         {
-            /*
-            if (stateMachine.enemyID.IDNumber == 2)
-            {
-                stateMachine.SwitchState(new EnemyLoadingAttackState(stateMachine));
-            }
-            else { stateMachine.SwitchState(new EnemyAttackState(stateMachine)); }
-            */
 
             stateMachine.SwitchState(new EnemyAttackState(stateMachine));
             return;
         }
-
-        /*
-        if (stateMachine.enemyID.IDNumber >= 2)
-        {
-            if (stateMachine.isBurning)
-            {
-                stateMachine.SwitchState(new EnemyBurningState(stateMachine));
-                return;
-            }
-        }
-        */
 
 
         //direction

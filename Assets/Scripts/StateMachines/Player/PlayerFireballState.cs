@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class PlayerFireballState : PlayerBaseState
 {
-    private float fireballEmissionDuration = 1.1f;
+    private float fireballEmissionDuration = 0.95f;
     private float fireballTimerCounter = 0f;
     //private GameObject fireballStartingPoint;
 
-    private readonly int LVL1_FireballHash = Animator.StringToHash("LVL1_Fireball");
-    private readonly int LVL2_FireballHash = Animator.StringToHash("LVL2_Fireball");
+    //private readonly int LVL1_FireballHash = Animator.StringToHash("LVL1_Fireball");
+    //private readonly int LVL2_FireballHash = Animator.StringToHash("LVL2_Fireball");
     //each for each level
-    private List<int> listOfFireballHash = new List<int>();
+    //private List<int> listOfFireballHash = new List<int>();
 
     private readonly int NBase_Fireball = Animator.StringToHash("NBase_Fireball");
-    //private readonly int NBase_Fireball = Animator.StringToHash("NBase_Bite");
 
     public PlayerFireballState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -30,7 +29,6 @@ public class PlayerFireballState : PlayerBaseState
         stateMachine.flappingSound.Stop();
         //stateMachine.fireballSound.Play();
 
-        //Debug.Log("fireball");
         stateMachine.canFireball = false;
         stateMachine.isStunnable = false;
 

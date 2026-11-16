@@ -13,11 +13,6 @@ public class EnemyAttackState : EnemyBaseState
     private float timebeforechangeStateCounter;
 
     
-
-    //enemy ID 2
-    private float delayAfterEnterStateAndBeforeHit = 1f;
-    private float delayAESABHCounter;
-    //private bool startAttack;
    
 
     //turning the prefab
@@ -57,7 +52,7 @@ public class EnemyAttackState : EnemyBaseState
 
         stateMachine.rb2D.velocity = Vector2.zero;
 
-        timebeforechangeStateCounter += Time.deltaTime;
+        timebeforechangeStateCounter += deltaTime;
 
 
         if (timebeforechangeStateCounter >= timebeforechangeState / 5)
@@ -73,8 +68,8 @@ public class EnemyAttackState : EnemyBaseState
             
         }
 
-        //ENEMY ID 2 shield
-        if (stateMachine.enemyID.IDNumber == 2)
+        //ENEMY ID 2 sword
+        if (stateMachine.enemyID.IDNumber == 2|| stateMachine.enemyID.IDNumber == 1)
         {
 
 
@@ -83,14 +78,16 @@ public class EnemyAttackState : EnemyBaseState
                 if (stateMachine.stillAttacking)
                 {
                     stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                    return;
                 }
                 else
                 {
                     stateMachine.SwitchState(new EnemyMainState(stateMachine));
+                    return;
                 }
                    
             }
-            else { ID2AttackTimerCounter += Time.deltaTime; }
+            else { ID2AttackTimerCounter += deltaTime; }
             
     
         }
@@ -100,8 +97,6 @@ public class EnemyAttackState : EnemyBaseState
         if (stateMachine.enemyID.IDNumber == 3 )
         {
 
-
-            Debug.Log("i am archer");
 
             if (!stateMachine.hasInstantiated)
             {
@@ -129,31 +124,21 @@ public class EnemyAttackState : EnemyBaseState
                 if (stateMachine.stillAttacking)
                 {
                     stateMachine.SwitchState(new EnemyAttackState(stateMachine));
+                    return;
                 }
                 else
                 {
                     stateMachine.SwitchState(new EnemyMainState(stateMachine));
+                    return;
                 }
 
             }
-            else { ID3AttackTimerCounter += Time.deltaTime; }
+            else { ID3AttackTimerCounter += deltaTime; }
 
             
 
 
         }
-
-
-
-
-        /*
-        if (attackTimerCounter < stateMachine.attackTimer)
-        {
-            attackTimerCounter += Time.deltaTime;
-        }
-        else { //stateMachine.hasInstantiated = false;
-               attackTimerCounter = 0f; }
-        */
 
 
 
@@ -176,7 +161,8 @@ public class EnemyAttackState : EnemyBaseState
         stateMachine.isInAttackState = false;
 
         timebeforechangeStateCounter = 0f;
-
+        ID2AttackTimerCounter = 0f;
+        ID3AttackTimerCounter = 0f;
 
         stateMachine.rb2D.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
 

@@ -1069,6 +1069,7 @@ MonoBehaviour:
   <hasAlreadyBurnt>k__BackingField: 0
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
+  <Skull>k__BackingField: {fileID: 0}
   <spriteRenderer>k__BackingField: {fileID: 7694351713912350198}
   <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 038caee82b91021408d3bd45bf408987, type: 3}
   <attackPSAirposition>k__BackingField: {fileID: 1279745285425800901}
@@ -1108,6 +1109,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   stateMachineEnemy: {fileID: 5299425713507165692}
   enemyIDNumber: {fileID: 6862377192765784903}
+  killsCount: {fileID: 11400000, guid: e72350aa99f655743b2cbb6ae1cfc216, type: 2}
   MyCurrentHealth: 0
   listOfPossibleLoots:
   - {fileID: 0}

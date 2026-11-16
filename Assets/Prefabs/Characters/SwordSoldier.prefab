@@ -1063,6 +1063,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   stateMachineEnemy: {fileID: 5299425713507165692}
   enemyIDNumber: {fileID: 6862377192765784903}
+  killsCount: {fileID: 11400000, guid: e72350aa99f655743b2cbb6ae1cfc216, type: 2}
   MyCurrentHealth: 0
   listOfPossibleLoots:
   - {fileID: 0}

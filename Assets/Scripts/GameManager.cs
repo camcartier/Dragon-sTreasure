@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] TreasureData treasureData;
+    //[SerializeField] TreasureData treasureData;
 
     [Header("Testing")]
     public float TimerCounter;
@@ -14,9 +15,19 @@ public class GameManager : MonoBehaviour
 
     [Header("Panel")]
     public GameObject DeathPanel;
+    public GameObject PausePanel;
+    public GameObject HeaderPanel;
+    public GameObject AbilitiesPanel;
+    public GameObject KillsPanel;
 
+    public bool isPaused;
+
+    [Header ("Scriptables")]
     [SerializeField] PlayerCurrentHealthAndMana currentPlayerHealthAndMana;
     [SerializeField] PlayerData playerData;
+    [SerializeField] KillsData killCount;
+    [SerializeField] GoldData goldData;
+
     public GameObject player;
 
     public int currentSelectedLoverIndex;
@@ -25,10 +36,18 @@ public class GameManager : MonoBehaviour
     {
 
         currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;
-        
+        killCount.killCount = 0;
+        killCount.swordsKillCount = 0;
+        killCount.horsesKillCount = 0;
+        killCount.sorcerersKillCount = 0;
+        goldData.goldCount = 0;
+
         player = GameObject.Find("Player");
 
-
+        PausePanel.SetActive(false);
+        HeaderPanel.SetActive(true);
+        AbilitiesPanel.SetActive(true);
+        KillsPanel.SetActive(true);
     }
 
     // Start is called before the first frame update
@@ -50,23 +69,42 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+                ActivateDeactivatePauseMenu();
+                isPaused = true;
+            }
+            else { UnPauseGame(); ActivateDeactivatePauseMenu(); isPaused = false; }
 
+        }
+
+        killCount.killCount = killCount.swordsKillCount + killCount.horsesKillCount + killCount.sorcerersKillCount;
 
     }
 
     public void SetActiveDeathPanel()
     {
         DeathPanel.SetActive(true);
+        HeaderPanel.SetActive(false);
+        AbilitiesPanel.SetActive(false);
+        KillsPanel.SetActive(false);
     }
 
-    public void SetActivePauseMenu()
+    public void ActivateDeactivatePauseMenu()
     {
-        //not yet implemented
+        if (!PausePanel.activeInHierarchy == true)
+        {
+            PausePanel.SetActive(true);
+        }
+        else
+        {
+            PausePanel.SetActive(false);
+        }
     }
-    public void RestartCurrent()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+
 
     public void PauseGame()
     {
@@ -80,5 +118,15 @@ public class GameManager : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

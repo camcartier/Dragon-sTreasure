@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -23,6 +22,7 @@ public class Destroyable : MonoBehaviour
     [SerializeField] PlayerData playerData;
     [SerializeField] EnemyStateMachine stateMachineEnemy;
     [SerializeField] EnemyIDNumber enemyIDNumber;
+    [SerializeField] KillsData killsCount;
     private GetAttackTargets getAttackTargets;
 
 
@@ -132,9 +132,10 @@ public class Destroyable : MonoBehaviour
             && !stateMachineEnemy.isBurning 
             && !stateMachineEnemy.hasAlreadyBurnt)
         {
-            stateMachineEnemy.isBurning = true;
+           // stateMachineEnemy.isBurning = true;
         }
-        else { stateMachineEnemy.isBurning = false; }
+        else { //stateMachineEnemy.isBurning = false;
+               }
 
 
         /*
@@ -204,7 +205,20 @@ public class Destroyable : MonoBehaviour
                 {
                     
                         //Instantiate(gameObject.GetComponent<EnemyStateMachine>().Skull, transform.position, new Quaternion(0,0,0,0));
-                        Destroy(gameObject);
+                    if (enemyIDNumber.IDNumber == 1)
+                    {
+                       killsCount.swordsKillCount ++;   
+                    }
+                    if( enemyIDNumber.IDNumber == 2)
+                    {
+                        killsCount.horsesKillCount ++;
+                    }
+                    if (enemyIDNumber.IDNumber == 3)
+                    {
+                        killsCount.sorcerersKillCount ++;
+                    }
+                    
+                    Destroy(gameObject);
                 }
             }
 
