@@ -1,4 +1,5 @@
 using NaughtyAttributes;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -50,12 +51,8 @@ public class Destroyable : MonoBehaviour
     public GameObject[] listOfPossibleLoots = new GameObject[6];
     public bool hasInstantiatedLoot;
 
-    /*
-    private void OnValidate()
-    {
-        //if (MyCurrentHealth <= 0) MyCurrentHealth = 100;   
-    }
-    */
+    public static event Action<int> OnDeath;
+
 
     void Reset()
     {
@@ -86,15 +83,12 @@ public class Destroyable : MonoBehaviour
         }
 
 
-
         if (MyCurrentHealth >= objectData.maxHealth)
         {
             MyCurrentHealth = objectData.maxHealth;
             IsRegen = false;
 
         }
-
-
 
 
         if (IsRepulsed)
@@ -112,21 +106,7 @@ public class Destroyable : MonoBehaviour
             else { RegenHealth(); currentWaitBeforeRegen = 0;  }
         }
 
-        /*
-        if (MyCurrentHealth <= objectData.maxHealth / 2)
-        {
-            if (lastColliderIsBullet)
-            {
-                IsBurning = true; IsRegen = false;
-            }
 
-            /*
-            if (MyCurrentHealth <= objectData.minHealthBurnsStop)
-            {
-                IsBurning = false;
-            }
-
-        }*/
 
         if (MyCurrentHealth - bulletData.BulletDamageArray[playerData.currentLevel] < objectData.maxHealth / 2 
             && !stateMachineEnemy.isBurning 
@@ -136,30 +116,6 @@ public class Destroyable : MonoBehaviour
         }
         else { //stateMachineEnemy.isBurning = false;
                }
-
-
-        /*
-        if (IsBurning)
-        {
-            
-            if (!burningFxHasSpawned)
-            {
-                burningFxInstance = Instantiate(burningFx, new Vector3(transform.position.x, transform.position.y + 16, transform.position.z), Quaternion.identity, gameObject.transform);
-                burningFxHasSpawned = true;
-            }
-
-            currentWaitBeforeNextBurn += Time.deltaTime;
-            if (currentWaitBeforeNextBurn >= objectData.burningSpeed)
-            {
-                BurningHealth(); currentWaitBeforeNextBurn = 0;
-            }
-
-        }
-        else 
-        {
-            
-            burningFxHasSpawned = false;
-        }*/
 
 
 
@@ -175,7 +131,7 @@ public class Destroyable : MonoBehaviour
             {
                 if (gameObject.CompareTag("Yakkuru") == true)
                 {
-                    int lootnum = Random.Range(0, 2);
+                    int lootnum = UnityEngine.Random.Range(0, 2);
                     Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
                     hasInstantiatedLoot = true;
                 }
@@ -187,13 +143,11 @@ public class Destroyable : MonoBehaviour
                 }
                 if (gameObject.CompareTag("Soldier") == true)
                 {
-                    int lootnum = Random.Range(4, 6);
+                    int lootnum = UnityEngine.Random.Range(4, 6);
                     Instantiate(listOfPossibleLoots[lootnum], transform.position, Quaternion.identity);
                     hasInstantiatedLoot = true;
                 }
             }
-
-
 
             //destructionFx.GetComponentInChildren<ParticleSystem>().Play();
 
@@ -217,7 +171,8 @@ public class Destroyable : MonoBehaviour
                     {
                         killsCount.sorcerersKillCount ++;
                     }
-                    
+
+                    OnDeath?.Invoke(1);
                     Destroy(gameObject);
                 }
             }
@@ -243,35 +198,17 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-
         if (collision.gameObject.CompareTag("Bullet"))
         {
-
-
             MyCurrentHealth -= bulletData.BulletDamageArray[playerData.currentLevel];
-            
-            
-
-             
+               
             if (!stateMachineEnemy.isHurt)
             {
                 stateMachineEnemy.isHurt = true;
             }
 
-            /*
-            if (!stateMachineEnemy.isBurning)
-            {
-                stateMachineEnemy.hurtIsReset = true;
-            }
-            */
-             
-   
-
             Destroy(collision.gameObject);
             lastColliderIsBullet = true;
-
-            
 
         }
 

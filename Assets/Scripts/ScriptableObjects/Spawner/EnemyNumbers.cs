@@ -6,10 +6,10 @@ using UnityEngine;
 public class EnemyNumbers : ScriptableObject
 {
     [Header("Princess")]
-    public List<int> totalEnemyNumber = new List<int>();
-    public List<int> swordsMaxNumber = new List<int>();
-    public List<int> horsesMaxNumber = new List<int>();
-    public List<int> sorceresMaxNumber = new List<int>();
+    public List<int> PtotalEnemyNumber = new List<int>();
+    public List<int> PswordsMaxNumber = new List<int>();
+    public List<int> PhorsesMaxNumber = new List<int>();
+    public List<int> PsorceresMaxNumber = new List<int>();
 
 
 }

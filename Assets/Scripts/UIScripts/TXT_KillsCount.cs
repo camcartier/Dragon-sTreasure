@@ -6,9 +6,11 @@ using UnityEngine;
 public class TXT_KillsCount : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI killCountTxt;
-
+    [SerializeField] EnemyNumbers enemyNumbers;
     [SerializeField] KillsData killData;
+    [SerializeField] SpawnerControls spawnerControls;
     public int killSaveValue;
+
 
     void Start()
     {
@@ -29,7 +31,7 @@ public class TXT_KillsCount : MonoBehaviour
         else { return; }*/
         
         //game manager change la valeur
-        killCountTxt.text = (killData.killCount.ToString());
+        killCountTxt.text = (killData.killCount.ToString()) + "/" + (enemyNumbers.PtotalEnemyNumber[spawnerControls.index].ToString());
 
     }
 }

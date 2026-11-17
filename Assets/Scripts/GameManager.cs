@@ -30,10 +30,11 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
 
-    public int currentSelectedLoverIndex;
+    public int currentWaveNumber;
 
     private void Awake()
     {
+        //currentWaveNumber = 1;
 
         currentPlayerHealthAndMana.currentHealth = playerData.MaxHealth;
         killCount.killCount = 0;
@@ -53,6 +54,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         if(SceneManager.GetActiveScene().buildIndex > 1)
         {
             if (player.GetComponent<PlayerStateMachine>().isDead)
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
         }
 
         killCount.killCount = killCount.swordsKillCount + killCount.horsesKillCount + killCount.sorcerersKillCount;
+
 
     }
 
