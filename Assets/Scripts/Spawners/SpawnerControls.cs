@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEditor.Build;
 
 public class SpawnerControls : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class SpawnerControls : MonoBehaviour
     private int currentHorseNumber;
     private int currentSorcererNumber;
     private int currentEnemyNumber;
+    private int numberOfEnemySpawned;
 
     private List<EnemyStateMachine> listOfEnemiesSM = new List<EnemyStateMachine>();
 
@@ -37,12 +40,17 @@ public class SpawnerControls : MonoBehaviour
     public float timeBeforeSorcererSpawn;
     private float spawnSorcererTimerCounter;
 
+    [SerializeField] TextMeshProUGUI testingTXT;
+    public int nbOfSpawnsFromEvent;
+
     private void OnEnable()
     {
         Destroyable.OnDeath += countDeath;
+        Destroyable.OnSpawn += countSpawn;
     }
     private void OnDisable()
     {
+        Destroyable.OnSpawn -= countSpawn;
         Destroyable.OnDeath -= countDeath;
     }
 
@@ -55,55 +63,62 @@ public class SpawnerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        testingTXT.text = nbOfSpawnsFromEvent.ToString();
+
+
 
         listOfEnemiesSM.Clear();
 
         listOfEnemiesSM.AddRange(FindObjectsOfType<EnemyStateMachine>());
         currentEnemyNumber = listOfEnemiesSM.Count;
+        numberOfEnemySpawned = nbOfSpawnsFromEvent;
 
-
-        if (currentEnemyNumber < EnemyNumbers.PtotalEnemyNumber[index])
+        if (numberOfEnemySpawned < EnemyNumbers.PtotalEnemyNumber[index])
         {
-            if (!hasReachedMaxNumber)
+            if (currentEnemyNumber < EnemyNumbers.PtotalEnemyNumber[index])
             {
-                spawnSwordTimerCounter += Time.deltaTime;
-                spawnHorseTimerCounter += Time.deltaTime;
-                spawnSorcererTimerCounter += Time.deltaTime;
-
-                if (spawnSwordTimerCounter >= timeBeforeSwordSpawn)
+                if (!hasReachedMaxNumber)
                 {
-                    SpawnSoldier();
-                    spawnSwordTimerCounter = 0;
-                }
+                    spawnSwordTimerCounter += Time.deltaTime;
+                    spawnHorseTimerCounter += Time.deltaTime;
+                    spawnSorcererTimerCounter += Time.deltaTime;
 
-                if (currentHorseNumber < EnemyNumbers.PhorsesMaxNumber[index])
-                {
-                    if (spawnHorseTimerCounter >= timeBeforeHorseSpawn)
+                    if (spawnSwordTimerCounter >= timeBeforeSwordSpawn)
                     {
-                        SpawnHorse();
-                        spawnHorseTimerCounter = 0;
+                        SpawnSoldier();
+                        spawnSwordTimerCounter = 0;
                     }
-                }
-
-                if (currentSorcererNumber < EnemyNumbers.PsorceresMaxNumber[index])
-                {
-                    if (spawnSorcererTimerCounter >= timeBeforeSorcererSpawn)
+                    if (currentHorseNumber < EnemyNumbers.PhorsesMaxNumber[index])
                     {
-                        SpawnSorcerer();
-                        spawnSorcererTimerCounter = 0;
+                        if (spawnHorseTimerCounter >= timeBeforeHorseSpawn)
+                        {
+                            SpawnHorse();
+                            spawnHorseTimerCounter = 0;
+                        }
+                    }
+                    if (currentSorcererNumber < EnemyNumbers.PsorceresMaxNumber[index])
+                    {
+                        if (spawnSorcererTimerCounter >= timeBeforeSorcererSpawn)
+                        {
+                            SpawnSorcerer();
+                            spawnSorcererTimerCounter = 0;
+                        }
                     }
                 }
             }
-            
         }
-        else { hasReachedMaxNumber = true;  }
+        else { hasReachedMaxNumber = true;   }
 
 
 
         if (KillsData.killCount >= EnemyNumbers.PtotalEnemyNumber[index])
         {
-            index += 1;
+            if (index < EnemyNumbers.PtotalEnemyNumber.Count-1)
+            {
+                index += 1;
+                nbOfSpawnsFromEvent = 0;
+            }
+         
             Debug.Log(index);
             hasReachedMaxNumber = false;
             KillsData.killCount = 0;
@@ -141,5 +156,10 @@ public class SpawnerControls : MonoBehaviour
     {
         Debug.Log("enemy died");
         
+    }
+
+    void countSpawn(int value)
+    {
+        nbOfSpawnsFromEvent += value;
     }
 }

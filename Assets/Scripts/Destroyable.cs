@@ -52,7 +52,7 @@ public class Destroyable : MonoBehaviour
     public bool hasInstantiatedLoot;
 
     public static event Action<int> OnDeath;
-
+    public static event Action<int> OnSpawn;
 
     void Reset()
     {
@@ -63,6 +63,8 @@ public class Destroyable : MonoBehaviour
 
     private void Start()
     {
+        OnSpawn?.Invoke(1);
+
         SetMaxHealth(objectData.maxHealth);
 
         MyCurrentHealth = objectData.maxHealth;
