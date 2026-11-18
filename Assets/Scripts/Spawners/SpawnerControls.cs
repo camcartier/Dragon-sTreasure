@@ -13,12 +13,16 @@ public class SpawnerControls : MonoBehaviour
     [SerializeField] GameObject HorsePrefab;
     [SerializeField] GameObject SorcererPrefab;
 
-    [SerializeField] List<GameObject> SpawnPOS;
+    [SerializeField] List<GameObject> SpawnPOS0;
 
     [SerializeField] EnemyNumbers EnemyNumbers;
     [SerializeField] GameManager GameManager;
     [SerializeField] KillsData KillsData;
 
+    [SerializeField] GameObject SpawnPosTL;
+    [SerializeField] GameObject SpawnPosTR;
+    [SerializeField] GameObject SpawnPosBL;
+    [SerializeField] GameObject SpawnPosBR;
 
     public int index;
     private int currentSwordNumber;
@@ -85,14 +89,14 @@ public class SpawnerControls : MonoBehaviour
 
                     if (spawnSwordTimerCounter >= timeBeforeSwordSpawn)
                     {
-                        SpawnSoldier();
+                        SpawnEnemyQuadrant(SoldierPrefab);
                         spawnSwordTimerCounter = 0;
                     }
                     if (currentHorseNumber < EnemyNumbers.PhorsesMaxNumber[index])
                     {
                         if (spawnHorseTimerCounter >= timeBeforeHorseSpawn)
                         {
-                            SpawnHorse();
+                            SpawnEnemyQuadrant(HorsePrefab);
                             spawnHorseTimerCounter = 0;
                         }
                     }
@@ -100,7 +104,7 @@ public class SpawnerControls : MonoBehaviour
                     {
                         if (spawnSorcererTimerCounter >= timeBeforeSorcererSpawn)
                         {
-                            SpawnSorcerer();
+                            SpawnEnemyQuadrant(SorcererPrefab);
                             spawnSorcererTimerCounter = 0;
                         }
                     }
@@ -132,29 +136,37 @@ public class SpawnerControls : MonoBehaviour
     {
         int index = Random.Range(0, 2);
 
-        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS[index].transform.position.x,
-                                                 SpawnPOS[index].transform.position.y + Random.Range(-300,300)), Quaternion.identity);
-        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS[2].transform.position.x + Random.Range(-300, 300),
-                                               SpawnPOS[2].transform.position.y), Quaternion.identity);
+        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS0[index].transform.position.x,
+                                                 SpawnPOS0[index].transform.position.y + Random.Range(-300,300)), Quaternion.identity);
+        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS0[2].transform.position.x + Random.Range(-300, 300),
+                                               SpawnPOS0[2].transform.position.y), Quaternion.identity);
     }
 
     void SpawnHorse()
     {
         int index = Random.Range(0, 2);
-        Instantiate (HorsePrefab, new Vector2(SpawnPOS[index].transform.position.x,
-                                                 SpawnPOS[index].transform.position.y + Random.Range(-300, 300)), Quaternion.identity);
+        Instantiate (HorsePrefab, new Vector2(SpawnPOS0[index].transform.position.x,
+                                                 SpawnPOS0[index].transform.position.y + Random.Range(-300, 300)), Quaternion.identity);
     }
 
     void SpawnSorcerer()
     {
         int index = Random.Range(0, 2);
-        Instantiate(SorcererPrefab, new Vector2(SpawnPOS[index].transform.position.x,
-                                                 SpawnPOS[index].transform.position.y + Random.Range(-300, 300)), Quaternion.identity);
+        Instantiate(SorcererPrefab, new Vector2(SpawnPOS0[index].transform.position.x,
+                                                 SpawnPOS0[index].transform.position.y + Random.Range(-300, 300)), Quaternion.identity);
+    }
+
+    void SpawnEnemyQuadrant(GameObject EnemyPrefab)
+    {
+        Instantiate(EnemyPrefab, SpawnPosTL.transform.position, Quaternion.identity);
+        Instantiate(EnemyPrefab, SpawnPosTR.transform.position, Quaternion.identity);
+        Instantiate(EnemyPrefab, SpawnPosBL.transform.position, Quaternion.identity);
+        Instantiate(EnemyPrefab, SpawnPosBR.transform.position, Quaternion.identity);
     }
 
     void countDeath(int value)
     {
-        Debug.Log("enemy died");
+        KillsData.totalKillCount += value;
         
     }
 
@@ -162,4 +174,47 @@ public class SpawnerControls : MonoBehaviour
     {
         nbOfSpawnsFromEvent += value;
     }
+
+    /*        if (numberOfEnemySpawned < EnemyNumbers.PtotalEnemyNumber[index])
+        {
+            if (currentEnemyNumber < EnemyNumbers.PtotalEnemyNumber[index])
+            {
+                if (!hasReachedMaxNumber)
+                {
+                    spawnSwordTimerCounter += Time.deltaTime;
+                    spawnHorseTimerCounter += Time.deltaTime;
+                    spawnSorcererTimerCounter += Time.deltaTime;
+
+                    if (spawnSwordTimerCounter >= timeBeforeSwordSpawn)
+                    {
+                        SpawnSoldier();
+                        spawnSwordTimerCounter = 0;
+                    }
+                    if (currentHorseNumber < EnemyNumbers.PhorsesMaxNumber[index])
+                    {
+                        if (spawnHorseTimerCounter >= timeBeforeHorseSpawn)
+                        {
+                            SpawnHorse();
+                            spawnHorseTimerCounter = 0;
+                        }
+                    }
+                    if (currentSorcererNumber < EnemyNumbers.PsorceresMaxNumber[index])
+                    {
+                        if (spawnSorcererTimerCounter >= timeBeforeSorcererSpawn)
+                        {
+                            SpawnSorcerer();
+                            spawnSorcererTimerCounter = 0;
+                        }
+                    }
+                }
+            }
+        }
+        else { hasReachedMaxNumber = true;   }
+    */
+
+
+
+
 }
+
+

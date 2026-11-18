@@ -14,7 +14,7 @@ public class HighScore_V1 : MonoBehaviour
     void Start()
     {
         goldsTXT.text = "Total gold : " + goldData.goldCount;
-        killsTXT.text = "Total kills : " + killData.killCount;
+        killsTXT.text = "Total kills : " + killData.totalKillCount;
     }
 
     // Update is called once per frame

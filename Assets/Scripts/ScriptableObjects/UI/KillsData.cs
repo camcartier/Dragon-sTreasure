@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class KillsData : ScriptableObject
 {
+    [Header("Highscore")]
+    public int totalKillCount;
+
     [Header ("Total")]
     public int killCount;
 
