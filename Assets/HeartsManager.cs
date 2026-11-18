@@ -10,7 +10,31 @@ public class HeartsManager : MonoBehaviour
     [SerializeField] PlayerCurrentHealthAndMana playerCurrentHealth;
     [SerializeField] PlayerData playerData;
 
-    // Start is called before the first frame update
+    void Start()
+    {
+        for (int i = 0; i < playerData.MaxHealth / 2; i++)
+        {
+            emptyHearts[i].SetActive(true);
+        }
+
+        UpdateHearts();
+    }
+
+    void Update()
+    {
+        UpdateHearts();
+    }
+
+    void UpdateHearts()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            // Le cœur est actif seulement si son index est inférieur à la vie actuelle
+            hearts[i].SetActive(i < playerCurrentHealth.currentHealth);
+        }
+    }
+
+    /*
     void Start()
     {
 
@@ -32,7 +56,6 @@ public class HeartsManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i = hearts.Length-1; i >= playerCurrentHealth.currentHealth; i--)
@@ -47,4 +70,6 @@ public class HeartsManager : MonoBehaviour
             hearts[i].SetActive(false);
         }
     }
+
+    */
 }
