@@ -46,9 +46,10 @@ public class GameManager : MonoBehaviour
         player = GameObject.Find("Player");
 
         PausePanel.SetActive(false);
-        HeaderPanel.SetActive(true);
-        AbilitiesPanel.SetActive(true);
-        KillsPanel.SetActive(true);
+        if (HeaderPanel != null){  HeaderPanel.SetActive(true); }
+        if (AbilitiesPanel != null) { AbilitiesPanel.SetActive(true); }
+        if (KillsPanel != null) {  KillsPanel.SetActive(true); }
+        
     }
 
     // Start is called before the first frame update
