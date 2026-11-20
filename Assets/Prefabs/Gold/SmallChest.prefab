@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 1881254762797329913}
   m_Layer: 11
   m_Name: SmallChest
-  m_TagString: Gold
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

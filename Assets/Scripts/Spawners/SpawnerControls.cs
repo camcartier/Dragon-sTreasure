@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class SpawnerControls : MonoBehaviour
 {
@@ -45,6 +46,8 @@ public class SpawnerControls : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI testingTXT;
     public int nbOfSpawnsFromEvent;
+
+    public static event Action AWaveSpawned; 
 
     private void OnEnable()
     {
@@ -108,9 +111,10 @@ public class SpawnerControls : MonoBehaviour
                         }
                     }
                 }
+                else { hasReachedMaxNumber = true;  }
             }
         }
-        else { hasReachedMaxNumber = true;   }
+        
 
 
 
@@ -128,31 +132,32 @@ public class SpawnerControls : MonoBehaviour
             KillsData.swordsKillCount=0;
             KillsData.horsesKillCount=0;
             KillsData.sorcerersKillCount=0;
+            AWaveSpawned?.Invoke();
         }
     }
 
     void SpawnSoldier()
     {
-        int index = Random.Range(0, 2);
+        int index = UnityEngine.Random.Range(0, 2);
 
         Instantiate(SoldierPrefab, new Vector2 (SpawnPOS0[index].transform.position.x,
-                                                 SpawnPOS0[index].transform.position.y + Random.Range(-300,300)), Quaternion.identity);
-        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS0[2].transform.position.x + Random.Range(-300, 300),
+                                                 SpawnPOS0[index].transform.position.y + UnityEngine.Random.Range(-300,300)), Quaternion.identity);
+        Instantiate(SoldierPrefab, new Vector2 (SpawnPOS0[2].transform.position.x + UnityEngine.Random.Range(-300, 300),
                                                SpawnPOS0[2].transform.position.y), Quaternion.identity);
     }
 
     void SpawnHorse()
     {
-        int index = Random.Range(0, 2);
+        int index = UnityEngine.Random.Range(0, 2);
         Instantiate (HorsePrefab, new Vector2(SpawnPOS0[index].transform.position.x,
-                                                 SpawnPOS0[index].transform.position.y + Random.Range(-300, 300)), Quaternion.identity);
+                                                 SpawnPOS0[index].transform.position.y + UnityEngine.Random.Range(-300, 300)), Quaternion.identity);
     }
 
     void SpawnSorcerer()
     {
-        int index = Random.Range(0, 2);
+        int index = UnityEngine.Random.Range(0, 2);
         Instantiate(SorcererPrefab, new Vector2(SpawnPOS0[index].transform.position.x,
-                                                 SpawnPOS0[index].transform.position.y + Random.Range(-300, 300)), Quaternion.identity);
+                                                 SpawnPOS0[index].transform.position.y + UnityEngine.Random.Range(-300, 300)), Quaternion.identity);
     }
 
     void SpawnEnemyQuadrant(GameObject EnemyPrefab)

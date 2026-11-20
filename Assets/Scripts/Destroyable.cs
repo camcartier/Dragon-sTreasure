@@ -234,7 +234,7 @@ public class Destroyable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fireball"))
         {
-            Debug.Log("fireball touched");
+            //Debug.Log("fireball touched");
             MyCurrentHealth -= bulletData.FireballDamageArray[playerData.currentLevel];
 
             gameObject.GetComponent<EnemyStateMachine>().isHit = true;

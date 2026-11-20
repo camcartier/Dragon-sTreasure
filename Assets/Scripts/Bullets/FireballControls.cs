@@ -49,7 +49,7 @@ public class FireballControls : MonoBehaviour
     {
         if (collision.gameObject.GetComponentInParent<Destroyable>())
         {
-            Debug.Log("HEADSHOT");
+            //Debug.Log("HEADSHOT");
         }
     }
 }

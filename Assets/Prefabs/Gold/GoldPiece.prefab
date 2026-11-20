@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8024907820477229463}
   m_Layer: 11
   m_Name: GoldPiece
-  m_TagString: Gold
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

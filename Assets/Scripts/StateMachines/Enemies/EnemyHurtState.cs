@@ -14,7 +14,7 @@ public class EnemyHurtState : EnemyBaseState
 
     public override void Enter()
     {
-        Debug.Log("in hurt state");
+        //Debug.Log("in hurt state");
         
         stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
@@ -65,7 +65,7 @@ public class EnemyHurtState : EnemyBaseState
         stateMachine.isHurt = false;
         stateMachine.isHit = false;
 
-        Debug.Log("out hurt state");
+        //Debug.Log("out hurt state");
 
         //stateMachine.walkTowards.isFollowing = true;
     }
