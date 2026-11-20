@@ -1024,6 +1024,7 @@ MonoBehaviour:
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
   <Skull>k__BackingField: {fileID: 6971560773099277409, guid: 191658bdda9d90d43b12b84b26cb5e11, type: 3}
+  <DeathPS>k__BackingField: {fileID: 9100096975892699767, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
   <spriteRenderer>k__BackingField: {fileID: 7694351713912350198}
   <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 48ec1afacc07d604181579786ab89e03, type: 3}
   <attackPSAirposition>k__BackingField: {fileID: 1279745285425800901}
@@ -1057,7 +1058,7 @@ MonoBehaviour:
   objectData: {fileID: 11400000, guid: 49b6ef3e2246a2c4aaf4ead0e0ffb6fb, type: 2}
   healthPanel: {fileID: 1527831968397726526}
   healthSlider: {fileID: 3619288009727063929}
-  destructionFx: {fileID: 0}
+  destructionFx: {fileID: 1686229333684010802, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
   burningFx: {fileID: 0}
   bulletData: {fileID: 11400000, guid: 4aaf37a5a3e11ea488af2876c3c9d395, type: 2}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}

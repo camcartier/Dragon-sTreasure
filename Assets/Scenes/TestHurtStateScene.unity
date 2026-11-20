@@ -14844,6 +14844,7 @@ MonoBehaviour:
   goldCount: {fileID: 0}
   thisLootValue: {fileID: 0}
   PlayerHealthAndMana: {fileID: 0}
+  GoldPSPrefab: {fileID: 0}
 --- !u!1 &2038733862
 GameObject:
   m_ObjectHideFlags: 0

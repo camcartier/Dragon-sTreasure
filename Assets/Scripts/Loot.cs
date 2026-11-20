@@ -24,7 +24,7 @@ public class Loot : MonoBehaviour
 
             goldCount.goldCount += thisLootValue.GoldValue;
             PlayerHealthAndMana.currentHealth += thisLootValue.HealthValue;
-            Instantiate(GoldPSPrefab, collision.gameObject.GetComponent<PlayerStateMachine>().goldFXPOS.transform.position, Quaternion.identity, collision.gameObject.GetComponent<PlayerStateMachine>().goldFXPOS.transform);
+            Instantiate(GoldPSPrefab, collision.gameObject.GetComponent<PlayerStateMachine>().goldFXPOS.transform.position, new Quaternion(0,0,0,0), collision.gameObject.GetComponent<PlayerStateMachine>().goldFXPOS.transform);
             Destroy(this.gameObject);
         }
 

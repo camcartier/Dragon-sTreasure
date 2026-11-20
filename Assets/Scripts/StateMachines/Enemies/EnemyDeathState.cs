@@ -17,6 +17,7 @@ public class EnemyDeathState : EnemyBaseState
 
         //Debug.Log(stateMachine.rb2D);
 
+        GameObject.Instantiate(stateMachine.DeathPS, stateMachine.transform.position, Quaternion.identity);
         stateMachine.Animator.Play("Death");
     }
 

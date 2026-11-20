@@ -52,7 +52,7 @@ public class EnemyStateMachine : StateMachine
     [field: SerializeField] public bool isStuned { get; set; }
     [field: SerializeField] public bool isDead { get; set; }
     [field: SerializeField] public GameObject Skull { get; private set; }
-
+    [field: SerializeField] public GameObject DeathPS { get; private set; }
 
     [field: SerializeField] public SpriteRenderer spriteRenderer { get; set; }
 

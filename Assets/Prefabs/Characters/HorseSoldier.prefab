@@ -373,6 +373,7 @@ MonoBehaviour:
   <isStuned>k__BackingField: 0
   <isDead>k__BackingField: 0
   <Skull>k__BackingField: {fileID: 0}
+  <DeathPS>k__BackingField: {fileID: 9100096975892699767, guid: ec906703103acd049beb5f2fb6304eec, type: 3}
   <spriteRenderer>k__BackingField: {fileID: 4785121132205214600}
   <attackPSHit>k__BackingField: {fileID: 5884306972038935457, guid: 48ec1afacc07d604181579786ab89e03, type: 3}
   <attackPSAirposition>k__BackingField: {fileID: 5245956542749725251}

@@ -120,7 +120,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public AudioSource flappingSound { get; set; }
     [field: SerializeField] public AudioSource dashingSound { get; set; }
     [field: SerializeField] public AudioSource fireballSound { get; set; }
-
+    [field: SerializeField] public AudioSource biteSound { get; set; }
 
 
     //[field: SerializeField] public GameObject StartingTextPanel { get; private set; }
