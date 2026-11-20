@@ -1618,6 +1618,7 @@ GameObject:
   - component: {fileID: 238244701}
   - component: {fileID: 238244700}
   - component: {fileID: 238244699}
+  - component: {fileID: 238244702}
   m_Layer: 5
   m_Name: TRYButton
   m_TagString: Untagged
@@ -1740,6 +1741,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238244697}
   m_CullTransparentMesh: 1
+--- !u!114 &238244702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238244697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564ab233f6f619944844aa4fcda03e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.1, y: 1.1, z: 1}
 --- !u!1 &240057231
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,6 +6577,7 @@ GameObject:
   - component: {fileID: 868673896}
   - component: {fileID: 868673895}
   - component: {fileID: 868673894}
+  - component: {fileID: 868673897}
   m_Layer: 5
   m_Name: QUITButton
   m_TagString: Untagged
@@ -6685,6 +6700,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868673892}
   m_CullTransparentMesh: 1
+--- !u!114 &868673897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868673892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564ab233f6f619944844aa4fcda03e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.1, y: 1.1, z: 1}
 --- !u!1 &894642994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7911,6 +7939,7 @@ GameObject:
   - component: {fileID: 1053070411}
   - component: {fileID: 1053070410}
   - component: {fileID: 1053070409}
+  - component: {fileID: 1053070412}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -8033,6 +8062,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053070407}
   m_CullTransparentMesh: 1
+--- !u!114 &1053070412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053070407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564ab233f6f619944844aa4fcda03e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.1, y: 1.1, z: 1}
 --- !u!1 &1055481177
 GameObject:
   m_ObjectHideFlags: 0
@@ -9942,6 +9984,7 @@ GameObject:
   - component: {fileID: 1301136721}
   - component: {fileID: 1301136720}
   - component: {fileID: 1301136719}
+  - component: {fileID: 1301136722}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -10064,6 +10107,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301136717}
   m_CullTransparentMesh: 1
+--- !u!114 &1301136722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301136717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564ab233f6f619944844aa4fcda03e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.1, y: 1.1, z: 1}
 --- !u!1 &1339145179
 GameObject:
   m_ObjectHideFlags: 0
@@ -12982,6 +13038,7 @@ GameObject:
   - component: {fileID: 1758323814}
   - component: {fileID: 1758323813}
   - component: {fileID: 1758323812}
+  - component: {fileID: 1758323815}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -13116,6 +13173,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758323810}
   m_CullTransparentMesh: 1
+--- !u!114 &1758323815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758323810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564ab233f6f619944844aa4fcda03e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: {x: 1.1, y: 1.1, z: 1}
 --- !u!1 &1766356306
 GameObject:
   m_ObjectHideFlags: 0
