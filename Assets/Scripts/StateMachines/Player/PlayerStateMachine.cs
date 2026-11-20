@@ -98,11 +98,14 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float repulseCooldownCounter { get; set; }
 
     //Leveling up
-    [field: SerializeField] public int currentLevelStored { get; set; }
-    [field: SerializeField] public TreasureData TreasureData { get; set; }
-    [field: SerializeField] public LevelingUpTimer LevelingUpTimer { get; set; }
+    //[field: SerializeField] public int currentLevelStored { get; set; }
+    //[field: SerializeField] public TreasureData TreasureData { get; set; }
+    //[field: SerializeField] public LevelingUpTimer LevelingUpTimer { get; set; }
 
-    public List<GameObject> LvlsObjects = new List<GameObject> ();
+    //public List<GameObject> LvlsObjects = new List<GameObject> ();
+
+
+    [field: SerializeField] public GameObject goldFXPOS { get; set; }
 
     //General
     public GameManager GameManager { get; set; }

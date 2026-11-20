@@ -264,6 +264,7 @@ MonoBehaviour:
   goldCount: {fileID: 11400000, guid: 421070bd531b09c4aaa9b22276157187, type: 2}
   thisLootValue: {fileID: 11400000, guid: 5f58e71844d9c7649be07a1ed3877d85, type: 2}
   PlayerHealthAndMana: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
+  GoldPSPrefab: {fileID: 4506599065298005568, guid: 77aab778dbde2974fa601efb2ebbf36c, type: 3}
 --- !u!1 &6325354317133666022
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class PlayerLevelingUpState : PlayerBaseState
         stateMachine.PlayerVisualsAndCollidersGO.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
         stateMachine.GameManager.PauseGame();
 
-        stateMachine.LevelingUpTimer.StartCoroutine(stateMachine.LevelingUpTimer.countingLevelUp());
+        //stateMachine.LevelingUpTimer.StartCoroutine(stateMachine.LevelingUpTimer.countingLevelUp());
         //stateMachine.CameraCoroutines.StartCoroutine(stateMachine.CameraCoroutines.LerpDezoomCamera());
 
         
@@ -28,7 +28,7 @@ public class PlayerLevelingUpState : PlayerBaseState
     }
     public override void Exit()
     {
-        stateMachine.currentLevelStored += 1;
+        //stateMachine.currentLevelStored += 1;
         stateMachine.PlayerVisualsAndCollidersGO.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         stateMachine.GameManager.UnPauseGame();
 

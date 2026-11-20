@@ -268,10 +268,9 @@ Transform:
   - {fileID: 3884045060633610854}
   - {fileID: 3534380203122937055}
   - {fileID: 6855757345211780610}
-  - {fileID: 769869981878959873}
   - {fileID: 6159479818231201813}
   - {fileID: 160584106019905025}
-  - {fileID: 555310139468691676}
+  - {fileID: 3791159168406754947}
   m_Father: {fileID: 5303012427385822974}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,13 +297,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538361059963673825}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 45, y: 35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9025353642850110306}
-  m_RootOrder: 6
+  m_Father: {fileID: 3791159168406754947}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1903614020001868552
 GameObject:
@@ -374,13 +373,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010943199372593793}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7, y: -0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9025353642850110306}
-  m_RootOrder: 3
+  m_Father: {fileID: 3791159168406754947}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3999552288910849269
 MonoBehaviour:
@@ -521,6 +520,71 @@ CircleCollider2D:
   m_Offset: {x: -1.02, y: 12}
   serializedVersion: 2
   m_Radius: 30
+--- !u!1 &4904523059426982380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7704202042428760511}
+  m_Layer: 3
+  m_Name: GoldFX_POS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7704202042428760511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4904523059426982380}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15, y: 45, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3791159168406754947}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4931333511995232883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3791159168406754947}
+  m_Layer: 3
+  m_Name: FXS_POS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3791159168406754947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4931333511995232883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 555310139468691676}
+  - {fileID: 7704202042428760511}
+  - {fileID: 769869981878959873}
+  m_Father: {fileID: 9025353642850110306}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5610117372633554883
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +618,7 @@ Transform:
   - {fileID: 8527566923230855153}
   - {fileID: 1819559411390266337}
   m_Father: {fileID: 9025353642850110306}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5869551314944903219
 GameObject:
@@ -647,9 +711,7 @@ GameObject:
   - component: {fileID: 9033838750334023689}
   - component: {fileID: 5001503474633560126}
   - component: {fileID: 8964317341285677106}
-  - component: {fileID: -8877131050200906242}
   - component: {fileID: 706902093216072592}
-  - component: {fileID: 5201265234941269172}
   - component: {fileID: 4326057434174692476}
   m_Layer: 3
   m_Name: Player
@@ -744,11 +806,10 @@ MonoBehaviour:
   <PlayerData>k__BackingField: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
   <PlayerCurrentHealthAndMana>k__BackingField: {fileID: 11400000, guid: 9285271469658db42b5065dc531830d2, type: 2}
   PlayerManaManager: {fileID: 8964317341285677106}
+  <facingRight>k__BackingField: 0
   <canFire>k__BackingField: 0
   <isFiring>k__BackingField: 0
   <BulletPrefab>k__BackingField: {fileID: 7257310845112473216, guid: 87fb1cce92c99ba418d8881c62f66436, type: 3}
-  <hasInfiniteMana>k__BackingField: 0
-  <diggingFX>k__BackingField: {fileID: 694227991297681290, guid: 85294e58309b04c4a888b6cdf836c235, type: 3}
   <isAttacking>k__BackingField: 0
   <isStunnable>k__BackingField: 0
   <stunDuration>k__BackingField: 0.5
@@ -860,7 +921,6 @@ MonoBehaviour:
     m_RotationOrder: 4
   <canDash>k__BackingField: 0
   <isDashing>k__BackingField: 0
-  <dashDuration>k__BackingField: 0.3
   <dashCooldownCounter>k__BackingField: 0
   <lastMovementDirection>k__BackingField: {x: 0, y: 0}
   <canFireball>k__BackingField: 0
@@ -870,12 +930,7 @@ MonoBehaviour:
   <FireBreathPS>k__BackingField: {fileID: 69400686310139866, guid: 23fddc2d68e248f4eae877b491099b0d, type: 3}
   <canRepulse>k__BackingField: 0
   <repulseCooldownCounter>k__BackingField: 0
-  <currentLevelStored>k__BackingField: 0
-  <TreasureData>k__BackingField: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
-  <LevelingUpTimer>k__BackingField: {fileID: -8877131050200906242}
-  LvlsObjects:
-  - {fileID: 1134238745312961694}
-  - {fileID: 0}
+  <goldFXPOS>k__BackingField: {fileID: 4904523059426982380}
   <InstantiateStuff>k__BackingField: {fileID: 4326057434174692476}
   <CameraCoroutines>k__BackingField: {fileID: 0}
   <CameraData>k__BackingField: {fileID: 0}
@@ -911,19 +966,6 @@ MonoBehaviour:
   treasureData: {fileID: 11400000, guid: 4e4e640b52f89a64f9dabe19c362dfc6, type: 2}
   ManaDepletionTimer: 0
   ManaDepletionTimerCounter: 0
---- !u!114 &-8877131050200906242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509603958421342453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93a769152eab704887e5c6210bee743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStateMachine: {fileID: 9033838750334023689}
 --- !u!114 &706902093216072592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,19 +980,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStateMachine: {fileID: 9033838750334023689}
   playerData: {fileID: 11400000, guid: aed181f16ba99a94aa5341a6f388f129, type: 2}
---- !u!114 &5201265234941269172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6509603958421342453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc033f815f883444acf94d044a5ea8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 9050391348230091813}
+  dashCooldownCounter: 0
+  fireballCooldownCounter: 0
+  repulseCooldownCounter: 0
+  dashFillImage: {fileID: 0}
+  fireballFillImage: {fileID: 0}
+  repulseFillImage: {fileID: 0}
 --- !u!114 &4326057434174692476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,7 +1525,7 @@ Transform:
   m_Children:
   - {fileID: 4905174381984655247}
   m_Father: {fileID: 9025353642850110306}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6644672698973902889
 MonoBehaviour:

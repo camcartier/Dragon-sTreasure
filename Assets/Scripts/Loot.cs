@@ -11,7 +11,7 @@ public class Loot : MonoBehaviour
     [SerializeField] LootValues thisLootValue;
 
     [SerializeField] PlayerCurrentHealthAndMana PlayerHealthAndMana;
-
+    [SerializeField] GameObject GoldPSPrefab;
 
     private void Start()
     {
@@ -24,6 +24,7 @@ public class Loot : MonoBehaviour
 
             goldCount.goldCount += thisLootValue.GoldValue;
             PlayerHealthAndMana.currentHealth += thisLootValue.HealthValue;
+            Instantiate(GoldPSPrefab, collision.gameObject.GetComponent<PlayerStateMachine>().goldFXPOS.transform.position, Quaternion.identity, collision.gameObject.GetComponent<PlayerStateMachine>().goldFXPOS.transform);
             Destroy(this.gameObject);
         }
 
