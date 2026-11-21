@@ -27,6 +27,9 @@ public class PlayerRepulseState : PlayerBaseState
         stateMachine.rb2D.velocity = Vector3.zero;
         stateMachine.MainSpriteRenderer.color = Color.green;
 
+        GameObject.Instantiate(stateMachine.repulseFX, stateMachine.transform.position, Quaternion.identity);
+        GameObject.Instantiate(stateMachine.repulsePS, stateMachine.transform.position, Quaternion.identity);
+
         stateMachine.PlayerCoroutinesScript.StartCoroutine(stateMachine.PlayerCoroutinesScript.countingRepulseReload());
 
         ApplyExplosionForce();

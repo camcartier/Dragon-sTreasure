@@ -930,6 +930,8 @@ MonoBehaviour:
   <FireBreathPS>k__BackingField: {fileID: 69400686310139866, guid: 23fddc2d68e248f4eae877b491099b0d, type: 3}
   <canRepulse>k__BackingField: 0
   <repulseCooldownCounter>k__BackingField: 0
+  <repulseFX>k__BackingField: {fileID: 3567537045727272948, guid: d51c4b9fffbf9d947abbdd4ba96a0a0d, type: 3}
+  <repulsePS>k__BackingField: {fileID: 8005033341563522687, guid: ac6f4cfe6415fdd44a33ae9302e2c4b8, type: 3}
   <goldFXPOS>k__BackingField: {fileID: 4904523059426982380}
   <InstantiateStuff>k__BackingField: {fileID: 4326057434174692476}
   <CameraCoroutines>k__BackingField: {fileID: 0}

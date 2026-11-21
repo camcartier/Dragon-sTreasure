@@ -9,6 +9,7 @@ public class MenuControls : MonoBehaviour
     //[SerializeField] GameObject MenuButtonsPanel;
     [SerializeField] GameObject CreditsPanel;
     [SerializeField] GameObject OptionsPanel;
+    [SerializeField] GameObject AchievementPanel;
 
     [SerializeField] Animator blackScreenAnimator;
     [SerializeField] GameObject blackScreen;
@@ -46,6 +47,18 @@ public class MenuControls : MonoBehaviour
                 OptionsPanel.SetActive(false);
             }
             else { OptionsPanel.SetActive(true); }
+        }
+    }
+
+    public void OpenHideAchievements()
+    {
+        if (AchievementPanel != null)
+        {
+            if (AchievementPanel.activeInHierarchy == true)
+            {
+                AchievementPanel.SetActive(false);
+            }
+            else { AchievementPanel.SetActive(true); }
         }
     }
     public void LoadGameScene()

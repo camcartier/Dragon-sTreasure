@@ -70,8 +70,8 @@ public class PlayerStateMachine : StateMachine
 
     //Animation curves
     [field: SerializeField] public AnimationCurve HeadbuttCurve { get; set; }
-    [field: SerializeField] public GameObject HeadbuttFXPOS { get; set; }
-    [field: SerializeField] public GameObject HeadbuttFXPrefab { get; set; }
+    [field: SerializeField] public GameObject HeadbuttFXPOS { get; private set; }
+    [field: SerializeField] public GameObject HeadbuttFXPrefab { get; private set; }
     [field: SerializeField] public AnimationCurve BiteCurve { get; set; }
     [field: SerializeField] public AnimationCurve DashCurve { get; set; }
 
@@ -96,6 +96,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public bool canRepulse { get; set; }
     //[field: SerializeField] public int repulseForce { get; set; }
     [field: SerializeField] public float repulseCooldownCounter { get; set; }
+    [field: SerializeField] public GameObject repulseFX { get; private set; }
+    [field: SerializeField] public GameObject repulsePS { get; private set; }
 
     //Leveling up
     //[field: SerializeField] public int currentLevelStored { get; set; }
