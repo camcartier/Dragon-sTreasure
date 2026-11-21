@@ -9,6 +9,9 @@ using System;
 
 public class SpawnerControls : MonoBehaviour
 {
+    [SerializeField] GameManager gameManager;
+    [SerializeField] WinT1 wint1;
+
     [SerializeField] GameObject SoldierPrefab;
     [SerializeField] GameObject HorsePrefab;
     [SerializeField] GameObject SorcererPrefab;
@@ -120,13 +123,20 @@ public class SpawnerControls : MonoBehaviour
 
         if (KillsData.killCount >= EnemyNumbers.PtotalEnemyNumber[index])
         {
+           
+
             if (index < EnemyNumbers.PtotalEnemyNumber.Count-1)
             {
                 index += 1;
                 nbOfSpawnsFromEvent = 0;
             }
-         
-            Debug.Log(index);
+            else if (index == EnemyNumbers.PtotalEnemyNumber.Count - 1)
+            {
+                //gameManager.hasWon = true;
+                wint1.hasWon = true;
+            }
+
+                Debug.Log(index);
             hasReachedMaxNumber = false;
             KillsData.killCount = 0;
             KillsData.swordsKillCount=0;

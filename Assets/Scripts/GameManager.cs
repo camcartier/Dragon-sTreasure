@@ -28,9 +28,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] KillsData killCount;
     [SerializeField] GoldData goldData;
 
+    [Header("Others")]
+    [SerializeField] GameObject blackScreenPanel;
+    [SerializeField] Animator blackScreenAnimator;
+
     public GameObject player;
 
     public int currentWaveNumber;
+
+    public bool hasWon;
+
 
     private void Awake()
     {
@@ -55,9 +62,15 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (blackScreenPanel != null) { if (blackScreenPanel.activeInHierarchy == false)
+            {
+                blackScreenPanel.SetActive(true);
+                StartCoroutine(BlackScreenFadeOut());
+            }
+        }
+           
 
-
-        if(SceneManager.GetActiveScene().buildIndex > 1)
+        if (SceneManager.GetActiveScene().buildIndex > 1)
         {
             if (player.GetComponent<PlayerStateMachine>().isDead)
             {
@@ -72,6 +85,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -87,7 +101,10 @@ public class GameManager : MonoBehaviour
 
         killCount.killCount = killCount.swordsKillCount + killCount.horsesKillCount + killCount.sorcerersKillCount;
 
+        if (hasWon)
+        {
 
+        }
     }
 
     public void SetActiveDeathPanel()
@@ -134,4 +151,12 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public IEnumerator BlackScreenFadeOut()
+    {
+        blackScreenAnimator.Play("fadeOut");
+        yield return new WaitForSecondsRealtime(1.25f);
+        blackScreenPanel.SetActive(false);
+    }
+
 }

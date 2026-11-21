@@ -20,7 +20,8 @@ public class DialogManager2 : MonoBehaviour
     [SerializeField] GameObject dialogPanel;
     [SerializeField] PlayableDirector timeline;
     [SerializeField] GameManager gameManager;
-
+    [SerializeField] GameObject blackPanel;
+    [SerializeField] Animator animator;
 
     private int index;
 
@@ -45,14 +46,23 @@ public class DialogManager2 : MonoBehaviour
     {
   
 
-        if (index <= 10)
+        if (index < 10)
         {
             index += 1;
         }
-        else
+        else if (index == 10)
         {
-            gameManager.LoadNextScene();
+            gameManager.UnPauseGame();
+            StartCoroutine(NextSceneWithBlackScreeen());
         }
 
+    }
+
+    private IEnumerator NextSceneWithBlackScreeen()
+    {
+        blackPanel.SetActive(true);
+        animator.Play("fadeIn");
+        yield return new WaitForSecondsRealtime(1.25f);
+        gameManager.LoadNextScene();
     }
 }
