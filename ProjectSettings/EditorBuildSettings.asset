@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Explanation.unity
     guid: 2abeb520403a6fa4fb4f01a22049e8ea
   - enabled: 1
-    path: Assets/Scenes/TestHurtStateScene.unity
+    path: Assets/Scenes/TestGameScene.unity
     guid: f0b71520f86c24e419693ae2a53367a2
   m_configObjects: {}

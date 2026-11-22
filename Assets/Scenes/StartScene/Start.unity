@@ -2109,7 +2109,7 @@ MonoBehaviour:
   targetsize: 1.2
   doesPulse: 1
   glowDuration: 0.8
-  pulseDuration: 1.075
+  pulseDuration: 1.2
 --- !u!1 &463498451
 GameObject:
   m_ObjectHideFlags: 0
@@ -6362,9 +6362,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1547239772}
-  color1: {r: 1, g: 1, b: 1, a: 1}
-  color2: {r: 1, g: 0.7045615, b: 0, a: 1}
-  duration: 3
+  color1: {r: 1, g: 0.6964086, b: 0, a: 1}
+  color2: {r: 1, g: 1, b: 1, a: 1}
+  duration: 1.2
 --- !u!114 &1547239776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6383,8 +6383,8 @@ MonoBehaviour:
   doesGlow: 0
   targetsize: 1.075
   doesPulse: 1
-  glowDuration: 0.8
-  pulseDuration: 1.075
+  glowDuration: 1.075
+  pulseDuration: 1.2
 --- !u!1 &1586959889
 GameObject:
   m_ObjectHideFlags: 0
@@ -6979,7 +6979,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 1
+  prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1

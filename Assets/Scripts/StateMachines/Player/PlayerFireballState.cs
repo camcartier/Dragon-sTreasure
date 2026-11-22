@@ -28,6 +28,8 @@ public class PlayerFireballState : PlayerBaseState
         stateMachine.Animator.Play(NBase_Fireball);
         stateMachine.flappingSound.Stop();
         stateMachine.fireballSound.Play();
+        //rend pas bien
+        //stateMachine.growlSound.Play();
 
         stateMachine.canFireball = false;
         stateMachine.isStunnable = false;

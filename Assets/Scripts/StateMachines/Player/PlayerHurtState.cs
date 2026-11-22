@@ -14,13 +14,6 @@ public class PlayerHurtState : PlayerBaseState
     private PlayerCollisionListener collisionListener;
 
 
-    private readonly int LVL1_HurtHash = Animator.StringToHash("LVL1_Hurt");
-    private readonly int LVL2_HurtHash = Animator.StringToHash("LVL2_Hurt");
-    private readonly int LVL3_HurtHash = Animator.StringToHash("LVL3_Hurt");
-    private readonly int LVL4_HurtHash = Animator.StringToHash("LVL4_Hurt");
-    private readonly int LVL5_HurtHash = Animator.StringToHash("LVL5_Hurt");
-    //each for each level
-    private List<int> listOfHurtHash = new List<int>();
 
     private readonly int NBase_Hurt = Animator.StringToHash("NBase_Hurt");
 
@@ -32,6 +25,7 @@ public class PlayerHurtState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.flappingSound.Stop();
+        stateMachine.hurtSound.Play();
         stateMachine.Animator.Play(NBase_Hurt);
 
         Debug.Log("enter hurt state");

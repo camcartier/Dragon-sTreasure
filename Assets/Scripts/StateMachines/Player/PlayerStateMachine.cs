@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,8 +33,8 @@ public class PlayerStateMachine : StateMachine
 
 
     //Firing bullets
-    [field: SerializeField] public bool canFire { get; private set; }
-    [field: SerializeField] public bool isFiring { get; private set; }
+    //[field: SerializeField] public bool canFire { get; private set; }
+    //[field: SerializeField] public bool isFiring { get; private set; }
     [field: SerializeField] public GameObject BulletPrefab { get; private set; }
     //[field: SerializeField] public bool hasInfiniteMana { get; set; }
 
@@ -44,6 +45,7 @@ public class PlayerStateMachine : StateMachine
 
 
     //stun and knockback
+    public string KNOCKBACK;
     [field: SerializeField] public bool isStunnable { get;  set; }
     [field: SerializeField] public float stunDuration { get; set; }
     [field: SerializeField] public Vector2 knockbackDirection { get; set; }
@@ -73,10 +75,12 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public GameObject HeadbuttFXPOS { get; private set; }
     [field: SerializeField] public GameObject HeadbuttFXPrefab { get; private set; }
     [field: SerializeField] public AnimationCurve BiteCurve { get; set; }
-    [field: SerializeField] public AnimationCurve DashCurve { get; set; }
+
 
 
     //Dash
+    public string DASH;
+    [field: SerializeField] public AnimationCurve DashCurve { get; set; }
     [field: SerializeField] public bool canDash { get; set; }
     [field: SerializeField] public bool isDashing { get; set; }
     //[field: SerializeField] public float dashDuration { get; private set; }
@@ -84,7 +88,9 @@ public class PlayerStateMachine : StateMachine
     //[field: SerializeField] public float dashCooldown { get; private set; }
     [field: SerializeField] public Vector2 lastMovementDirection { get; set; }
 
+
     //Fireball
+    public string FIREBALL;
     [field: SerializeField] public bool canFireball { get; set; }
     [field: SerializeField] public float fireballCooldownCounter { get; set; }
     [field: SerializeField] public GameObject fireballStartingPoint { get; private set; }
@@ -93,6 +99,7 @@ public class PlayerStateMachine : StateMachine
 
 
     //Repulse
+    public string REPULSE;
     [field: SerializeField] public bool canRepulse { get; set; }
     //[field: SerializeField] public int repulseForce { get; set; }
     [field: SerializeField] public float repulseCooldownCounter { get; set; }
@@ -118,12 +125,13 @@ public class PlayerStateMachine : StateMachine
 
     public CinemachineVirtualCamera CinemachineVirtualCamera { get; set; }
 
-
+    public string SOUDNS;
     [field: SerializeField] public AudioSource flappingSound { get; set; }
     [field: SerializeField] public AudioSource dashingSound { get; set; }
     [field: SerializeField] public AudioSource fireballSound { get; set; }
     [field: SerializeField] public AudioSource biteSound { get; set; }
-
+    [field: SerializeField] public AudioSource growlSound { get; set; }
+    [field: SerializeField] public AudioSource hurtSound { get; set; }
 
     //[field: SerializeField] public GameObject StartingTextPanel { get; private set; }
 

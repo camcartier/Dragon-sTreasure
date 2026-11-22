@@ -31,6 +31,7 @@ public class PlayerBiteState : PlayerBaseState
          
 
         stateMachine.Animator.Play(NBase_Bite);
+        //current sound takes too much space
         //stateMachine.biteSound.Play();
         stateMachine.flappingSound.Stop();
 
