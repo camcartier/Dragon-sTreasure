@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: ChosenMusician
   m_EditorClassIdentifier: 
   portraits:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d5c28cebb357d5343bad28cbc34acfda, type: 3}
+  - {fileID: -1751508663, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
+  - {fileID: 21300000, guid: d5c28cebb357d5343bad28cbc34acfda, type: 3}
+  - {fileID: 1506110187, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: 21300000, guid: d5c28cebb357d5343bad28cbc34acfda, type: 3}
+  - {fileID: -1751508663, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
+  - {fileID: -1087531128, guid: f0eba72dcd0c4124a940cd4a8c43e13e, type: 3}
+  - {fileID: 1728719926, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: 21300000, guid: d5c28cebb357d5343bad28cbc34acfda, type: 3}
+  - {fileID: -1979549266, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
+  - {fileID: 1506110187, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: 531385349, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
+  - {fileID: 21300000, guid: d5c28cebb357d5343bad28cbc34acfda, type: 3}
+  - {fileID: 1158237901, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: -360207179, guid: f0eba72dcd0c4124a940cd4a8c43e13e, type: 3}
+  - {fileID: 1625130308, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
   titles:
   - Musician
   - Queen
