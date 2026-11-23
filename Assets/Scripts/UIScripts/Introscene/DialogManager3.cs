@@ -18,8 +18,10 @@ public class DialogManager3 : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogToDisplay;
 
     [SerializeField] GameObject dialogPanel;
-    //[SerializeField] PlayableDirector timeline;
+    [SerializeField] PlayableDirector timeline;
     [SerializeField] GameManager gameManager;
+
+    [SerializeField] GameObject characterSelectionPanel;
 
     //same for everyone
     [SerializeField] AudioSource speakingSound;
@@ -64,6 +66,7 @@ public class DialogManager3 : MonoBehaviour
         {
 
             dialogPanel.SetActive(false);
+            characterSelectionPanel.SetActive(true);
             //speakingSound.Stop();
         }
 

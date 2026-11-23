@@ -33,10 +33,7 @@ public class DialogManager : MonoBehaviour
 
         portraitToDisplay.sprite = portraits[0];
         titleToDisplay.text = titles[0];
-        //dialogToDisplay.text = sentences[0];
-        //gameManager.PauseGame();
 
-        //typewritterEffect.StartCoroutine(typewritterEffect.DisplayLetters(sentences, index, dialogToDisplay));
         StartSentence();
     }
 
@@ -46,7 +43,6 @@ public class DialogManager : MonoBehaviour
 
         portraitToDisplay.sprite = portraits[index];
         titleToDisplay.text = titles[index];
-        //dialogToDisplay.text = sentences[index];
     }
 
     public void NextSentence()
@@ -57,7 +53,6 @@ public class DialogManager : MonoBehaviour
         if (index < 3)
         {
             index += 1;
-            //typewritterEffect.StartCoroutine(typewritterEffect.DisplayLetters(sentences, index, dialogToDisplay));
             StartSentence();
         }
         else

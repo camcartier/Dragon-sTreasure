@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348d3f01fd95c874f9a2ef9bcdd2ba96, type: 3}
+  m_Name: ChosenPigeon
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  titles:
+  - Queen
+  - Princess
+  - Dragon
+  - Pigeon
+  - Dragon
+  - Pigeon
+  - Dragon
+  - Pigeon
+  - Dragon
+  - Queen
+  - Dragon
+  - Queen
+  - Dragp,
+  sentences:
+  - ???
+  - ???
+  - My sweet princess, you've bewitched me! Ever since I saw you fly straight into
+    this trash can I've been smitten!
+  - rouuu rou! rouuu rouuu rouuuu
+  - You sure showed this cockroach what's what. His offspring will spread the word
+    of your might as a cautionnary tale for generations.
+  - rouuu, rouuuuuu!
+  - Shall I take you out to dinner? I heard the worms this side of town are the juiciest.
+  - rouuu... rou! rouuu rouuuuuuuu.
+  - Of course my love, I will win this tournament in a heartbeat and fly right to
+    your side.
+  - Uh... You can marry the pigeon without taking the tournament...
+  - Nonsense! How shall I prove my worth as a suitor if I don't win the tournament?
+    Burning houses is so outdated
+  - 'Right. No burning houses... You can... take the tournament to prove your worth
+    to... the pigeon. '
+  - 'Let''s get to it! '
+  typeSpeed: 0
+  speakingSound: {fileID: 0}

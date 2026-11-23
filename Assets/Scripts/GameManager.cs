@@ -37,7 +37,17 @@ public class GameManager : MonoBehaviour
     public int currentWaveNumber;
 
     public bool hasWon;
+    public bool sceneIsOver;
 
+    private void OnEnable()
+    {
+        DialogBase.SceneIsOver += OnDialogSceneOver;
+    }
+
+    private void OnDisable()
+    {
+        DialogBase.SceneIsOver -= OnDialogSceneOver;
+    }
 
     private void Awake()
     {
@@ -105,6 +115,11 @@ public class GameManager : MonoBehaviour
         {
 
         }
+
+        if (sceneIsOver)
+        {
+            StartCoroutine(DialogSceneOver());
+        }
     }
 
     public void SetActiveDeathPanel()
@@ -159,4 +174,16 @@ public class GameManager : MonoBehaviour
         blackScreenPanel.SetActive(false);
     }
 
+    public void OnDialogSceneOver()
+    {
+        sceneIsOver = true;
+    }
+
+    public IEnumerator DialogSceneOver()
+    {
+        blackScreenPanel.SetActive(true);
+        blackScreenAnimator.Play("fadeIn");
+        yield return new WaitForSecondsRealtime(1.25f);
+        LoadNextScene();
+    }
 }
