@@ -23,27 +23,47 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   titles:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Musician
+  - Queen
+  - Musician
+  - Dragon
+  - Musician
+  - Queen
+  - Princess
+  - Dragon
+  - Musician
+  - Queen
+  - Dragon
+  - Queen
+  - Musician
+  - Dragon
+  - Princess
+  - Queen
   sentences:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  typeSpeed: 0
+  - Princess is not the worse thing I've been called. I'll take it.
+  - You want to marry the dragon?
+  - Think of all the adventures I'll live with a dragon. I'm sure I'll get a balad
+    or two out of it. Fame! Fortune! What else would I dream of?
+  - I'll bring you the greatest treasure my Princess!
+  - I'm counting on it darling!
+  - ...
+  - '*Hum* What about the tournament? '
+  - I shall win it and bring glory to my future spouse!
+  - Does that mean you still get the "real" Princess' hand in marriage?
+  - '!'
+  - Dragons don't share, my Princess. You are mine and mine only.
+  - ...
+  - What, I'm just asking.
+  - My Princess is eager to be bedded. Let the tournament begin so I shall take him
+    to my den promptly.
+  - Oh my!
+  - I don't want to know. I declare this tournament open, may the best prevail!
+  typeSpeed: 0.025
   speakingSound: {fileID: 0}

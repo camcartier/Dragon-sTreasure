@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348d3f01fd95c874f9a2ef9bcdd2ba96, type: 3}
+  m_Name: ChosenVampire
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  titles:
+  - Vampire
+  - Queen
+  - Vampire
+  - Queen
+  - Vampire
+  - Princess
+  - Queen
+  - Vampire
+  - Dragon
+  - Princess
+  - Queen
+  - Dragon
+  - Dragon
+  sentences:
+  - '*Stares*'
+  - Uh... Sir? This dragon wishes to marry you. Do you... agree to his suit?
+  - '*Mumbles* Too much sun...'
+  - Pardon?
+  - Is it evening soon? My head is killing me.
+  - '*Whispers* Mother, I think he''s drunk'
+  - '*Ahem* Are you indisposed Sir? I can have water fetched for you.'
+  - I thirst not for water...
+  - My Princess thirst for the blood of our enemies! Fear not, I shall slay them
+    all for you
+  - ...Is that allowed?
+  - 'Technically, nothing prevents the victor from eating his opponents. '
+  - 'It''s settled then! There will be torrents of blood for you my Princess. '
+  - '*ROAR*'
+  typeSpeed: 0.025
+  speakingSound: {fileID: 0}

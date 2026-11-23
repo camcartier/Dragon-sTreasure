@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348d3f01fd95c874f9a2ef9bcdd2ba96, type: 3}
+  m_Name: ChosenWolf
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 0}
+  - {fileID: 1728719926, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1158237901, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: 0}
+  - {fileID: 1027140961, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 1506110187, guid: ac91caeb5b381b342923dc46e1a12cc4, type: 3}
+  - {fileID: 0}
+  - {fileID: -1751508663, guid: 75b7320297d8c0a49941c2b3b0d88827, type: 3}
+  - {fileID: 0}
+  titles:
+  - Wolf
+  - Dragon
+  - Princess
+  - Wolf
+  - Dragon
+  - Princess
+  - Queen
+  - Wolf
+  - Princess
+  - Queen
+  - Wolf
+  - Queen
+  - Princess
+  - Dragon
+  - Wolf
+  - Queen
+  - Wolf
+  sentences:
+  - Who? Me?
+  - Yes! My Princess with the biggest and whitest teeth of them all!
+  - '*Whispers* It''s true He''s got big teeth.'
+  - Big teeth? Hahaha, no way, I've got perfectly normal teeth. Certainly not teeth
+    as big as a wolf's. That's for sure!
+  - Your teeth are almost as mighty as mine my princess. And your eyes shine like
+    mine do! We are made for each other!
+  - '*Whispers* He''s got big eyes too.'
+  - It's rude to stare, my daughter.
+  - Shiny eyes? That's, that's because I watched the moon too long yesterday. I swear
+    I'm not suspicious! I'm not a wolf.
+  - '*Whispers* What''s his deal with wolves? He''s weird.'
+  - '*Whispers* He''s a bit weird, but you can''t badmouth guests.'
+  - '*Ears twitching* Hahaha! Nothing about wolves no, I didn''t hear anything.'
+  - '!'
+  - '!'
+  - Your ears are also the biggest, furriest...
+  - 'Fuzziest! I''ve got fuzzy ears, yes. '
+  - Hum...
+  - Wasn't there a tournament starting soon? We can talk about my ...ears, if you
+    win it.
+  typeSpeed: 0.025
+  speakingSound: {fileID: 0}

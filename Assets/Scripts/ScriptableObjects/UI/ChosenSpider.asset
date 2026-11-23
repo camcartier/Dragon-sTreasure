@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348d3f01fd95c874f9a2ef9bcdd2ba96, type: 3}
+  m_Name: ChosenSpider
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  titles:
+  - Spiderlady
+  - Spider
+  - Spiderlady
+  - Dragon
+  - Spider
+  - Dragon
+  - Spiderlady
+  - Dragon
+  - Spiderlady
+  - Queen
+  sentences:
+  - A dragon likes us! Do you like him my Arachnee?
+  - ... ...
+  - I don't think you can eat him my Arachnee.
+  - Dragons only allow themselves to be eaten when they are fallen in battle.
+  - ... ...?
+  - I can't fight you, Spider. It would make my Princess sad.
+  - Ooooh he's so romantic. But it would make Arachnee happy to eat dragon meat.
+    What to do...
+  - 'I shall fight in this tournament to the death my Princess. If I win, I''ll marry
+    you, if I lose your spider may eat me in the soldier''s stead. '
+  - So sweet. Yes. Let's do that. I hope you win. I also hope you don't. What a delightful
+    dilemma!
+  - ...Alright. Let the tournament begin.
+  typeSpeed: 0.025
+  speakingSound: {fileID: 0}
