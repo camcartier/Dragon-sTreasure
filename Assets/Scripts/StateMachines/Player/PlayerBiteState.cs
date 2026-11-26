@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBiteState : PlayerBaseState
 {
@@ -17,6 +18,9 @@ public class PlayerBiteState : PlayerBaseState
 
     private readonly int NBase_Bite = Animator.StringToHash("NBase_Bite");
 
+    private bool isCombo;
+    private float timeBeforeComboCounter;
+    private float timeForComboEnabled = 0.1f;
 
     public PlayerBiteState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
@@ -32,7 +36,7 @@ public class PlayerBiteState : PlayerBaseState
 
         stateMachine.Animator.Play(NBase_Bite);
         //current sound takes too much space
-        //stateMachine.biteSound.Play();
+        stateMachine.biteSound.Play();
         stateMachine.flappingSound.Stop();
 
 
@@ -41,15 +45,39 @@ public class PlayerBiteState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.isAttacking = false;
+        isCombo = false;
+        stateMachine.isDashing = false;
     }
 
     public override void Tick(float deltaTime)
     {
         BiteTimerCounter += Time.deltaTime;
 
+        if (Mouse.current.rightButton.wasPressedThisFrame) { stateMachine.isDashing = true;}
+
+        if (stateMachine.isDashing) 
+        {
+            stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+            return;
+        }
+
+        timeBeforeComboCounter += Time.deltaTime;
+        if (timeBeforeComboCounter > timeForComboEnabled)
+        {
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                isCombo = true;
+            }
+        }
+
+
+
         if (BiteTimerCounter > BiteTimer)
         {
+            if (isCombo) { stateMachine.SwitchState(new PlayerHeadbuttState(stateMachine)); }
+            else { 
             stateMachine.SwitchState(new PlayerMainState(stateMachine));
+            }
         }
 
         BiteMoveTimer += Time.deltaTime;

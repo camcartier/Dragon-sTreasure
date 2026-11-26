@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static Cinemachine.CinemachineFreeLook;
 
 public class PlayerHeadbuttState : PlayerBaseState
@@ -49,12 +50,19 @@ public class PlayerHeadbuttState : PlayerBaseState
         
         isBiting = false;
         stateMachine.isAttacking = false;
-
+        stateMachine.isDashing = false;
     }
 
     public override void Tick(float deltaTime)
     {
         HeadbuttTimerCounter += Time.deltaTime;
+
+        if (Mouse.current.rightButton.wasPressedThisFrame) { stateMachine.isDashing = true; }
+        if (stateMachine.isDashing)
+        {
+            stateMachine.SwitchState(new PlayerDashingState(stateMachine));
+            return;
+        }
 
         if (HeadbuttTimerCounter >= HeadbuttTimer)
         {

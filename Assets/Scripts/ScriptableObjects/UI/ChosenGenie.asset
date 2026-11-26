@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348d3f01fd95c874f9a2ef9bcdd2ba96, type: 3}
+  m_Name: ChosenGenie
+  m_EditorClassIdentifier: 
+  portraits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  titles:
+  - Genie
+  - Princess
+  - Queen
+  - Dragon
+  - Genie
+  - Dragon
+  - Princess
+  - Queen
+  - Dragon
+  sentences:
+  - You wish to marry me? Unfortunately I cannot grant love related wishes.
+  - He's rejecting the dragon? Maybe I have my chances then...
+  - Hush!
+  - It's alright my Princess, love shall come on the way. I only ask that you grant
+    me the honor of being in your presence, oh mighty Princess.
+  - Hmmm... I see. I shall grant this wish, dragon. What of your two other wishes?
+  - I have no other wish to see fulfilled my Princess. I'm already a great mighty
+    dragon who can have any riches, except for the greatest one of them all, your
+    love. I will earn it fair and square!
+  - '*Squeals* I ship it!'
+  - ... Daughter mine, sometimes I'm concerned about you.
+  - I will win this tournament to show you proof of my resolve, and then I will woo
+    you. I can't wait!
+  typeSpeed: 0.025
+  speakingSound: {fileID: 0}
