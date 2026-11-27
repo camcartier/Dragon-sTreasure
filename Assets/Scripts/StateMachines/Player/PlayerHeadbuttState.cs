@@ -17,7 +17,7 @@ public class PlayerHeadbuttState : PlayerBaseState
     private Vector2 HeadbuttStartPosition;
 
     private bool hasInstatiated;
-    private bool isBiting;
+    private bool privateIsBiting;
 
     private readonly int NBase_Headbutt = Animator.StringToHash("NBase_Headbutt");
 
@@ -29,7 +29,7 @@ public class PlayerHeadbuttState : PlayerBaseState
     {
         //Debug.Log("am heabutting");
 
-        isBiting = false;
+        privateIsBiting = false;
         HeadbuttTimerCounter = 0f;
         stateMachine.InputReader.BiteEvent += OnBite;
 
@@ -37,7 +37,7 @@ public class PlayerHeadbuttState : PlayerBaseState
 
 
         stateMachine.isAttacking = true;
-            
+        stateMachine.isHeadbutt = true;    
 
         stateMachine.Animator.Play(NBase_Headbutt);
     }
@@ -47,15 +47,22 @@ public class PlayerHeadbuttState : PlayerBaseState
         stateMachine.InputReader.BiteEvent -= OnBite;
 
         HeadbuttTimerCounter = 0f;
-        
-        isBiting = false;
+
+        privateIsBiting = false;
         stateMachine.isAttacking = false;
+        stateMachine.isHeadbutt = false;
         stateMachine.isDashing = false;
     }
 
     public override void Tick(float deltaTime)
     {
         HeadbuttTimerCounter += Time.deltaTime;
+
+        if (stateMachine.isHurt)
+        {
+            stateMachine.SwitchState(new PlayerHurtState(stateMachine));
+            return;
+        }
 
         if (Mouse.current.rightButton.wasPressedThisFrame) { stateMachine.isDashing = true; }
         if (stateMachine.isDashing)
@@ -64,11 +71,15 @@ public class PlayerHeadbuttState : PlayerBaseState
             return;
         }
 
+
         if (HeadbuttTimerCounter >= HeadbuttTimer)
         {
-            if (isBiting) { stateMachine.SwitchState(new PlayerBiteState(stateMachine)); }
+            stateMachine.SwitchState(new PlayerMainState(stateMachine));
+            /*
+            if (privateIsBiting) { stateMachine.SwitchState(new PlayerBiteState(stateMachine)); }
 
             else { stateMachine.SwitchState(new PlayerMainState(stateMachine)); }
+            */
         }
 
 
@@ -105,8 +116,8 @@ public class PlayerHeadbuttState : PlayerBaseState
     }
 
     private void OnBite()
-    {   
-        isBiting = true;
+    {
+        privateIsBiting = true;
     }
 
 

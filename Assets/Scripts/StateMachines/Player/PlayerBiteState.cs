@@ -31,7 +31,7 @@ public class PlayerBiteState : PlayerBaseState
         BiteTimerCounter = 0f;
         stateMachine.rb2D.velocity = Vector3.zero;
         stateMachine.isAttacking = true;
-
+        stateMachine.isBiting = true;
          
 
         stateMachine.Animator.Play(NBase_Bite);
@@ -47,14 +47,20 @@ public class PlayerBiteState : PlayerBaseState
         stateMachine.isAttacking = false;
         isCombo = false;
         stateMachine.isDashing = false;
+        stateMachine.isBiting = false;
     }
 
     public override void Tick(float deltaTime)
     {
         BiteTimerCounter += Time.deltaTime;
 
-        if (Mouse.current.rightButton.wasPressedThisFrame) { stateMachine.isDashing = true;}
+        if (stateMachine.isHurt)
+        {
+            stateMachine.SwitchState(new PlayerHurtState(stateMachine));
+            return;
+        }
 
+        if (Mouse.current.rightButton.wasPressedThisFrame) { stateMachine.isDashing = true;}
         if (stateMachine.isDashing) 
         {
             stateMachine.SwitchState(new PlayerDashingState(stateMachine));

@@ -10,6 +10,7 @@ public class EnemyStateMachine : StateMachine
     //[field: SerializeField] public SpriteRenderer spriteRenderer { get; set; }
     [field: SerializeField] public ObjectsData characterData { get; private set; }
     [field: SerializeField] public Destroyable destroyableInfo { get; private set; }
+    [field: SerializeField] public GetAttackTargets getAttackTargets { get; private set; }
 
 
     [field: SerializeField] public bool canAttack { get;  set; }
@@ -32,6 +33,7 @@ public class EnemyStateMachine : StateMachine
 
     [field: SerializeField] public bool isFollowing { get; set; }
     [field: SerializeField] public bool isHit { get; set; }
+    [field: SerializeField] public bool hasAlreadyBeenHit { get; set; }
     [field: SerializeField] public bool isInvulnerable { get; set; }
     [field: SerializeField] public bool isHurt { get; set; }
     [field: SerializeField] public bool hurtIsReset { get; set; }
@@ -69,6 +71,8 @@ public class EnemyStateMachine : StateMachine
         SwitchState(new EnemySpawnState(this));
 
         spriteRenderer.gameObject.GetComponentInChildren<SpriteRenderer>();
+
+        getAttackTargets = GameObject.Find("Player").GetComponentInChildren<GetAttackTargets>();
     }
 
 

@@ -27,6 +27,7 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public PlayerManaManager PlayerManaManager;
 
+    [field: SerializeField] public GetAttackTargets getAttackTargets;
 
     [field: SerializeField] public bool facingRight { get;  set; }
 
@@ -42,7 +43,8 @@ public class PlayerStateMachine : StateMachine
     //[field: SerializeField] public GameObject diggingFX { get; private set; }
 
     [field: SerializeField] public bool isAttacking { get; set; }
-
+    [field: SerializeField] public bool isBiting { get; set; }
+    [field: SerializeField] public bool isHeadbutt { get; set; }
 
     //stun and knockback
     public string KNOCKBACK;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class GetAttackTargets : MonoBehaviour
     public PlayerStateMachine playerStateMachine;
     //private EnemyStateMachine enemyStateMachine;
 
-
+    public event Action HasBeenHit;
+    public bool hasAlreadBeenHit;
 
     void Update()
     {
@@ -26,8 +28,21 @@ public class GetAttackTargets : MonoBehaviour
                 EnemyStateMachine enemyStateMachine = gameObject.GetComponentInParent<EnemyStateMachine>();
                 if (enemyStateMachine != null)
                 {
+
+
+                    HasBeenHit?.Invoke();
                     enemyStateMachine.isHit = true;
-                    enemyStateMachine.pendingDamage = playerStateMachine.PlayerData.biteDamage;
+                    
+
+
+                    if (playerStateMachine.isBiting)
+                    {
+                        enemyStateMachine.pendingDamage = playerStateMachine.PlayerData.biteDamage;
+                    }
+                    if (playerStateMachine.isHeadbutt)
+                    {
+                        enemyStateMachine.pendingDamage = playerStateMachine.PlayerData.headbuttDamage;
+                    }
 
                 }
 

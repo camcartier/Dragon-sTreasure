@@ -983,6 +983,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentWaveNumber: 0
   hasWon: 0
+  sceneIsOver: 0
 --- !u!1 &149805846
 GameObject:
   m_ObjectHideFlags: 0
@@ -10790,7 +10791,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 16383
+    m_Bits: 32767
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

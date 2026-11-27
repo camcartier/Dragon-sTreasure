@@ -56,6 +56,7 @@ MonoBehaviour:
   HealthRegenAmount: 0
   knockbackAmount: 15
   biteDamage: 50
+  headbuttDamage: 100
   repulseRadius: 150
   repulseAmount: 50
   repulseDelay: 1

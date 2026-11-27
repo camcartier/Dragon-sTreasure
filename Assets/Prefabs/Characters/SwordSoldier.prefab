@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600242997365686281}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86448086154267931}
   - component: {fileID: 4574577212077146110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio_swordwoosh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8418063581094902809}
   - component: {fileID: 945128836605945703}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Audio_footspteps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2941541015302687049}
   - component: {fileID: 5612830264591034615}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadow_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 6533025818083396672}
   - component: {fileID: 357299460586810601}
   - component: {fileID: 6371505721148943238}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Shadow_Regular
   m_TagString: Untagged
   m_Icon: {fileID: 0}

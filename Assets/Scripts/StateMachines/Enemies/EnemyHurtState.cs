@@ -8,23 +8,29 @@ public class EnemyHurtState : EnemyBaseState
 
     private readonly int Hurt = Animator.StringToHash("Hurt");
 
+    private float successiveHitsTimerCounter;
+    private float successiveHitsTimer = 0.1f;
+
+    private bool willTakeAnotherHit;
+    private int Count;
     public EnemyHurtState(EnemyStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
-        //Debug.Log("in hurt state");
-        
-        stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        stateMachine.getAttackTargets.HasBeenHit += OnHit;
 
+        //stateMachine.gameObject.layer = LayerMask.NameToLayer("DestroyableKnockback");
+        SetLayerRecursively(stateMachine.gameObject, 14);
+
+        stateMachine.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         stateMachine.Animator.Play("Hurt");
 
         stateMachine.attackSound.Stop();
 
         
         stateMachine.rb2D.velocity = Vector2.zero;
-
 
         stateMachine.rb2D.AddForce(stateMachine.pendingRepulse, ForceMode2D.Impulse);
         stateMachine.pendingRepulse = Vector2.zero;    
@@ -35,32 +41,51 @@ public class EnemyHurtState : EnemyBaseState
     }
     public override void Tick(float deltaTime)
     {
+        successiveHitsTimerCounter += deltaTime;
+        if (successiveHitsTimerCounter > successiveHitsTimer) { stateMachine.hasAlreadyBeenHit = false; }
+
         if (stateMachine.isDead)
         {
             stateMachine.SwitchState(new EnemyDeathState(stateMachine));
             return;
         }
 
-
+        /*
         if (stateMachine.hurtIsReset)
         {
             hurtTimerCounter = 0f; stateMachine.hurtIsReset = false;
         }
+        */
 
-        
+
 
         if (hurtTimerCounter < stateMachine.characterData.hurtTimer)
         {
             hurtTimerCounter += Time.deltaTime;
-            
+
         }
-        else { stateMachine.SwitchState(new EnemyMainState(stateMachine)); }
+        else
+        {
 
+            if (Count > 1)
+            {
+                stateMachine.SwitchState(new EnemyHurtState(stateMachine));
+                Count = 0;
+                return;
+            }
+            else { stateMachine.SwitchState(new EnemyMainState(stateMachine)); return; }
 
+        }
     }
 
     public override void Exit()
     {
+        stateMachine.getAttackTargets.HasBeenHit -= OnHit;
+
+        //stateMachine.gameObject.layer = LayerMask.NameToLayer("Destroyable");
+        SetLayerRecursively(stateMachine.gameObject, 7);
+
+
         hurtTimerCounter = 0f;
         stateMachine.isHurt = false;
         stateMachine.isHit = false;
@@ -69,4 +94,20 @@ public class EnemyHurtState : EnemyBaseState
 
         //stateMachine.walkTowards.isFollowing = true;
     }
+
+    void SetLayerRecursively(GameObject gameObject, int layer)
+    {
+        gameObject.layer = layer;
+        foreach (Transform child in gameObject.transform)
+            SetLayerRecursively(child.gameObject, layer);
+    }
+
+    void OnHit()
+    {
+        Count++;
+        Debug.Log("got hit");
+        //willTakeAnotherHit = true;
+        stateMachine.getAttackTargets.HasBeenHit -= OnHit;
+    }
+
 }

@@ -18,8 +18,11 @@ public class EnemyEnterAttackRange : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (!enemyStateMachine.isHit)
+            {
+                enemyStateMachine.isAttacking = true;
+            }
             
-            enemyStateMachine.isAttacking = true;
         }
     }
 

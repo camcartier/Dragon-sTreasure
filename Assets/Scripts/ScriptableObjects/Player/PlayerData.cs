@@ -49,6 +49,8 @@ public class PlayerData : ScriptableObject
     [Header("Bite Attack")]
     public float biteDamage;
 
+    [Header("Headbutt Attack")]
+    public float headbuttDamage;
     /*
     [Header("Firing Info")]
     public float fireDelay;
